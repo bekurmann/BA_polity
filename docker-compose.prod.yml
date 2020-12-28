@@ -4,12 +4,12 @@ services:
   django:
     # which Dockerfile to use, path
     build: 
-      context: ./polity-backend
-      dockerfile: Dockerfile
+      context: ./django
+      dockerfile: Dockerfile.prod
     ports: 
       - 8000:8000
     env_file: 
-      - ./polity-backend/.env.prod
+      - ./django/.env.prod
     command: gunicorn polity.wsgi:application --bind 0.0.0.0:8000
     depends_on:
       - db
@@ -19,7 +19,13 @@ services:
     volumes:
       - postgis_data:/var/lib/postgis/data/
     env_file: 
-      - ./polity-backend/.env.prod.db
+      - ./postgis/.env.prod
+# nginx:
+#   build: ./nginx
+#   ports:
+#     - 1337:80
+#   depends_on:
+#     - django
 
 volumes:
   postgis_data:

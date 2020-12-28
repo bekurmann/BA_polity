@@ -1,0 +1,66 @@
+###########
+# BUILDER #
+###########
+
+# pull official base image
+FROM python:3.8-slim as builder
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# set work directory
+WORKDIR /polity
+
+# create requirements 
+# (local) pipenv lock --requirements > requirements.txt
+COPY ./requirements.txt .
+
+# install dependencies
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /polity/wheels -r requirements.txt
+
+#########
+# FINAL #
+#########
+
+FROM python:3.8-slim
+
+# create directory for the polity user
+RUN mkdir -p /home/polity
+
+# create the app polity
+RUN adduser --disabled-password --gecos '' polity
+
+# create the appropriate directories
+ENV HOME=/home/polity
+ENV APP_HOME=/home/polity/django
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+# install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # dependencies gdal & postgis
+    binutils libproj-dev gdal-bin python-gdal python3-gdal \
+    && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN pip install --upgrade pip
+COPY --from=builder /polity/wheels /wheels
+COPY --from=builder /polity/requirements.txt .
+RUN pip install --no-cache /wheels/*
+
+# copy entrypoint-prod.sh
+COPY ./entrypoint.prod.sh $APP_HOME
+
+# copy project
+COPY . $APP_HOME
+
+# chown all the files to the app user
+RUN chown -R polity:polity $APP_HOME
+
+# change to the app user
+USER polity
+
+# run entrypoint.prod.sh
+ENTRYPOINT ["/home/polity/django/entrypoint.prod.sh"]

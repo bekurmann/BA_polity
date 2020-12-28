@@ -14,7 +14,7 @@ then
     echo "postgis started"
 fi
 
-# migrate
+# migrate (only dev)
 echo "migrate..."
 python manage.py migrate --no-input
 
@@ -23,7 +23,3 @@ exec "$@"
 # collect all static
 echo "collect static files..."
 python manage.py collectstatic --noinput
-
-# start django project running uwsgi
-#uwsgi --socket :8000 --master --enable-threads --module polity.wsgi
-
