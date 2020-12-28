@@ -1,0 +1,25 @@
+version: '3.7'
+
+services: 
+  django:
+    # which Dockerfile to use, path
+    build: 
+      context: ./polity-backend
+      dockerfile: Dockerfile
+    ports: 
+      - 8000:8000
+    env_file: 
+      - ./polity-backend/.env.prod
+    command: gunicorn polity.wsgi:application --bind 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    # postgis image for geodjango 
+    image: postgis/postgis:12-2.5-alpine
+    volumes:
+      - postgis_data:/var/lib/postgis/data/
+    env_file: 
+      - ./polity-backend/.env.prod.db
+
+volumes:
+  postgis_data:
