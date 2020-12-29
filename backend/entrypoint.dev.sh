@@ -1,7 +1,4 @@
-#!/bin/sh
-
-# exit when error
-set -e
+#!/bin/bash
 
 if [ "$DATABASE" = "postgis" ]
 then
@@ -18,8 +15,8 @@ fi
 echo "migrate..."
 python manage.py migrate --no-input
 
-exec "$@"
-
 # collect all static
 echo "collect static files..."
 python manage.py collectstatic --noinput
+
+exec "$@"
