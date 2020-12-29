@@ -6,7 +6,7 @@ services:
     build: ./django
     volumes: 
       # for local dev: when changes in polity
-      - ./django/polity/:/polity
+      - ./django/polity/:/usr/src/polity/
     ports: 
       - 8000:8000
     env_file: 
