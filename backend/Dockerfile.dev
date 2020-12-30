@@ -24,6 +24,7 @@ RUN apt-get update && \
     build-essential \
     # dependencies gdal & postgis
     binutils libproj-dev gdal-bin python-gdal python3-gdal \
+    # netcat for entrypoint.sh (waiting for db)
     netcat \
     && \
     apt-get autoremove -y && \

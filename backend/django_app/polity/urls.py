@@ -36,7 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # browsable api; only for dev
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/api-auth/', include('rest_framework.urls')),
     
     # authentication
     path('api/auth/', include('dj_rest_auth.urls')),

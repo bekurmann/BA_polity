@@ -2,7 +2,6 @@ version: '3.7'
 
 services: 
   django:
-    # which Dockerfile to use, path
     build: 
       context: ./backend
       dockerfile: Dockerfile.dev
@@ -17,7 +16,6 @@ services:
     depends_on:
       - db
   db:
-    # postgis image for geodjango 
     image: postgis/postgis:12-2.5-alpine
     volumes:
       - postgis_data:/var/lib/postgis/data/
@@ -25,6 +23,21 @@ services:
       - POSTGRES_USER=polity
       - POSTGRES_PASSWORD=politydev
       - POSTGRES_DB=polity
+  nuxt:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes: 
+      # for local dev: when changes in polity
+      - ./frontend/nuxt_app:/usr/src/app/
+    ports:
+      - 3000:3000
+    env_file: 
+      - ./frontend/.env.dev
+    command: npm run dev
+    depends_on: 
+      - django
+
 
 volumes:
   postgis_data:
