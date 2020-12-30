@@ -24,6 +24,7 @@ RUN apt-get update && \
     build-essential \
     # dependencies gdal & postgis
     binutils libproj-dev gdal-bin python-gdal python3-gdal \
+    netcat \
     && \
     apt-get autoremove -y && \
     apt-get clean && \
@@ -32,9 +33,6 @@ RUN apt-get update && \
 ################################################
 # copy all to /usr/src/app
 ################################################
-COPY ./Pipfile ./Pipfile
-COPY ./Pipfile.lock ./Pipfile.lock
-COPY ./entrypoint.dev.sh ./entrypoint.dev.sh
 COPY ./django_app . 
 
 ################################################
@@ -46,4 +44,4 @@ RUN pipenv install --system --deploy --ignore-pipfile
 # adjust permissions entrypoint + run 
 ################################################
 RUN chmod 777 entrypoint.dev.sh
-#ENTRYPOINT ["/usr/src/app/entrypoint.dev.sh"]
+ENTRYPOINT ["/usr/src/app/entrypoint.dev.sh"]
