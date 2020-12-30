@@ -16,7 +16,7 @@ fi
 
 # migrate (only dev)
 echo "migrate..."
-python manage.py migrate --no-input
+python manage.py migrate --run-syncdb --no-input
 
 # collect all static
 echo "collect static files..."

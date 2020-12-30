@@ -217,13 +217,13 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication', #only for dev
-        # 'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
 
 # # PLUGIN: JWT
-# REST_USE_JWT = True
-# JWT_AUTH_COOKIE = 'polity-jwt'
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'polity-jwt'
 
 
 # PLUGIN: django-location-field
