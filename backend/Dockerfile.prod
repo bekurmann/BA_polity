@@ -2,22 +2,37 @@
 # FINAL #
 #########
 
+
+################################################
+# base image
+################################################
 FROM python:3.8-slim
 
-# create directory for the polity user
-RUN mkdir -p /home/polityuser
+################################################
+# create work directory for user
+################################################
+RUN mkdir -p /home/app
 
-# create the app polity
+################################################
+# create polityuser
+################################################
 RUN adduser --disabled-password --gecos '' polityuser
 
+################################################
 # create the appropriate directories
-ENV HOME=/home/polityuser
-ENV APP_HOME=/home/polityuser/django/polity
+################################################
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/django
 RUN mkdir $APP_HOME
-RUN mkdir $APP_HOME/static
+
+################################################
+# set workdir
+################################################
 WORKDIR $APP_HOME
 
+################################################
 # install dependencies
+################################################
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # pipenv
     pipenv \
@@ -25,31 +40,31 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     # dependencies gdal & postgis
     binutils libproj-dev gdal-bin python-gdal python3-gdal \
+    # netcat for entrypoint.sh (waiting for db)
+    netcat \
     && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
+################################################
+# copy project
+################################################
+COPY ./django_app $APP_HOME
 
+################################################
 # pipenv
-# copy Pipfiles
-COPY ./Pipfile .
-COPY ./Pipfile.lock .
+################################################
+RUN pip install --upgrade pip
 # install django dependencies from pipfile
 RUN pipenv install --system --deploy --ignore-pipfile
 
-# copy entrypoint-prod.sh
-COPY ./entrypoint.prod.sh $APP_HOME
-
-# copy project
-COPY . $APP_HOME
-
-# chown all the files to the app user
-RUN chown -R polity:polity $APP_HOME
-
+################################################
+# change permissions user / directory
+################################################
+RUN chown -R polityuser:polityuser $APP_HOME
+RUN chmod 777 entrypoint.prod.sh
 # change to the app user
-USER polity
-
+USER polityuser
 # run entrypoint.prod.sh
-ENTRYPOINT ["/home/polity/django/entrypoint.prod.sh"]
+ENTRYPOINT ["/home/app/django/entrypoint.prod.sh"]
