@@ -1,15 +1,15 @@
 # ****************************************************************
 # backend
 # ****************************************************************
-django_app/uploads/
-django_app/static/
-django_app/.env.prod
+backend/django_app/uploads/
+backend/django_app/static/
+backend/django_app/.env.prod
 
 # ****************************************************************
 # frontend
 # ****************************************************************
-nuxt_app/.nuxt/
-nuxt_app/node_modules
+frontend/nuxt_app/.nuxt/
+frontend/nuxt_app/node_modules/
 
 # ****************************************************************
 # db
