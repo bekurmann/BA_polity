@@ -18,7 +18,7 @@ build-backend-django:
         DOCKER_DRIVER: overlay2
         DOCKER_TLS_CERTDIR: ""
     script:
-        - cd frontend
+        - cd backend
         - docker build -f Dockerfile.prod -t $CI_REGISTRY_IMAGE/backend-django:latest .
         - docker tag $CI_REGISTRY_IMAGE/backend-django:latest $CI_REGISTRY_IMAGE/backend-django:$CI_COMMIT_REF_NAME
         - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
@@ -33,7 +33,7 @@ build-frontend-nuxt:
     services:
         - docker:dind
     script:
-        - cd backend
+        - cd frontend
         - docker build -f Dockerfile.prod -t $CI_REGISTRY_IMAGE/frontend-nuxt:latest .
         - docker tag $CI_REGISTRY_IMAGE/frontend-nuxt:latest $CI_REGISTRY_IMAGE/frontend-nuxt:$CI_COMMIT_REF_NAME
         - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
