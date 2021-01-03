@@ -21,9 +21,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-# 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
-# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+# 'ALLOWED_HOSTS' should be a single string of hosts with a space between each.
+# For example: 'ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 # ***********************************************************************************************
 
@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'location_field.apps.DefaultConfig',
-    'csvimport.app.CSVImportConf',
     
     # DRF
     'rest_framework',
@@ -147,9 +146,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Zurich'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 
@@ -198,7 +197,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         #'rest_framework.authentication.SessionAuthentication', #only for dev
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-    ]
+    ],
+    # for production: disable browsable api
+    # 'DEFAULT_RENDERER_CLASSES': [
+    #     'rest_framework.renderers.JSONRenderer',
+    # ],
 }
 
 # # PLUGIN: JWT

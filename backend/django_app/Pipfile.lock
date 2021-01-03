@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6a12c3a92debcf52472c34d7c3c08f543a3173b0082aab8160155738f01c169f"
+            "sha256": "3d44e4592ad7e8b937fe2d46b8f67f295bee28c21dabce23a2e7196b17134351"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -140,13 +140,6 @@
                 "sha256:f5dde281f4db8871eb5845aee614b4f1a47e7fd5b20476238793f519cd7bdf41"
             ],
             "version": "==0.3.2"
-        },
-        "django-csvimport": {
-            "hashes": [
-                "sha256:ef3c5784df37574743ae7a1c458bab512ef0bc8753866b09c56cb970f7ade623"
-            ],
-            "index": "pypi",
-            "version": "==2.16"
         },
         "django-flat-responsive": {
             "hashes": [

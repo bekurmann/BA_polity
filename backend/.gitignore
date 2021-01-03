@@ -62,13 +62,13 @@ db.sqlite3
 db.sqlite3-journal
 
 # Django uploads: ********************************
-polity/uploads/
+django_app/uploads/
 
 # locations / data **************
-polity/locations/data/
+django_app/locations/data/
 
 # static ******
-polity/static/
+django_app/static/
 
 
 # Flask stuff:

@@ -24,7 +24,7 @@ services:
   db:
     image: postgis/postgis:12-2.5-alpine
     volumes:
-      - postgis_data:/var/lib/postgis/data/
+      - postgis_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=polity
       - POSTGRES_PASSWORD=politydev
