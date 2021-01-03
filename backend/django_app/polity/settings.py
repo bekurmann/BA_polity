@@ -15,27 +15,15 @@ import os
 from pathlib import Path
 
 # ***********************************************************************************************
-# environ
-# https://github.com/joke2k/django-environ
+# get environmental variables
 
-import environ
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# reading .env file
-environ.Env.read_env('/../../.env.dev')
-
-# False if not in os.environ
-DEBUG = env('DEBUG')
-
-# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # ***********************************************************************************************
 
@@ -130,16 +118,8 @@ DATABASES = {
     }
 }
 
-# # SpatiaLite
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.spatialite',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'
+# only for spatiallite, if no postgis is present
+SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'
 
 
 
@@ -216,7 +196,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication', #only for dev
+        #'rest_framework.authentication.SessionAuthentication', #only for dev
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ]
 }
