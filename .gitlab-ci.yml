@@ -5,7 +5,7 @@ stages:
 
 build-backend-django:
     tags:
-        - docker
+        - build-docker
     stage: build-docker
     image: docker:latest
     services:
@@ -19,7 +19,7 @@ build-backend-django:
 
 build-frontend-nuxt:
     tags:
-        - docker
+        - build-docker
     stage: build-docker
     image: docker:latest
     services:
@@ -33,7 +33,7 @@ build-frontend-nuxt:
 
 build-nginx:
     tags:
-        - docker
+        - build-docker
     stage: build-docker
     image: docker:latest
     services:
