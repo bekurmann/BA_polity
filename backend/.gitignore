@@ -64,10 +64,10 @@ db.sqlite3-journal
 # Django uploads: ********************************
 django_app/uploads/
 
-# locations / data **************
+# locations / data ********************************
 django_app/locations/data/
 
-# static ******
+# static ********************************
 django_app/static/
 
 
@@ -120,7 +120,6 @@ ENV/
 env.bak/
 venv.bak/
 .env.prod
-.env.prod.db
 
 # Spyder project settings
 .spyderproject
