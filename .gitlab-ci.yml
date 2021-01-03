@@ -10,6 +10,13 @@ build-backend-django:
     image: docker:latest
     services:
         - docker:dind
+    variables:
+        # Tell docker CLI how to talk to Docker daemon; see
+        # https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor
+        DOCKER_HOST: tcp://docker:2375/
+        # Use the overlayfs driver for improved performance:
+        DOCKER_DRIVER: overlay2
+        DOCKER_TLS_CERTDIR: ""
     script:
         - cd frontend
         - docker build -f Dockerfile.prod -t $CI_REGISTRY_IMAGE/backend-django:latest .
