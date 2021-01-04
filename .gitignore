@@ -3,7 +3,7 @@
 # ****************************************************************
 backend/django_app/uploads/
 backend/django_app/static/
-backend/django_app/.env.prod
+backend/django_app/.env.prod.sample
 
 # ****************************************************************
 # frontend
@@ -14,8 +14,8 @@ frontend/nuxt_app/node_modules/
 # ****************************************************************
 # db
 # ****************************************************************
-postgis/.env.prod
-postgis/.env.prod
+postgis/.env.prod.sample
+
 # ****************************************************************
 # nginx
 # ****************************************************************
@@ -146,7 +146,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.env.prod
 
 # Spyder project settings
 .spyderproject
