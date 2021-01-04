@@ -54,6 +54,4 @@ build-nginx:
         - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY
         - docker push $CI_REGISTRY_IMAGE/nginx:$CI_COMMIT_REF_NAME
     when: manual
-    only: 
-        changes:
-            - nginx/*
+
