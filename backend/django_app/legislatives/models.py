@@ -5,7 +5,6 @@ from location_field.models.spatial import LocationField
 from politicans.models import Politican
 from locations.models import Country, Canton, Municipality, PLZ
 
-# just a comment for build test -> polymorph membership!
 
 class Parlament(models.Model):
     """
