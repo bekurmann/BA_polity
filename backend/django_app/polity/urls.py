@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
+# import view for account registration confirmation
+from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
+
 # import routers from apps
 from legislatives.api.urls import router as legislatives_router
 from politicans.api.urls import router as politicans_router
@@ -39,8 +42,12 @@ urlpatterns = [
     path('api/api-auth/', include('rest_framework.urls')),
     
     # authentication
-    path('api/auth/', include('dj_rest_auth.urls')),
-    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/v1/auth/', include('dj_rest_auth.urls')),
+    path('api/v1/auth/allauth/', include('allauth.urls')),
+
+    path('api/v1/auth/registration/account-confirm-email/<str:key>/', ConfirmEmailView.as_view(),), # Needs to be defined before the registration path
+    path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/v1/auth/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
 
     # router
     path('api/v1/', include(router.urls))

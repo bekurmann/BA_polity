@@ -24,7 +24,7 @@ services:
   db:
     image: postgis/postgis:12-2.5-alpine
     volumes:
-      - postgis_data:/var/lib/postgresql/data/
+      - postgis_data_dev:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=polity
       - POSTGRES_PASSWORD=politydev
@@ -41,12 +41,10 @@ services:
       - ./frontend/nuxt_app:/usr/src/app/
     ports:
       - 3000:3000
-    env_file: 
-      - ./frontend/.env.dev
     command: npm run dev
     depends_on: 
       - django
 
 
 volumes:
-  postgis_data:
+  postgis_data_dev:

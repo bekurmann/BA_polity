@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'location_field.apps.DefaultConfig',
+    'csvimport.app.CSVImportConf',
     
     # DRF
     'rest_framework',
@@ -176,18 +177,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-# Custom Serializer for CustomUser
-REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'users.api.serializers.CustomUserDetailSerializer',
-}
-
 # ***********************************************************************************************
 # PLUGINS
 # ***********************************************************************************************
 
 
-# PLUGIN: Site-ID for Registration @dj-rest-auth AND (dependency) allauth
-SITE_ID = 1
+# PLUGIN: dj-rest-auth AND (dependency) allauth
+SITE_ID = 1 # dj-rest-auth
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory" # allauth
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+LOGIN_URL = 'http://localhost:8000/api/v1/auth/login/' # redirect after successful confirmation
+
+AUTHENTICATION_BACKENDS = [
+    # allauth specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # Needed to login by username in Django admin, regardless of allauth
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# Custom Serializer for CustomUser
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'users.api.serializers.CustomUserDetailSerializer',
+}
+
 
 # PLUGIN: DRF
 REST_FRAMEWORK = {
@@ -195,7 +208,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        #'rest_framework.authentication.SessionAuthentication', #only for dev
+        'rest_framework.authentication.SessionAuthentication', #only for dev
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     # for production: disable browsable api

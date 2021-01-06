@@ -15,6 +15,7 @@ django-admin-interface = "*"
 uWSGI = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+django-csvimport = "*"
 
 [dev-packages]
 pylint = "*"
