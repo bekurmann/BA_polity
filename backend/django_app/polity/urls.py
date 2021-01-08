@@ -28,16 +28,26 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # **************************************************************************************
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
-# POLITICAN ROUTER: import viewsets for router
 from politicans.api.views import PoliticanViewSet
-# PARLAMENT ROUTER: import viewsets for router
-from legislatives.api.views import ParlamentViewSet
+from legislatives.api.views import ParlamentViewSet, CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet
 
 # PARLAMENT ROUTER: create router
 router = routers.SimpleRouter()
-router.register(r'parlaments', ParlamentViewSet)
+router.register(r'parlaments', ParlamentViewSet, basename='parlaments')
 # /parlaments/
 # /parlaments/<pk>/
+commissions_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+commissions_router.register(r'commissions', CommissionViewSet, basename='commissions')
+# /parlaments/<pk>/commissions/
+# /parlaments/<pk>/commissions/<pk>/
+commissions_members_router = routers.NestedSimpleRouter(commissions_router, r'commissions', lookup='commission')
+commissions_members_router.register(r'members', CommissionMembershipViewSet, basename='members')
+# /parlaments/<pk>/commissions/<pk>/members/
+# /parlaments/<pk>/commissions/<pk>/members/<pk>/
+commissions_members_roles_router = routers.NestedSimpleRouter(commissions_members_router, r'members', lookup='commission_membership')
+commissions_members_roles_router.register(r'roles', CommissionMembershipRoleViewSet, basename='roles')
+
+
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
 # /politicans/<pk>/
@@ -56,7 +66,10 @@ urlpatterns = [
     path('api/v1/auth/registration/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
 
     # nested routes
-    path('api/v1/', include(router.urls))
+    path('api/v1/', include(router.urls)),
+    path('api/v1/', include(commissions_router.urls)),
+    path('api/v1/', include(commissions_members_router.urls)),
+    path('api/v1/', include(commissions_members_roles_router.urls)),
 ]
 
 # media files

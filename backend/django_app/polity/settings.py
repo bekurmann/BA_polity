@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'location_field.apps.DefaultConfig',
-    'csvimport.app.CSVImportConf',
+    'import_export',
     
     # DRF
     'rest_framework',
