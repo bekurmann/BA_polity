@@ -48,3 +48,4 @@ admin.site.register(CustomUser, CustomUserAdmin)
 # unregister sites, groups
 admin.site.unregister(Group)
 admin.site.unregister(Site)
+#admin.site.unregister()

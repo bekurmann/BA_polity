@@ -4,6 +4,10 @@ from legislatives.models import Parlament, ParlamentRole, ParlamentMembership, P
 from legislatives.models import Commission, CommissionRole, CommissionMembership, CommissionMembershipRole
 from locations.api.serializers import PLZSerializer
 
+# *****************************************************************************************
+# Parlament
+# *****************************************************************************************
+
 class ParlamentSerializer(serializers.ModelSerializer):
     """ 
     model serializer for parlament
@@ -16,8 +20,6 @@ class ParlamentSerializer(serializers.ModelSerializer):
         model = Parlament
         exclude = ['created_at', 'updated_at', 'location_query']
 
-    # def get_commissions = 
-
 
 class ParlamentRoleSerializer(serializers.ModelSerializer):
     """
@@ -26,7 +28,8 @@ class ParlamentRoleSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = ParlamentRole
-        exclude = ['id', 'created_at', 'updated_at', 'description',]
+        exclude = ['created_at', 'updated_at',]
+
 
 class ParlamentMembershipSerializer(serializers.ModelSerializer):
     """
@@ -34,10 +37,34 @@ class ParlamentMembershipSerializer(serializers.ModelSerializer):
         * also used in PoliticanSerializer
         * nested ParlamentRoles
     """
-    membership_roles = ParlamentRoleSerializer(many=True, read_only=True)
+    membership_roles = serializers.SerializerMethodField()
     class Meta:
         model = ParlamentMembership
-        exclude = ['id', 'created_at', 'updated_at', ]
+        exclude = [ 'id', 'created_at', 'updated_at',]
+
+    def get_membership_roles(self, object):
+        return ParlamentMembershipRoleSerializer(ParlamentMembershipRole.objects.filter(parlament_membership=object), many=True).data
+
+
+
+class ParlamentMembershipRoleSerializer(serializers.ModelSerializer):
+    """
+    model serializer for through model parlamet membership roles
+    """
+    class Meta:
+        model = ParlamentMembershipRole
+        exclude = [ 'created_at', 'updated_at', ]
+
+
+
+
+
+
+
+
+
+
+
 
 class CommissionSerializer(serializers.ModelSerializer):
     """

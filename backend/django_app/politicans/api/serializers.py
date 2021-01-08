@@ -12,13 +12,13 @@ from locations.api.serializers import PLZSerializer
 class PoliticanSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
 
-    membership_parlaments = serializers.SerializerMethodField()
+    #parlament_memberships = serializers.SerializerMethodField()
    
     class Meta:
         model = Politican
         exclude = ['created_at', 'updated_at', 'location_query', ]
 
-    def get_membership_parlaments(self, object):
-        # returns a serialized .data where politican is parlament member
-        return ParlamentMembershipSerializer(ParlamentMembership.objects.filter(politican=object), 
-                                                many=True).data
+    # def get_parlament_memberships(self, object):
+    #     # returns a serialized .data where politican is parlament member
+    #     return ParlamentMembershipSerializer(ParlamentMembership.objects.filter(politican=object), 
+    #                                             many=True).data

@@ -16,6 +16,7 @@ uWSGI = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
 django-csvimport = "*"
+drf-nested-routers = "*"
 
 [dev-packages]
 pylint = "*"

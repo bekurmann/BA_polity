@@ -15,24 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-
-# import view for account registration confirmation
-from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
-
-# import routers from apps
-from legislatives.api.urls import router as legislatives_router
-from politicans.api.urls import router as politicans_router
 
 # for media files
 from django.conf.urls.static import static
 from django.conf import settings
 
-router = DefaultRouter()
+# import view for account registration confirmation
+from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 
-# local apps extend DefaultRouter
-router.registry.extend(legislatives_router.registry)
-router.registry.extend(politicans_router.registry)
+# **************************************************************************************
+# Router
+# **************************************************************************************
+# import router from 3rd party nested-routes
+from rest_framework_nested import routers
+# POLITICAN ROUTER: import viewsets for router
+from politicans.api.views import PoliticanViewSet
+# PARLAMENT ROUTER: import viewsets for router
+from legislatives.api.views import ParlamentViewSet
+
+# PARLAMENT ROUTER: create router
+router = routers.SimpleRouter()
+router.register(r'parlaments', ParlamentViewSet)
+# /parlaments/
+# /parlaments/<pk>/
+router.register(r'politicans', PoliticanViewSet)
+# /politicans/ 
+# /politicans/<pk>/
 
 urlpatterns = [
     # admin
@@ -41,15 +49,13 @@ urlpatterns = [
     # browsable api; only for dev
     path('api/api-auth/', include('rest_framework.urls')),
     
-    # authentication
+    # authentication & registration
     path('api/v1/auth/', include('dj_rest_auth.urls')),
-    path('api/v1/auth/allauth/', include('allauth.urls')),
-
     path('api/v1/auth/registration/account-confirm-email/<str:key>/', ConfirmEmailView.as_view(),), # Needs to be defined before the registration path
     path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('api/v1/auth/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
+    path('api/v1/auth/registration/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
 
-    # router
+    # nested routes
     path('api/v1/', include(router.urls))
 ]
 
