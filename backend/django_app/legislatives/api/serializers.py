@@ -35,14 +35,14 @@ class ParlamentMembershipSerializer(serializers.ModelSerializer):
     politican = PoliticanSerializer(read_only=True)
     class Meta:
         model = ParlamentMembership
-        exclude = [ 'id', 'created_at', 'updated_at',]
+        exclude = [ 'created_at', 'updated_at',]
 
 
 class ParlamentMembershipRoleSerializer(serializers.ModelSerializer):
     """
     model serializer for through model parlamet membership roles
     """
-    parlament_role = ParlamentRoleSerializer(read_only=True, many=True)
+    parlament_role = ParlamentRoleSerializer(read_only=True)
     class Meta:
         model = ParlamentMembershipRole
         exclude = [ 'created_at', 'updated_at', ]
@@ -80,7 +80,7 @@ class CommissionMembershipRoleSerializer(serializers.ModelSerializer):
     """
     model serializer for CommissionMembershipRole
     """
-    commission_role = CommissionRoleSerializer(read_only=True, many=True)
+    commission_role = CommissionRoleSerializer(read_only=True)
     class Meta:
         model = CommissionMembershipRole
         exclude = ['created_at', 'updated_at',]

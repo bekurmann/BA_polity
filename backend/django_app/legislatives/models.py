@@ -93,6 +93,8 @@ class ParlamentMembership(models.Model):
                                                 through_fields=('parlament_membership',
                                                 'parlament_role'))
 
+    # TODO: compute active flag based on roles
+
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

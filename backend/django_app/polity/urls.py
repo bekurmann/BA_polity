@@ -14,7 +14,7 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
 from politicans.api.views import PoliticanViewSet
-from legislatives.api.views import ( ParlamentViewSet, ParlamentMembershipViewSet, 
+from legislatives.api.views import ( ParlamentViewSet, ParlamentMembershipViewSet, ParlamentMembershipRoleViewSet,
                                     CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet )
 
 # PARLAMENT ROUTER: create router
@@ -22,20 +22,24 @@ router = routers.SimpleRouter()
 router.register(r'parlaments', ParlamentViewSet, basename='parlaments')
 # /parlaments/
 # /parlaments/<pk>/
-parlament_members_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
-parlament_members_router.register(r'members', ParlamentMembershipViewSet, basename='parlament-members')
-# /parlaments/<pk>/members/
-# /parlaments/<pk>/members/<pk>
-commissions_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
-commissions_router.register(r'commissions', CommissionViewSet, basename='commissions')
+parlament_membership_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+parlament_membership_router.register(r'memberships', ParlamentMembershipViewSet, basename='parlament-memberships')
+# /parlaments/<pk>/memberships/
+# /parlaments/<pk>/memberships/<pk>
+parlament_membership_role_router = routers.NestedSimpleRouter(parlament_membership_router, r'memberships', lookup='parlament_membership')
+parlament_membership_role_router.register(r'roles', ParlamentMembershipRoleViewSet, basename='parlament-memberships-roles')
+# /parlaments/<pk>/members/<pk>/roles/
+# /parlaments/<pk>/members/<pk>/roles/<pk>/
+commission_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+commission_router.register(r'commissions', CommissionViewSet, basename='commissions')
 # /parlaments/<pk>/commissions/
 # /parlaments/<pk>/commissions/<pk>/
-commissions_members_router = routers.NestedSimpleRouter(commissions_router, r'commissions', lookup='commission')
-commissions_members_router.register(r'members', CommissionMembershipViewSet, basename='commission-members')
+commission_membership_router = routers.NestedSimpleRouter(commission_router, r'commissions', lookup='commission')
+commission_membership_router.register(r'members', CommissionMembershipViewSet, basename='commission-members')
 # /parlaments/<pk>/commissions/<pk>/members/
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/
-commissions_members_roles_router = routers.NestedSimpleRouter(commissions_members_router, r'members', lookup='commission_membership')
-commissions_members_roles_router.register(r'roles', CommissionMembershipRoleViewSet, basename='commission-member-roles')
+commission_membership_role_router = routers.NestedSimpleRouter(commission_membership_router, r'members', lookup='commission_membership')
+commission_membership_role_router.register(r'roles', CommissionMembershipRoleViewSet, basename='commission-member-roles')
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/<pk>/
 
@@ -59,11 +63,12 @@ urlpatterns = [
     # nested routes /parlaments
     path('api/v1/', include(router.urls)),
     # nested routes /parlaments/members
-    path('api/v1/', include(parlament_members_router.urls)),
+    path('api/v1/', include(parlament_membership_router.urls)),
+    path('api/v1/', include(parlament_membership_role_router.urls)),
     # nested commissions / ...
-    path('api/v1/', include(commissions_router.urls)),
-    path('api/v1/', include(commissions_members_router.urls)),
-    path('api/v1/', include(commissions_members_roles_router.urls)),
+    path('api/v1/', include(commission_router.urls)),
+    path('api/v1/', include(commission_membership_router.urls)),
+    path('api/v1/', include(commission_membership_role_router.urls)),
 ]
 
 # media files
