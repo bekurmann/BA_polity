@@ -12,7 +12,7 @@ WORKDIR /usr/src/app/
 # copy package.json for dependencies + install + run
 ################################################
 COPY ./nuxt_app/package.json .
-COPY ./nuxt_app/package-lock.json
+COPY ./nuxt_app/package-lock.json . 
 
 RUN npm install
 
