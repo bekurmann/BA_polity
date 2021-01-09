@@ -9,3 +9,9 @@ class PoliticanViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = Politican.objects.all()
     serializer_class = PoliticanSerializer
+
+class PoliticanParlamentMembershipViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for listing parlament membership for politican
+    """
+    pass

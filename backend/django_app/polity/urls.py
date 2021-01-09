@@ -29,13 +29,18 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
 from politicans.api.views import PoliticanViewSet
-from legislatives.api.views import ParlamentViewSet, CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet
+from legislatives.api.views import ( ParlamentViewSet, ParlamentMembershipViewSet, 
+                                    CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet )
 
 # PARLAMENT ROUTER: create router
 router = routers.SimpleRouter()
 router.register(r'parlaments', ParlamentViewSet, basename='parlaments')
 # /parlaments/
 # /parlaments/<pk>/
+parlament_members_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+parlament_members_router.register(r'members', ParlamentMembershipViewSet, basename='parlament-members')
+# /parlaments/<pk>/members/
+# /parlaments/<pk>/members/<pk>
 commissions_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
 commissions_router.register(r'commissions', CommissionViewSet, basename='commissions')
 # /parlaments/<pk>/commissions/
@@ -65,8 +70,11 @@ urlpatterns = [
     path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/v1/auth/registration/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
 
-    # nested routes
+    # nested routes /parlaments
     path('api/v1/', include(router.urls)),
+    # nested routes /parlaments/members
+    path('api/v1/', include(parlament_members_router.urls)),
+    # nested commissions / ...
     path('api/v1/', include(commissions_router.urls)),
     path('api/v1/', include(commissions_members_router.urls)),
     path('api/v1/', include(commissions_members_roles_router.urls)),
