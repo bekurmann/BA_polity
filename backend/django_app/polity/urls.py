@@ -36,7 +36,8 @@ commissions_members_router.register(r'members', CommissionMembershipViewSet, bas
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/
 commissions_members_roles_router = routers.NestedSimpleRouter(commissions_members_router, r'members', lookup='commission_membership')
 commissions_members_roles_router.register(r'roles', CommissionMembershipRoleViewSet, basename='commission-member-roles')
-
+# /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/
+# /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/<pk>/
 
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
