@@ -13,6 +13,4 @@ WORKDIR /usr/src/app/
 ################################################
 COPY ./nuxt_app .
 RUN npm install
-
-
-
+RUN npm run build

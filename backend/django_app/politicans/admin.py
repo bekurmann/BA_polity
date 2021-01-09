@@ -2,10 +2,34 @@ from django.contrib import admin
 
 from politicans.models import Politican
 
+# import export 
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+
+# import Municipality for .csv import 
+from locations.models import PLZ
+
 # for avatar_preview
 from django.utils.safestring import mark_safe
 
-class PoliticanAdmin(admin.ModelAdmin):
+
+# *****************************************************************************************
+# import export ressources
+# *****************************************************************************************
+
+class PoliticanRessource(resources.ModelResource):
+    city = fields.Field(column_name='city', attribute='city',
+                        widget=ForeignKeyWidget(PLZ, 'pk'))
+
+    class Meta:
+        model = Politican
+        import_id_fields = ['id']
+
+# *****************************************************************************************
+# admin models
+# *****************************************************************************************
+class PoliticanAdmin(ImportExportModelAdmin):
     """
     Customizing Admininterface for Politican
     """
@@ -21,6 +45,7 @@ class PoliticanAdmin(admin.ModelAdmin):
         ('Admin', { 'fields': ('active', ) }),
     )
 
+    resource_class = PoliticanRessource
 
     list_display = ('first_name', 'last_name', 'get_city_name', 'active',)
 
