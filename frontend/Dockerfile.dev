@@ -16,5 +16,5 @@ COPY ./nuxt_app/package-lock.json .
 
 RUN npm install
 
-COPY . .
+COPY ./nuxt_app .
 
