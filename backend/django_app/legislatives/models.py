@@ -93,8 +93,6 @@ class ParlamentMembership(models.Model):
                                                 through_fields=('parlament_membership',
                                                 'parlament_role'))
 
-    # TODO: compute active flag based on roles
-
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -116,8 +114,8 @@ class ParlamentMembershipRole(models.Model):
     parlament_role = models.ForeignKey(ParlamentRole, on_delete=models.CASCADE)
 
     # additional date information
-    elected_at = models.DateField(null=True, blank=True)
-    resigned_at = models.DateField(null=True, blank=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
 
     # reference election
     # TO DO -> !
@@ -139,7 +137,6 @@ class Commission(models.Model):
     """
     * model for commissions
     """
-
     # general information
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
@@ -151,6 +148,11 @@ class Commission(models.Model):
     members = models.ManyToManyField(Politican, through='CommissionMembership',
                                                 through_fields=('commission',
                                                 'politican'))
+
+    # permanent / non-permanent commission | start/end date
+    permanent = models.BooleanField()
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
 
     # contact
     email = models.EmailField( max_length=200, blank=True)
@@ -224,8 +226,8 @@ class CommissionMembershipRole(models.Model):
     commission_role = models.ForeignKey(CommissionRole, on_delete=models.CASCADE)
 
     # additional date information
-    elected_at = models.DateField(null=True, blank=True)
-    resigned_at = models.DateField(null=True, blank=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
 
     # reference election
     # TO DO -> !

@@ -47,6 +47,10 @@ router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
 # /politicans/<pk>/
 
+# **************************************************************************************
+# urls patterns
+# **************************************************************************************
+
 urlpatterns = [
     # admin
     path('admin/', admin.site.urls),
@@ -71,7 +75,9 @@ urlpatterns = [
     path('api/v1/', include(commission_membership_role_router.urls)),
 ]
 
+# **************************************************************************************
 # media files
+# **************************************************************************************
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
