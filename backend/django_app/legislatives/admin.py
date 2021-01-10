@@ -80,7 +80,7 @@ class CommissionAdmin(admin.ModelAdmin):
     Customizing Admininterface for Commission
     """
     fieldsets = (
-        ('General Information', { 'fields': ('title', 'description',) }),
+        ('General Information', { 'fields': ('title', 'description', 'permanent', 'start_date', 'end_date',) }),
         ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Contact', {'fields': ('email', 'website', 'phone')}),
     )
