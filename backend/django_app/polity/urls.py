@@ -17,7 +17,10 @@ from politicans.api.views import PoliticanViewSet
 from legislatives.api.views import ( ParlamentViewSet, ParlamentMembershipViewSet, ParlamentMembershipRoleViewSet,
                                     CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet )
 
-# PARLAMENT ROUTER: create router
+from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, MunicipalityViewSet )
+
+# PARLAMENT ROUTER
+# **************************************************************************************
 router = routers.SimpleRouter()
 router.register(r'parlaments', ParlamentViewSet, basename='parlaments')
 # /parlaments/
@@ -43,10 +46,26 @@ commission_membership_role_router.register(r'roles', CommissionMembershipRoleVie
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/
 # /parlaments/<pk>/commissions/<pk>/members/<pk>/roles/<pk>/
 
+# POLITICAN ROUTER
+# **************************************************************************************
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
 # /politicans/<pk>/
 
+# LOCATION ROUTER
+# **************************************************************************************
+router.register(r'locations/countries', CountryViewSet)
+# /locations/countries/
+# /locations/countries/<pk>/
+router.register(r'locations/regions', RegionViewSet)
+# /locations/regions/
+# /locations/regions/<pk>
+router.register(r'locations/cantons', CantonViewSet)
+# /locations/cantons/
+# /locations/cantons/<pk>
+router.register(r'locations/municipalities', MunicipalityViewSet)
+# /locations/municipalities/
+# /locations/municipalities/<pk>
 # **************************************************************************************
 # urls patterns
 # **************************************************************************************

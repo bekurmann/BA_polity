@@ -18,6 +18,7 @@ gunicorn = "*"
 django-csvimport = "*"
 drf-nested-routers = "*"
 django-import-export = "*"
+djangorestframework-gis = "*"
 
 [dev-packages]
 pylint = "*"
