@@ -41,10 +41,6 @@ class Politican(models.Model):
 
     avatar = models.ImageField(upload_to=get_politican_upload_path, blank=True, null=True)
 
-    # Admin
-    # active should be computed, based on membership?
-    active = models.BooleanField()
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

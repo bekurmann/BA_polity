@@ -42,7 +42,6 @@ class PoliticanAdmin(ImportExportModelAdmin):
         ('Location', { 'fields': ('location_query', 'location',  ) }),
         ('Contact', { 'fields': ('email', 'website', 'phone' ) }),
         ('Avatar', { 'fields': ('avatar', 'get_avatar_preview', ) }),
-        ('Admin', { 'fields': ('active', ) }),
     )
 
     resource_class = PoliticanRessource

@@ -93,6 +93,9 @@ class ParlamentMembership(models.Model):
                                                 through_fields=('parlament_membership',
                                                 'parlament_role'))
 
+    # active flag
+    active = models.BooleanField(blank=True, null=True)
+
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
