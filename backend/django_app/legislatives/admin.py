@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # import Parlaments + depending
-from legislatives.models import Parlament, ParlamentRole, ParlamentMembership, ParlamentMembershipRole
+from legislatives.models import Parlament, ParlamentSession, ParlamentRole, ParlamentMembership, ParlamentMembershipRole
 # import Commission + depending
 from legislatives.models import Commission, CommissionRole, CommissionMembership, CommissionMembershipRole
 
@@ -47,6 +47,35 @@ class ParlamentAdmin(admin.ModelAdmin):
 
     def get_avatar_preview(self, obj):
         return mark_safe(f'<img src="{obj.avatar.url}" style="max-width: 150px" />')
+
+class ParlamentSessionAdmin(admin.ModelAdmin):
+    """
+    Customizing admininterface for ParlamentSession
+    """
+    # def formfield_for_manytomany(self, db_field, request, **kwargs):
+    #     if db_field.name == "excused_politicans":
+    #         kwargs["queryset"] = ParlamentMembership.objects.filter(politican=request.user)
+    #     return super().formfield_for_manytomany(db_field, request, **kwargs)
+
+    def get_object(self, request, object_id):
+        # Hook obj for use in formfield_for_manytomany
+        self.obj = super(ParlamentSessionAdmin, self).get_object(request, object_id)
+        return self.obj
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.name == "members" and getattr(self, 'obj', None):
+            kwargs["queryset"] = ParlamentMembership.objects.filter(
+                parlament=self.obj.parlament)
+        return super(ParlamentSessionAdmin, self).formfield_for_manytomany(
+            db_field, request, **kwargs)
+    
+    fieldsets = (
+        ('Parlament', {'fields': ('parlament',)}),
+        ('General Information', {'fields': ('date', 'opening_session', 'regular_session', 'additional_information')}),
+        ('Messages', {'fields': ('greeting', 'discharge',)}),
+        ('Excused Councillors', {'fields': ('excused_politicans',)})
+    )
+
 
 class ParlamentRoleAdmin(admin.ModelAdmin):
     """
@@ -109,6 +138,7 @@ class CommissionMembershipAdmin(admin.ModelAdmin):
 
 # register parlament + depending
 admin.site.register(Parlament, ParlamentAdmin)
+admin.site.register(ParlamentSession, ParlamentSessionAdmin)
 admin.site.register(ParlamentRole, ParlamentRoleAdmin)
 admin.site.register(ParlamentMembership, ParlamentMembershipAdmin)
 
