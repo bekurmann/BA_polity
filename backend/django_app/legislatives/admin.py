@@ -52,22 +52,6 @@ class ParlamentSessionAdmin(admin.ModelAdmin):
     """
     Customizing admininterface for ParlamentSession
     """
-    # def formfield_for_manytomany(self, db_field, request, **kwargs):
-    #     if db_field.name == "excused_politicans":
-    #         kwargs["queryset"] = ParlamentMembership.objects.filter(politican=request.user)
-    #     return super().formfield_for_manytomany(db_field, request, **kwargs)
-
-    def get_object(self, request, object_id):
-        # Hook obj for use in formfield_for_manytomany
-        self.obj = super(ParlamentSessionAdmin, self).get_object(request, object_id)
-        return self.obj
-
-    def formfield_for_manytomany(self, db_field, request, **kwargs):
-        if db_field.name == "members" and getattr(self, 'obj', None):
-            kwargs["queryset"] = ParlamentMembership.objects.filter(
-                parlament=self.obj.parlament)
-        return super(ParlamentSessionAdmin, self).formfield_for_manytomany(
-            db_field, request, **kwargs)
     
     fieldsets = (
         ('Parlament', {'fields': ('parlament',)}),

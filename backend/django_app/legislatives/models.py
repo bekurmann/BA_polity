@@ -67,7 +67,7 @@ class ParlamentSession(models.Model):
     model for parlament sessions
     """
     # fk parlament
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name='parlament_session')
+    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name='parlament_sessions')
 
     # general information
     date = models.DateField()
