@@ -1,9 +1,13 @@
 from rest_framework import viewsets
 
-from legislatives.models import ( Parlament, ParlamentMembership, ParlamentMembershipRole,
+from legislatives.models import ( Parlament, ParlamentSession, 
+                                ParlamentMembership, ParlamentMembershipRole,
                                 Commission, CommissionMembership, CommissionMembershipRole )
-from legislatives.api.serializers import ( ParlamentSerializer, ParlamentMembershipSerializer, ParlamentMembershipRoleSerializer,
-                                            CommissionSerializer, CommissionMembershipSerializer, CommissionMembershipRoleSerializer )
+from legislatives.api.serializers import ( ParlamentSerializer, ParlamentSessionSerializer,
+                                        ParlamentMembershipSerializer, 
+                                        ParlamentMembershipRoleSerializer,
+                                        CommissionSerializer, CommissionMembershipSerializer, 
+                                        CommissionMembershipRoleSerializer )
                                         
 # *****************************************************************************************
 # Parlament
@@ -15,6 +19,16 @@ class ParlamentViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = Parlament.objects.all()
     serializer_class = ParlamentSerializer
+
+class ParlamentSessionViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for listing parlament sessions
+    """
+    def get_queryset(self):
+        return ParlamentSession.objects.filter(parlament=self.kwargs['parlament_pk'])
+
+    serializer_class = ParlamentSessionSerializer
+    
 
 class ParlamentMembershipViewSet(viewsets.ReadOnlyModelViewSet):
     """

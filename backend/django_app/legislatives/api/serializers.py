@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from legislatives.models import ( Parlament, ParlamentRole, ParlamentMembership, ParlamentMembershipRole,
+from legislatives.models import ( Parlament, ParlamentRole, ParlamentSession, ParlamentMembership, 
+                                ParlamentMembershipRole,
                                 Commission, CommissionRole, CommissionMembership, CommissionMembershipRole ) 
 from locations.api.serializers import PLZSerializer
 from politicans.api.serializers import PoliticanSerializer
@@ -28,6 +29,13 @@ class ParlamentRoleSerializer(serializers.ModelSerializer):
         model = ParlamentRole
         exclude = ['created_at', 'updated_at',]
 
+class ParlamentSessionSerializer(serializers.ModelSerializer):
+    """
+    model serializer for parlamentsession
+    """
+    class Meta:
+        model = ParlamentSession
+        exclude = ['created_at', 'updated_at', ]
 class ParlamentMembershipSerializer(serializers.ModelSerializer):
     """
     model serializer for parlament memberships

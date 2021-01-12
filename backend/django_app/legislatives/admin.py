@@ -60,6 +60,8 @@ class ParlamentSessionAdmin(admin.ModelAdmin):
         ('Excused Councillors', {'fields': ('excused_politicans',)})
     )
 
+    list_display = ('parlament', 'date', 'regular_session',)
+
 
 class ParlamentRoleAdmin(admin.ModelAdmin):
     """

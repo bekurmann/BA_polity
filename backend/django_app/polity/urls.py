@@ -14,7 +14,8 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
 from politicans.api.views import PoliticanViewSet
-from legislatives.api.views import ( ParlamentViewSet, ParlamentMembershipViewSet, ParlamentMembershipRoleViewSet,
+from legislatives.api.views import ( ParlamentViewSet, ParlamentSessionViewSet, 
+                                    ParlamentMembershipViewSet, ParlamentMembershipRoleViewSet,
                                     CommissionViewSet, CommissionMembershipViewSet, CommissionMembershipRoleViewSet )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, MunicipalityViewSet )
@@ -29,10 +30,14 @@ parlament_membership_router = routers.NestedSimpleRouter(router, r'parlaments', 
 parlament_membership_router.register(r'memberships', ParlamentMembershipViewSet, basename='parlament-memberships')
 # /parlaments/<pk>/memberships/
 # /parlaments/<pk>/memberships/<pk>
+parlament_session_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+parlament_session_router.register(r'sessions', ParlamentSessionViewSet, basename='parlament-sessions')
+# /parlament/<pk>/sessions/
+# /parlament/<pk>/sessions/<pk>/
 parlament_membership_role_router = routers.NestedSimpleRouter(parlament_membership_router, r'memberships', lookup='parlament_membership')
 parlament_membership_role_router.register(r'roles', ParlamentMembershipRoleViewSet, basename='parlament-memberships-roles')
-# /parlaments/<pk>/members/<pk>/roles/
-# /parlaments/<pk>/members/<pk>/roles/<pk>/
+# /parlaments/<pk>/memberships/<pk>/roles/
+# /parlaments/<pk>/memberships/<pk>/roles/<pk>/
 commission_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
 commission_router.register(r'commissions', CommissionViewSet, basename='commissions')
 # /parlaments/<pk>/commissions/
@@ -54,16 +59,16 @@ router.register(r'politicans', PoliticanViewSet)
 
 # LOCATION ROUTER
 # **************************************************************************************
-router.register(r'locations/countries', CountryViewSet)
+router.register(r'locations/countries', CountryViewSet, basename='countries')
 # /locations/countries/
 # /locations/countries/<pk>/
-router.register(r'locations/regions', RegionViewSet)
+router.register(r'locations/regions', RegionViewSet, basename='regions')
 # /locations/regions/
 # /locations/regions/<pk>
-router.register(r'locations/cantons', CantonViewSet)
+router.register(r'locations/cantons', CantonViewSet, basename='cantons')
 # /locations/cantons/
 # /locations/cantons/<pk>
-router.register(r'locations/municipalities', MunicipalityViewSet)
+router.register(r'locations/municipalities', MunicipalityViewSet, basename='municipalities')
 # /locations/municipalities/
 # /locations/municipalities/<pk>
 # **************************************************************************************
@@ -85,6 +90,8 @@ urlpatterns = [
 
     # nested routes /parlaments
     path('api/v1/', include(router.urls)),
+    # nested routes /parlaments/sessions
+    path('api/v1/', include(parlament_session_router.urls)),
     # nested routes /parlaments/members
     path('api/v1/', include(parlament_membership_router.urls)),
     path('api/v1/', include(parlament_membership_role_router.urls)),
