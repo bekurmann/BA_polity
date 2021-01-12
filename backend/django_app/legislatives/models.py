@@ -80,6 +80,7 @@ class ParlamentSession(models.Model):
     discharge = models.TextField(blank=True)
 
     # manytomany affairs
+    # TODO
     #affairs = models.ManyToManyField()
 
     # manytomany politicans
@@ -127,8 +128,14 @@ class ParlamentMembership(models.Model):
                                                 through_fields=('parlament_membership',
                                                 'parlament_role'))
 
-    # active flag
+    # start & end date
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
+
+    # active flag  -> TODO: computed?
     active = models.BooleanField()
+
+    # TODO: reference election
 
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
@@ -151,8 +158,8 @@ class ParlamentMembershipRole(models.Model):
     parlament_role = models.ForeignKey(ParlamentRole, on_delete=models.CASCADE)
 
     # additional date information
-    start_date = models.DateField(null=True, blank=True)
-    end_date = models.DateField(null=True, blank=True)
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
 
     # reference election
     # TO DO -> !
@@ -245,8 +252,14 @@ class CommissionMembership(models.Model):
                                                 through_fields=('commission_membership',
                                                 'commission_role'))
 
-    # active flag
+    # start & end date
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
+
+    # active flag; computed=
     active = models.BooleanField()
+
+    # TODO: election? or how do you become commission member?
 
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
@@ -269,8 +282,8 @@ class CommissionMembershipRole(models.Model):
     commission_role = models.ForeignKey(CommissionRole, on_delete=models.CASCADE)
 
     # additional date information
-    start_date = models.DateField(null=True, blank=True)
-    end_date = models.DateField(null=True, blank=True)
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
 
     # reference election
     # TO DO -> !
@@ -281,3 +294,104 @@ class CommissionMembershipRole(models.Model):
 
     def __str__(self):
         return f'{self.commission_role.title}'
+
+# *****************************************************************************************
+# Affairs
+# *****************************************************************************************
+
+class AffairTopic(models.Model):
+    """
+    model for topics
+    * based on the topics of curavista, federal parlament
+    """
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+
+    # admin
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.title}'
+
+class Affair(models.Model):
+    """
+    base model affairs
+    * manytomany field to topic
+    * manytomany field to session
+    """
+    # status choices
+    UNKNOWN = 'UNKNO'
+    RECEIVED = 'RECEI'
+    TRANSFERED = 'TRANS'
+    ANSWERED = 'ANSWE'
+    PROCESSED = 'PROCE'
+    STATUS_CHOICES = [
+        (UNKNOWN, 'Unknown'),
+        (RECEIVED, 'Received'),
+        (TRANSFERED, 'Transfered'),
+        (ANSWERED, 'Answered'),
+        (PROCESSED, 'Processed')
+    ]
+
+    # general information
+    status = models.CharField(max_length=5, choices=STATUS_CHOICES, default=UNKNOWN)
+    urgent = models.BooleanField(blank=True)
+    identifier = models.CharField(max_length=200)
+    date_received = models.DateField()
+    
+    # topics
+    topics = models.ManyToManyField(AffairTopic, related_name="affair_topics", blank=True)
+
+    # executive statement
+
+
+    # sessions
+    sessions = models.ManyToManyField(ParlamentSession, related_name="affair_sessions", blank=True)
+
+    # debates
+    # TODO: many to many debates
+
+    # social??? -> still to do
+
+    # admin
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.identifier} {self.date_received}'
+    
+
+class Inquiry(Affair):
+    """
+    model for inquiry (* DE: anfragen / kleine anfragen / einfach anfragen)
+    * inherits from affair
+    * signatory + joint_signatory refers to politican
+    """
+    # signatory
+    signatory = models.ForeignKey(Politican, on_delete=models.CASCADE, related_name="inquiry_signatories")
+    joint_signatory = models.ManyToManyField(Politican, related_name="inquiry_joint_signatories", blank=True)
+
+    # content
+    # motivation
+    content_motivation = models.TextField(blank=True)
+    content_inquiries = models.TextField(blank=True)
+
+
+    # questions
+    # many to many questions
+
+    # response executive
+
+class Interpellation(Affair):
+    pass
+
+class Postulate(Affair):
+    pass
+
+class Motion(Affair):
+    pass
+
+class Legislation(Affair):
+    # gesetzgebungsvorlage
+    pass
