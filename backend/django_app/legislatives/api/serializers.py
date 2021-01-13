@@ -1,8 +1,7 @@
 from rest_framework import serializers
 
-from legislatives.models import ( Parlament, ParlamentRole, ParlamentSession, ParlamentMembership, 
-                                ParlamentMembershipRole,
-                                Commission, CommissionRole, CommissionMembership, CommissionMembershipRole ) 
+from legislatives.models import ( Parlament, ParlamentSession, ParlamentMembership, 
+                                Commission, CommissionMembership ) 
 from locations.api.serializers import PLZSerializer
 from politicans.api.serializers import PoliticanSerializer
 
@@ -21,14 +20,6 @@ class ParlamentSerializer(serializers.ModelSerializer):
         model = Parlament
         exclude = ['created_at', 'updated_at', 'location_query']
 
-class ParlamentRoleSerializer(serializers.ModelSerializer):
-    """
-    model serializer for parlamentrole 
-    """
-    class Meta:
-        model = ParlamentRole
-        exclude = ['created_at', 'updated_at',]
-
 class ParlamentSessionSerializer(serializers.ModelSerializer):
     """
     model serializer for parlamentsession
@@ -41,19 +32,10 @@ class ParlamentMembershipSerializer(serializers.ModelSerializer):
     model serializer for parlament memberships
     """
     politican = PoliticanSerializer(read_only=True)
+    active = serializers.BooleanField()
     class Meta:
         model = ParlamentMembership
         exclude = [ 'created_at', 'updated_at',]
-
-
-class ParlamentMembershipRoleSerializer(serializers.ModelSerializer):
-    """
-    model serializer for through model parlamet membership roles
-    """
-    parlament_role = ParlamentRoleSerializer(read_only=True)
-    class Meta:
-        model = ParlamentMembershipRole
-        exclude = [ 'created_at', 'updated_at', ]
 
 # *****************************************************************************************
 # Commission
@@ -67,14 +49,6 @@ class CommissionSerializer(serializers.ModelSerializer):
         model = Commission
         exclude = ['created_at', 'updated_at',]
 
-class CommissionRoleSerializer(serializers.ModelSerializer):
-    """
-    model serializer for commission role
-    """
-    class Meta:
-        model = CommissionRole
-        exclude = ['created_at', 'updated_at',]
-
 class CommissionMembershipSerializer(serializers.ModelSerializer):
     """
     model serializer for CommissionMembership
@@ -82,13 +56,4 @@ class CommissionMembershipSerializer(serializers.ModelSerializer):
     politican = PoliticanSerializer(read_only=True)
     class Meta:
         model = CommissionMembership
-        exclude = ['created_at', 'updated_at',]
-
-class CommissionMembershipRoleSerializer(serializers.ModelSerializer):
-    """
-    model serializer for CommissionMembershipRole
-    """
-    commission_role = CommissionRoleSerializer(read_only=True)
-    class Meta:
-        model = CommissionMembershipRole
         exclude = ['created_at', 'updated_at',]

@@ -79,8 +79,7 @@ class ParlamentSession(models.Model):
     greeting = models.TextField(blank=True)
     discharge = models.TextField(blank=True)
 
-    # manytomany affairs
-    # TODO
+    # TODO :manytomany affairs
     #affairs = models.ManyToManyField()
 
     # manytomany politicans
@@ -93,47 +92,32 @@ class ParlamentSession(models.Model):
     def __str__(self):
         return f'{self.date}'
     
-
-class ParlamentRole(models.Model):
-    """
-    model for roles inside a parlament
-    """
-    title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
-
-    # fk parlament
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name="parlament_roles")
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['title', 'parlament'], name='unique_parlament_roles')
-        ]
-
-    def __str__(self):
-        return f'{self.title} {self.parlament.title}'
-
 class ParlamentMembership(models.Model):
     """
     * through model for manytomany politican - parlament
     """
+    # type
+    MEMBER = 'MEMBE'
+    PRESIDENT = 'PRESI'
+    VICEPRESIDENT = 'VICEP'
+    VOTECOUNTER = 'VOTEC'
+    SECRETARY = 'SECRE'
+    TYPE_CHOICES = [
+        (MEMBER, 'Member'),
+        (PRESIDENT, 'President'),
+        (VICEPRESIDENT, 'Vice-President'),
+        (VOTECOUNTER, 'Vote Counter'),
+        (SECRETARY, 'Secretary')
+    ]
+    membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES, default=MEMBER)
+
+    #fk 
     politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
     parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE)
-
-    membership_roles = models.ManyToManyField(ParlamentRole,
-                                                through='ParlamentMembershipRole',
-                                                through_fields=('parlament_membership',
-                                                'parlament_role'))
 
     # start & end date
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
-
-    # active flag  -> TODO: computed?
-    active = models.BooleanField()
 
     # TODO: reference election
 
@@ -144,38 +128,25 @@ class ParlamentMembership(models.Model):
     class Meta:
         constraints = [
             # one politican can only be member of the same parlament once
-            models.UniqueConstraint(fields=['politican', 'parlament'], name='unique_parlament_memberships')
+            models.UniqueConstraint(fields=['membership_type', 'politican'], name='unique_politican_membership_types')
         ]
+
+    # calculated active flag
+    def active(self):
+        # Returns whether or not the Membership is active, depending on end_date
+        import datetime
+        if not self.end_date:
+            # if end_date not set, membership true
+            return True
+        elif self.end_date > datetime.date.today():
+            # if end_date set, but in future, membership true
+            return True
+        return False
+    active.boolean = True
 
     def __str__(self):
         return f'{self.politican.first_name} {self.politican.last_name} / {self.parlament.title}'
 
-class ParlamentMembershipRole(models.Model):
-    """
-    * through model for through model ParlamentMembership manytomany membership_roles
-    """
-    parlament_membership = models.ForeignKey(ParlamentMembership, on_delete=models.CASCADE)
-    parlament_role = models.ForeignKey(ParlamentRole, on_delete=models.CASCADE)
-
-    # additional date information
-    start_date = models.DateField()
-    end_date = models.DateField(blank=True, null=True)
-
-    # reference election
-    # TO DO -> !
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            # one politican can only be member of the same parlament once
-            models.UniqueConstraint(fields=['parlament_membership', 'parlament_role'], name='unique_parlament_membership_roles')
-        ]
-
-    def __str__(self):
-        return f'{self.parlament_role.title}'
 
 # *****************************************************************************************
 # Commission
@@ -219,47 +190,30 @@ class Commission(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-class CommissionRole(models.Model):
-    """ 
-    model for roles inside a commission
-    """
-    title = models.CharField(max_length=200)
-
-    # fk commission
-    commission = models.ForeignKey(Commission, on_delete=models.CASCADE, related_name="commission_roles")
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['title', 'commission'], name='unique_commission_roles')
-        ]
-
-    def __str__(self):
-        return f'{self.title} {self.commission.title}'
-
 class CommissionMembership(models.Model):
     """
     through model for manytomany politican - commission
     """
+    # type
+    MEMBER = 'MEMBE'
+    PRESIDENT = 'PRESI'
+    VICEPRESIDENT = 'VICEP'
+    TYPE_CHOICES = [
+        (MEMBER, 'Member'),
+        (PRESIDENT, 'President'),
+        (VICEPRESIDENT, 'Vice-President')
+    ]
+    membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES, default=MEMBER)
+
+    # fk
     politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
     commission = models.ForeignKey(Commission, on_delete=models.CASCADE)
-
-    membership_roles = models.ManyToManyField(CommissionRole,
-                                                through='CommissionMembershipRole',
-                                                through_fields=('commission_membership',
-                                                'commission_role'))
 
     # start & end date
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
 
-    # active flag; computed=
-    active = models.BooleanField()
-
-    # TODO: election? or how do you become commission member?
+    # TODO: fk election? or how do you become commission member?
 
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
@@ -271,29 +225,22 @@ class CommissionMembership(models.Model):
             models.UniqueConstraint(fields=['politican', 'commission'], name='unique_commission_memberships')
         ]
 
+    # calculated active flag
+    def active(self):
+        "Returns whether or not the Membership is active, depending on end_date"
+        import datetime
+        if not self.end_date:
+            # if end_date not set, membership true
+            return True
+        elif self.end_date > datetime.date.today():
+            # if end_date set, but in future, membership true
+            return True
+        return False
+    active.boolean = True
+
     def __str__(self):
         return f'{self.politican.first_name} {self.politican.last_name} / {self.commission.title}'
 
-class CommissionMembershipRole(models.Model):
-    """
-    through model for through model CommissionMembership manytomany membership_roles
-    """
-    commission_membership = models.ForeignKey(CommissionMembership, on_delete=models.CASCADE)
-    commission_role = models.ForeignKey(CommissionRole, on_delete=models.CASCADE)
-
-    # additional date information
-    start_date = models.DateField()
-    end_date = models.DateField(blank=True, null=True)
-
-    # reference election
-    # TO DO -> !
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.commission_role.title}'
 
 # *****************************************************************************************
 # Affairs
@@ -320,6 +267,19 @@ class Affair(models.Model):
     * manytomany field to topic
     * manytomany field to session
     """
+    # type choices
+    INQUIRY = 'INQUI'               # Anfrage/Kleine Anfrage/Fragestunde
+    INTERPELLATION = 'INTER'        # Interpellation
+    POSTULATE = 'POSTU'             # Postulat
+    MOTION = 'MOTIO'                # Motion
+    LEGISLATIVEPROPOSAL = 'LEGIS'   # Gesetzgebungsvorlage (Kommission)
+    TYPE_CHOICES = [
+        (INQUIRY, 'Inquiry'),
+        (INTERPELLATION, 'Interpellation'),
+        (POSTULATE, 'Postulate'),
+        (MOTION, 'Motion'),
+        (LEGISLATIVEPROPOSAL, 'Legislative Proposal')
+    ]
     # status choices
     UNKNOWN = 'UNKNO'
     RECEIVED = 'RECEI'
@@ -335,13 +295,20 @@ class Affair(models.Model):
     ]
 
     # general information
+    affiar_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default=UNKNOWN)
     urgent = models.BooleanField(blank=True)
     identifier = models.CharField(max_length=200)
     date_received = models.DateField()
-    
+    # authorship
+    signatory = models.ForeignKey(Politican, on_delete=models.CASCADE, related_name="inquiry_signatories")
+    joint_signatory = models.ManyToManyField(Politican, related_name="inquiry_joint_signatories", blank=True)
     # topics
     topics = models.ManyToManyField(AffairTopic, related_name="affair_topics", blank=True)
+
+    # content
+    content_motivation = models.TextField(blank=True)
+    content_inquiries = models.TextField(blank=True)
 
     # executive statement
 
@@ -361,37 +328,3 @@ class Affair(models.Model):
     def __str__(self):
         return f'{self.identifier} {self.date_received}'
     
-
-class Inquiry(Affair):
-    """
-    model for inquiry (* DE: anfragen / kleine anfragen / einfach anfragen)
-    * inherits from affair
-    * signatory + joint_signatory refers to politican
-    """
-    # signatory
-    signatory = models.ForeignKey(Politican, on_delete=models.CASCADE, related_name="inquiry_signatories")
-    joint_signatory = models.ManyToManyField(Politican, related_name="inquiry_joint_signatories", blank=True)
-
-    # content
-    # motivation
-    content_motivation = models.TextField(blank=True)
-    content_inquiries = models.TextField(blank=True)
-
-
-    # questions
-    # many to many questions
-
-    # response executive
-
-class Interpellation(Affair):
-    pass
-
-class Postulate(Affair):
-    pass
-
-class Motion(Affair):
-    pass
-
-class Legislation(Affair):
-    # gesetzgebungsvorlage
-    pass
