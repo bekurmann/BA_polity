@@ -42,7 +42,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
   axios: {
-    baseURL: 'https://127.0.0.1:8000/api/v1/',
+    baseURL: 'https://0.0.0.0:8000/api/v1/',
     credentials: true, // this says that in the request the httponly cookie should be sent
   },
   auth: {
