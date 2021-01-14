@@ -1,3 +1,6 @@
-id,title,description,parlament
-100,,,
-101,,,
+id,title,abbreviation,description,parlament,permanent,start_date,end_date,email,website,phone
+100,Beitrag Neubau Schlachthaus der Schlachthausgenossenschaft Obwalden,,Beitrag Neubau Schlachthaus der Schlachthausgenossenschaft Obwalden,100,FALSE,,,,,
+101,Beitrag Sanierung Drainage Aaried Giswil,,Beitrag Sanierung Drainage Aaried Giswil,100,FALSE,,,,,
+102,Beitrag Sanierung Wassserversorgung Melchtal,,Beitrag Sanierung Wassserversorgung Melchtal,100,FALSE,,,,,
+103,Bericht über den Einsatz des kantonalen Führungsstabs im Zusammenhang mit der Corona-Pandemie,,Bericht über den Einsatz des kantonalen Führungsstabs im Zusammenhang mit der Corona-Pandemie,100,FALSE,,,,,
+104,Bildungsgesetzgebung,,Bildungsgesetzgebung,100,TRUE,,,,,

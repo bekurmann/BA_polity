@@ -127,8 +127,8 @@ class ParlamentMembership(models.Model):
 
     class Meta:
         constraints = [
-            # one politican can only be member of the same parlament once
-            models.UniqueConstraint(fields=['membership_type', 'politican'], name='unique_politican_membership_types')
+            # membership type of one politican must be unique for one parlament
+            models.UniqueConstraint(fields=['membership_type', 'politican'], name='unique_parlament_membership_types')
         ]
 
     # calculated active flag
@@ -157,6 +157,7 @@ class Commission(models.Model):
     """
     # general information
     title = models.CharField(max_length=200)
+    abbreviation = models.CharField(max_length=50, blank=True)
     description = models.TextField(blank=True)
 
     # fk for parlament
@@ -221,8 +222,8 @@ class CommissionMembership(models.Model):
 
     class Meta:
         constraints = [
-            # one politican can only be member of the same commission once
-            models.UniqueConstraint(fields=['politican', 'commission'], name='unique_commission_memberships')
+            # membership type of one politican must be unique for one commission
+            models.UniqueConstraint(fields=['membership_type', 'commission'], name='unique_commission_membership_types')
         ]
 
     # calculated active flag
@@ -307,6 +308,7 @@ class Affair(models.Model):
     topics = models.ManyToManyField(AffairTopic, related_name="affair_topics", blank=True)
 
     # content
+    content_all = models.TextField(blank=True)
     content_motivation = models.TextField(blank=True)
     content_inquiries = models.TextField(blank=True)
 
@@ -318,6 +320,17 @@ class Affair(models.Model):
 
     # debates
     # TODO: many to many debates
+
+    # *****************************************
+    # special fields for Legislative Proposal
+    # *****************************************
+    # applications (anträge; only legislativeproposals have applications (one to many))
+    # dispatch (botschaft)
+    # consultation (vernehmlassung)
+    # legislative proposal (gesetzesvorlage)
+    # regulatory statuses (ausführungsbestimmungen)
+    # *****************************************
+
 
     # social??? -> still to do
 

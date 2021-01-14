@@ -39,6 +39,13 @@ class ParlamentMembershipRessource(resources.ModelResource):
         model = ParlamentMembership
         import_id_fields = ['id']
 
+class CommissionRessource(resources.ModelResource):
+    parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
+
+    class Meta:
+        model = Commission
+        import_id_fields = ['id']
+
 # *************************************************************************************
 # Parlament Admin
 # *************************************************************************************
@@ -115,7 +122,7 @@ class ParlamentMembershipAdmin(ImportExportModelAdmin):
 # Commission Admin
 # *************************************************************************************
 
-class CommissionAdmin(admin.ModelAdmin):
+class CommissionAdmin(ImportExportModelAdmin):
     """
     Customizing Admininterface for Commission
     """
@@ -124,6 +131,8 @@ class CommissionAdmin(admin.ModelAdmin):
         ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Contact', {'fields': ('email', 'website', 'phone')}),
     )
+
+    resource_class = CommissionRessource
 
     list_display = ('title', 'parlament')
     search_fields = ['title' 'parlament',]
@@ -134,6 +143,7 @@ class CommissionMembershipAdmin(admin.ModelAdmin):
     Customizing Admininterface for Model CommissionMembership
     """
     raw_id_fields = ['politican']
+    readonly_fields = ('active',)
 
     fieldsets = (
         ('Membership Type', {'fields': ('membership_type',)}),
