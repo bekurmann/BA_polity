@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!-- navigation drawer ********************************** -->
     <v-navigation-drawer
       v-model="drawer"
       clipped
@@ -23,6 +24,8 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
+    <!-- app bar ********************************** -->
     <v-app-bar
       clipped-left
       fixed
@@ -34,36 +37,28 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       
+      <div v-if="!$auth.loggedIn">
+        <v-btn outline to="/login">Login</v-btn>
+      </div>
+      <div v-else>
+        <v-avatar
+          size="avatarSize"
+          color="red"
+        >
+          <img src="src" alt="alt">
+        </v-avatar>
+      </div>
+      
 
     </v-app-bar>
+
+    <!-- main ********************************** -->
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+
   </v-app>
 </template>
 

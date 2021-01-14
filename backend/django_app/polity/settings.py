@@ -79,6 +79,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # workaround:
+    # https://github.com/jazzband/dj-rest-auth/issues/97
+    'users.middleware.MoveJWTCookieIntoTheBody',
+    'users.middleware.MoveJWTRefreshCookieIntoTheBody'
 ]
 
 ROOT_URLCONF = 'polity.urls'
@@ -190,6 +194,10 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory" # allauth
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 LOGIN_URL = 'http://localhost:8000/api/v1/auth/login/' # redirect after successful confirmation
 
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'polity-access'
+JWT_AUTH_REFRESH_COOKIE = 'polity-refresh'
+
 AUTHENTICATION_BACKENDS = [
     # allauth specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -209,7 +217,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication', #only for dev
+        #'rest_framework.authentication.SessionAuthentication', #only for dev
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     # for production: disable browsable api
@@ -217,11 +225,6 @@ REST_FRAMEWORK = {
     #     'rest_framework.renderers.JSONRenderer',
     # ],
 }
-
-# # PLUGIN: JWT
-REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'polity-jwt'
-
 
 # PLUGIN: django-location-field
 LOCATION_FIELD = {

@@ -19,6 +19,7 @@ django-csvimport = "*"
 drf-nested-routers = "*"
 django-import-export = "*"
 djangorestframework-gis = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 pylint = "*"
