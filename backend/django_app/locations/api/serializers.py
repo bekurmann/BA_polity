@@ -4,13 +4,16 @@ from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometrySe
 
 from locations.models import Country, Region, Canton, Municipality, PLZ
 
+# topojson
+import topojson
+
 class CountrySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    simplified_geom = GeometrySerializerMethodField()
+    topojson_geom = GeometrySerializerMethodField()
 
-    def get_simplified_geom(self, obj):
+    def get_topojson_geom(self, obj):
         # Returns a new GEOSGeometry, simplified to the specified tolerance
         # using the Douglas-Peucker algorithm. A higher tolerance value implies
         # fewer points in the output. If no tolerance is provided, it

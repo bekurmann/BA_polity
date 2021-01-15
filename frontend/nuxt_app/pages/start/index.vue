@@ -9,7 +9,7 @@
                     <v-card-subtitle>select an area.</v-card-subtitle>
                     <v-card-text>
                         <!-- map -->
-                        <v-img id="map"></v-img>
+                        <CantonMap></CantonMap>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -18,7 +18,12 @@
     </v-container>
 </template>
 <script>
+import CantonMap from '~/components/CantonMap.vue'
+
 export default {
+    components: {
+        CantonMap
+    },
     middleware: 'auth'
 }
 </script>

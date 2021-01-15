@@ -198,6 +198,7 @@ LOGIN_URL = 'http://localhost:8000/api/v1/auth/login/' # redirect after successf
 
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'polity-access'
+JWT_AUTH_COOKIE = 'polity-refresh'
 
 AUTHENTICATION_BACKENDS = [
     # allauth specific authentication methods, such as login by e-mail
@@ -218,7 +219,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        #'rest_framework.authentication.SessionAuthentication', #only for dev
+        'rest_framework.authentication.SessionAuthentication', #only for dev
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     # for production: disable browsable api
