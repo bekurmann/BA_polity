@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # for allauth
     'django.contrib.sites', 
-    # for spatialite
+    # for spatialite / postgis
     'django.contrib.gis', 
 
     # 3rd party
