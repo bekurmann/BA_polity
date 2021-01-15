@@ -26,7 +26,9 @@
         </v-card-subtitle>
           
             <v-card-text>
-                 <v-form v-model="formValid"> 
+                 <v-form v-model="formValid" @submit.prevent="registerUser"> 
+                    <v-text-field label="Username" placeholder="Your Username" outline required v-model="username"></v-text-field>
+
                     <v-text-field label="Firstname" placeholder="Your Firstname" outline required v-model="firstname"></v-text-field>
 
                     <v-text-field label="Lastname" placeholder="Your Lastname" outline required v-model="lastname"></v-text-field>
@@ -35,7 +37,7 @@
                     <v-text-field label="eMail" placeholder="Your eMail" required v-model="email" :rules="[formRules.required, formRules.validEmail]"></v-text-field>
 
                     <v-text-field
-                    v-model="password"
+                    v-model="password1"
                     :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
                     :rules="[formRules.required, formRules.min]"
                     :type="pwShow ? 'text' : 'password'"
@@ -47,7 +49,7 @@
                     ></v-text-field>
 
                     <v-text-field
-                    v-model="rePassword"
+                    v-model="password2"
                     :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
                     :rules="[formRules.required, formRules.min, formRules.pwMatch]"
                     :type="pwShow ? 'text' : 'password'"
@@ -59,7 +61,7 @@
                     ></v-text-field>
 
                     <v-checkbox label="Accept terms of service" required v-model="terms" :rules="[formRules.required]"></v-checkbox>
-                    <v-btn block color="red" @click.stop="registerUser" dark>SignUp</v-btn>
+                    <v-btn block color="red" type="submit" dark>SignUp</v-btn>
                 </v-form>
                 <v-spacer class="ma-10"></v-spacer>
                 <v-divider></v-divider>
@@ -69,20 +71,6 @@
             </v-card-text>
         
     </v-card>
-    <v-snackbar
-      v-model="snackbar"
-      :timeout="snackbarTimeout"
-      bottom color="error"
-    >
-      {{ snackbarText }}
-      <v-btn
-        color="error"
-        snackbarText
-        @click="snackbar = false"
-      >
-        Close
-      </v-btn>
-    </v-snackbar>
 </v-container>
 </template>
 
@@ -93,15 +81,12 @@ export default {
         return {
             formValid: false,
 
-            snackbar: false,
-            snackbarText: 'Check your Input!',
-            snackbarTimeout: 2000,
-
+            username: '',
             firstname: '',
             lastname: '',
             email: '',
-            password: '',
-            rePassword: '',
+            password1: '',
+            password2: '',
             terms: false,
 
             pwShow: false,
@@ -110,26 +95,29 @@ export default {
                 min: v => v.length >= 8 || 'Min 8 characters',
                 //emailMatch: () => ('The email and password you entered don\'t match'),
                 validEmail: v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid',
-                pwMatch: () => (this.password == this.rePassword) || 'Passwords must match',
+                pwMatch: () => (this.password1 == this.password2) || 'Passwords must match',
             },
         }
     },
     methods: {
-        registerUser () {
+        async registerUser () {
             if(this.formValid) {
-                instance.post('/users/', { email: this.email, password: this.password, first_name: this.firstname, last_name: this.lastname })
-                .then(res => {
-                    console.log(res);
-                    if(res.status === 201) {
-                        console.log('redirecting');
-                        router.replace('/login');
-                    } else {
-                        console.log('something didnt work');
-                    }
-                })
-                .catch(error => console.log(error));
+                try {
+                    await this.$axios.$post('/auth/registration/', {
+                        first_name: this.firstname,
+                        last_name: this.lastname,
+                        username: this.username,
+                        email: this.email,
+                        password1: this.password1,
+                        password2: this.password2
+                    })
+                    this.$router.push('/')
+                    this.$notifier.showSnackbar({content: 'Registration successful. Check your e-mail to confirm registration process.', color: 'success'})
+                } catch(error) {
+                    console.log(error)
+                }
             } else {
-                this.snackbar = true;
+                this.$notifier.showSnackbar({ content: 'Your inputs are not valid. Try again!', color: 'info' })
             }
         }
     }

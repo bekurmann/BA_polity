@@ -37,16 +37,19 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       
-      <div v-if="!$auth.loggedIn">
-        <v-btn outline to="/login">Login</v-btn>
-      </div>
-      <div v-else>
+      <div v-if="$auth.loggedIn">
         <v-avatar
           size="avatarSize"
           color="red"
         >
-          <img src="src" alt="alt">
+          <v-img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
+          <v-img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
         </v-avatar>
+        <v-btn color="success" @click="$auth.logout()">Logout</v-btn>
+        
+      </div>
+      <div v-else>
+        <v-btn outlined to="/login">Login</v-btn>
       </div>
       
 
@@ -59,11 +62,19 @@
       </v-container>
     </v-main>
 
+    <!-- global Snackbar -->
+    <Snackbar></Snackbar>
+
   </v-app>
 </template>
 
 <script>
-export default {
+import Snackbar from '~/components/Snackbar.vue'
+
+export default { 
+  components: {
+    Snackbar
+  },
   data () {
     return {
       title: 'polity',

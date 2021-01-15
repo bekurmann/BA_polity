@@ -25,6 +25,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/notifier.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -42,8 +43,8 @@ export default {
     '@nuxtjs/auth-next'
   ],
   axios: {
-    baseURL: 'https://0.0.0.0:8000/api/v1/',
-    credentials: true, // this says that in the request the httponly cookie should be sent
+    baseURL: 'http://0.0.0.0:8000/api/v1/',
+    credentials: false, // this says that in the request the httponly cookie should be sent
   },
   auth: {
     strategies: {
@@ -51,9 +52,8 @@ export default {
         scheme: 'refresh',
         token: {
           property: 'access_token',
-          name: 'polity-jwt',
           maxAge: 1800,
-          // type: 'Bearer'
+          type: 'Bearer'
         },
         refreshToken: {
           property: 'refresh_token',
@@ -61,16 +61,20 @@ export default {
           maxAge: 60 * 60 * 24 * 30
         },
         user: {
-          property: 'user',
+          property: false,
          // autoFetch: true
         },
         endpoints: {
-          login: { url: '/auth/login', method: 'post' },
-          refresh: { url: '/auth/token/refresh', method: 'post' },
-          user: { url: '/auth/user', method: 'get' },
-          logout: { url: '/auth/logout', method: 'post' }
+          login: { url: '/auth/login/', method: 'post' },
+          refresh: { url: 'auth/token/refresh/', method: 'post' },
+          logout: { url: '/auth/logout/', method: 'post' },
+          user: { url: '/auth/user/', method: 'get' },
+
         },
-        // autoLogout: false
+        redirect: {
+          login: '/',
+          logout: '/'
+        }
       }
     }
   },

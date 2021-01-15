@@ -15,40 +15,25 @@
         login & start!
         </v-card-subtitle>
           
-            <v-card-text>
-                 <v-form v-model="formValid"> 
+        <v-card-text>
+                <v-form v-model="formValid" @submit.prevent="loginUser"> 
 
-                    <v-text-field label="Username" placeholder="Your Username" outlined required v-model="username"></v-text-field>
+                <v-text-field label="Username" placeholder="Your Username" outlined required v-model="username"></v-text-field>
 
-                    <v-text-field label="eMail" placeholder="Your eMail" outlined required v-model="email" :rules="[pwRules.required, pwRules.validEmail]"></v-text-field>
+                <v-text-field label="eMail" placeholder="Your eMail" outlined required v-model="email" :rules="[pwRules.required, pwRules.validEmail]"></v-text-field>
 
-                    <v-text-field label="Password" placeholder="Your Password" outlined required type="password" v-model="password"></v-text-field>
-            
-                    <v-btn block color="info" @click.stop="loginUser">Login</v-btn>
-                </v-form>
-                <v-spacer class="ma-5"></v-spacer>
-                <v-divider></v-divider>
-                <v-spacer class="ma-5"></v-spacer>
-                <p>Don't have a Login?</p>
-                <p><v-btn block color="red" to="/login/register" dark>Sign Up</v-btn></p>
-            </v-card-text>
+                <v-text-field label="Password" placeholder="Your Password" outlined required type="password" v-model="password"></v-text-field>
         
-
+                <v-btn block color="info" type="submit">Login</v-btn>
+            </v-form>
+            <v-spacer class="ma-5"></v-spacer>
+            <v-divider></v-divider>
+            <v-spacer class="ma-5"></v-spacer>
+            <p>Don't have a Login?</p>
+            <p><v-btn block color="red" to="/login/registration" dark>Sign Up</v-btn></p>
+        </v-card-text>
+        
     </v-card>
-    <v-snackbar
-      v-model="snackbar"
-      :timeout="snackbarTimeout"
-      bottom color="error"
-    >
-      {{ snackbarText }}
-      <v-btn
-        color="error"
-        snackbarText
-        @click="snackbar = false"
-      >
-        Close
-      </v-btn>
-    </v-snackbar>
 </v-container>
 </template>
 
@@ -58,10 +43,6 @@ export default {
     data () {
         return {
             formValid: false,
-
-            snackbar: false,
-            snackbarText: 'Enter a valid emailaddress!',
-            snackbarTimeout: 2000,
 
             username: '',
             email: '',
@@ -74,16 +55,20 @@ export default {
         }
     },
     methods: {
-        loginUser () {
+        async loginUser () {
             if(this.formValid) {
-                this.$auth.loginWith('local', {
-                    data: {
-                        username: this.username,
-                        password: this.password
-                    }
-                })
+                try {
+                    await this.$auth.loginWith('local', {
+                        data: {
+                            username: this.username,
+                            password: this.password
+                        }
+                    })
+                } catch(error) {
+                    this.$notifier.showSnackbar({ content: 'Login Failed! Check your inputs.<br><br><b>Error Message:</b><br>' + error.response.data.non_field_errors, color: 'error' })
+                }
             } else {
-                this.snackbar = true;
+                this.$notifier.showSnackbar({ content: 'Your inputs are not valid. Try again!', color: 'info' })
             }
         }
     },

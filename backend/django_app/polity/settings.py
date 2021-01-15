@@ -73,9 +73,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -198,7 +198,6 @@ LOGIN_URL = 'http://localhost:8000/api/v1/auth/login/' # redirect after successf
 
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'polity-access'
-JWT_AUTH_REFRESH_COOKIE = 'polity-refresh'
 
 AUTHENTICATION_BACKENDS = [
     # allauth specific authentication methods, such as login by e-mail
@@ -238,11 +237,17 @@ LOCATION_FIELD = {
 X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
 
 # PLUGIN: corsheaders
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "http://0.0.0.0:8000",
+    "http://172.17.*.*:*",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://0.0.0.0:3000",
+    "http://0.0.0.0",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    #'change.allowed.com',
+    '0.0.0.0',
+    '172.17.*.*',
 ]
