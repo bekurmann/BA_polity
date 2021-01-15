@@ -12,6 +12,8 @@
     "@nuxtjs/auth-next": "^5.0.0-1610540671.f7e00e8",
     "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.6.5",
+    "d3": "^6.3.1",
+    "leaflet": "^1.7.1",
     "nuxt": "^2.14.6"
   },
   "devDependencies": {

@@ -9,7 +9,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in drawerItems"
           :key="i"
           :to="item.to"
           router
@@ -33,23 +33,21 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-img src="/polity_small.png" class="mx-2" max-height="40" max-width="40" contain />
-      <v-toolbar-title v-text="title" />
+      <v-img src="/polity.jpg" class="mx-2" max-width="100" max-height="50" contain />
       <v-spacer />
       
       <div v-if="$auth.loggedIn">
         <v-avatar
-          size="avatarSize"
           color="red"
         >
-          <v-img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
-          <v-img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
+          <img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
+          <img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
         </v-avatar>
         <v-btn color="success" @click="$auth.logout()">Logout</v-btn>
         
       </div>
       <div v-else>
-        <v-btn outlined to="/login">Login</v-btn>
+        <v-btn color="primary" outlined to="/login">Login</v-btn>
       </div>
       
 
@@ -77,9 +75,8 @@ export default {
   },
   data () {
     return {
-      title: 'polity',
       drawer: false,
-      items: [
+      drawerItems: [
         {
           icon: 'mdi-apps',
           title: 'Welcome',

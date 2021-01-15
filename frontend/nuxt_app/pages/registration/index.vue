@@ -61,13 +61,13 @@
                     ></v-text-field>
 
                     <v-checkbox label="Accept terms of service" required v-model="terms" :rules="[formRules.required]"></v-checkbox>
-                    <v-btn block color="red" type="submit" dark>SignUp</v-btn>
+                    <v-btn block color="primary" type="submit" dark>SignUp</v-btn>
                 </v-form>
                 <v-spacer class="ma-10"></v-spacer>
                 <v-divider></v-divider>
                 <v-spacer class="ma-10"></v-spacer>
                 <p>Already have an account?</p>
-                <p><v-btn block color="info" to="/login" dark>Login</v-btn></p>
+                <p><v-btn block color="primary" outlined to="/login" dark>Login</v-btn></p>
             </v-card-text>
         
     </v-card>
@@ -115,6 +115,7 @@ export default {
                     this.$notifier.showSnackbar({content: 'Registration successful. Check your e-mail to confirm registration process.', color: 'success'})
                 } catch(error) {
                     console.log(error)
+                    this.$notifier.showSnackbar({content: 'Registration failed. 🤯<br><br>'+ error.response.data.username + '<br>' + error.response.data.email, color: 'error'})
                 }
             } else {
                 this.$notifier.showSnackbar({ content: 'Your inputs are not valid. Try again!', color: 'info' })

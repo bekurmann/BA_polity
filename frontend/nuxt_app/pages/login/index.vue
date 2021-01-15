@@ -3,8 +3,10 @@
     <v-card class="mx-auto" max-width="700">
 
         <v-img
-        src="https://images.pexels.com/photos/167708/pexels-photo-167708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        src="/polity.jpg"
         height="200px"
+        contain
+        class="mx-2"
         ></v-img>
 
         <v-card-title>
@@ -24,13 +26,13 @@
 
                 <v-text-field label="Password" placeholder="Your Password" outlined required type="password" v-model="password"></v-text-field>
         
-                <v-btn block color="info" type="submit">Login</v-btn>
+                <v-btn block color="primary" type="submit">Login</v-btn>
             </v-form>
             <v-spacer class="ma-5"></v-spacer>
             <v-divider></v-divider>
             <v-spacer class="ma-5"></v-spacer>
             <p>Don't have a Login?</p>
-            <p><v-btn block color="red" to="/login/registration" dark>Sign Up</v-btn></p>
+            <p><v-btn block color="primary" outlined to="/registration" dark>Sign Up</v-btn></p>
         </v-card-text>
         
     </v-card>
@@ -64,6 +66,7 @@ export default {
                             password: this.password
                         }
                     })
+                    this.$notifier.showSnackbar({ content: 'Login successful! <br>Welcome @ polity.ch 👋', color: 'success' })
                 } catch(error) {
                     this.$notifier.showSnackbar({ content: 'Login Failed! Check your inputs.<br><br><b>Error Message:</b><br>' + error.response.data.non_field_errors, color: 'error' })
                 }
