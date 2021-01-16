@@ -97,7 +97,8 @@ class Canton(models.Model):
     uuid = models.CharField(max_length=38)
 
     # kantonsnum as identifier for foreignkey @municipality
-    kantonsnum = models.BigIntegerField(unique=True)
+    # as primary key
+    kantonsnum = models.BigIntegerField(primary_key=True)
 
     name = models.CharField(max_length=254)
     abbreviation = models.CharField(blank=True, max_length=20)

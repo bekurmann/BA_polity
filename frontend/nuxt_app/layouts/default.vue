@@ -1,13 +1,15 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #eee;">
     <!-- navigation drawer ********************************** -->
     <v-navigation-drawer
       v-model="drawer"
       clipped
       fixed
       app
+      class="primary"
+      dark
     >
-      <v-list>
+      <v-list rounded>
         <v-list-item
           v-for="(item, i) in drawerItems"
           :key="i"
@@ -37,13 +39,11 @@
       <v-spacer />
       
       <div v-if="$auth.loggedIn">
-        <v-avatar
-          color="red"
-        >
+        <v-avatar>
           <img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
           <img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
         </v-avatar>
-        <v-btn color="success" @click="$auth.logout()">Logout</v-btn>
+        <v-btn color="primary" @click="$auth.logout()">Logout</v-btn>
         
       </div>
       <div v-else>

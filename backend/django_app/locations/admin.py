@@ -35,7 +35,6 @@ class RegionAdmin(GEOadmin.OSMGeoAdmin):
 class CantonAdmin(GEOadmin.OSMGeoAdmin):
     """
     """
-    readonly_fields = ['id']
 
     list_display = ('name',)
     search_fields = ['name',]
