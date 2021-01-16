@@ -9,7 +9,7 @@ class CountrySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    geom = GeometryField(precision=0, remove_duplicates=True)
+    geom = GeometryField(precision=2, remove_duplicates=True)
 
     class Meta:
         model = Country
@@ -21,18 +21,12 @@ class RegionSerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    simplified_geom = GeometrySerializerMethodField()
 
-    def get_simplified_geom(self, obj):
-        # Returns a new GEOSGeometry, simplified to the specified tolerance
-        # using the Douglas-Peucker algorithm. A higher tolerance value implies
-        # fewer points in the output. If no tolerance is provided, it
-        # defaults to 0.
-        return obj.geom.simplify(tolerance=0.05, preserve_topology=True)
+    geom = GeometryField(precision=2, remove_duplicates=True)
 
     class Meta:
         model = Region
-        geo_field = 'simplified_geom'
+        geo_field = 'geom'
 
         fields = '__all__'
 class CantonSerializer(GeoFeatureModelSerializer):
@@ -40,7 +34,7 @@ class CantonSerializer(GeoFeatureModelSerializer):
     serialize country as geojson compatible data
     """
     # should be transformed to 4326 first
-    geom = GeometryField(precision=0, remove_duplicates=True)
+    geom = GeometryField(precision=2, remove_duplicates=True)
 
     class Meta:
         model = Canton
@@ -53,20 +47,13 @@ class MunicipalitySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    simplified_geom = GeometrySerializerMethodField()
-
-    def get_simplified_geom(self, obj):
-        # Returns a new GEOSGeometry, simplified to the specified tolerance
-        # using the Douglas-Peucker algorithm. A higher tolerance value implies
-        # fewer points in the output. If no tolerance is provided, it
-        # defaults to 0.
-        return obj.geom.simplify(tolerance=0.05, preserve_topology=True)
-
+    geom = GeometryField(precision=2, remove_duplicates=True)
     class Meta:
         model = Municipality
-        geo_field = 'simplified_geom'
+        geo_field = 'geom'
 
         fields = '__all__'
+
 class PLZSerializer(serializers.ModelSerializer):
 
     class Meta:

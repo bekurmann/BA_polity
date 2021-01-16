@@ -37,7 +37,9 @@ class Country(models.Model):
     einwohnerz = models.BigIntegerField(null=True)
 
     # geodjango specific: a geometry field (multipolygonfield)
-    geom = models.MultiPolygonField(srid=21781)
+    # geom = models.MultiPolygonField(srid=21781)
+    # automatically set srid for data (4326 is google/osm)
+    geom = models.MultiPolygonField(srid=4326)
 
     # emblem
     def get_country_upload_path(instance, filename):
@@ -73,7 +75,8 @@ class Region(models.Model):
     einwohnerz = models.BigIntegerField(null=True)
 
     # geodjango specific: a geometry field (multipolygonfield)
-    geom = models.MultiPolygonField(srid=21781)
+    #geom = models.MultiPolygonField(srid=21781)
+    geom = models.MultiPolygonField(srid=4326)
 
     # emblem
     def get_region_upload_path(instance, filename):
@@ -107,7 +110,8 @@ class Canton(models.Model):
     einwohnerz = models.BigIntegerField(null=True)
 
     # geodjango specific: a geometry field (multipolygonfield)
-    geom = models.MultiPolygonField(srid=21781)
+    #geom = models.MultiPolygonField(srid=21781)
+    geom = models.MultiPolygonField(srid=4326)
 
     # emblem
     def get_canton_upload_path(instance, filename):
@@ -146,7 +150,8 @@ class Municipality(models.Model):
     einwohnerz = models.BigIntegerField(null=True)
 
     # geodjango specific: a geometry field (multipolygonfield)
-    geom = models.MultiPolygonField(srid=21781)
+    #geom = models.MultiPolygonField(srid=21781)
+    geom = models.MultiPolygonField(srid=4326)
 
     # emblem
     def get_municipality_upload_path(instance, filename):
