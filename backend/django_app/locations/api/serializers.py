@@ -9,7 +9,7 @@ class CountrySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    geom = GeometryField(precision=2, remove_duplicates=True)
+    geom = GeometryField(precision=1, remove_duplicates=True)
 
     class Meta:
         model = Country
@@ -47,7 +47,7 @@ class MunicipalitySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
     """
-    geom = GeometryField(precision=2, remove_duplicates=True)
+    geom = GeometryField(precision=1, remove_duplicates=True)
     class Meta:
         model = Municipality
         geo_field = 'geom'
