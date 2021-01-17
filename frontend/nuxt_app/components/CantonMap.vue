@@ -1,6 +1,12 @@
 <template>
 <v-container>
-    <p v-if="$fetchState.pending">fetching map data...</p>
+    <p v-if="$fetchState.pending">fetching map data...
+        <v-skeleton-loader
+        class="mx-auto"
+        type="image@3"
+        height="500"
+        ></v-skeleton-loader>
+    </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
     <p v-else>data loaded
     </p>
@@ -27,13 +33,7 @@ export default {
             throw new Error('Failed to fetch mapData from /locations/cantons')
         }
     },
-    // computed() {
-    //     //this.generateMap()
-    // },
     methods: {
-        // selectCanton(canton) {
-        //     this.canton = canton
-        // },
         generateMap() {
             // settings
             var width = 960;
