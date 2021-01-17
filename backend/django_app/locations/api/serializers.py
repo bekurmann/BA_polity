@@ -34,7 +34,7 @@ class CantonSerializer(GeoFeatureModelSerializer):
     serialize country as geojson compatible data
     """
     # should be transformed to 4326 first
-    geom = GeometryField(precision=2, remove_duplicates=True)
+    geom = GeometryField(precision=3, remove_duplicates=True)
 
     class Meta:
         model = Canton

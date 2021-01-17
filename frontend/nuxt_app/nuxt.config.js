@@ -52,13 +52,13 @@ export default {
         scheme: 'refresh',
         token: {
           property: 'access_token',
-          maxAge: 1800,
+          maxAge: 10,
           type: 'Bearer'
         },
         refreshToken: {
           property: 'refresh_token',
           data: 'refresh',
-          maxAge: 60 * 60 * 24 * 30
+          maxAge: 60 * 60 * 24 * 30// one day
         },
         user: {
           property: false,

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 # for db environment settings
 import os
-
+import datetime
 from pathlib import Path
 
 # ***********************************************************************************************
@@ -199,6 +199,10 @@ LOGIN_URL = 'http://localhost:8000/api/v1/auth/login/' # redirect after successf
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'polity-access'
 JWT_AUTH_REFRESH_COOKIE = 'polity-refresh'
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=30),
+}
 
 AUTHENTICATION_BACKENDS = [
     # allauth specific authentication methods, such as login by e-mail
