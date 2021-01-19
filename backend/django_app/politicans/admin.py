@@ -19,8 +19,8 @@ from django.utils.safestring import mark_safe
 # *****************************************************************************************
 
 class PoliticanRessource(resources.ModelResource):
-    city = fields.Field(column_name='city', attribute='city',
-                        widget=ForeignKeyWidget(PLZ, 'pk'))
+    city = fields.Field(column_name='jurisdiction', attribute='city',
+                        widget=ForeignKeyWidget(PLZ, 'name'))
 
     class Meta:
         model = Politican
