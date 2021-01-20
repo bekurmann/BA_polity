@@ -10,7 +10,7 @@
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
     <p v-else>data loaded
     </p>
-    <v-img id="map"></v-img>
+    <v-img id="map" max-height="600"></v-img>
 </v-container>
 </template>
 <script>
@@ -36,8 +36,8 @@ export default {
     methods: {
         generateMap() {
             // settings
-            var width = 960;
-            var height = 500;
+            var width = 750;
+            var height = 450;
 
             var projection = d3.geoMercator()
                 .fitSize([width, height], this.mapData)
@@ -66,11 +66,11 @@ export default {
 </script>
 <style>
 .stroke {
-    stroke: #005bad;
+    stroke: white;
     stroke-width: 1px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 0.5;
-    fill: white;
+    fill: #005bad;
 }
 </style>
