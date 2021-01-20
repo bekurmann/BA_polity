@@ -42,15 +42,6 @@ class CommissionSerializer(serializers.ModelSerializer):
         model = Commission
         exclude = ['created_at', 'updated_at',]
 
-class CommissionMembershipSerializer(serializers.ModelSerializer):
-    """
-    model serializer for CommissionMembership
-    """
-    politican = PoliticanSerializer(read_only=True)
-    class Meta:
-        model = CommissionMembership
-        exclude = ['created_at', 'updated_at',]
-
 # *****************************************************************************************
 # Membership
 # *****************************************************************************************
@@ -62,5 +53,5 @@ class MembershipSerializer(serializers.ModelSerializer):
     politican = PoliticanSerializer(read_only=True)
     active = serializers.BooleanField()
     class Meta:
-        model = ParlamentMembership
+        model = Membership
         exclude = [ 'created_at', 'updated_at',]

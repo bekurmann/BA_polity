@@ -46,7 +46,7 @@ class MembershipRessource(resources.ModelResource):
     #fraciton =
 
     class Meta:
-        model = ParlamentMembership
+        model = Membership
         import_id_fields = ['id']
 
 # *************************************************************************************
