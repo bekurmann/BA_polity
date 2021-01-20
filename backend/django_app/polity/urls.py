@@ -16,7 +16,8 @@ from rest_framework_nested import routers
 from politicans.api.views import PoliticanViewSet
 from legislatives.api.views import ( ParlamentViewSet, ParlamentSessionViewSet, 
                                     ParlamentMembershipViewSet,
-                                    CommissionViewSet, CommissionMembershipViewSet )
+                                    CommissionViewSet,
+                                    CommissionMembershipViewSet )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, MunicipalityViewSet )
 

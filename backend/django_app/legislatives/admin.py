@@ -1,8 +1,9 @@
 from django.contrib import admin
 
 # import models
-from legislatives.models import ( Parlament, ParlamentSession, ParlamentMembership,
-                                Commission, CommissionMembership )
+from legislatives.models import ( Parlament, ParlamentSession,
+                                Commission,
+                                Membership )
 from politicans.models import Politican
 from locations.models import Country, Canton, Municipality, PLZ
 
@@ -15,7 +16,7 @@ from import_export.widgets import ForeignKeyWidget
 from import_export.admin import ImportExportModelAdmin
 
 # *************************************************************************************
-# import export ressources
+# import export ressources (for django-import-export)
 # *************************************************************************************
 
 class ParlamentRessource(resources.ModelResource):
@@ -31,19 +32,21 @@ class ParlamentRessource(resources.ModelResource):
         model = Parlament
         import_id_fields = ['id']
 
-class ParlamentMembershipRessource(resources.ModelResource):
-    politican = fields.Field(column_name='politican', attribute='politican', widget=ForeignKeyWidget(Politican, 'pk'))
-    parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
-
-    class Meta:
-        model = ParlamentMembership
-        import_id_fields = ['id']
-
 class CommissionRessource(resources.ModelResource):
     parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
 
     class Meta:
         model = Commission
+        import_id_fields = ['id']
+
+class MembershipRessource(resources.ModelResource):
+    politican = fields.Field(column_name='politican', attribute='politican', widget=ForeignKeyWidget(Politican, 'pk'))
+    parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
+    commission = fields.Field(column_name='commission', attribute='commission', widget=ForeignKeyWidget(Commission, 'pk'))
+    #fraciton =
+
+    class Meta:
+        model = ParlamentMembership
         import_id_fields = ['id']
 
 # *************************************************************************************
@@ -99,23 +102,6 @@ class ParlamentSessionAdmin(admin.ModelAdmin):
     list_display = ('parlament', 'date', 'regular_session',)
 
 
-class ParlamentMembershipAdmin(ImportExportModelAdmin):
-    """
-    Customizing Admininterface for Model ParlamentMembership
-    """
-    raw_id_fields = ['politican']
-    readonly_fields = ('active',)
-
-    fieldsets = (
-        ('Membership Type', {'fields': ('membership_type',)}),
-        ('Foreign Keys', {'fields': ('politican', 'parlament', )}),
-        ('Start- Enddate', {'fields': ('start_date', 'end_date',)}),
-        ('Active (Calculated)', {'fields': ('active',)}),
-    )
-
-    resource_class = ParlamentMembershipRessource
-
-    list_display = ('politican', 'membership_type', 'parlament', 'active',)
 
 
 # *************************************************************************************
@@ -138,29 +124,35 @@ class CommissionAdmin(ImportExportModelAdmin):
     search_fields = ['title' 'parlament',]
 
 
-class CommissionMembershipAdmin(admin.ModelAdmin):
+# *************************************************************************************
+# Membership Admin
+# *************************************************************************************
+class MembershipAdmin(ImportExportModelAdmin):
     """
-    Customizing Admininterface for Model CommissionMembership
+    Customizing Admininterface for Model Membership
     """
     raw_id_fields = ['politican']
     readonly_fields = ('active',)
 
     fieldsets = (
         ('Membership Type', {'fields': ('membership_type',)}),
-        ('Foreign Keys', {'fields': ('politican', 'commission', )}),
+        ('Membership Function', {'fields': ('membership_function',)}),
+        ('Foreign Keys', {'fields': ('politican', 'parlament', 'commission',)}),
         ('Start- Enddate', {'fields': ('start_date', 'end_date',)}),
         ('Active (Calculated)', {'fields': ('active',)}),
     )
 
-    list_display = ('politican', 'commission')
+    resource_class = MembershipRessource
+
+    list_display = ('politican', 'membership_type', 'parlament', 'active',)
 
 
 # register parlament + depending
 admin.site.register(Parlament, ParlamentAdmin)
 admin.site.register(ParlamentSession, ParlamentSessionAdmin)
-admin.site.register(ParlamentMembership, ParlamentMembershipAdmin)
 
-# register commission + depending
+# register commission
 admin.site.register(Commission, CommissionAdmin)
-admin.site.register(CommissionMembership, CommissionMembershipAdmin)
 
+# register membership
+admin.site.register(Membership, MembershipAdmin)

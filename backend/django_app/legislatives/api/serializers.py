@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
-from legislatives.models import ( Parlament, ParlamentSession, ParlamentMembership, 
-                                Commission, CommissionMembership ) 
+from legislatives.models import ( Parlament, ParlamentSession, 
+                                Commission,
+                                Membership ) 
 from locations.api.serializers import PLZSerializer
 from politicans.api.serializers import PoliticanSerializer
 
@@ -27,15 +28,7 @@ class ParlamentSessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = ParlamentSession
         exclude = ['created_at', 'updated_at', ]
-class ParlamentMembershipSerializer(serializers.ModelSerializer):
-    """
-    model serializer for parlament memberships
-    """
-    politican = PoliticanSerializer(read_only=True)
-    active = serializers.BooleanField()
-    class Meta:
-        model = ParlamentMembership
-        exclude = [ 'created_at', 'updated_at',]
+
 
 # *****************************************************************************************
 # Commission
@@ -57,3 +50,17 @@ class CommissionMembershipSerializer(serializers.ModelSerializer):
     class Meta:
         model = CommissionMembership
         exclude = ['created_at', 'updated_at',]
+
+# *****************************************************************************************
+# Membership
+# *****************************************************************************************
+
+class MembershipSerializer(serializers.ModelSerializer):
+    """
+    model serializer for membership
+    """
+    politican = PoliticanSerializer(read_only=True)
+    active = serializers.BooleanField()
+    class Meta:
+        model = ParlamentMembership
+        exclude = [ 'created_at', 'updated_at',]

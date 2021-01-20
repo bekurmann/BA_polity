@@ -1,12 +1,11 @@
 from rest_framework import viewsets
 
 from legislatives.models import ( Parlament, ParlamentSession, 
-                                ParlamentMembership,
-                                Commission, CommissionMembership )
+                                Membership,
+                                Commission )
 from legislatives.api.serializers import ( ParlamentSerializer, ParlamentSessionSerializer,
-                                        ParlamentMembershipSerializer, 
-                                        CommissionSerializer, CommissionMembershipSerializer, 
-                                        )
+                                        MembershipSerializer, 
+                                        CommissionSerializer )
                                         
 # *****************************************************************************************
 # Parlament
@@ -28,20 +27,10 @@ class ParlamentSessionViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = ParlamentSessionSerializer
     
-
-class ParlamentMembershipViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    read-only viewset for listing parlament members
-    """
-    def get_queryset(self):
-        return ParlamentMembership.objects.filter(parlament=self.kwargs['parlament_pk'])
-
-    serializer_class = ParlamentMembershipSerializer  
     
 # *****************************************************************************************
 # Commission
 # *****************************************************************************************
-
 class CommissionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     read-only viewset for listing commissions
@@ -51,13 +40,23 @@ class CommissionViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = CommissionSerializer
 
-class CommissionMembershipViewSet(viewsets.ReadOnlyModelViewSet):
+# *****************************************************************************************
+# Memberships
+# *****************************************************************************************
+class ParlamentMembershipViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    read-only viewset for listing commission members
+    read-only viewset for listing parlament membership
     """
     def get_queryset(self):
-        return CommissionMembership.objects.filter(commission=self.kwargs['commission_pk'])
+        return Membership.objects.filter(parlament=self.kwargs['parlament_pk'])
 
-    serializer_class = CommissionMembershipSerializer
-    
+    serializer_class = MembershipSerializer 
 
+class CommissionMembershipViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for listing commission membership
+    """
+    def get_queryset(self):
+        return Membership.objects.filter(commission=self.kwargs['commission_pk'])
+
+    serializer_class = MembershipSerializer 

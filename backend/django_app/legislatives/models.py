@@ -31,7 +31,7 @@ class Parlament(models.Model):
     jurisdiction_municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="municipality_parlaments", blank=True, null=True)
 
     # manytomany members
-    members = models.ManyToManyField(Politican, through='ParlamentMembership',
+    members = models.ManyToManyField(Politican, through='Membership',
                                                 through_fields=('parlament',
                                                 'politican'))
 
@@ -92,61 +92,6 @@ class ParlamentSession(models.Model):
     def __str__(self):
         return f'{self.date}'
     
-class ParlamentMembership(models.Model):
-    """
-    * through model for manytomany politican - parlament
-    """
-    # type
-    MEMBER = 'MEMBE'
-    PRESIDENT = 'PRESI'
-    VICEPRESIDENT = 'VICEP'
-    VOTECOUNTER = 'VOTEC'
-    SECRETARY = 'SECRE'
-    TYPE_CHOICES = [
-        (MEMBER, 'Member'),
-        (PRESIDENT, 'President'),
-        (VICEPRESIDENT, 'Vice-President'),
-        (VOTECOUNTER, 'Vote Counter'),
-        (SECRETARY, 'Secretary')
-    ]
-    membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES, default=MEMBER)
-
-    #fk 
-    politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE)
-
-    # start & end date
-    start_date = models.DateField()
-    end_date = models.DateField(blank=True, null=True)
-
-    # TODO: reference election
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        constraints = [
-            # membership type of one politican must be unique for one parlament
-            models.UniqueConstraint(fields=['membership_type', 'politican'], name='unique_parlament_membership_types')
-        ]
-
-    # calculated active flag
-    def active(self):
-        # Returns whether or not the Membership is active, depending on end_date
-        import datetime
-        if not self.end_date:
-            # if end_date not set, membership true
-            return True
-        elif self.end_date > datetime.date.today():
-            # if end_date set, but in future, membership true
-            return True
-        return False
-    active.boolean = True
-
-    def __str__(self):
-        return f'{self.politican.first_name} {self.politican.last_name} / {self.parlament.title}'
-
 
 # *****************************************************************************************
 # Commission
@@ -164,7 +109,7 @@ class Commission(models.Model):
     parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name="commissions")
 
     # members
-    members = models.ManyToManyField(Politican, through='CommissionMembership',
+    members = models.ManyToManyField(Politican, through='Membership',
                                                 through_fields=('commission',
                                                 'politican'))
 
@@ -191,30 +136,106 @@ class Commission(models.Model):
     def __str__(self):
         return f'{self.title}'
 
-class CommissionMembership(models.Model):
+# class CommissionMembership(models.Model):
+#     """
+#     through model for manytomany politican - commission
+#     """
+#     # type
+#     MEMBER = 'MEMBE'
+#     PRESIDENT = 'PRESI'
+#     VICEPRESIDENT = 'VICEP'
+#     TYPE_CHOICES = [
+#         (MEMBER, 'Member'),
+#         (PRESIDENT, 'President'),
+#         (VICEPRESIDENT, 'Vice-President')
+#     ]
+#     membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES, default=MEMBER)
+
+#     # fk
+#     politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
+#     commission = models.ForeignKey(Commission, on_delete=models.CASCADE)
+
+#     # start & end date
+#     start_date = models.DateField()
+#     end_date = models.DateField(blank=True, null=True)
+
+#     # TODO: fk election? or how do you become commission member?
+
+#     # admin
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+
+#     class Meta:
+#         constraints = [
+#             # membership type of one politican must be unique for one commission
+#             models.UniqueConstraint(fields=['membership_type', 'commission'], name='unique_commission_membership_types')
+#         ]
+
+#     # calculated active flag
+#     def active(self):
+#         "Returns whether or not the Membership is active, depending on end_date"
+#         import datetime
+#         if not self.end_date:
+#             # if end_date not set, membership true
+#             return True
+#         elif self.end_date > datetime.date.today():
+#             # if end_date set, but in future, membership true
+#             return True
+#         return False
+#     active.boolean = True
+
+#     def __str__(self):
+#         return f'{self.politican.first_name} {self.politican.last_name} / {self.commission.title}'
+
+# *****************************************************************************************
+# Membership
+# *****************************************************************************************
+class Membership(models.Model):
     """
-    through model for manytomany politican - commission
+    sparse model for membersips
+    * used for
+        parlament
+        commission
+        fraction
+     as through model
     """
-    # type
+    # membership type
+    PARLAMENT = 'PARLA'
+    COMMISSION = 'COMMI'
+    FRACTION = 'FRACT'
+    TYPE_CHOICES = [
+        (PARLAMENT, 'Parlament'),
+        (COMMISSION, 'Commission'),
+        (FRACTION, 'Fraction')
+    ]
+    membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
+
+    # membership function
     MEMBER = 'MEMBE'
     PRESIDENT = 'PRESI'
     VICEPRESIDENT = 'VICEP'
-    TYPE_CHOICES = [
+    VOTECOUNTER = 'VOTEC'
+    SECRETARY = 'SECRE'
+    FUNCTION_CHOICES = [
         (MEMBER, 'Member'),
         (PRESIDENT, 'President'),
-        (VICEPRESIDENT, 'Vice-President')
+        (VICEPRESIDENT, 'Vice-President'),
+        (VOTECOUNTER, 'Vote Counter'),
+        (SECRETARY, 'Secretary')
     ]
-    membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES, default=MEMBER)
+    membership_function = models.CharField(max_length=5, choices=FUNCTION_CHOICES, default=MEMBER)
 
-    # fk
+    #fk 
     politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
-    commission = models.ForeignKey(Commission, on_delete=models.CASCADE)
+    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, blank=True)
+    commission = models.ForeignKey(Commission, on_delete=models.CASCADE, blank=True)
+    #fraction = models.ForeignKey()
 
     # start & end date
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
 
-    # TODO: fk election? or how do you become commission member?
+    # TODO: reference election
 
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
@@ -222,13 +243,13 @@ class CommissionMembership(models.Model):
 
     class Meta:
         constraints = [
-            # membership type of one politican must be unique for one commission
-            models.UniqueConstraint(fields=['membership_type', 'commission'], name='unique_commission_membership_types')
+            # membership type of one politican must be unique for one parlament
+            models.UniqueConstraint(fields=['membership_type', 'membership_function', 'politican'], name='unique_parlament_membership_types'),
         ]
 
     # calculated active flag
     def active(self):
-        "Returns whether or not the Membership is active, depending on end_date"
+        # Returns whether or not the Membership is active, depending on end_date
         import datetime
         if not self.end_date:
             # if end_date not set, membership true
@@ -240,8 +261,7 @@ class CommissionMembership(models.Model):
     active.boolean = True
 
     def __str__(self):
-        return f'{self.politican.first_name} {self.politican.last_name} / {self.commission.title}'
-
+        return f'{self.politican.first_name} {self.politican.last_name} / {self.parlament.title}'
 
 # *****************************************************************************************
 # Affairs
