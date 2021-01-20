@@ -13,13 +13,14 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # **************************************************************************************
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
-from politicans.api.views import PoliticanViewSet
+from politicans.api.views import (  PoliticanViewSet, PoliticanParlamentViewSet )
 from legislatives.api.views import ( ParlamentViewSet, ParlamentSessionViewSet, 
                                     ParlamentMembershipViewSet,
                                     CommissionViewSet,
                                     CommissionMembershipViewSet )
 
-from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, MunicipalityViewSet )
+from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
+                                    MunicipalityViewSet, NestedMunicipalityViewSet )
 
 # PARLAMENT ROUTER
 # **************************************************************************************
@@ -50,6 +51,10 @@ commission_membership_router.register(r'memberships', CommissionMembershipViewSe
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
 # /politicans/<pk>/
+politican_membership_router = routers.NestedSimpleRouter(router, r'politicans', lookup='politican')
+politican_membership_router.register(r'memberships', PoliticanParlamentViewSet, basename='politican-memberships')
+# /politicans/<pk>/parlaments/
+# /politicans/<pk>/parlaments/<pk>/
 
 # LOCATION ROUTER
 # **************************************************************************************
@@ -62,6 +67,10 @@ router.register(r'locations/regions', RegionViewSet, basename='regions')
 router.register(r'locations/cantons', CantonViewSet, basename='cantons')
 # /locations/cantons/
 # /locations/cantons/<pk>
+canton_municipality_router = routers.NestedSimpleRouter(router, r'locations/cantons', lookup='kantonsnum')
+canton_municipality_router.register(r'municipalities', NestedMunicipalityViewSet, basename='canton-municipalities')
+# /locations/cantons/<pk>/municipalities/
+# /locations/cantons/<pk>/municipalities/<pk>/
 router.register(r'locations/municipalities', MunicipalityViewSet, basename='municipalities')
 # /locations/municipalities/
 # /locations/municipalities/<pk>
@@ -86,11 +95,17 @@ urlpatterns = [
     path('api/v1/', include(router.urls)),
     # nested routes /parlaments/sessions
     path('api/v1/', include(parlament_session_router.urls)),
-    # nested routes /parlaments/membership
+    # nested routes /parlaments/memberships
     path('api/v1/', include(parlament_membership_router.urls)),
     # nested commissions / ...
     path('api/v1/', include(commission_router.urls)),
     path('api/v1/', include(commission_membership_router.urls)),
+
+    # nested politicans/ memberships
+    path('api/v1/', include(politican_membership_router.urls)),
+
+    # nested municipalities / cantons
+     path('api/v1/', include(canton_municipality_router.urls)),
 ]
 
 # **************************************************************************************

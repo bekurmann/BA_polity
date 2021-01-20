@@ -227,8 +227,8 @@ class Membership(models.Model):
 
     #fk 
     politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, blank=True)
-    commission = models.ForeignKey(Commission, on_delete=models.CASCADE, blank=True)
+    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, blank=True, null=True)
+    commission = models.ForeignKey(Commission, on_delete=models.CASCADE, blank=True, null=True)
     #fraction = models.ForeignKey()
 
     # start & end date
@@ -261,7 +261,7 @@ class Membership(models.Model):
     active.boolean = True
 
     def __str__(self):
-        return f'{self.politican.first_name} {self.politican.last_name} / {self.parlament.title}'
+        return f'{self.politican.first_name} {self.politican.last_name} / {self.membership_type} / {self.membership_function}'
 
 # *****************************************************************************************
 # Affairs

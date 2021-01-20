@@ -31,3 +31,12 @@ class MunicipalityViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = Municipality.objects.all()
     serializer_class = MunicipalitySerializer
+
+class NestedMunicipalityViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for municipalities in canton x
+    """
+    def get_queryset(self):
+        return Municipality.objects.filter(kantonsnum=self.kwargs['kantonsnum_pk'])
+
+    serializer_class = MunicipalitySerializer

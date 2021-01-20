@@ -144,7 +144,7 @@ class MembershipAdmin(ImportExportModelAdmin):
 
     resource_class = MembershipRessource
 
-    list_display = ('politican', 'membership_type', 'parlament', 'active',)
+    list_display = ('politican', 'membership_type', 'membership_function', 'commission', 'parlament', 'active',)
 
 
 # register parlament + depending
