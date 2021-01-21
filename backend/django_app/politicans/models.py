@@ -27,7 +27,7 @@ class Politican(models.Model):
 
     # location
     location_query = models.CharField(max_length=200, blank=True, null=True)
-    location = LocationField(based_fields=['street1', 'street2', 'location_query'], zoom=7, blank=True, null=True)
+    location = LocationField(based_fields=['location_query'], zoom=7, blank=True, null=True)
 
     # contact
     email = models.EmailField(max_length=200, blank=True)
