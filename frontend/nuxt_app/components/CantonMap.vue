@@ -8,20 +8,22 @@
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-    <p v-else>data loaded; {{ selectedCanton.name }}
+    <p v-else>
+    
+        <p>Hello</p>
     </p>
 
-    <v-img id="map" max-height="600"></v-img>
+    <v-row>
+        <v-col>
+            Selected Cannton: {{ selectedCanton.id }} <br> {{ selectedCanton.properties.name }}
+        </v-col>
+    </v-row>
 
-    <v-tooltip right v-model="toolTipCanton" :activator="`${ `#` + hoverCanton.id }`" v-if="hoverCanton">
-        <span>fucker!</span>
-    </v-tooltip>
-    
-
-    <!-- <v-tooltip bottom v-model="toolTipCanton" 
-        :activator="`${ `#` + hoverCanton.id }`" v-if="hoverCanton">
-        <span>{{ hoverCanton.name }}</span>
-    </v-tooltip> -->
+    <v-row>
+        <v-col>
+            <v-img id="map" max-height="600"></v-img>
+        </v-col>
+    </v-row> 
 
 </v-container>
 </template>
@@ -32,9 +34,14 @@ export default {
     data() {
         return {
             mapData: {},
-            toolTipCanton: false,
-            hoverCanton: {},
-            selectedCanton: {},
+            hoverCanton: {
+                id: '',
+                properties: {}
+            },
+            selectedCanton: {
+                id: '',
+                properties: {}
+            },
         }
     },
     async fetch() {
@@ -74,23 +81,27 @@ export default {
                 // styling
                 .attr('class', 'canton')
                 // enter data from geojson (properties)
-                .attr("id", function(d) { return d.id; });
+                .attr("id", function(d) { return d.id; })
+                .attr(":to", function(d) {return d.id})
                 // interactions
-            cantons.on("mouseover", function(event, d) { self.onCantonHover(d); } );
-            cantons.on("mouseout", function()  { self.offCantonHover(); } );
-            cantons.on("click", function(event, d) { self.onCantonClicked(d); });
+                .on("mouseover", function(event, d) { 
+                    self.onCantonHover(d); 
+                    d3.select(this).style("cursor", "pointer");
+                    })
+                .on("mouseout", function()  { self.offCantonHover(); } )
+                .on("click", function(event, d) { self.onCantonClicked(d); });
         },
         onCantonHover(d) {
-            console.log(d);
-            this.toolTipCanton = true;
-            this.hoverCanton = d.properties;
+            this.hoverCanton.id = d.id
+            this.hoverCanton.properties = d.properties;
         },
         offCantonHover() {
-            this.toolTipCanton = false;
-            this.hoverCanton = undefined;
+            this.hoverCanton.id = '';
+            this.hoverCanton.properties = {};
         },
         onCantonClicked(d) {
-            this.selectedCanton = d.properties;
+            this.selectedCanton.id = d.id
+            this.selectedCanton.properties = d.properties;
         },
 },
 
