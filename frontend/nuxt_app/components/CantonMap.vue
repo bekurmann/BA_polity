@@ -8,13 +8,21 @@
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-    <p v-else>data loaded
+    <p v-else>data loaded; {{ selectedCanton.name }}
     </p>
+
     <v-img id="map" max-height="600"></v-img>
-    <v-tooltip bottom v-model="toolTipCanton" 
-        :activator="`${ `#` + hoverCanton.id }`" v-if="hoverCanton">
-        <span>{{ 'toolTipCanton!' }}</span>
+
+    <v-tooltip right v-model="toolTipCanton" :activator="`${ `#` + hoverCanton.id }`" v-if="hoverCanton">
+        <span>fucker!</span>
     </v-tooltip>
+    
+
+    <!-- <v-tooltip bottom v-model="toolTipCanton" 
+        :activator="`${ `#` + hoverCanton.id }`" v-if="hoverCanton">
+        <span>{{ hoverCanton.name }}</span>
+    </v-tooltip> -->
+
 </v-container>
 </template>
 <script>
@@ -23,10 +31,10 @@ import * as d3 from "d3";
 export default {
     data() {
         return {
-            mapData: undefined,
+            mapData: {},
             toolTipCanton: false,
-            hoverCanton: undefined,
-            selectedCanton: undefined,
+            hoverCanton: {},
+            selectedCanton: {},
         }
     },
     async fetch() {
@@ -40,21 +48,11 @@ export default {
         }
     },
     methods: {
-        onCantonHover(d) {
-            this.toolTipCanton = true;
-            this.hoverCanton = d.properties.name;
-        },
-        offCantonHover() {
-            this.toolTipCanton = false;
-            this.hoverCanton = undefined;
-        },
-        onCantonClicked(d) {
-            this.selectedCanton = d.properties.name;
-        },
         generateMap() {
             // settings
             var width = 750;
             var height = 450;
+            let self=this;
 
             var projection = d3.geoMercator()
                 .fitSize([width, height], this.mapData)
@@ -68,8 +66,6 @@ export default {
                 .append("svg")
                 .attr("viewBox", [0, 0, width, height]);
 
-            const self=this;
-
             const cantons = svg.selectAll("path")
                 .data(this.mapData.features)
                 .enter()
@@ -78,13 +74,25 @@ export default {
                 // styling
                 .attr('class', 'canton')
                 // enter data from geojson (properties)
-                .attr("id", function(d) { return d.id; })
+                .attr("id", function(d) { return d.id; });
                 // interactions
-                .on("mouseover", function(d) { self.onCantonHover(d); } )
-                .on("mouseout", function()  { self.offCantonHover(); } )
-                .on("click", function(d) { self.onCantonClicked(d); });
+            cantons.on("mouseover", function(event, d) { self.onCantonHover(d); } );
+            cantons.on("mouseout", function()  { self.offCantonHover(); } );
+            cantons.on("click", function(event, d) { self.onCantonClicked(d); });
         },
-    },
+        onCantonHover(d) {
+            console.log(d);
+            this.toolTipCanton = true;
+            this.hoverCanton = d.properties;
+        },
+        offCantonHover() {
+            this.toolTipCanton = false;
+            this.hoverCanton = undefined;
+        },
+        onCantonClicked(d) {
+            this.selectedCanton = d.properties;
+        },
+},
 
 }
 </script>
