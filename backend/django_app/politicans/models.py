@@ -37,7 +37,7 @@ class Politican(models.Model):
     # avatar
     def get_politican_upload_path(instance, filename):
         # file will be uploaded to MEDIA_ROOT/politicans/<first_name>_<last_name>_<city.name>/<filename>
-        return f'politicans/{filename}'
+        return f'politicans/{instance.last_name}_{instance.first_name}_{instance.city.name}/{filename}'
 
     avatar = models.ImageField(upload_to=get_politican_upload_path, blank=True, null=True)
 
