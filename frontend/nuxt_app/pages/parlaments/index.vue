@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12"><!--md="12" lg="12" xl="12" -->
+            <v-col cols="12">
                 <v-card>
                     <v-card-title primary-title>
                         Parlaments

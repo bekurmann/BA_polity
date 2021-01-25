@@ -4,7 +4,6 @@
         <v-skeleton-loader
         class="mx-auto"
         type="article@2"
-        height="500"
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
@@ -57,8 +56,3 @@ export default {
 
 }
 </script>
-<style>
-.whitespace {
-    white-space: pre-wrap;
-}   
-</style>
