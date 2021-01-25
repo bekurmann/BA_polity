@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <p v-if="$fetchState.pending">fetching map data...
+    <p v-if="$fetchState.pending">
         <v-skeleton-loader
         class="mx-auto"
         type="image@3"
@@ -8,12 +8,7 @@
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-    <p v-else>
-    
-        <p>Hello</p>
-    </p>
-
-    <v-row>
+    <v-row v-else>
         <v-col>
             Selected Cannton: {{ selectedCanton.id }} <br> {{ selectedCanton.properties.name }}
         </v-col>

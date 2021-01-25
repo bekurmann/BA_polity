@@ -3,7 +3,7 @@ from rest_framework import serializers
 from legislatives.models import ( Parlament, ParlamentSession, 
                                 Commission,
                                 Membership ) 
-from locations.api.serializers import PLZSerializer
+from locations.api.serializers import PLZSerializer, CantonNestedSerializer
 from politicans.api.serializers import PoliticanSerializer
 
 # *****************************************************************************************
@@ -16,6 +16,7 @@ class ParlamentSerializer(serializers.ModelSerializer):
         * notice excluded fields
     """
     city = PLZSerializer(read_only=True)
+    jurisdiction_canton = CantonNestedSerializer(read_only=True)
 
     class Meta:
         model = Parlament

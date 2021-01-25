@@ -41,7 +41,8 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    'cookie-universal-nuxt',
+    'cookie-universal-nuxt', // for redirect fix
+    'nuxt-leaflet',
   ],
   axios: {
     baseURL: 'http://0.0.0.0:8000/api/v1/',

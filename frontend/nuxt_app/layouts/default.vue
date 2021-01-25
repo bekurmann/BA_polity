@@ -86,6 +86,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Start',
           to: '/start'
+        },
+        {
+          icon: 'mdi-bank',
+          title: 'Parlaments',
+          to: '/parlaments'
         }
       ],
     }

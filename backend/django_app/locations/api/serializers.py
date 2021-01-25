@@ -42,6 +42,14 @@ class CantonSerializer(GeoFeatureModelSerializer):
         fields = '__all__'
         #fields = ('kantonsnum', 'name', 'see_flaech', 'kantonsfla', 'einwohnerz', 'emblem', '')
 
+class CantonNestedSerializer(serializers.ModelSerializer):
+    """
+    serialize canton without geom and geojson (for nesting in parlament)
+    """
+    class Meta:
+        model = Canton
+        exclude = ['geom']
+
 class MunicipalitySerializer(GeoFeatureModelSerializer):
     """
     serialize country as geojson compatible data
@@ -54,7 +62,9 @@ class MunicipalitySerializer(GeoFeatureModelSerializer):
         fields = '__all__'
 
 class PLZSerializer(serializers.ModelSerializer):
-
+    """
+    serialize plz
+    """
     class Meta:
         model = PLZ
         exclude = ['id', 'created_at', 'updated_at']

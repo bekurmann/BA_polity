@@ -1,0 +1,112 @@
+<template>
+<v-container>
+    <p v-if="$fetchState.pending">fetching map data...
+        <v-skeleton-loader
+        class="mx-auto"
+        type="card-avatar, article, actions"
+        height="500"
+        ></v-skeleton-loader>
+    </p>
+    <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
+    <v-container v-else>
+
+        <v-row justify="center" class="mb-5" v-for="parlament in parlaments" :key="parlament.id">
+
+            <v-col cols="12">
+
+                <v-card
+                dark
+                class="primary"
+                >
+                    <v-row>
+                        <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                        <v-card-title
+                            class="headline"
+                        >{{parlament.title}}
+                            <v-avatar
+                                size="25"
+                                class="ma-3"
+                            >
+                                <img :src="parlament.jurisdiction_canton.emblem" alt="canton emblem">
+                            </v-avatar>
+                        </v-card-title> 
+                            <v-card-text class="whitespace">
+                                <p>{{parlament.description}}</p>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-btn
+                                class="mx-2"
+                                outlined
+                                rounded
+                                big
+                                :to="'/parlaments/' + parlament.id"
+                                >
+                                More
+                                </v-btn>
+                            </v-card-actions>
+                        </v-col>
+                        <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                            <v-card light class="mx-3">
+                                <v-img :src="parlament.avatar" max-height="200"></v-img>
+                                <v-card-text>
+                                    <v-row>
+                                        <v-col>
+                                        {{parlament.street1}} <br>
+                                        {{parlament.city.plz}} {{parlament.city.name}}<br>
+                                        {{parlament.website}}<br>
+                                        {{parlament.email}}<br>
+                                        {{parlament.phone}}
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col>
+                                            <div id="map-wrap" style="height: 20vh">
+                                                <client-only>
+                                                <l-map :zoom=13 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]">
+                                                    <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+                                                    <l-marker :lat-lng="[parlament.location.coordinates[1], parlament.location.coordinates[0]]"></l-marker>
+                                                </l-map>
+                                                </client-only>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-card-text>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+
+                </v-card>
+
+
+            </v-col>
+        </v-row>
+    </v-container>
+
+</v-container>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            parlaments:  {},
+        }
+    },
+    async fetch() {
+        try {
+            const parlamentData = await this.$axios.$get('/parlaments/')
+            this.parlaments = parlamentData
+        } catch(error) {
+            throw new Error('Failed to fetch parlamentData from /parlaments')
+        }
+    },
+    methods: {
+
+},
+
+}
+</script>
+<style>
+.whitespace {
+    white-space: pre-wrap;
+}   
+</style>
