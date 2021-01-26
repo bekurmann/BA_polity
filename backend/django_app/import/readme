@@ -17,7 +17,7 @@ sudo docker cp backend/django_app/import/dump.json polity_django_1:/usr/src/app/
 
 load db data:
 
-python manage.py loaddata /import_static/dump.json
+python manage.py loaddata import/dump.json
 
 *************************************************************
 COPY STatic files into container

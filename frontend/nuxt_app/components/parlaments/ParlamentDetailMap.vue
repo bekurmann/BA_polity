@@ -6,7 +6,7 @@
         <v-card-text>
             <div id="map-wrap" style="height: 350px">
                 <client-only>
-                <l-map :zoom=10 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]">
+                <l-map :zoom=10 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]" class="lowerZ">
                     <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
                     <l-control position="topright">
                         <v-card>
@@ -49,8 +49,8 @@ export default {
         return {
             politicanIcon: icon({
                 // see: https://github.com/pointhi/leaflet-color-markers
-                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconUrl: '/leaflet/greenMarker.png',
+                shadowUrl: '/leaflet/markerShadow.png',
                 iconSize: [25, 41],
                 iconAnchor: [12, 41],
                 popupAnchor: [1, -34],
@@ -74,3 +74,9 @@ export default {
     }
 }
 </script>
+<style>
+/* leaflet map went over app bar; changed zindex */
+.lowerZ {
+    z-index: 0;
+}
+</style>

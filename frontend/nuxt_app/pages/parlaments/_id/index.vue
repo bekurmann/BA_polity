@@ -1,8 +1,8 @@
 <template>
-    <v-container>
+    <v-container fluid>
         <v-row>
             <v-col cols="12">
-                <v-card>
+                <v-card dark color="primary">
                     <v-card-title primary-title>
                         {{parlament.title}}
                         <v-avatar
@@ -17,14 +17,25 @@
         </v-row>
         <!-- start grid -->
         <v-row>
-            <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="4" class="d-flex child-flex align-stretch">
-                <ParlamentGeneralInformation :parlament="parlament"></ParlamentGeneralInformation>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
+                <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
             </v-col>
-            <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="4" class="d-flex child-flex align-stretch"> 
-                <ParlamentContact :parlament="parlament"></ParlamentContact>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch"> 
+                <ParlamentDetailContact :parlament="parlament"></ParlamentDetailContact>
             </v-col>
-            <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="4" class="d-flex child-flex align-stretch">
-                <ParlamentMap :parlament="parlament" :memberships="memberships"></ParlamentMap>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12" class="d-flex child-flex align-stretch">
+
+                <v-card v-if="$fetchState.pending">
+                    <v-card-title primary-title>
+                        Map
+                    </v-card-title>
+                    <v-card-text>
+                        Loading...
+                    </v-card-text>
+                </v-card>
+
+                <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
+                <ParlamentDetailMap :parlament="parlament" :memberships="memberships" v-else></ParlamentDetailMap>
             </v-col>
         </v-row>
         <v-row>
@@ -37,11 +48,7 @@
                 </v-card>
             </v-col>
             <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                <v-card>
-                    <v-card-title primary-title>
-                        Members
-                    </v-card-title>
-                </v-card>
+                <ParlamentDetailMembers :memberships="memberships"></ParlamentDetailMembers>
             </v-col>
         </v-row>
         <v-row>
@@ -66,9 +73,10 @@
     </v-container>
 </template>
 <script>
-import ParlamentGeneralInformation from '~/components/parlaments/ParlamentGeneralInformation.vue'
-import ParlamentContact from '~/components/parlaments/ParlamentContact.vue'
-import ParlamentMap from '~/components/parlaments/ParlamentMap.vue'
+import ParlamentDetailGeneralInformation from '~/components/parlaments/ParlamentDetailGeneralInformation.vue'
+import ParlamentDetailContact from '~/components/parlaments/ParlamentDetailContact.vue'
+import ParlamentDetailMap from '~/components/parlaments/ParlamentDetailMap.vue'
+import ParlamentDetailMembers from '~/components/parlaments/ParlamentDetailMembers.vue'
 
 export default {
     async asyncData({params, $axios}) {
@@ -79,11 +87,18 @@ export default {
             memberships: memberships,
         }
     },
+    async fetch() {
+        try {
+            this.ParlamentMap
+        } catch(error) {
+            throw new Error('Failed to fetch parlamentMap (dependencies)')
+        }
+    },
     components: {
-        ParlamentGeneralInformation,
-        ParlamentContact,
-        ParlamentMap,
-
+        ParlamentDetailGeneralInformation,
+        ParlamentDetailContact,
+        ParlamentDetailMap,
+        ParlamentDetailMembers,
     },
     middleware: ['auth-user']
 }
