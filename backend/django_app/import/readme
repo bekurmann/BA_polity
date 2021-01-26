@@ -1,0 +1,14 @@
+*************************************************************
+load db data:
+
+python manage.py loaddata /import_static/db.json
+
+(export with datadump)
+
+*************************************************************
+copy files into docker container (dev):
+
+create folder uploads/import in contaer
+(wihtout / after import!)
+sudo docker cp backend/django_app/import polity_django_1:/usr/src/app/uploads/
+
