@@ -1,10 +1,26 @@
 *************************************************************
+CREATE DUMP DATA
+*************************************************************
+
+python manage.py dumpdata > dump.json
+
+copy file out of container and into /import
+
+sudo docker cp polity_django_1:/usr/src/app/dump.json backend/django_app/import/
+
+*************************************************************
+LOAD DUMP DATA
+*************************************************************
+copy dump.json into container
+
+sudo docker cp backend/django_app/import/dump.json polity_django_1:/usr/src/app/
+
 load db data:
 
-python manage.py loaddata /import_static/db.json
+python manage.py loaddata /import_static/dump.json
 
-(export with datadump)
-
+*************************************************************
+COPY STatic files into container
 *************************************************************
 copy files into docker container (dev):
 
