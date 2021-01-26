@@ -8,6 +8,14 @@
                 <client-only>
                 <l-map :zoom=10 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]">
                     <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+                    <l-control position="topright">
+                        <v-card>
+                            <v-card-text>
+                                <span><v-avatar size="15" color="blue"></v-avatar> Parlaments</span><br>
+                               <span><v-avatar size="15" color="green"></v-avatar> Politicans</span>
+                            </v-card-text>
+                        </v-card>
+                    </l-control>
                     <l-marker :lat-lng="[parlament.location.coordinates[1], parlament.location.coordinates[0]]">
                         <l-popup>
                             <b>{{parlament.title}}</b><br>

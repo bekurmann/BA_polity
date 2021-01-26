@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <p v-if="$fetchState.pending">fetching map data...
+    <p v-if="$fetchState.pending">
         <v-skeleton-loader
         class="mx-auto"
         type="article@2"
