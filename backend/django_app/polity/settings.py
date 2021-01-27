@@ -66,10 +66,7 @@ INSTALLED_APPS = [
     # local
     'users.apps.UsersConfig',
     'locations.apps.LocationsConfig',
-    'legislatives.apps.LegislativesConfig',
-    'politicans.apps.PoliticansConfig',
-    'parties.apps.PartiesConfig',
-
+    'core.apps.LocationsConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,23 +1,3 @@
-from django.contrib import admin
-
-from politicans.models import Politican
-
-# import export 
-from import_export import fields, resources
-from import_export.widgets import ForeignKeyWidget
-from import_export.admin import ImportExportModelAdmin
-
-# import Municipality for .csv import 
-from locations.models import PLZ
-
-# for avatar_preview
-from django.utils.safestring import mark_safe
-
-
-# *****************************************************************************************
-# import export ressources
-# *****************************************************************************************
-
 class PoliticanRessource(resources.ModelResource):
     city = fields.Field(column_name='jurisdiction', attribute='city',
                         widget=ForeignKeyWidget(PLZ, 'name'))
@@ -47,6 +27,7 @@ class PoliticanAdmin(ImportExportModelAdmin):
     resource_class = PoliticanRessource
 
     list_display = ('first_name', 'last_name', 'get_city_name',)
+    search_fields = ['first_name' 'last_name', 'get_city_name',]
 
     # function for getting the city name (foreign key PLZ, field "name")
     def get_city_name(self, obj):

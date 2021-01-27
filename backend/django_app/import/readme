@@ -2,7 +2,8 @@
 CREATE DUMP DATA
 *************************************************************
 
-python manage.py dumpdata > dump.json
+python manage.py dumpdata --exclude=auth --exclude=contenttypes > dump.json
+-> see: https://docs.djangoproject.com/en/3.1/ref/django-admin/
 
 copy file out of container and into /import
 
@@ -17,8 +18,9 @@ sudo docker cp backend/django_app/import/dump.json polity_django_1:/usr/src/app/
 
 load db data:
 
-python manage.py loaddata import/dump.json
+python manage.py --exclude=auth --exclude=contenttypes loaddata import/dump.json
 
+-> when auth and contenttypes already excluded in dumpdata, no need to exclude again
 *************************************************************
 COPY STatic files into container
 *************************************************************
