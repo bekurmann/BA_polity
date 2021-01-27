@@ -13,11 +13,10 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # **************************************************************************************
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
-from politicans.api.views import (  PoliticanViewSet, PoliticanParlamentViewSet )
-from legislatives.api.views import ( ParlamentViewSet, ParlamentSessionViewSet, 
-                                    ParlamentMembershipViewSet,
-                                    CommissionViewSet,
-                                    CommissionMembershipViewSet )
+from core.api.views import (    ParlamentViewSet, ParlamentSessionViewSet, 
+                                PoliticanViewSet, PoliticanParlamentViewSet,
+                                ParlamentMembershipViewSet, CommissionViewSet,
+                                CommissionMembershipViewSet )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -114,9 +113,3 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# # admin look customization
-# # obsolete with django-admin-interface
-# admin.site.site_header = "polity Admin"
-# admin.site.site_title = "polity Admin Portal"
-# admin.site.index_title = "Welcome to polity Portal"
