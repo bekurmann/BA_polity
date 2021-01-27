@@ -26,7 +26,7 @@ class FractionAdmin(ImportExportModelAdmin):
     fieldsets = (
         ('General Information', { 'fields': ('name', 'abbreviation', 'description',) }),
         ('Belonging Parlament', {'fields': ('parlament',)}),
-        ('Address & Contact', {'fields': ('street1', 'street2', 'city', 'email', 'website', 'phone')}),
+        ('Address & Contact', {'fields': ('street1', 'street2', 'city', 'email', 'website', 'phone',)}),
     )
 
     resource_class = FractionRessource

@@ -43,6 +43,7 @@ class Membership(models.Model):
     parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, blank=True, null=True)
     commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, blank=True, null=True)
     fraction = models.ForeignKey('core.Fraction', on_delete=models.CASCADE, blank=True, null=True)
+    party = models.ForeignKey('core.Party', on_delete=models.CASCADE, blank=True, null=True)
 
     # start & end date
     start_date = models.DateField()

@@ -23,7 +23,7 @@ class PartyRessource(resources.ModelResource):
 # *****************************************************************************************
 # admin models
 # *****************************************************************************************
-class PartyAdmin(admin.ModelAdmin):
+class PartyAdmin(ImportExportModelAdmin):
     """
     Customizing Admininterface for Model Council
     """

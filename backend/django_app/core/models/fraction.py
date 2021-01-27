@@ -29,7 +29,7 @@ class Fraction(models.Model):
     # address
     street1 = models.CharField(max_length=200, blank=True)
     street2 = models.CharField(max_length=200, blank=True)
-    city = models.ForeignKey(PLZ, on_delete=models.CASCADE, related_name="fractions")
+    city = models.ForeignKey(PLZ, on_delete=models.CASCADE, related_name="fractions", blank=True, null=True)
 
     # contact
     email = models.EmailField( max_length=200, blank=True)

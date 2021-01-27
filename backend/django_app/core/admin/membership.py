@@ -38,7 +38,11 @@ class MembershipAdmin(ImportExportModelAdmin):
 
     resource_class = MembershipRessource
 
-    list_display = ('politican', 'membership_type', 'membership_function', 'commission', 'parlament', 'active',)
+    list_display = ('politican', 
+                    'membership_type', 'membership_function',  
+                    'parlament', 'commission', 
+                    'fraction', 'party',
+                    'active',)
 
 
 # register membership

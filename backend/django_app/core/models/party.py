@@ -20,6 +20,11 @@ class Party(models.Model):
     # parent for sections
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
+    # members
+    members = models.ManyToManyField('core.Politican', through='Membership',
+                                                through_fields=('party',
+                                                'politican'))
+
     # address
     street1 = models.CharField(max_length=200, blank=True)
     street2 = models.CharField(max_length=200, blank=True)
