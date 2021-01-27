@@ -1,3 +1,5 @@
+from django.db import models
+
 # *****************************************************************************************
 # Membership
 # *****************************************************************************************
@@ -37,10 +39,10 @@ class Membership(models.Model):
     membership_function = models.CharField(max_length=5, choices=FUNCTION_CHOICES, default=MEMBER)
 
     #fk 
-    politican = models.ForeignKey(Politican, on_delete=models.CASCADE)
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, blank=True, null=True)
-    commission = models.ForeignKey(Commission, on_delete=models.CASCADE, blank=True, null=True)
-    fraction = models.ForeignKey(Fraction, on_delete=models.CASCADE, blank=True, null=True)
+    politican = models.ForeignKey('core.Politican', on_delete=models.CASCADE)
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, blank=True, null=True)
+    commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, blank=True, null=True)
+    fraction = models.ForeignKey('core.Fraction', on_delete=models.CASCADE, blank=True, null=True)
 
     # start & end date
     start_date = models.DateField()

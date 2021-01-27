@@ -1,3 +1,11 @@
+from django.db import models
+
+# for location
+from django.contrib.gis.geos import Point
+from location_field.models.spatial import LocationField
+# import locations
+from locations.models import Country, Canton, Municipality, PLZ
+
 # *****************************************************************************************
 # Parlament
 # *****************************************************************************************
@@ -23,7 +31,7 @@ class Parlament(models.Model):
     jurisdiction_municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="municipality_parlaments", blank=True, null=True)
 
     # manytomany members
-    members = models.ManyToManyField(Politican, through='Membership',
+    members = models.ManyToManyField('core.Politican', through='Membership',
                                                 through_fields=('parlament',
                                                 'politican'))
 

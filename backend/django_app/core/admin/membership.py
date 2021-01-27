@@ -1,3 +1,13 @@
+from django.contrib import admin
+
+# import export 
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+
+# import models
+from core.models import Politican, Parlament, Commission, Membership
+
 class MembershipRessource(resources.ModelResource):
     politican = fields.Field(column_name='politican', attribute='politican', widget=ForeignKeyWidget(Politican, 'pk'))
     parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))

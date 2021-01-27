@@ -1,3 +1,5 @@
+from django.db import models
+
 # *****************************************************************************************
 # Commission
 # *****************************************************************************************
@@ -11,10 +13,10 @@ class Commission(models.Model):
     description = models.TextField(blank=True)
 
     # fk for parlament
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name="commissions")
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="commissions")
 
     # members
-    members = models.ManyToManyField(Politican, through='Membership',
+    members = models.ManyToManyField('core.Politican', through='Membership',
                                                 through_fields=('commission',
                                                 'politican'))
 

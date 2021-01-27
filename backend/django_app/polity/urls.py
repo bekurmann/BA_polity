@@ -13,7 +13,7 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # **************************************************************************************
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
-from core.api.views import (    ParlamentViewSet, ParlamentSessionViewSet, 
+from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 PoliticanViewSet, PoliticanParlamentViewSet,
                                 ParlamentMembershipViewSet, CommissionViewSet,
                                 CommissionMembershipViewSet )
@@ -32,7 +32,7 @@ parlament_membership_router.register(r'memberships', ParlamentMembershipViewSet,
 # /parlaments/<pk>/memberships/
 # /parlaments/<pk>/memberships/<pk>
 parlament_session_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
-parlament_session_router.register(r'sessions', ParlamentSessionViewSet, basename='parlament-sessions')
+parlament_session_router.register(r'sessions', SessionViewSet, basename='parlament-sessions')
 # /parlament/<pk>/sessions/
 # /parlament/<pk>/sessions/<pk>/
 commission_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')

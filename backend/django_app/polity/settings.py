@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     # local
     'users.apps.UsersConfig',
     'locations.apps.LocationsConfig',
-    'core.apps.LocationsConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [

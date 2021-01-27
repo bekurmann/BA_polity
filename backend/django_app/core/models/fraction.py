@@ -1,3 +1,8 @@
+from django.db import models
+
+# import locations
+from locations.models import Country, Canton, Municipality, PLZ
+
 # *****************************************************************************************
 # Fraction
 # *****************************************************************************************
@@ -11,13 +16,13 @@ class Fraction(models.Model):
     description = models.TextField(blank=True)
 
     # fk for parlament
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name="fractions")
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="fractions")
 
     # fk party
-    party = models.ForeignKey(Party, on_delete=models.CASCADE, blank=True, null=True)
+    party = models.ForeignKey('core.Party', on_delete=models.CASCADE, blank=True, null=True)
 
     # members
-    members = models.ManyToManyField(Politican, through='Membership',
+    members = models.ManyToManyField('core.Politican', through='Membership',
                                                 through_fields=('fraction',
                                                 'politican'))
     

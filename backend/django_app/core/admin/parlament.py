@@ -1,3 +1,17 @@
+from django.contrib import admin
+
+# avatar preview
+from django.utils.safestring import mark_safe
+
+# import export 
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+
+# import models
+from core.models import Parlament
+from locations.models import Country, Canton, Municipality, PLZ
+
 class ParlamentRessource(resources.ModelResource):
     city= fields.Field(column_name='city', attribute='city', widget=ForeignKeyWidget(PLZ, 'pk'))
     jurisdiction_country = fields.Field(column_name='jurisdiction_country', attribute='jurisdiction_country',

@@ -1,21 +1,8 @@
+from django.db import models
+
 # *****************************************************************************************
 # Affairs
 # *****************************************************************************************
-
-class AffairTopic(models.Model):
-    """
-    model for topics
-    * based on the topics of curavista, federal parlament
-    """
-    title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
-
-    # admin
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.title}'
 
 class Affair(models.Model):
     """
@@ -57,10 +44,10 @@ class Affair(models.Model):
     identifier = models.CharField(max_length=200)
     date_received = models.DateField()
     # authorship
-    signatory = models.ForeignKey(Politican, on_delete=models.CASCADE, related_name="inquiry_signatories")
-    joint_signatory = models.ManyToManyField(Politican, related_name="inquiry_joint_signatories", blank=True)
+    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="inquiry_signatories")
+    joint_signatory = models.ManyToManyField('core.Politican', related_name="inquiry_joint_signatories", blank=True)
     # topics
-    topics = models.ManyToManyField(AffairTopic, related_name="affair_topics", blank=True)
+    topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
 
     # content
     content_all = models.TextField(blank=True)
@@ -71,7 +58,7 @@ class Affair(models.Model):
 
 
     # sessions
-    sessions = models.ManyToManyField(ParlamentSession, related_name="affair_sessions", blank=True)
+    sessions = models.ManyToManyField('core.Session', related_name="sessions", blank=True)
 
     # debates
     # TODO: many to many debates

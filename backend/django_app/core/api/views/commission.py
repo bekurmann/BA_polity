@@ -1,3 +1,11 @@
+from rest_framework import viewsets
+
+# models
+from core.models import Commission
+
+# serializers
+from core.api.serializers import CommissionSerializer
+
 # *****************************************************************************************
 # Commission
 # *****************************************************************************************

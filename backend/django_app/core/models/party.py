@@ -1,7 +1,14 @@
+from django.db import models
+# for location
+from django.contrib.gis.geos import Point
+from location_field.models.spatial import LocationField
+# import locations
+from locations.models import Country, Canton, Municipality, PLZ
+
+
 # *****************************************************************************************
 # Party
 # *****************************************************************************************
-
 class Party(models.Model):
     """
     model for parties

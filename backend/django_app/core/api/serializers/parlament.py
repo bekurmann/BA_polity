@@ -1,3 +1,11 @@
+from rest_framework import serializers
+
+# import models
+from core.models import Parlament
+
+# import additional serializers 
+from locations.api.serializers import CantonNestedSerializer, PLZSerializer
+
 # *****************************************************************************************
 # Parlament
 # *****************************************************************************************

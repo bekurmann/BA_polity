@@ -1,3 +1,12 @@
+from django.contrib import admin
+
+# import export 
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+
+# import models
+from core.models import Session
 class SessionAdmin(admin.ModelAdmin):
     """
     Customizing admininterface for ParlamentSession
@@ -13,4 +22,4 @@ class SessionAdmin(admin.ModelAdmin):
     list_display = ('parlament', 'date', 'regular_session',)
 
 # register SessionAdmin
-admin.site.register(ParlamentSession, ParlamentSessionAdmin)
+admin.site.register(Session, SessionAdmin)

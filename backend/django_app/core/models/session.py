@@ -1,9 +1,11 @@
+from django.db import models
+
 class Session(models.Model):
     """
     model for sessions
     """
     # fk parlament
-    parlament = models.ForeignKey(Parlament, on_delete=models.CASCADE, related_name='sessions')
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name='sessions')
     # more fk to come
 
     # general information
@@ -20,7 +22,7 @@ class Session(models.Model):
     #affairs = models.ManyToManyField()
 
     # manytomany politicans
-    excused_politicans = models.ManyToManyField(Politican, blank=True)
+    excused_politicans = models.ManyToManyField('core.Politican', blank=True)
 
     # admin
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,3 +1,11 @@
+from rest_framework import viewsets
+
+# models
+from core.models import Politican, Membership
+
+# serializers
+from core.api.serializers import PoliticanSerializer, MembershipSerializer
+
 class PoliticanViewSet(viewsets.ReadOnlyModelViewSet):
     """
     read-only viewset for listing politicans & detailview based on pk
