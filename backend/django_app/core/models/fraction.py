@@ -20,11 +20,6 @@ class Fraction(models.Model):
 
     # fk party
     party = models.ForeignKey('core.Party', on_delete=models.CASCADE, blank=True, null=True)
-
-    # members
-    members = models.ManyToManyField('core.Politican', through='Membership',
-                                                through_fields=('fraction',
-                                                'politican'))
     
     # address
     street1 = models.CharField(max_length=200, blank=True)

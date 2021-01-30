@@ -15,11 +15,6 @@ class Commission(models.Model):
     # fk for parlament
     parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="commissions")
 
-    # members
-    members = models.ManyToManyField('core.Politican', through='Membership',
-                                                through_fields=('commission',
-                                                'politican'))
-
     # permanent / non-permanent commission | start/end date
     permanent = models.BooleanField()
     start_date = models.DateField(blank=True, null=True)

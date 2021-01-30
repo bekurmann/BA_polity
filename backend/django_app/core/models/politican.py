@@ -31,6 +31,20 @@ class Politican(models.Model):
     location_query = models.CharField(max_length=200, blank=True, null=True)
     location = LocationField(based_fields=['location_query'], zoom=7, blank=True, null=True)
 
+    # memberships
+    parlaments = models.ManyToManyField('core.Parlament', through='Membership',
+                                                through_fields=('politican',
+                                                'parlament'))
+    fractions = models.ManyToManyField('core.Fraction', through='Membership',
+                                                through_fields=('politican',
+                                                'fraction'))
+    commissions = models.ManyToManyField('core.Commission', through='Membership',
+                                                through_fields=('politican',
+                                                'commission'))
+    parties = models.ManyToManyField('core.Party', through='Membership',
+                                                through_fields=('politican',
+                                                'party'))
+
     # contact
     email = models.EmailField(max_length=200, blank=True)
     website = models.URLField(max_length=200, blank=True)

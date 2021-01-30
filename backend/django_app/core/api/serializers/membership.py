@@ -3,7 +3,6 @@ from rest_framework import serializers
 # import models
 from core.models import Membership
 
-# import additional serializers 
 from core.api.serializers import PoliticanSerializer
 
 # *****************************************************************************************

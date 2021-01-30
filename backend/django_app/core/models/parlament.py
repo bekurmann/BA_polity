@@ -30,11 +30,6 @@ class Parlament(models.Model):
     jurisdiction_canton = models.ForeignKey(Canton, on_delete=models.CASCADE, related_name="canton_parlaments", blank=True, null=True)
     jurisdiction_municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="municipality_parlaments", blank=True, null=True)
 
-    # manytomany members
-    members = models.ManyToManyField('core.Politican', through='Membership',
-                                                through_fields=('parlament',
-                                                'politican'))
-
     # address
     street1 = models.CharField(max_length=200, blank=True)
     street2 = models.CharField(max_length=200, blank=True)
