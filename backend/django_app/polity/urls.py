@@ -52,8 +52,8 @@ router.register(r'politicans', PoliticanViewSet)
 # /politicans/<pk>/
 politican_membership_router = routers.NestedSimpleRouter(router, r'politicans', lookup='politican')
 politican_membership_router.register(r'memberships', PoliticanParlamentViewSet, basename='politican-memberships')
-# /politicans/<pk>/parlaments/
-# /politicans/<pk>/parlaments/<pk>/
+# /politicans/<pk>/memberships/
+# /politicans/<pk>/memberships/<pk>/
 
 # LOCATION ROUTER
 # **************************************************************************************

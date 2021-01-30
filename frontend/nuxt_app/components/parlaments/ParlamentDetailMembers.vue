@@ -16,8 +16,8 @@
                         <v-list-item-content>
                             <v-list-item-title >
                 
-                                <NuxtLink :to="'/politican/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}, </NuxtLink>
-                                <NuxtLink :to="'/fraction/' + membership.politican.id">{{membership.politican.first_name}}</NuxtLink>
+                                <NuxtLink :to="'/politican/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink> 
+                                (<NuxtLink :to="'/fraction/' + membership.politican.id">{{membership.politican.first_name}}</NuxtLink>)
                                 
                             </v-list-item-title>
                             <v-list-item-subtitle>{{membership.politican.city.name}}</v-list-item-subtitle>

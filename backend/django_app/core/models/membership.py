@@ -16,10 +16,12 @@ class Membership(models.Model):
     PARLAMENT = 'PARLA'
     COMMISSION = 'COMMI'
     FRACTION = 'FRACT'
+    PARTY = 'PARTY'
     TYPE_CHOICES = [
         (PARLAMENT, 'Parlament'),
         (COMMISSION, 'Commission'),
-        (FRACTION, 'Fraction')
+        (FRACTION, 'Fraction'),
+        (PARTY, 'Party'),
     ]
     membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
 

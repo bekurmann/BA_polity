@@ -21,3 +21,4 @@ class PoliticanParlamentViewSet(viewsets.ReadOnlyModelViewSet):
         return Membership.objects.filter(politican=self.kwargs['politican_pk'])
 
     serializer_class = MembershipSerializer
+    
