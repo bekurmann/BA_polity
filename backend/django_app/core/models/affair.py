@@ -38,14 +38,16 @@ class Affair(models.Model):
     ]
 
     # general information
-    affiar_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
+    title = models.CharField(max_length=200)
+    affair_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default=UNKNOWN)
     urgent = models.BooleanField(blank=True)
     identifier = models.CharField(max_length=200)
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="parlaments", blank=True, null=True)
     date_received = models.DateField()
     # authorship
-    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="inquiry_signatories")
-    joint_signatory = models.ManyToManyField('core.Politican', related_name="inquiry_joint_signatories", blank=True)
+    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
+    joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
     # topics
     topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
 
@@ -54,25 +56,11 @@ class Affair(models.Model):
     content_motivation = models.TextField(blank=True)
     content_inquiries = models.TextField(blank=True)
 
-    # executive statement
-
-
     # sessions
     sessions = models.ManyToManyField('core.Session', related_name="sessions", blank=True)
 
     # debates
     # TODO: many to many debates
-
-    # *****************************************
-    # special fields for Legislative Proposal
-    # *****************************************
-    # applications (anträge; only legislativeproposals have applications (one to many))
-    # dispatch (botschaft)
-    # consultation (vernehmlassung)
-    # legislative proposal (gesetzesvorlage)
-    # regulatory statuses (ausführungsbestimmungen)
-    # *****************************************
-
 
     # social??? -> still to do
 
@@ -81,5 +69,5 @@ class Affair(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.identifier} {self.date_received}'
+        return f'{self.identifier} {self.title}'
     

@@ -30,7 +30,10 @@
                         Map
                     </v-card-title>
                     <v-card-text>
-                        Loading...
+                        <v-skeleton-loader
+                        class="mx-auto"
+                        type="image@2"
+                        ></v-skeleton-loader>
                     </v-card-text>
                 </v-card>
 
@@ -44,7 +47,6 @@
                     <v-card-title primary-title>
                         Affairs
                     </v-card-title>
-                    
                 </v-card>
             </v-col>
             <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
