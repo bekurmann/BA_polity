@@ -23,8 +23,10 @@ class FractionAdmin(ImportExportModelAdmin):
     """
     Customizing Admininterface for Fraction
     """
+    readonly_fields = ['id',]
+
     fieldsets = (
-        ('General Information', { 'fields': ('name', 'abbreviation', 'description',) }),
+        ('General Information', { 'fields': ('id', 'name', 'abbreviation', 'description',) }),
         ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Address & Contact', {'fields': ('street1', 'street2', 'city', 'email', 'website', 'phone',)}),
     )

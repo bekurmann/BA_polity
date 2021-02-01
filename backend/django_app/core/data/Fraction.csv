@@ -1,0 +1,6 @@
+parlament,id,name,abbreviation,description,party,street1,street2,city,email,website,phone,avatar,created_at,updated_at
+100,5,CVP Fraktion,CVP OW,Fraktion der CVP im Kantonsrat Obwalden,,,,,,http://cvp-ow.ch,,,2021-02-01 10:11:57,2021-02-01 10:11:57
+100,4,FDP Fraktion,FDP OW,FDP Fraktion im Kantonsrat Obwalden,,,,,,http://fdp-ow.ch,,,2021-02-01 10:11:33,2021-02-01 10:11:33
+100,3,SVP Fraktion,SVP OW,SVP Fraktion im Kantonsrat Obwalden,,,,,,http://svp-ow.ch,,,2021-02-01 10:11:05,2021-02-01 10:11:05
+100,2,CSP Fraktion,CSP OW,CSP Fraktion im Kantonsrat Obwalden,,,,,info@csp-ow.ch,http://csp-ow.ch,,,2021-02-01 10:10:36,2021-02-01 10:10:36
+100,1,SP Fraktion,SP,SP Fraktion im Kantonsrat Obwalden,,,,,info@sp-obwalden.ch,http://sp-obwalden.ch,,,2021-01-30 14:06:30,2021-02-01 10:09:49

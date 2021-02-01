@@ -17,7 +17,9 @@
                             <v-list-item-title >
                 
                                 <NuxtLink :to="'/politican/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink> 
-                                (<NuxtLink :to="'/fraction/' + membership.politican.id">{{membership.politican.first_name}}</NuxtLink>)
+                                (<NuxtLink :to="'/fraction/' + fraction.id" 
+                                            v-for="fraction in membership.politican.fractions"
+                                            :key="fraction.id">{{fraction.name}}</NuxtLink>)
                                 
                             </v-list-item-title>
                             <v-list-item-subtitle>{{membership.politican.city.name}}</v-list-item-subtitle>
@@ -57,6 +59,7 @@ export default {
             return previewMemberships.slice(0,5)
         },
         filteredMemberships: function() {
+            // only active memberships
             let noInactiveMemberships = this.memberships.filter(el => el.politican.active !== true)
             return noInactiveMemberships;    
         }
