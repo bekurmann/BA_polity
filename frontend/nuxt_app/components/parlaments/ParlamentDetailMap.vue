@@ -42,12 +42,10 @@
     </v-card>
 </template>
 <script>
-import { icon } from "leaflet";
-
 export default {
     data() {
         return {
-            politicanIcon: icon({
+            politicanIcon: this.$L.icon({
                 // see: https://github.com/pointhi/leaflet-color-markers
                 iconUrl: '/leaflet/greenMarker.png',
                 shadowUrl: '/leaflet/markerShadow.png',

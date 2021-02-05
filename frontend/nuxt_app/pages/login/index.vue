@@ -3,10 +3,9 @@
     <v-card class="mx-auto" max-width="700">
 
         <v-img
-        src="/polity.jpg"
+        src="/polity_small.png"
         height="200px"
         contain
-        class="mx-2"
         ></v-img>
 
         <v-card-title>

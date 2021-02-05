@@ -5,9 +5,11 @@
       v-model="drawer"
       clipped
       fixed
+      right
       app
       class="primary"
       dark
+      disable-resize-watcher
     >
       <v-list rounded>
         <v-list-item
@@ -29,27 +31,81 @@
 
     <!-- app bar ********************************** -->
     <v-app-bar
-      clipped-left
+      clipped-right
       fixed
       color="white"
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-img src="/polity.jpg" class="mx-2" max-width="100" max-height="50" contain />
+      <client-only>
+
+      <nuxt-link to="/">
+        <v-img src="/polity.jpg" class="mx-2" max-width="100" max-height="50" contain />
+      </nuxt-link>
+      
       <v-spacer />
-      
-      <div v-if="$auth.loggedIn">
-        <v-avatar>
-          <img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
-          <img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
-        </v-avatar>
-        <v-btn color="primary" @click="$auth.logout()">Logout</v-btn>
+    
+      <!-- desktop menu -->
+      <div v-show="$vuetify.breakpoint.mdAndUp && $auth.loggedIn">
+        <v-btn
+          v-for="(item, i) in drawerItems"
+          :key="i"
+          :to="item.to"
+          router
+          text
+          class="mx-2"
+          rounded
+        >
+          <v-icon class="mx-1">{{ item.icon }}</v-icon>{{ item.title}}
+        </v-btn>
+      </div>
+
+      <v-spacer />
+     
+      <!-- user menu -->
+      <template v-if="$auth.loggedIn">
+
+        <v-divider vertical class="mx-2"></v-divider>
+        <v-icon>mdi-bell-outline</v-icon>
         
-      </div>
-      <div v-else>
+        <v-divider vertical class="mx-2"></v-divider>
+
+        <v-menu offset-y>
+          <template v-slot:activator="{on, attrs}">
+
+            <v-avatar v-bind="attrs" v-on="on">
+              <img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
+              <img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
+            </v-avatar>
+          </template>
+
+          <v-list>
+            <v-list-item v-for="(item, index) in userItems" :key="index" :to="item.to" link>
+              <v-list-item-title>
+                <v-icon class="mx-1">{{ item.icon }}</v-icon>
+                {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="$auth.logout()">
+              <v-icon class="mx-1">mdi-exit-to-app</v-icon>
+              Logout
+            </v-list-item>
+          </v-list>
+
+        </v-menu>
+        
+      </template>
+      <template v-else>
         <v-btn color="primary" outlined to="/login">Login</v-btn>
-      </div>
-      
+      </template>
+
+
+      <!-- mobile menu -->
+      <template v-if="$vuetify.breakpoint.smAndDown">
+        <v-divider vertical class="mx-2"></v-divider>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      </template>
+
+      </client-only>
 
     </v-app-bar>
 
@@ -78,11 +134,6 @@ export default {
       drawer: false,
       drawerItems: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
           icon: 'mdi-chart-bubble',
           title: 'Start',
           to: '/start'
@@ -91,8 +142,25 @@ export default {
           icon: 'mdi-bank',
           title: 'Parlaments',
           to: '/parlaments'
-        }
+        },
+        {
+          icon: 'mdi-account-multiple',
+          title: 'Politicans',
+          to: '/politicans',
+        },
+        {
+          icon: 'mdi-file-document-outline',
+          title: 'Affairs',
+          to: '/affairs',
+        },
       ],
+      userItems: [
+        { 
+          icon: 'mdi-account',
+          title: 'My Profile',
+          to: '/user',
+        }
+      ]
     }
   }
 }

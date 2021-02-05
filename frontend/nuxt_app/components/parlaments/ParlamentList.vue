@@ -1,14 +1,14 @@
 <template>
 <v-container>
-    <p v-if="$fetchState.pending">
+    <!-- <p v-if="$fetchState.pending">
         <v-skeleton-loader
         class="mx-auto"
         type="article@2"
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-    <v-container v-else>
-
+    <v-container v-else> -->
+    <v-container>
         <v-row class="mb-5" v-for="parlament in parlaments" :key="parlament.id">
 
             <v-col cols="12">
@@ -37,22 +37,23 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            parlaments:  {},
+    // data() {
+    //     return {
+    //         parlaments:  {},
+    //     }
+    // },
+    // async fetch() {
+    //     try {
+    //         const parlamentData = await this.$axios.$get('/parlaments/')
+    //         this.parlaments = parlamentData
+    //     } catch(error) {
+    //         throw new Error('Failed to fetch parlamentData from /parlaments')
+    //     }
+    // },
+    props: {
+        parlaments: {
+            type: Array
         }
-    },
-    async fetch() {
-        try {
-            const parlamentData = await this.$axios.$get('/parlaments/')
-            this.parlaments = parlamentData
-        } catch(error) {
-            throw new Error('Failed to fetch parlamentData from /parlaments')
-        }
-    },
-    methods: {
-
-},
-
+    }
 }
 </script>

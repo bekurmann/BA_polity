@@ -18,5 +18,5 @@ RUN npm install && npm cache clean --force
 
 COPY ./nuxt_app .
 
-
-
+ENV NUXT_HOST: 0.0.0.0
+ENV NUXT_PORT: 3000
