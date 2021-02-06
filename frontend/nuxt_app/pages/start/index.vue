@@ -24,6 +24,6 @@ export default {
     components: {
         CantonMap
     },
-    middleware: ['auth-user']
+    middleware: ['auth']
 }
 </script>

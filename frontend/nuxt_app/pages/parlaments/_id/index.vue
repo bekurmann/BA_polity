@@ -102,6 +102,6 @@ export default {
         ParlamentDetailMap,
         ParlamentDetailMembers,
     },
-    middleware: ['auth-user']
+    middleware: ['auth']
 }
 </script>

@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  // disable ssr
+  ssr: false,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - polity',
@@ -44,7 +46,8 @@ export default {
     'nuxt-leaflet',
   ],
   axios: {
-    baseURL: 'http://0.0.0.0:8000/api/v1/',
+    baseURL: 'http://0.0.0.0:8000/api/v1/', // dev
+    //baseURL: 'http://0.0.0.0/api/v1/', // prod
     credentials: false, // this says that in the request the httponly cookie should be sent
   },
   auth: {
@@ -61,6 +64,16 @@ export default {
           data: 'refresh',
           maxAge: 60 * 60 * 24 * 30// one day
         },
+        cookie: {
+          prefix: 'auth.', // Default token prefix used in building a key for token storage in the browser's localStorage.
+          options: {
+              path: '/', // Path where the cookie is visible. Default is '/'.
+              expires: 5 // Can be used to specify cookie lifetime in Number of days or specific Date. Default is session only.
+                  // domain: '', // Domain (and by extension subdomain/s) where the cookie is visible. Default is domain and all subdomains.
+                  // secure: false, // Sets whether the cookie requires a secure protocol (https). Default is false, should be set to true if possible.
+          }
+        },
+        watchLoggedIn: false,
         user: {
           property: false,
          // autoFetch: true

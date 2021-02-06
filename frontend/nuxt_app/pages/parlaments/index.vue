@@ -8,7 +8,9 @@
                     </v-card-title>
                     <v-card-subtitle>Check out already registered parlaments. </v-card-subtitle>
                     <v-card-text>
+                        <client-only>
                         <ParlamentList :parlaments="parlaments"></ParlamentList>
+                        </client-only>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -21,7 +23,7 @@ import ParlamentList from '~/components/parlaments/ParlamentList.vue'
 
 export default {
     async asyncData({$axios}) {
-        const parlaments = await $axios.$get(`http://0.0.0.0:8000/api/v1/parlaments/`)
+        const parlaments = await $axios.$get(`/parlaments/`)
         return {
             parlaments: parlaments
         }
@@ -29,6 +31,6 @@ export default {
     components: {
         ParlamentList
     },
-    middleware: ['auth-user'],
+    middleware: ['auth'],
 }
 </script>

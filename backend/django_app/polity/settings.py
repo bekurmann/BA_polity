@@ -239,13 +239,10 @@ LOCATION_FIELD = {
 X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
 
 # PLUGIN: corsheaders
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = ['DELETE','GET','OPTIONS','PATCH','POST','PUT']
 CORS_ALLOWED_ORIGINS = [
-    "http://172.17.*.*:*",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
     "http://0.0.0.0:3000",
-    "http://0.0.0.0",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
