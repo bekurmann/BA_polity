@@ -61,7 +61,7 @@
             </v-col>
 
             <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" align="center">
-                    <v-img src="/home/signup.svg" max-width="80%"></v-img>
+                    <v-img src="/signup.svg" max-width="80%"></v-img>
             </v-col>
 
         </v-row>
