@@ -21,7 +21,7 @@ import ParlamentList from '~/components/parlaments/ParlamentList.vue'
 
 export default {
     async asyncData({$axios}) {
-        const parlaments = await $axios.$get(`/parlaments/`)
+        const parlaments = await $axios.$get(`http://0.0.0.0:8000/api/v1/parlaments/`)
         return {
             parlaments: parlaments
         }
