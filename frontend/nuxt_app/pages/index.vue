@@ -2,27 +2,20 @@
     <v-container>
         <v-row>
             <v-col cols="12">
-                <v-card class="primary" dark>
+                <v-card class="primary" dark height="100%">
                   <!-- start main -->
                   <v-container>
 
                     <v-row>
-                      <v-col align="center">
-                        <span class="text-h3">Welcome<br>to polity</span>
-                      </v-col>
-                    </v-row>
-
-                    <v-row>
                       <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                        <span class="text-h2">Welcome</span><br>
-                        <span class="text-h3"></span>
+                        <p class="text-h3 mt-15">We help you to participate.</p><br>
+                        <p class="text-h5">Explore democracy online.</p>
+                        <p><v-btn outlined x-large to="/registration">Sign up now</v-btn></p>
                       </v-col>
-                      <v-col>
+                      <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
                         <v-card light>
                           <v-img></v-img>
-                          <v-card-title primary-title>
-                            See
-                          </v-card-title>
+                            <v-img src="/home/participate.png" contain max-height="400"></v-img>
                         </v-card>
                       </v-col>
                     </v-row>

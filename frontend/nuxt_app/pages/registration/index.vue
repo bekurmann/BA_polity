@@ -1,74 +1,73 @@
 <template>
 <v-container>
-    <v-card class="mx-auto" max-width="700">
+    <v-card color="primary">
 
-        <v-img
-        src="https://images.pexels.com/photos/3753793/pexels-photo-3753793.jpeg?cs=srgb&dl=people-on-snow-covered-mountain-3753793.jpg&fm=jpg"
-        height="200px"
-        >
-            <template v-slot:placeholder>
-                <v-row
-                class="fill-height ma-0"
-                align="center"
-                justify="center"
-                >
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                </v-row>
-            </template>
-        </v-img>
+        <v-row class="px-3" align="center">
+            
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                <v-card>
 
-        <v-card-title>
-        SignUp
-        </v-card-title>
+                    <v-card-title>
+                    SignUp
+                    </v-card-title>
 
-        <v-card-subtitle>
-        create your account and start engaging!
-        </v-card-subtitle>
+                    <v-card-text>
+                        <v-form v-model="formValid" @submit.prevent="registerUser"> 
+                            <v-text-field label="Username" placeholder="Your Username" outline required v-model="username"></v-text-field>
+
+                            <v-text-field label="Firstname" placeholder="Your Firstname" outline required v-model="firstname"></v-text-field>
+
+                            <v-text-field label="Lastname" placeholder="Your Lastname" outline required v-model="lastname"></v-text-field>
+                            
+
+                            <v-text-field label="eMail" placeholder="Your eMail" required v-model="email" :rules="[formRules.required, formRules.validEmail]"></v-text-field>
+
+                            <v-text-field
+                            v-model="password1"
+                            :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
+                            :rules="[formRules.required, formRules.min]"
+                            :type="pwShow ? 'text' : 'password'"
+                            name="input-10-1"
+                            label="Your Password"
+                            hint="At least 8 characters"
+                            counter
+                            @click:append="pwShow = !pwShow"
+                            ></v-text-field>
+
+                            <v-text-field
+                            v-model="password2"
+                            :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
+                            :rules="[formRules.required, formRules.min, formRules.pwMatch]"
+                            :type="pwShow ? 'text' : 'password'"
+                            name="input-10-1"
+                            label="Your Password"
+                            hint="At least 8 characters"
+                            counter
+                            @click:append="pwShow = !pwShow"
+                            ></v-text-field>
+
+                            <v-checkbox label="Accept terms of service" required v-model="terms" :rules="[formRules.required]"></v-checkbox>
+                            <v-btn block color="primary" type="submit" dark>SignUp</v-btn>
+                        </v-form>
+                        <v-spacer class="ma-10"></v-spacer>
+                        <v-divider></v-divider>
+                        <v-spacer class="ma-10"></v-spacer>
+                        <p>Already have an account?</p>
+                        <p><v-btn block color="primary" outlined to="/login" dark>Login</v-btn></p>
+                    </v-card-text>
+
+                </v-card>
+
+            </v-col>
+
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" align="center">
+                    <v-img src="/home/signup.svg" max-width="80%"></v-img>
+            </v-col>
+
+        </v-row>
+
           
-            <v-card-text>
-                 <v-form v-model="formValid" @submit.prevent="registerUser"> 
-                    <v-text-field label="Username" placeholder="Your Username" outline required v-model="username"></v-text-field>
 
-                    <v-text-field label="Firstname" placeholder="Your Firstname" outline required v-model="firstname"></v-text-field>
-
-                    <v-text-field label="Lastname" placeholder="Your Lastname" outline required v-model="lastname"></v-text-field>
-                    
-
-                    <v-text-field label="eMail" placeholder="Your eMail" required v-model="email" :rules="[formRules.required, formRules.validEmail]"></v-text-field>
-
-                    <v-text-field
-                    v-model="password1"
-                    :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
-                    :rules="[formRules.required, formRules.min]"
-                    :type="pwShow ? 'text' : 'password'"
-                    name="input-10-1"
-                    label="Your Password"
-                    hint="At least 8 characters"
-                    counter
-                    @click:append="pwShow = !pwShow"
-                    ></v-text-field>
-
-                    <v-text-field
-                    v-model="password2"
-                    :append-icon="pwShow ? 'mdi-eye' : 'mdi-eye-off'"
-                    :rules="[formRules.required, formRules.min, formRules.pwMatch]"
-                    :type="pwShow ? 'text' : 'password'"
-                    name="input-10-1"
-                    label="Your Password"
-                    hint="At least 8 characters"
-                    counter
-                    @click:append="pwShow = !pwShow"
-                    ></v-text-field>
-
-                    <v-checkbox label="Accept terms of service" required v-model="terms" :rules="[formRules.required]"></v-checkbox>
-                    <v-btn block color="primary" type="submit" dark>SignUp</v-btn>
-                </v-form>
-                <v-spacer class="ma-10"></v-spacer>
-                <v-divider></v-divider>
-                <v-spacer class="ma-10"></v-spacer>
-                <p>Already have an account?</p>
-                <p><v-btn block color="primary" outlined to="/login" dark>Login</v-btn></p>
-            </v-card-text>
         
     </v-card>
 </v-container>

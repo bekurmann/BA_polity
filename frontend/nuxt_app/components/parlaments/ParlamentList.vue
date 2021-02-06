@@ -1,14 +1,13 @@
 <template>
 <v-container>
-    <!-- <p v-if="$fetchState.pending">
+    <p v-if="$fetchState.pending">
         <v-skeleton-loader
         class="mx-auto"
         type="article@2"
         ></v-skeleton-loader>
     </p>
     <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-    <v-container v-else> -->
-    <v-container>
+    <v-container v-else>
         <v-row class="mb-5" v-for="parlament in parlaments" :key="parlament.id">
 
             <v-col cols="12">
