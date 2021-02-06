@@ -37,23 +37,18 @@
 </template>
 <script>
 export default {
-    // data() {
-    //     return {
-    //         parlaments:  {},
-    //     }
-    // },
-    // async fetch() {
-    //     try {
-    //         const parlamentData = await this.$axios.$get('/parlaments/')
-    //         this.parlaments = parlamentData
-    //     } catch(error) {
-    //         throw new Error('Failed to fetch parlamentData from /parlaments')
-    //     }
-    // },
-    props: {
-        parlaments: {
-            type: Array
+    data() {
+        return {
+            parlaments:  {},
         }
-    }
+    },
+    async fetch() {
+        try {
+            const parlamentData = await this.$axios.$get('/parlaments/')
+            this.parlaments = parlamentData
+        } catch(error) {
+            throw new Error('Failed to fetch parlamentData from /parlaments')
+        }
+    },
 }
 </script>

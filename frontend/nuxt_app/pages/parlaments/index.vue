@@ -9,7 +9,7 @@
                     <v-card-subtitle>Check out already registered parlaments. </v-card-subtitle>
                     <v-card-text>
                         <client-only>
-                        <ParlamentList :parlaments="parlaments"></ParlamentList>
+                        <ParlamentList></ParlamentList>
                         </client-only>
                     </v-card-text>
                 </v-card>
