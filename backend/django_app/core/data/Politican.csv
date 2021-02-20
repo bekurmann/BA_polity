@@ -54,3 +54,12 @@ id,first_name,last_name,date_of_birth,profession,email,jurisdiction,fraction,str
 123,Daniel,Windisch,1989-12-12,Geschäftsführer Veranstaltungstechnikbetrieb,d.windisch@windisch-ag.ch,Giswil,CSP,Brünigstrasse 99,SRID=4326;POINT (8.1867473 46.8375513),Giswil Brünigstrasse 99,41796667756,import/politicans/ow/DanielWindisch_imim_5fd781a90da9f.jpg
 124,André,Windlin,1968-06-15,Meisterlandwirt,andre.windlin@herrschwand.ch,Kerns,FDP,Gisigenstrasse 3,SRID=4326;POINT (8.294067 46.9017273),Kerns Gisigenstrasse 3,41416608765,import/politicans/ow/AndreasGasser_imim_5f6449a8403ad.jpg
 116,Silvia,Zbinden,1961-04-14,Primarlehrerin / Heilpädagogin,si.zbinden@bluewin.ch,Sarnen,CSP, ,SRID=4326;POINT (8.2461492 46.8956729),Sarnen  ,,import/politicans/ow/SilviaZbinden_imim_5f6af881b08c8.jpg
+200,Walter,Wyrsch,1958-12-04,dipl. Erwachsenenbildner,,Alpnach Dorf,,Sagengasse 2,,Alpnach Dorf  ,41416703209,import/politicans/ow/WalterWyrsch.jpg
+201,Willy,Fallegger,,,,Alpnach Dorf,SVP,,,,,import/politicans/ow/WillyFallegger.jpg
+202,Peter,Wechsler,,Heilpädagoge,,Kerns,CSP,Hoheneich 2,,Kerns  ,41416607528,import/politicans/ow/PeterWechsler.jpg
+203,Helen,Imfeld-Ettlin,,Hebamme,,Lungern,CSP,Studenstrasse 4,,Lungern Studenstrasse 4,41788209667,import/politicans/ow/HelenImfeld.jpeg
+204,Beat,von Wyl,,"Biologe, Gemeindepräsident Giswil",,Giswil,SP,Brünigstrasse 82,,Giswil Brünigstrasse 82,41416752482,import/politicans/ow/BeatvonWyl.jpeg
+205,Heidi,Wernli Gasser,,Heilpädagogin,,Sarnen,SP,Giglenstrasse 23,,Sarnen Giglenstrasse 23,41416601469,
+206,Lucia,Omlin,,"lic. iur., Rechtsanwältin und Notarin",,Sachseln,CVP,Bruder-Klausen-Weg 3,,Sachseln Bruder-Klausen-Weg 3,41416606262,import/politicans/ow/Lucia-Omlin.jpg
+207,Klaus,Wallimann-Bucher,1964-05-24,Treuhänder / Korporationsschreiber,,Alpnach Dorf,CVP,Dammstrasse 20,,Alpnach Dorf Dammstrasse 20,41416702668,import/politicans/ow/Klaus-Wallimann.jpg
+208,Paul,Vogler,1962-01-01,Meisterlandwirt,,Sachseln,CVP,,,,,

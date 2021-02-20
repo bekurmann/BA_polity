@@ -68,15 +68,26 @@ class Affair(models.Model):
     # vote
     # #######################################################################
     # anon vote
-    anon_yes = models.IntegerField()
-    anon_no = models.IntegerField()
-    anon_abstinence = models.IntegerField()
+    anon_yes = models.IntegerField(blank=True)
+    anon_no = models.IntegerField(blank=True)
+    anon_abstinence = models.IntegerField(blank=True)
 
     # personalised vote
     personalised_yes = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_yeses, blank=True, null=True)
     personalised_no = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_nos, blank=True, null=True)
     personalised_abstinence = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_abstinences, blank=True, null=True)
 
+    # interpellation discussion desired
+    inter_discussion_desired = models.BooleanField(blank=True)
+
+    # motion / postulat accepted (more yes than no, maybe computed?)
+    accepted = models.BooleanField(blank=True)
+
+    # recommendation executive
+    recommendation_executive = models.BooleanField(blank=True)
+
+    # transformation motion -> postulat
+    transformation_postulat = models.BooleanField(blank=True)
 
     # social??? -> still to do
 
