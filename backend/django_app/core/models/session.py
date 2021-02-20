@@ -9,7 +9,8 @@ class Session(models.Model):
     # more fk to come
 
     # general information
-    date = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
     opening_session = models.BooleanField()
     regular_session = models.BooleanField()
     additional_information = models.TextField(blank=True)

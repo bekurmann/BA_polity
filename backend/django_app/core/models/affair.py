@@ -11,16 +11,18 @@ class Affair(models.Model):
     * manytomany field to session
     """
     # type choices
-    INQUIRY = 'INQUI'               # Anfrage/Kleine Anfrage/Fragestunde
-    INTERPELLATION = 'INTER'        # Interpellation
-    POSTULATE = 'POSTU'             # Postulat
-    MOTION = 'MOTIO'                # Motion
-    LEGISLATIVEPROPOSAL = 'LEGIS'   # Gesetzgebungsvorlage (Kommission)
+    INQUIRY = 'INQUI'             
+    INTERPELLATION = 'INTER'   
+    POSTULATE = 'POSTU'         
+    MOTION = 'MOTIO'    
+    PEOPLE_MOTION = 'PMOTI'          
+    LEGISLATIVEPROPOSAL = 'LEGIS'  # gesetzgebungsvorlage
     TYPE_CHOICES = [
         (INQUIRY, 'Inquiry'),
         (INTERPELLATION, 'Interpellation'),
         (POSTULATE, 'Postulate'),
         (MOTION, 'Motion'),
+        (PEOPLE_MOTION, 'People Motion'),
         (LEGISLATIVEPROPOSAL, 'Legislative Proposal')
     ]
     # status choices
@@ -61,6 +63,9 @@ class Affair(models.Model):
 
     # debates
     # TODO: many to many debates
+
+    # vote
+    #vote = models.ForeignKey('core.Vote', on_delete=models.CASCADE, related_name="votes", blank=True, null=True)
 
     # social??? -> still to do
 

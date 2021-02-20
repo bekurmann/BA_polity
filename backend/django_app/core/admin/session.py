@@ -14,12 +14,12 @@ class SessionAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('Parlament', {'fields': ('parlament',)}),
-        ('General Information', {'fields': ('date', 'opening_session', 'regular_session', 'additional_information')}),
+        ('General Information', {'fields': ('start_date', 'end_date', 'opening_session', 'regular_session', 'additional_information')}),
         ('Messages', {'fields': ('greeting', 'discharge',)}),
         ('Excused Councillors', {'fields': ('excused_politicans',)})
     )
 
-    list_display = ('parlament', 'date', 'regular_session',)
+    list_display = ('parlament', 'start_date', 'regular_session',)
 
 # register SessionAdmin
 admin.site.register(Session, SessionAdmin)
