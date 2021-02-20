@@ -1,7 +1,7 @@
 # ****************************************************************
 # backend
 # ****************************************************************
-backend/django_app/uploads/
+#backend/django_app/uploads/
 backend/django_app/static/
 backend/django_app/.env.prod.sample
 
