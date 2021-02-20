@@ -47,10 +47,13 @@ class Affair(models.Model):
     identifier = models.CharField(max_length=200)
     parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="parlaments", blank=True, null=True)
     date_received = models.DateField()
+
     # authorship
     signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
     joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
+    joint_signatories_count = models.IntegerField()
     # topics
+
     topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
 
     # content
@@ -61,11 +64,19 @@ class Affair(models.Model):
     # sessions
     sessions = models.ManyToManyField('core.Session', related_name="sessions", blank=True)
 
-    # debates
-    # TODO: many to many debates
-
+    # #######################################################################
     # vote
-    #vote = models.ForeignKey('core.Vote', on_delete=models.CASCADE, related_name="votes", blank=True, null=True)
+    # #######################################################################
+    # anon vote
+    anon_yes = models.IntegerField()
+    anon_no = models.IntegerField()
+    anon_abstinence = models.IntegerField()
+
+    # personalised vote
+    personalised_yes = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_yeses, blank=True, null=True)
+    personalised_no = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_nos, blank=True, null=True)
+    personalised_abstinence = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_abstinences, blank=True, null=True)
+
 
     # social??? -> still to do
 
