@@ -107,6 +107,9 @@ class Affair(models.Model):
 
     def __str__(self):
         return f'{self.identifier} {self.title}'
+
+class AffairResponse(models.Model):
+    pass
     
 class AffairFile(models.Model):
     """
