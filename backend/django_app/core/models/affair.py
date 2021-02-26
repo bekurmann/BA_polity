@@ -52,8 +52,10 @@ class Affair(models.Model):
     signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
     joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
     joint_signatories_count = models.IntegerField()
-    # topics
+    # if not politican is signatory, but a commission
+    commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, related_name="commissions", blank=True, null=True)
 
+    # topics
     topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
 
     # content
@@ -87,6 +89,7 @@ class Affair(models.Model):
     recommendation_executive = models.BooleanField(blank=True)
 
     # transformation motion -> postulat
+    recommendation_postulat_executive = models.BooleanField(blank=True)
     transformation_postulat = models.BooleanField(blank=True)
 
     # social??? -> still to do

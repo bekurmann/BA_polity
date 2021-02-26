@@ -54,7 +54,7 @@ id,first_name,last_name,date_of_birth,profession,email,jurisdiction,fraction,str
 123,Daniel,Windisch,1989-12-12,Geschäftsführer Veranstaltungstechnikbetrieb,d.windisch@windisch-ag.ch,Giswil,CSP,Brünigstrasse 99,SRID=4326;POINT (8.1867473 46.8375513),Giswil Brünigstrasse 99,41796667756,import/politicans/ow/DanielWindisch_imim_5fd781a90da9f.jpg
 124,André,Windlin,1968-06-15,Meisterlandwirt,andre.windlin@herrschwand.ch,Kerns,FDP,Gisigenstrasse 3,SRID=4326;POINT (8.294067 46.9017273),Kerns Gisigenstrasse 3,41416608765,import/politicans/ow/AndreasGasser_imim_5f6449a8403ad.jpg
 116,Silvia,Zbinden,1961-04-14,Primarlehrerin / Heilpädagogin,si.zbinden@bluewin.ch,Sarnen,CSP, ,SRID=4326;POINT (8.2461492 46.8956729),Sarnen  ,,import/politicans/ow/SilviaZbinden_imim_5f6af881b08c8.jpg
-200,Walter,Wyrsch,1958-12-04,dipl. Erwachsenenbildner,,Alpnach Dorf,,Sagengasse 2,,Alpnach Dorf  ,41416703209,import/politicans/ow/WalterWyrsch.jpg
+200,Walter,Wyrsch,1958-12-04,dipl. Erwachsenenbildner,,Alpnach Dorf,CSP,Sagengasse 2,,Alpnach Dorf  ,41416703209,import/politicans/ow/WalterWyrsch.jpg
 201,Willy,Fallegger,,,,Alpnach Dorf,SVP,,,,,import/politicans/ow/WillyFallegger.jpg
 202,Peter,Wechsler,,Heilpädagoge,,Kerns,CSP,Hoheneich 2,,Kerns  ,41416607528,import/politicans/ow/PeterWechsler.jpg
 203,Helen,Imfeld-Ettlin,,Hebamme,,Lungern,CSP,Studenstrasse 4,,Lungern Studenstrasse 4,41788209667,import/politicans/ow/HelenImfeld.jpeg
@@ -63,3 +63,38 @@ id,first_name,last_name,date_of_birth,profession,email,jurisdiction,fraction,str
 206,Lucia,Omlin,,"lic. iur., Rechtsanwältin und Notarin",,Sachseln,CVP,Bruder-Klausen-Weg 3,,Sachseln Bruder-Klausen-Weg 3,41416606262,import/politicans/ow/Lucia-Omlin.jpg
 207,Klaus,Wallimann-Bucher,1964-05-24,Treuhänder / Korporationsschreiber,,Alpnach Dorf,CVP,Dammstrasse 20,,Alpnach Dorf Dammstrasse 20,41416702668,import/politicans/ow/Klaus-Wallimann.jpg
 208,Paul,Vogler,1962-01-01,Meisterlandwirt,,Sachseln,CVP,,,,,
+209,Urs,Küchler,1966-02-20,dipl. Bauleiter,kuechlerundpartner@bluewin.ch,Kägiswil,CVP,Mittelgasse 9,,Mittelgasse 9 Kägiswil Obwalden,41416610153,import/politicans/ow/UrsKüchler.jpg
+210,Jürg,Berlinger,1969-04-29,Unternehmer,sarnen@juerg-berlinger.ch,Sarnen,CVP,,,,,import/politicans/ow/Juerg-Berlinger.jpg
+211,Ruth,Koch-Niederberger,1964-07-13,Primarlehrerin / PR-Fachfrau,ruth_koch@bluewin.ch,Kerns,SP,Siebeneichstrasse 21,,Siebeneichstrasse 21 Kerns,41416609560,import/politicans/ow/RuthKochNiederberger.jpeg
+212,Maya,Büchi-Kaiser,1963-02-13,Betriebswirtschafterin,,Sachseln,FDP,,,,,import/politicans/ow/MayaBuechiKaiser.jpeg
+213,Urs,Keiser,1968-09-21,dipl. Physiotherapeut,keiser.wirth@hispeed.ch,Sarnen,CVP,Kirchstrasse 5D,,Kirchstrasse 5D Sarnen,41416609227,import/politicans/ow/UrsKeiser.jpg
+214,Susanne,Burch-Windlin,,Bäuerin mit FA,,Stalden,SVP,,,,,
+215,Lukas,Küng,,"Rechtsanwalt, Fachanwalt SAV Strafrecht",,Alpnach Dorf,FDP,,,,,
+216,Guido,Steudler,,Dr. med. Facharzt für allg. Medizin,,Sarnen,CSP,Allmendstrasse 26,,Allmendstrasse 26 Wilen Sarnen,41416606740,
+217,Nicole,Wildisen,,Gymnasiallehrerin,,Sarnen,SP,Brunnmattweg 12,,Brunnmattweg 12 Sarnen,41416600511,
+218,Leo,Spichtig,,Dr. med. Facharzt für allg. Medizin,,Alpnach Dorf,CSP,Robert Barmettlerstrasse 5,,Robert Barmettlerstrasse 5 Alpnach Dorf,41416710101,import/politicans/ow/LeoSpichtig.jpg
+219,Boris,Camenzind,,dipl. Bauingenieur ETH,,Sarnen,FDP,Goldmattweg 34,,Goldmattweg 34 Sarnen,41416601065,import/politicans/ow/BorisCamenzind.jpg
+220,Walter,Küchler,,Gastronom,info@tschiferli.ch,Sachseln,SVP,,,,,import/politicans/ow/WalterKuechler.jpg
+221,Hampi,Lussi-Berwert,,eidg. dipl. Bautechn.,,Kägiswil,CVP,Dörflistrasse 30,,Dörflistrasse 30 Kägiswil,,import/politicans/ow/Lussi-Hampi-2018.jpg
+222,Pia,Berchtold-von Wyl,,Heilpädagogin,,Kägiswil,CVP,Hostettliweg 5,,Hostettliweg 5 Käsgiswil,,
+223,Werni,Birrer,,,,Alpnach Dorf,SVP,,,,,
+224,Margrit,Freivogel-Kayser,,Redaktorin,,Sachseln,CVP,Wissibach 9,,Wissibach 9 Sachseln,,
+225,Christoph,Amstad-Bucher,1973-09-27,Dipl. Finanzplanungs-Experte,,Sarnen,CVP,Aamattweg 15,,Aamattweg 15 Sarnen,,import/politicans/ow/ChristophAmstad.jpg
+226,Daniel,Wyler,1959-10-23,Jurist,,Engelberg,SVP,Acherrainstrasse 4,,Acherrainstrasse 4 Engelberg,,import/politicans/ow/DanielWyler.jpg
+227,Lisbeth,Berchtold-Durrer,,"Bäuerin, Medizinische Praxisassistentin MPA",,Giswil,CVP,Ei 1,,Ei 1 Giswil,,import/politicans/ow/Lisbeth-Berchtold-Internet.jpg
+228,Sepp,Stalder,,Förster,,Lungern,CSP,Wichelmatte 7,,Wichelmatte 7 Lungern,,import/politicans/ow/
+229,Hans-Melk,Reinhard,1971-01-20,Schreinertechniker,,Sachseln,FDP,Bruechli 1,,Bruechli 1 Sachseln,,import/politicans/ow/HansMelkReinhard.jpg
+230,Bruno,Furrer,1962-01-01,Zimmermeister,,Lungern,CVP,Strüpfistrasse 1,,Strüpfistrasse 1 Lungern,,import/politicans/ow/BrunoFurrer.jpg
+231,Monika,Rüegger,1968-03-25,Hausfrau,moni.rueegger@bluewin.ch,Engelberg,SVP,Oberbergstrasse 110,,Oberbergstrasse 110 Engelberg,,import/politicans/ow/MonikaRueegger.jpg
+232,Markus,Ettlin,1962-10-29,Anlageberater,markus.ettlin@bluewin.ch,Kerns,CVP,,,,,import/politicans/ow/MarkusEttlin.jpg
+233,Christian,Schäli,1974-07-30,Rechtsanwalt,,Kerns,CSP,Hoheneich 6,,Hoheneich 6 Kerns,,import/politicans/ow/ChristianSchaeli.jpg
+234,Martin,Mahler,,Treuhänder,,Engelberg,FDP,Engelbergerstrasse 41,,Engelbergerstrasse 41 Engelberg,,import/politicans/ow/MartinMahler.jpg
+235,Isabella,Kretz-Kiser,,Buchhalterin,,Kerns,SVP,,,,,import/politicans/ow/IsabellaKretzKiser.jpg
+236,Christian,Limacher,1984-05-07,Unternehmer,christian@holzlimacher.ch,Alpnach Dorf,FDP,Baumgartenstrasse 9,,Baumgartenstrasse 9 Alpnach,,import/politicans/ow/ChristianLimacher.jpg
+237,Seppi,Hainbuchner,1959-09-15,Sachbearbeiter Finanzwesen,j-u.hainbuchner@tep.ch,Engelberg,SP,Meilandweg 23,,Meilandweg 23 Engelberg,,import/politicans/ow/SeppiHainbuchner.jpg
+,,,,,,,,,,,,import/politicans/ow/
+,,,,,,,,,,,,import/politicans/ow/
+,,,,,,,,,,,,import/politicans/ow/
+,,,,,,,,,,,,import/politicans/ow/
+,,,,,,,,,,,,import/politicans/ow/
+,,,,,,,,,,,,import/politicans/ow/
