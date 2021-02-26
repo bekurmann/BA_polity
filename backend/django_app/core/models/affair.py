@@ -85,11 +85,16 @@ class Affair(models.Model):
     # motion / postulat accepted (more yes than no, maybe computed?)
     accepted = models.BooleanField(blank=True)
 
-    # recommendation executive
+    # #######################################################################
+    # statement executive
+    # #######################################################################
+
+    # recommendation executive accept/not accept
     recommendation_executive = models.BooleanField(blank=True)
 
-    # transformation motion -> postulat
+    # recommendation executive transformation motion -> postulat
     recommendation_postulat_executive = models.BooleanField(blank=True)
+    # was ist transformed?
     transformation_postulat = models.BooleanField(blank=True)
 
     # social??? -> still to do
@@ -101,3 +106,18 @@ class Affair(models.Model):
     def __str__(self):
         return f'{self.identifier} {self.title}'
     
+class AffairFile(models.Model):
+    affair = models.ForeignKey('core.Affair', on_delete=models.CASCADE, related_name="affairs")
+
+    def get_affairfile_upload_path(instance, filename):
+        # file will be uploaded to MEDIA_ROOT/affairs/<parlament.name>/<filename>
+        return f'affairs/{instance.affair.parlament.name}/{instance.affair.identifier}/{filename}'
+
+    affair_file = models.FileField(upload_to=get_affairfile_upload_path)
+    
+    # admin
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.affair.title}'
