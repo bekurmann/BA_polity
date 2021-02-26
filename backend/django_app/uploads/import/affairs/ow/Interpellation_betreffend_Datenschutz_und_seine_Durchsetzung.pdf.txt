@@ -1,0 +1,70 @@
+Fraktion SVP Obwalden I 2
+ie Parts ges Meledstandes
+© Kanton
+Obwalden Geschäftsnummer: HN. Io \Y
+Art des Vorstosses: Interpellation (gemäss Art. 58 Kantonratsgesetz)
+Datenschutz und seine Durchsetzung
+Im Zusammenhang mit der zunehmenden Auslagerung der Datenhaltung und der Datenbearbei-
+tung durch kantonale Instanzen an internationale Software-Konzerne einerseits und angesichts
+des anwendbaren Datenschutzrechts andererseits gelangen wir mit folgender Anfrage an Sie:
+1. Fragen
+Datenschutzrechtliche Grundsätze (Datenbearbeitung):
+a. Welche Richtlinien, Verordnungen oder Gesetze bestehen für öffentliche Organe,
+um die Einhaltung der datenschutzrechtlichen Grundsätze in diesen Fällen sicher
+zu stellen?
+b. Wie überprüft die Kantonsverwaltung die Einhaltung der datenschutzrechtlichen
+Vorgaben (z.B. Amtsgeheimnis) einer Bekanntgabe von Daten bei internationalen
+Grosskonzernen ins Ausland (z.B. Art. 2 Abs. 1 DSG-OW 1.V.m. Art. 6 DSG
+1.V.m. Art. 7 DSG)?
+Missbräuchliche Geschäftsbedingungen (Datenbearbeitungssoftware):
+c. Können die Gerichte des Kantons mögliche kartellrechtliche Ansprüche des Kan-
+tons wegen Marktmachtmissbrauch (Art. 7 KG) seitens der IT-Giganten sicher-
+stellen?
+d. Können die Gerichte des Kantons den kartellrechtlichen Schutz auch dann sicher-
+stellten, wenn aufgrund der Verträge ein ausländischer Gerichtsstand bestimmt
+wurde?
+e. Wie evaluiert der Kanton die Prozessrisiken, wenn er - als Opfer eines Kartell-
+rechtsverstosses — Ansprüche gestützt auf das Schweizer Kartellgesetz vor einem
+ausländischen Gericht (infolge einer möglichen Gerichtsstandklausel) geltend
+machen muss’?
+2. Hintergrund
+Aktuelle Entwicklungen
+www.svp-ow.ch SVP Obwalden
+info@svp-ow.ch Postfach 1512
+6061 Sarnen
+Fraktion SVP Obwalden S
+Ort Paares ges Miledetanden
+Der Schutz von personenbezogenen Daten wird mit der rasanten Kommerzialisierung dieser Da-
+ten zu einem immer wichtigeren Thema. Dies betrifft nicht nur die internationale oder bundes-
+staatliche Ebene, sondern auch die kantonale Ebene, denn der Kanton verwaltet innerhalb seiner
+Kompetenz sowohl in quantitativer Hinsicht eine sehr grosse Menge an Daten, wie auch in qua-
+litativer Hinsicht auch besonders schutzwürdige Daten.
+Vor dem Hintergrund des am 16. Juli 2020 ergangenen Urteils des EuGh 1.S. Data Protection
+Commissioner / Maximilian Schrems gegen Facebook Ireland (C-311/18), nach welchem zu-
+sammengefasst in den USA kein mit der EU äquivalenter Datenschutz besteht, stellen sich auch
+für den Kanton Obwalden Fragen zum Datentransfer ins Ausland.
+Diktierte Gerichtsstände
+Bei der Datenbearbeitung ist der Kanton Obwalden von gewissen Softwareanbietern abhängig
+(bspw. Microsoft, Oracle, IBM oder SAP), da vielfach keine alternativen Anbieter bestehen
+(insb. Microsoft Office und SAP ERP). Sollte ein Softwareanbieter diese Abhängigkeit miss-
+brauchen, indem er bspw. unangemessene Geschäftsbedingungen verlangt (insb. Rechte des An-
+bieters bei der Datenbearbeitung bzw. an der Verwendung von Daten oder Lizenzkosten),
+müsste sich der Kanton mittels Rückgriffs auf das Schweizer Kartellrecht gegen diesen Miss-
+brauch wehren.
+Die Verträge der internationalen Software-Konzerne (Hersteller/Anbieter) beinhalten oftmals
+nicht verhandelbare Gerichtsstandsklauseln zugunsten eines ausländischen Gerichtes. Das führt
+dazu, dass ein ausländisches Gericht einen Schweizer Kanton aufgrund von Schweizer Kartell-
+recht schützen müsste. Dem Kanton entstünden unverhältnismässige Risiken bei der Durchset-
+zung der Beseitigung des Missbrauchs: insbes. hohe Kosten für ausländische Anwaltsfirmen,
+unzureichende Fachkompetenz der ausländischen Instanzen betreffend Schweizer Kartellrecht
+oder auch Interessenkonflikte (Vermeidung von Standortnachteilen für multinationale Kon-
+zerne). Vor diesem Hintergrund bestimmt der Kanton Zürich beispielsweise in Muster-AGB (bei
+Auslagerung von IT - Leistungen durch öffentliche Organe mit Dritten) explizit eine kantonale
+Zuständigkeit.
+\
+Ho
+Ort/Datum: Alpnachstad, 3.12.2020 Urheber: KR Ivo Herzog
+www.svp-ow.ch SVP Obwalden
+info@svp-ow.ch Postfach 1512
+6061 Sarnen
+

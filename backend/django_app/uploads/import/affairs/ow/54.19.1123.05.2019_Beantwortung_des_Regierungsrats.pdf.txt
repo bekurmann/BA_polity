@@ -1,0 +1,260 @@
+Ka nton Regierungsrat
+Obwalden
+Sitzung vom: 25. Juni 2019
+Beschluss Nr.: 505
+Interpellation:
+5G im Kanton Obwalden;
+Beantwortung.
+Der Regierungsrat beantwortet
+die Interpellation „5G im Kanton Obwalden”, welche von Kantonsrat Ambros Albert, Giswil, und
+22 Mitunterzeichnenden am 23. Mai 2019 (Nr. 54.19.11) eingereicht worden ist, wie folgt:
+1. Gegenstand der Interpellation
+Mit der Interpellation wird der Regierungsrat ersucht, Fragen zum Thema „5G im Kanton Obwal-
+den” zu beantworten. Sie wird damit begründet, dass seit der Vergabe der Mobilfunkfrequenz
+für 5G im Februar 2019 in verschiedenen Kantonen verlangt wird, die Bewilligungen für die 5G-
+Sendeanlagen erst zu erteilen, wenn die wissenschaftlichen Erkenntnisse keine nachteiligen
+gesundheitlichen Folgen auf den Menschen und die Umwelt durch zu hohe Strahlung nachwei-
+sen können.
+2. Vorbemerkungen
+Für den kommerziellen Mobilfunk kommen in der Schweiz seit längerem Frequenzbänder mit
+800, 900, 1 800, 2 100 und 2 600 Megahertz (MHz) zum Einsatz (für 2G, 3G und 4G). Anfang
+2019 wurden zudem Frequenzen um 700, 1 400 und 3 600 MHz (= 3,6 Gigahertz; GHz) für Mo-
+bilfunk freigegeben. Voraussichtlich wird 5G insbesondere im Frequenzband von 3,6 GHz ein-
+geführt. Diese Frequenzen wurden früher für die Übertragung von Radio- und Fernsehsignalen
+genutzt, mit der Einführung des Kabelfernsehens sodann dem Mobilfunk zugewiesen. 5G ist
+aber in allen Mobilfunkfrequenzen einsetzbar. Die zurzeit laufende Einführung von 5G erfolgt
+somit in Frequenzbereichen, wie sie bereits jetzt für den Mobilfunk und für WLAN (2,4 und
+5 GHz) verwendet werden. Längerfristig soll 5G in noch deutlich höheren Frequenzbereichen
+zur Anwendung gelangen (im zweistelligen Gigahertzbereich), man spricht hier auch von soge-
+nannten „Millimeterwellen”. Ein Zeitplan, wann in der Schweiz Millimeterwellen zur Anwendung
+gelangen könnten, liegt noch nicht vor.
+Die Frequenzen um 3,6 GHz, die für 5G zur Anwendung kommen, haben schlechtere funktech-
+nische Übertragungseigenschaften als die bisher genutzten tieferen Frequenzen. Es werden
+daher Antennen eingesetzt, die das Signal in Richtung des Nutzers bzw. des Mobilfunkgeräts
+fokussieren (sogenannte adaptive Antennen). In alle anderen Richtungen ist die Strahlung je-
+doch tiefer. Insgesamt haben adaptive Antennen dadurch eine geringere Strahlenbelastung zur
+Folge als herkömmliche Antennen, die im Wesentlichen die Strahlung in einer immer gleichen
+räumlichen Verteilung senden.
+Signatur OWVD.665 Seite 1|6
+Die Verordnung über den Schutz vor nichtionisierender Strahlung vom 23. Dezember 1999
+(NISV; SR 814.710) bezweckt den Schutz der Menschen vor schädlicher oder lästiger nichtioni-
+sierender Strahlung (NIS). Sie regelt die Begrenzung der Emissionen von elektrischen und
+magnetischen Feldern mit Frequenzen von 0 Hz bis 300 GHZ, die beim Betrieb ortsfester Anla-
+gen erzeugt werden. Gemäss dem im Umweltschutzgesetz vom 7. Oktober 1983 (USG;
+SR 814.01) verankerten Vorsorgeprinzip sind Emissionen unabhängig von der bestehenden
+Umweltbelastung bei der Quelle so weit zu begrenzen, als dies technisch und betrieblich mög-
+lich und wirtschaftlich tragbar ist (Art. 11 USG). Zum Schutz vor thermischen Effekten (Erwär-
+mung des Körpergewebes) müssen sämtliche Mobilfunkanlagen sogenannte Immissionsgrenz-
+werte einhalten. Diese Grenzwerte werden auch im umliegenden Ausland mehrheitlich ange-
+wendet. Sie müssen überall eingehalten werden, wo sich Menschen aufhalten können und
+schützen vor den wissenschaftlich gesicherten Gesundheitsauswirkungen. Weil aus der For-
+schung unterschiedlich gut abgestützte Beobachtungen vorliegen, wonach es auch noch an-
+dere als die thermischen Effekte gibt, legt die NISV zusätzlich Vorsorgewerte fest. Diese soge-
+nannten Anlagegrenzwerte sind für Mobilfunkstrahlung rund zehnmal tiefer als die Immissions-
+grenzwerte. Sie gelten für die Strahlung einer Anlage. Sie müssen nicht überall, sondern nur an
+den Orten mit empfindlicher Nutzung (OMEN) eingehalten werden. Dazu zählen insbesondere
+Wohnungen, Schulen, Kindergärten, Spitäler, ständige Arbeitsplätze und Kinderspielplätze, also
+Orte, wo sich Menschen während längerer Zeit aufhalten.
+Ergänzend zur nachfolgenden Beantwortung der Fragen wird auf die Unterlagen des Bundes
+unter https://www.bafu.admin.ch/bafu/de/home/themen/elektrosmog/dossiers/5g-netze.html ver-
+wiesen.
+Die Beantwortung der Interpellation wurde in Zusammenarbeit mit dem Bau- und Raumentwick-
+lungsdepartement ausgearbeitet.
+3. Fragebeantwortung
+3.1 Wie viele Gesuche von 5G-Sendeanlagen sind auf dem Gebiet des Kantons Obwalden
+bereits eingegangen oder bearbeitet worden?
+Bisher (Stand Ende Mai 2019) sind drei Gesuche eingegangen, wovon zwei behandelt und be-
+willigt sind und eines noch in Behandlung ist.
+3.2 An welchen Standorten sind bereits 5G-Sendeanlagen bewilligt oder in Betrieb?
+Bewilligt wurde ein Gesuch für einen bestehenden Standort einer Mobilfunkanlage in Stalden,
+Mosacher, Ebenso wurde die Änderung der bestehenden Mobilfunkanlage in Sarnen, Flüe-
+listrasse 1, bewilligt. Zum aktuellen Zeitpunkt (Stand Ende Mai 2019) sind im Kanton Obwalden
+noch nirgends 5G-Antennen in Betrieb.
+Gemäss Auskunft von Swisscom sind für 2019 an zwei Orten in Obwalden Sendeanlagen ge-
+plant, nämlich in Sarnen und in Engelberg. Die Inbetriebnahme hängt aber von den jeweiligen
+Baubewilligungen ab.
+3.3 Wie viele Anlagen sind nötig, um das Abdeckungsziel zu gewährleisten?
+Der Kanton ist nicht zuständig für die Netzplanung der Betreiber. Daher können nur allgemeine
+Aussagen gemacht werden. Um die steigenden Datenmengen weiterhin bewältigen zu können,
+die über die Mobilfunknetze übertragen werden, ist zum einen die Bereitstellung neuer Frequen-
+zen notwendig, über welche die Datenübertragung abgewickelt werden kann. Die Kommunikati-
+onskommission des Bundes hat Anfang Jahr neue Frequenzen im Bereich von 700 Mhz,
+1 400 MHz und 3 400 - 3 800 MHz vergeben. Die totale Bandbreite für Mobilfunk wurde mit den
+neuen Frequenzen ungefähr verdoppelt. Zum anderen ist ein weiterer Ausbau der Mobilfunk-
+netze erforderlich. Der Ausbau der Netze kann sowohl über Kapazitätssteigerungen bestehen-
+der, als auch durch den Bau zusätzlicher neuer Anlagen erreicht werden. Der Branchenverband
+Signatur OWVD.665 Seite 2|6
+der Mobilfunkbetreiber asut rechnet damit, dass in der Schweiz 15 000 zusätzliche Mobilfunk-
+standorte neu gebaut werden müssen. Es ist jedoch davon auszugehen, dass in städtischen
+Gebieten und in Agglomerationen mit einer hohen Antennendichte mehr zusätzliche Standorte
+notwendig sein werden, als dies in ländlicheren Gebieten der Fall sein wird. Dies weil die Leis-
+tungsreserven aufgrund der geltenden Grenzwerte in den dicht besiedelten Gebieten bereits
+heute ausgeschöpft sind.
+Gemäss Rückmeldung von Swisscom vom 11. Juni 2019 beträgt das minimale Abdeckungsziel,
+gemäss den Lizenzauflagen, 50 Prozent. Für die Erreichung des Abdeckungsziels ist die Ergän-
+zung aller bestehenden Standorte mit 5G erforderlich und es werden ungefähr 12 zusätzliche
+Standorte nötig. Aufgrund der restriktiven Anforderungen der NISV sind die Operatoren mehr-
+heitlich gezwungen, eigene Standorte zu realisieren und nur in Ausnahmefällen kann eine An-
+lage gemeinsam genutzt werden.
+3.4 Welche Massnahmen ergreift der Regierungsrat, damit es nicht zu einer unnötigen
+Überdeckung durch die verschiedenen Anbieter kommt?
+Grundsätzlich bauen und betreiben die Mobilfunkanbieter eigene, voneinander unabhängige
+Mobilfunknetze. Die Anzahl Standorte wird durch die Technologie, die Umweltvorschriften sowie
+durch Angebot und Nachfrage an Datenübertragung und Dienstleistungen bestimmt. Heute geht
+es nicht mehr nur darum, dass ein Mobilfunknetz ein geografisches Gebiet abdeckt. Aufgrund
+der seit Jahren zunehmenden Datenmengen, welche über das Mobilfunknetz abgewickelt wer-
+den, müssen die Kapazitäten der Netze ausgebaut werden. Dies kann zum Teil durch einen
+Ausbau von bestehenden Standorten erfolgen. Mancherorts ist ein solcher Ausbau jedoch nicht
+mehr möglich, wenn z.B. die Grenzwerte der NISV ausgeschöpft sind. In diesen Fällen müssen
+die Mobilfunknetze durch den Bau von neuen, zusätzlichen Anlagen erweitert werden.
+Der Kanton und die Einwohnergemeinden haben mit den Mobilfunkbetreibern Swisscom, Sun-
+rise und Salt eine Vereinbarung über die Standortevaluation und -koordination von Mobilfunkan-
+lagen abgeschlossen. Die Mobilfunkbetreiber orientieren die Einwohnergemeinden jährlich über
+die langfristige Planung, über den Neubau sowie über den Aus- und Umbau von Antennenanla-
+gen. Bei neuen Standorten können die Einwohnergemeinden unter gewissen Voraussetzungen
+den Baustandort im Rahmen einer Interessenabwägung festlegen und auch mögliche Alterna-
+tivstandorte in einem angegebenen Perimeter vorschlagen. Weitere Massnahmen erachtet der
+Regierungsrat als nicht notwendig.
+3.5 Wie stellt der Regierungsrat sicher, dass beim Ausbau eines bestehenden Antennen-
+standorts auf die 5G-Technologie immer ein Baubewilligungsverfahren zur Anwendung
+kommt?
+Die Vorschriften der NISV sind technologieneutral und gelten unabhängig davon, ob es sich bei
+der Mobilfunktechnologie um 2G, 3G, 4G oder 5G handelt. In einem Bewilligungsverfahren wird
+geprüft, ob eine Anlage die bau- und umweltrechtlichen Anforderungen erfüllt, unabhängig von
+der eingesetzten Technologie.
+Die Bau-, Planungs- und Umweltdirektorenkonferenz (BPUK) publizierte am 7. März 2013 Emp-
+fehlungen zur Bewilligung von Mobilfunkanlagen. Darin empfahl sie, Änderungen im Sinne der
+NISV von Mobilfunkanlagen, die nicht zu einer nennenswerten Erhöhung der elektrischen Feld-
+stärke führen, als Bagatelländerungen zu behandeln und auf eine ordentliche Baubewilligung zu
+verzichten. Folgende Kriterien müssen dabei eingehalten sein:
+- An Orten mit empfindlicher Nutzung (OMEN), an denen der Anlagegrenzwert vor der Ände-
+rung im massgebenden Betriebszustand bereits zu mehr als 50 Prozent ausgeschöpft war,
+nehmen die berechneten elektrischen Feldstärken nicht zu.
+Signatur OWVD.665 Seite 3| 6
+— An den übrigen OMEN liegen die berechneten elektrischen Feldstärken im massgebenden
+Zustand mindestens 50 Prozent unter dem Anlagegrenzwert und nehmen im Vergleich zur
+vorherigen Situation um weniger als 0,5 Volt pro Meter (V/m) zu (der Anlagegrenzwert be-
+trägt in den meisten Fällen 5 V/m).
+Der Cercl’Air (Schweizerische Gesellschaft der Lufthygiene-Fachleute), setzt sich für einen ein-
+heitlichen Vollzug der Umweltvorschriften im Bereich der Lufthygiene und der NIS in der
+Schweiz ein. Er empfiehlt den NIS-Fachstellen, folgende Änderungen als Bagatellen zu behan-
+dein, unter der Voraussetzung, dass die Kriterien der BPUK-Empfehlung eingehalten sind:
+— Auswechseln von bestehenden Antennen.
+— Verschiebung von Sendeleistung zwischen bisher genutzten oder neuen Frequenzbändern
+innerhalb des gleichen Antennen-Panels und Azimuts (horizontale Senderichtung).
+Andere Änderungen von bestehenden Mobilfunkanlagen, wie der Ausbau mit zusätzlichen An-
+tennen, Änderung der Lage von Antennen, die Erhöhung der bewilligten Sendeleistung und die
+Änderung von Senderichtungen über den bewilligten Winkelbereich hinaus, fallen nicht unter
+die Kriterien der Bagatelländerungen. Solche Änderungen bedürfen einer Baubewilligung.
+Diese Praxis wird auch im Kanton Obwalden angewendet. In jedem Falle, d.h. auch bei Baga-
+telländerungen im Sinne der obigen Ausführungen, werden die Standortdatenblätter durch die
+Mobilfunkbetreiber aktualisiert und der NIS-Fachstelle zur Prüfung und Beurteilung eingereicht.
+Die Einhaltung der umweltrechtlichen Vorschriften ist somit gewährleistet.
+Zurzeit erarbeitet eine Arbeitsgruppe von Kantonen, Bund und Einwohnergemeinden im Auftrag
+der BPUK einen Vorschlag für eine neue Empfehlung der Bewilligungsverfahren.
+3.6 Ist der Regierungsrat der Meinung, dass auf Bewilligungen verzichtet werden soll, bis
+von unabhängiger Seite nachteilige Folgen auf den Menschen und die Umwelt durch
+5G-Sendeanlagen ausgeschlossen werden können?
+Der heutige Stand der wissenschaftlichen Untersuchungen zu den gesundheitlichen Auswirkun-
+gen von hochfrequenter nichtionisierender Strahlung auf den Menschen lässt sich folgender-
+Massen zusammenfassen:
+- Der einzige für den Menschen schädliche Effekt von hochfrequenter Strahlung, der wissen-
+schaftlich zweifelsfrei nachgewiesen ist, ist die Erwärmung des Körpergewebes infolge der
+Absorption der Strahlung. Dieser Effekt liegt den Immissionsgrenzwerten der NISV zugrunde.
+Sind diese eingehalten, dann ist der Mensch vor thermischen Wirkungen geschützt.
+— Aus der Forschung liegen unterschiedlich gut abgesicherte Beobachtungen vor, wonach es
+noch andere biologische Effekte gibt, die nicht auf eine Erwärmung zurückgeführt werden
+können. Nach wissenschaftlichen Kriterien ausreichend nachgewiesen, ist eine Beeinflus-
+sung der Hirnströme. Begrenzte Evidenz besteht noch für einige weitere mögliche Auswir-
+kungen. Ob damit Gesundheitsfolgen verbunden sind, ist nicht bekannt, ebenso wenig ob es
+bezüglich der Intensität und Dauer der Strahlung Schwellenwerte gibt.
+— Die Weltgesundheitsorganisation WHO hat hochfrequente Strahlung als möglicherweise
+krebserregend klassiert, gestützt auf Befunde bei der Nutzung von Mobiltelefonen. Für die
+wesentlich schwächere Belastung durch ortsfeste Sendeanlagen fehlen aussagekräftige
+Langzeituntersuchungen. Die WHO stelit diesbezüglich jedoch fest, dass epidemiologische
+Studien zu Sendeanlagen (Radar, Radio, TV, Mobilfunk-Basisstationen) nicht auf ein erhöh-
+tes Krebsrisiko durch deren Strahlung hinweisen.
+Signatur OWVD.665 Seite 4| 6
+In der Schweiz gelten für die Strahlung, die von einer einzelnen Anlage emittiert wird, Anlage-
+grenzwerte, die zehnmal tiefer sind als die Immissionsgrenzwerte. Im Unterschied zu den Im-
+missionsgrenzwerten müssen sie nur an Orten eingehalten werden, an denen sich Menschen
+regelmässig während längerer Zeit aufhalten. Mit den Anlagegrenzwerten wird dem im USG
+verankerten Vorsorgeprinzip Rechnung getragen. Das USG verpflichtet zur vorsorglichen Emis-
+sionsbegrenzung u.a. dann, wenn ein Verdacht auf eine gesundheitliche Gefährdung besteht,
+selbst wenn diese Gefährdung wissenschaftlich nicht erwiesen ist. Die dabei verordneten Vor-
+sorgemassnahmen müssen allerdings verhältnismässig sein.
+Ein Nachweis, dass alle möglichen Beeinträchtigungen durch nichtionisierende Strahlung aus-
+geschlossen werden können, kann durch die Wissenschaft aktuell jedoch nicht erbracht wer-
+den.
+Der Regierungsrat ist der Ansicht, dass Baubewilligungen zu erteilen sind, wenn die Anlagen
+die bau- und umweltrechtlichen Vorschriften einhalten. Wie das Bundesamt für Umwelt (BAFU)
+und das Bundesamt für Kommunikation (BAKOM) in einer gemeinsamen Stellungnahme vom
+3. Mai 2019 festgehalten haben, besteht für strengere Regelungen zum Schutz vor nichtionisie-
+render Strahlung als die bestehenden kein Spielraum. Der Bund ist zuständig für den Erlass
+von Vorschriften über den Schutz des Menschen vor schädlicher oder lästiger nichtionisierender
+Strahlung. Er hat diese umfassende Rechtsetzungskompetenz mit dem Erlass des USG und
+der NISV abschliessend wahrgenommen. Es bleibt deshalb kein Raum für weitergehende kan-
+tonale oder kommunale Bestimmungen zum Schutz des Menschen vor der Strahlung von Mo-
+bilfunkanlagen. Die Kantone sind zuständig für die Beurteilung der Einhaltung der Grenzwerte.
+Im Kanton Obwalden sind die Einwohnergemeinden zuständig für die Durchführung des or-
+dentlichen Bauverfahrens und für die Baubewilligungen von Mobilfunkanlagen. Änderungen, die
+im Bagatellverfahren durchgeführt werden können, werden vom Kanton (Amt für Landwirtschaft
+und Umwelt) hinsichtlich Einhaltung der Bagatellkriterien und der Grenzwerte beurteilt. Die Ein-
+wohnergemeinden erhalten die aktualisierten Standortdatenblätter. Für die inhaltliche Beurtei-
+lung, ob die Voraussetzungen für die Erteilung einer Baubewilligung erfüllt sind, wenden der
+Kanton und die Einwohnergemeinden neben dem Bundesumweltrecht auch kantonale und
+kommunale bau- und planungsrechtliche Bestimmungen an. Solche kantonalen und kommuna-
+len Bestimmungen sind jedoch nur zulässig, wenn sie nicht den Schutz der Bevölkerung vor
+nichtionisierender Strahlung bezwecken und weder zu einer unzulässigen Beschränkung der
+Emissionen der Mobilfunksendeanlagen noch zu einer Verletzung der in der Fernmeldegesetz-
+gebung konkretisierten öffentlichen Interessen führen. Der Verzicht auf die Erteilung von Bau-
+bewilligungen für 56-Sendeanlagen kommt einem Moratorium gleich. Gegen eine Verweige-
+rung oder Verzögerung der Baubewilligung könnten die Mobilfunkanbieter eine Beschwerde
+einreichen. Es wäre dann Aufgabe des zuständigen Gerichts, zu entscheiden, ob und inwiefern
+ein solches Moratorium Bundesrecht verletzt.
+3.7 Wer ist zuständig für die Kontrollen der Anlagen zur Einhaltung der Strahiengrenzwerte
+und wie wird sichergestellt, dass die geltenden Grenzwerte im gesamten Raum Obwal-
+den eingehalten werden?
+Die NIS-Fachstelle im Amt für Landwirtschaft und Umwelt kontrolliert im Rahmen der Baubewil-
+ligung und im Falle von Bagatelländerungen, dass die Belastungsgrenzwerte eingehalten wer-
+den. Die Mobilfunkanbieter haben dabei mit einer Berechnung der elektrischen Feldstärken
+nachzuweisen, dass die von ihrer Anlage erzeugte Strahlung den Anlagegrenzwert einhält. Wird
+der Anlagegrenzwert an einem oder mehreren Orten mit empfindlicher Nutzung gemäss Be-
+rechnung zu mehr als 80 Prozent ausgeschöpft, so muss der Mobilfunkbetreiber auf seine Kos-
+ten eine Abnahmemessung durchführen lassen, Zeigt die Messung, dass der Anlagegrenzwert
+überschritten wird, so muss die Anlage nachträglich angepasst werden. Jeder Mobilfunkanbie-
+ter hat zudem ein Qualitätssicherungs-System zu betreiben, das sicherstellt, dass die Anlagen
+bewilligungskonform betrieben werden (Einhaltung der bewilligten Sendeleistungen, Einhaltung
+Signatur OWVD.665 Seite 5|6
+der bewilligten Senderichtungen). Sie haben der NIS-Fachstelle darüber periodisch Bericht zu
+erstatten. Weitere Kontrollinstrumente, die der NIS-Fachstelle zur Verfügung stehen und ange-
+wendet werden, sind die Datenbank mit den aktuellen Betriebsdaten der Mobilfunkanlagen, wei-
+che vom Bundesamt für Kommunikation (BAKOM) betrieben wird, und die Stichprobenkontrol-
+len in den Zentralen der Mobilfunkanbieter.
+3.8 Welche Massnahmen ergreift der Regierungsrat, wenn bestehende Antennen die
+Strahlen-Grenzwerte nicht einhalten?
+Für Mobilfunkanlagen gibt es im Umweltrecht keine Bestimmungen, wonach in Ausnahmefällen
+der Grenzwert überschritten werden darf oder ein milderer Grenzwert gilt. Ist im Bewilligungs-
+verfahren damit zu rechnen, dass der Anlagegrenzwert überschritten werden könnte, so muss
+eine Abnahmemessung durchgeführt werden (siehe auch Antwort auf Frage 3.7). Im Falle einer
+Überschreitung des Anlagegrenzwerts muss die Mobitfunkanlage so angepasst werden, dass
+der Grenzwert eingehalten werden kann. Dies erfolgt in der Regel durch eine Reduktion der
+Sendeleistung. Für die Messung von 5G-Antennen wird der Bund ein Messverfahren noch emp-
+fehlen.
+39 Könnte sich der Regierungsrat ein Moratorium gegen den Bau von 5G-Antennen in
+Obwalden vorstellen?
+Der Regierungsrat hat keine rechtliche Grundlage, um ein solches Moratorium zu beschliessen.
+Protokollauszug an:
+Mitglieder des Kantonsrats sowie übrige Empfänger der Kantonsratsunterlagen (mit Text der
+Interpellation)
+Volkswirtschaftsdepartement
+Amt für Landwirtschaft und Umwelt
+Bau- und Raumentwicklungsdepartement
+Staatskanzlei
+Ratssekretariat Kantonsrat
+Im Namen des Regierungsrats
+Nic unz
+Landschreiberin
+Versand: 3. Juli 2019
+Signatur OWVD.665 Seite6|6
+

@@ -1,0 +1,113 @@
+Ka nton Regierungsrat
+Obwalden
+Sitzung vom! 4. Februar 2020
+Beschluss Nr.: 269
+Motion:
+5G im Kanton Obwalden;
+Beantwortung.
+Der Regierungsrat beantwortet
+die Motion „Baumoratorium für 5G-Antennen” (52.19.08), welche von Kantonsrat Ambros Albert,
+Giswil, und 14 Mitunterzeichnenden am 24. Oktober 2019 eingereicht worden ist, wie folgt:
+1. Anliegen der Motionäre
+1.1 Anliegen
+Mit der Motion wird der Regierungsrat beauftragt, analog zur Regelung in den Kantonen Genf
+und Jura, dem Kantonsrat einen Entwurf zur Anpassung der gesetzlichen Grundlage vorzule-
+gen, falls er nicht in eigener Kompetenz ein Baumoratorium für 5G-Sendeanlagen beschliessen
+kann.
+1.2 Begründung
+Durch den Ausbau des Mobilfunks auf die 56G-Technologie werde die Bevölkerung möglicher-
+weise einem weiteren unbekannten Gesundheitsrisiko durch hochfrequente elektromagnetische
+Felder ausgesetzt. Verschiedene Kantone prüften derzeit ein Moratorium für das Aufstellen von
+5G-Sendeanlagen, bis die Auswirkungen dieser Anlagen auf die Umwelt und insbesondere auf
+Menschen geklärt seien. Dies als Reaktion auf eine zunehmende Zahl von Einsprachen.
+Der Kanton Obwalden solle ein Baumoratorium für 5G-Antennen einführen, das solange gilt, bis
+unabhängige wissenschaftliche Erkenntnisse vorliegen. Mindestens seien die Ergebnisse des
+Berichts der Arbeitsgruppe des Bundes unter der Leitung des Bundesamts für Umwelt (BAFU)
+mit Empfehlungen zum Bereich Mobilfunk und Strahlung abzuwarten.
+2. Stellungnahme des Regierungsrats
+Der Bundesrat will, dass die Schweiz die Chancen der Digitalisierung nutzt, und hat im Jahr
+2016 die Strategie „Digitale Schweiz” lanciert. Ein wichtiges Element dieser Strategie ist die
+Schaffung leistungsstarker und offener Übertragungsnetze für eine konkurrenzfähige Informati-
+onsgesellschaft. Eine gute Mobilfunkversorgung entspricht einem gesellschaftlichen Bedürfnis.
+Die über Mobilfunknetze übertragenen Datenvolumen haben in den vergangenen Jahren stetig
+zugenommen und steigen auch in Zukunft weiter an. Die bestehenden Netze stossen an ihre
+Leistungsgrenzen. Zur Bewältigung dieser Herausforderungen wird die 5. Mobilfunkgeneration
+(56) als unverzichtbar angesehen. 5G ermöglicht eine um ein Vielfaches effizientere Daten-
+übertragung - bei gleichbleibender Sendeleistung. Diese Technologie ermöglicht ausserdem
+heue Anwendungen und schafft damit erhebliches Innovationspotenzial für Unternehmen in der
+Signatur OWKR.172 Seite 1| 3
+Schweiz. Die Mobilfunkbetreiber haben sich mit dem Erwerb der Anfang 2019 vergebenen Mo-
+bilfunkkonzessionen für 5G verpflichtet, innert einer vorgegebenen Frist ein hochwertiges Mobil-
+funknetz mit einer Mindestabdeckung aufzubauen.
+Diesen Entwicklungen stehen Unsicherheiten in der Bevölkerung bezüglich den Auswirkungen
+von 5G auf die Gesundheit gegenüber. Die Strahlung von Mobilfunkantennen wird in der
+Schweiz durch die Verordnung über den Schutz vor nichtionisierender Strahlung (NISV,
+SR 814.710) im internationalen Vergleich streng begrenzt. Die Grenzwerte liegen rund zehnmal
+tiefer als in den Nachbarländern und müssen auch von 5G-Antennen eingehalten werden.
+Grundlage für diese Bestimmungen ist das Vorsorgeprinzip gemäss Art. 11 des Umweltschutz-
+gesetzes (USG, SR 814.01). Demnach sind Emissionen so weit zu begrenzen, als dies tech-
+nisch und betrieblich möglich und wirtschaftlich tragbar ist.
+Die Grenzwerte sind abhängig von der Frequenz, und nicht von der verwendeten Technologie
+(2G, 3G, 4G, 5G), da die gesetzlichen Bestimmungen der NISV technologieneutral sind. Für die
+Strahlung von 5G-Antennen gelten daher dieselben emissionsbegrenzenden Vorschriften wie
+für andere Antennen. Die Übertragungstechnik (Modulationstechnik) von 5G beruht auf der glei-
+chen Technik wie 4G. Auch wenn 5G-Antennen eine effizientere Technologie nutzen, dank der
+mehr Informationen schneller übermittelt werden können, sind die Eigenschaften der Wellen
+vergleichbar mit denen für 4G. Die hauptsächlich für 5G vorgesehenen adaptiven Antennen
+können mit allen Diensten von 2G bis 5G betrieben werden.
+Gemäss der Kompetenzaufteilung zwischen Bund und Kantonen ist der Bund zuständig für den
+Erlass von Vorschriften über den Schutz des Menschen vor schädlicher oder lästiger nichtioni-
+sierender Strahlung. Der Bund hat die umfassende Rechtsetzungskompetenz mit dem Erlass
+des Umweltschutzgesetzes (USG) und der Verordnung über den Schutz vor nichtionisierender
+Strahlung (NISV) abschliessend wahrgenommen. Es bleibt deshalb kein Raum für kantonale
+oder kommunale Bestimmungen zum Schutz des Menschen vor der Strahlung von Mobilfunk-
+anlagen; der Erlass solcher Bestimmungen wäre kompetenzwidrig (vgl. auch gemeinsame Stel-
+Iungnahme der Bundesämter für Umwelt [BAFU] und Kommunikation [BAKOM] vom 3. Mai
+2019). Vor diesem Hintergrund stellt sich die Frage, welche Behörde in Obwalden für den Er-
+lass eines Moratoriums zuständig sein könnte, gar nicht.
+In anderen Kantonen wurden ähnliche Vorstösse eingereicht, die ein Moratorium für den Bau
+von 5G-Mobilfunkantennen verlangen. Teilweise wurden diese bereits beantwortet und abge-
+lehnt (z.B. Kanton Aargau und Bern). Auch in diesen Kantonen beriefen sich die Regierungen
+insbesondere auf die Stellungnahme des BAKOM vom 3. Mai 2019. Darin wird, unter Verweis
+auf die geltende Kompetenzordnung im Bereich Baubewilligung und nichtionisierende Strahlung
+(NIS), festgehalten, dass kein Raum bestehe für kantonale oder kommunale Bestimmungen,
+welche über die NISV hinausgehen.
+Noch offen ist zurzeit eine Vollzugshilfe des Bundes zur Bewilligung von sogenannten „adapti-
+ven Antennen”. Diese sind in der Lage, die abgestrahlte Leistung gezielt auf einzelne Nutzerin-
+nen und Nutzer zu fokussieren. Bis diese Vollzugshilfe vorliegt, beurteilt das zuständige Amt für
+Landwirtschaft und Umwelt des Kantons Obwalden adaptive Antennen im Sinne der schlecht-
+möglichsten Szenarien. Dabei wird die Strahlung wie bei konventionellen Anlagen nach der ma-
+ximalen Leistung beurteilt. Die tatsächliche Strahlung wird damit überschätzt und die Beurtei-
+lung ist auf der sicheren Seite.
+Der von der Arbeitsgruppe Mobilfunk und Strahlung im Auftrag des Eidgenössischen Departe-
+ments für Umwelt, Verkehr, Energie und Kommunikation (UVEK) erstellte Bericht „Mobilfunk
+und Strahlung” wurde am 18. November 2019 vorgelegt und bestätigt diese Sachverhalte. Er
+Signatur OWKR.172 Seite 2|3
+fasst auch den Stand des Wissens über die gesundheitlichen Folgen der Mobilfunkstrahlung zu-
+sammen und enthält keinerlei Hinweise auf neue gesundheitliche Risiken.
+Unter den Voraussetzungen, dass die Bestimmungen der NISV (Bundesrecht) und die pla-
+nungs- und baurechtlichen Vorschriften eingehalten werden, ist die Installation von Antennen
+zur Umsetzung der Mobilfunktechnologie 5G zu bewilligen. Für kantonale Bestimmungen, wel-
+che über die NISV hinausgehen, oder gar ein Moratorium für neue Antennenanlagen lässt das
+geltende Bundesrecht keinen Raum.
+3. Fazit und Antrag des Regierungsrats
+Der Regierungsrat hält zusammenfassend fest, dass der Kanton keine Kompetenz zum Erlass
+eines Moratoriums für den Ausbau der Mobilfunknetze mit dem Mobilfunkstandard 56 hat. Auf-
+grund der vorliegenden Fakten sieht der Regierungsrat keinen Bedarf, an der bisherigen Praxis
+bezüglich der Erteilung von Baubewilligungen für 5G-Antennen beziehungsweise dem Ersatz
+bestehender Antennen durch 5G-Antennen etwas zu ändern. Der Regierungsrat beantragt dem
+Kantonsrat deshalb, die Motion „Baumoratorium für 5G-Antennen” abzulehnen.
+Protokollauszug an:
+Mitglieder des Kantonsrats sowie übrige Empfänger der Kantonsratsunterlagen (mit Motions-
+text)
+— Bau- und Raumentwicklungsdepartement
+Amt für Raumentwicklung und Verkehr
+Volkswirtschaftsdepartement
+Amt für Landwirtschaft und Umwelt
+Staatskanzlei
+Ratssekretrariat
+Nicole Frunz Wallimann
+Landschreiberi
+Versand: 12. Februar 2020
+Signatur OWKR.172 Seite 3 | 3
+
