@@ -48,13 +48,6 @@ class Affair(models.Model):
     parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="parlaments", blank=True, null=True)
     date_received = models.DateField()
 
-    # authorship
-    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
-    joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
-    joint_signatories_count = models.IntegerField()
-    # if not politican is signatory, but a commission
-    commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, related_name="commissions", blank=True, null=True)
-
     # topics
     topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
 
@@ -65,6 +58,15 @@ class Affair(models.Model):
 
     # sessions
     sessions = models.ManyToManyField('core.Session', related_name="sessions", blank=True)
+
+    # #######################################################################
+    # authorship
+    # #######################################################################
+    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
+    joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
+    joint_signatories_count = models.IntegerField()
+    # if not politican is signatory, but a commission
+    commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, related_name="commissions", blank=True, null=True)
 
     # #######################################################################
     # vote
