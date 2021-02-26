@@ -109,13 +109,16 @@ class Affair(models.Model):
         return f'{self.identifier} {self.title}'
     
 class AffairFile(models.Model):
+    """
+    model for affair files (not protocols, only files related to affair)
+    """
     affair = models.ForeignKey('core.Affair', on_delete=models.CASCADE, related_name="affairs")
 
-    def get_affairfile_upload_path(instance, filename):
-        # file will be uploaded to MEDIA_ROOT/affairs/<parlament.name>/<filename>
+    def get_affair_file_upload_path(instance, filename):
+        # file will be uploaded to MEDIA_ROOT/affairs/<parlament.name>/<identifier>/<filename>
         return f'affairs/{instance.affair.parlament.name}/{instance.affair.identifier}/{filename}'
 
-    affair_file = models.FileField(upload_to=get_affairfile_upload_path)
+    affair_file = models.FileField(upload_to=get_affair_file_upload_path)
     
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
