@@ -109,6 +109,17 @@ class Affair(models.Model):
         return f'{self.identifier} {self.title}'
 
 class AffairResponse(models.Model):
+    """
+    model for affair response
+    * the response from the executive regarding the affair
+    """
+    pass
+
+class AffairDebate(models.Model):
+    """
+    model for affair debate
+    * statements made in parlamet regarding the affair, WORTMELDUNGEN
+    """
     pass
     
 class AffairFile(models.Model):
