@@ -92,10 +92,9 @@ class Affair(models.Model):
     # #######################################################################
 
     # recommendation executive accept/not accept
-    recommendation_executive = models.BooleanField(blank=True)
-
+    recommendation = models.BooleanField(blank=True)
     # recommendation executive transformation motion -> postulat
-    recommendation_postulat_executive = models.BooleanField(blank=True)
+    transformation_recommendation = models.BooleanField(blank=True)
     # was ist transformed?
     transformation_postulat = models.BooleanField(blank=True)
 
