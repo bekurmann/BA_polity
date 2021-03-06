@@ -31,9 +31,9 @@ class AffairAdmin(ImportExportModelAdmin):
     raw_id_fields = ['signatory', 'joint_signatories',]
 
     fieldsets = (
-        ('General Information', { 'fields': ('id', 'title', 'affair_type', 'status', 'urgent', 'identifier',) }),
+        ('General Information', { 'fields': ('id', 'title', 'affair_type', 'status', 'urgent', 'identifier', 'date_received',) }),
         ('Belonging Parlament', {'fields': ('parlament', 'date_received',)}),
-        ('Authorship', {'fields': ('signatory', 'joint_signatories',)}),
+        ('Authorship', {'fields': ('signatory', 'joint_signatories_count', 'joint_signatories', 'commission',)}),
         ('Topics', {'fields': ('topics',)}),
         ('Content', {'fields': ('content_motivation', 'content_inquiries', 'content_all',)}),
         ('Sessions', {'fields': ('sessions',)}),   
@@ -41,7 +41,7 @@ class AffairAdmin(ImportExportModelAdmin):
 
     resource_class = AffairRessource
 
-    list_display = ('title', 'affair_type', 'status', 'identifier', 'parlament')
+    list_display = ('title', 'date_received', 'affair_type', 'status', 'identifier', 'parlament')
     search_fields = ['name' 'parlament',]
 
 # register fraction

@@ -77,9 +77,9 @@ class Affair(models.Model):
     anon_abstinence = models.IntegerField(blank=True)
 
     # personalised vote
-    personalised_yes = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_yeses, blank=True, null=True)
-    personalised_no = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_nos, blank=True, null=True)
-    personalised_abstinence = models.ManyToManyField('core.Politican', on_delete=models.CASCADE, related_name=affair_abstinences, blank=True, null=True)
+    personalised_yes = models.ManyToManyField('core.Politican', related_name="affair_yeses", blank=True)
+    personalised_no = models.ManyToManyField('core.Politican', related_name="affair_nos", blank=True)
+    personalised_abstinence = models.ManyToManyField('core.Politican', related_name="affair_abstinences", blank=True)
 
     # interpellation discussion desired
     inter_discussion_desired = models.BooleanField(blank=True)
