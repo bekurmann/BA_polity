@@ -5,7 +5,7 @@ class Session(models.Model):
     model for sessions
     """
     # fk parlament
-    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name='sessions')
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name='parlaments')
     # more fk to come
 
     # general information
@@ -33,7 +33,7 @@ class SessionFile(models.Model):
     """
     model for session files -> mostly protocols
     """
-    session = models.ForeignKey('core.Session', on_delete=models.CASCADE, related_name="sessions")
+    session = models.ForeignKey('core.Session', on_delete=models.CASCADE, related_name="session_files")
 
     def get_session_file_upload_path(instance, filename):
         # file will be uploaded to MEDIA_ROOT/sessions/<parlament.name>/<filename>
