@@ -22,6 +22,11 @@ class Session(models.Model):
     # manytomany politicans
     excused_politicans = models.ManyToManyField('core.Politican', blank=True)
 
+    #files
+    #word_protocol = 
+    #short_protocol =
+    #agenda_items = 
+
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
