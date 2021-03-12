@@ -47,7 +47,7 @@ class Affair(models.Model):
     identifier = models.CharField(max_length=200)
     parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="parlaments", blank=True, null=True)
     date_received = models.DateField()
-    additional_information = models.TextField(blank=True)
+    additional_information = models.TextField(blank=True)b
 
     # topics
     topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
