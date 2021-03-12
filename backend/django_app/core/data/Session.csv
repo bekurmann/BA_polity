@@ -13,6 +13,7 @@ id,date,session_protocol,start_date,end_date,title,opening_session,additional_in
 111,03.11.2011,import/protocols/ow/2011_11_03.pdf,2011-03-11,2011-03-11,Kantonsratssitzung,,,100
 112,02.12.2011,import/protocols/ow/Kantonsratsprotokoll_vom_1._2._Dezember_2011.pdf,2011-12-01,2011-12-02,Kantonsratssitzung,,,100
 113,26.01.2012,import/protocols/ow/2012_01_26.pdf,2012-01-26,2012-01-26,Kantonsratssitzung,,,100
+174,03.05.2012,import/protocols/ow/2012_05_03.pdf,2012-05-03,2012-05-03,Kantonsratssitzung,,,100
 114,31.05.2012,import/protocols/ow/2012_05_30_31.pdf,2012-05-30,2012-05-31,Kantonsratssitzung,,,100
 115,15.03.2012,import/protocols/ow/2012_03_15.pdf,2012-03-15,2012-03-15,Kantonsratssitzung,,,100
 117,29.06.2012,import/protocols/ow/2012_06_29.pdf,2012-06-29,2012-06-29,Eröffnungssitzung des Kantonsrats,1,,100
