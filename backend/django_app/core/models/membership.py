@@ -60,12 +60,12 @@ class Membership(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        constraints = [
-            # membership type of one politican must be unique for one parlament 
-            # not sure if this works with more than one votecounter membership
-            models.UniqueConstraint(fields=['membership_type', 'membership_function', 'politican'], name='unique_parlament_membership_types'),
-        ]
+    # class Meta:
+    #     constraints = [
+    #         # membership type of one politican must be unique for one parlament 
+    #         # not sure if this works with more than one votecounter membership -> true that
+    #         models.UniqueConstraint(fields=['membership_type', 'membership_function', 'politican'], name='unique_parlament_membership_types'),
+    #     ]
 
     # calculated active flag
     def active(self):

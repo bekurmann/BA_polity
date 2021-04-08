@@ -28,6 +28,7 @@ class FractionAdmin(ImportExportModelAdmin):
     fieldsets = (
         ('General Information', { 'fields': ('id', 'name', 'abbreviation', 'description',) }),
         ('Belonging Parlament', {'fields': ('parlament',)}),
+        ('Belonging Party', {'fields': ('party',)}),
         ('Address & Contact', {'fields': ('street1', 'street2', 'city', 'email', 'website', 'phone',)}),
     )
 

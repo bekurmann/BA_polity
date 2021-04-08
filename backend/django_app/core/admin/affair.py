@@ -6,7 +6,7 @@ from import_export.widgets import ForeignKeyWidget, ManyToManyWidget
 from import_export.admin import ImportExportModelAdmin
 
 # import models
-from core.models import Affair, Topic, Politican, Session, Parlament
+from core.models import Affair, AffairDebate, AffairFile, Topic, Politican, Session, Parlament
 
 class AffairRessource(resources.ModelResource):
     parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
@@ -17,6 +17,15 @@ class AffairRessource(resources.ModelResource):
 
     class Meta:
         model = Affair
+        import_id_fields = ['id']
+
+
+
+class AffairFileResource(resources.ModelResource):
+    affair = fields.Field(column_name='affair', attribute='affair',
+                            widget=ForeignKeyWidget(Affair, 'pk'))
+    class Meta:
+        model = AffairFile
         import_id_fields = ['id']
 
 # *************************************************************************************
@@ -47,7 +56,33 @@ class AffairAdmin(ImportExportModelAdmin):
     resource_class = AffairRessource
 
     list_display = ('title', 'date_received', 'affair_type', 'status', 'identifier', 'parlament')
-    search_fields = ['name' 'parlament',]
+    search_fields = ['title', 'date_received', 'affair_type',]
 
-# register fraction
+# *************************************************************************************
+# AffairDebate Admin
+# *************************************************************************************
+
+class AffairDebateAdmin(ImportExportModelAdmin):
+    pass
+
+# *************************************************************************************
+# AffairFile Admin
+# *************************************************************************************
+
+class AffairFileAdmin(ImportExportModelAdmin):
+    """
+    Customizing Admininterface for AffairFile
+    """
+    readonly_fields = ['id']
+
+    fieldsets = (
+        ('General Information', {'fields': ('id', 'affair', 'affair_file',)})
+    )
+
+    resource_class = AffairFileResource
+
+    list_display = ('affair.title', 'affair_file')
+
+# register
 admin.site.register(Affair, AffairAdmin)
+admin.site.register(AffairFile, AffairFileAdmin)
