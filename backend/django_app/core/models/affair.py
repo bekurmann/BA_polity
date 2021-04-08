@@ -6,9 +6,7 @@ from django.db import models
 
 class Affair(models.Model):
     """
-    base model affairs
-    * manytomany field to topic
-    * manytomany field to session
+    model for affair
     """
     # type choices
     INQUIRY = 'INQUI'             
@@ -39,18 +37,20 @@ class Affair(models.Model):
         (PROCESSED, 'Processed')
     ]
 
+    # #######################################################################
     # general information
+    # #######################################################################
     title = models.CharField(max_length=200)
     affair_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default=UNKNOWN)
     urgent = models.BooleanField(blank=True)
     identifier = models.CharField(max_length=200)
-    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="parlaments", blank=True, null=True)
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, related_name="affairs_parlaments", blank=True, null=True)
     date_received = models.DateField()
-    additional_information = models.TextField(blank=True)b
+    additional_information = models.TextField(blank=True)
 
     # topics
-    topics = models.ManyToManyField('core.Topic', related_name="topics", blank=True)
+    topics = models.ManyToManyField('core.Topic', related_name="affairs_topics", blank=True)
 
     # content
     content_all = models.TextField(blank=True)
@@ -58,12 +58,12 @@ class Affair(models.Model):
     content_inquiries = models.TextField(blank=True)
 
     # sessions
-    sessions = models.ManyToManyField('core.Session', related_name="sessions", blank=True)
+    session = models.ForeignKey('core.Session', on_delete=models.CASCADE, related_name="affairs_sessions", blank=True, null=True)
 
     # #######################################################################
     # authorship
     # #######################################################################
-    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories")
+    signatory = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="signatories", blank=True, null=True)
     joint_signatories = models.ManyToManyField('core.Politican', related_name="joint_signatories", blank=True)
     joint_signatories_count = models.IntegerField()
     # if not politican is signatory, but a commission
@@ -82,9 +82,6 @@ class Affair(models.Model):
     personalised_no = models.ManyToManyField('core.Politican', related_name="affair_nos", blank=True)
     personalised_abstinence = models.ManyToManyField('core.Politican', related_name="affair_abstinences", blank=True)
 
-    # interpellation discussion desired
-    inter_discussion_desired = models.BooleanField(blank=True)
-
     # motion / postulat accepted (more yes than no, maybe computed?)
     accepted = models.BooleanField(blank=True)
 
@@ -96,7 +93,15 @@ class Affair(models.Model):
     recommendation = models.BooleanField(blank=True)
     # recommendation executive transformation motion -> postulat
     transformation_recommendation = models.BooleanField(blank=True)
-    # was ist transformed?
+
+    content_response = models.TextField(blank=True)
+
+    # #######################################################################
+    # special variables
+    # #######################################################################
+    # interpellation
+    discussion_desired = models.BooleanField(blank=True)
+    # motion
     transformation_postulat = models.BooleanField(blank=True)
 
     # social??? -> still to do

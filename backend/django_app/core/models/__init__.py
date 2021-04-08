@@ -3,6 +3,7 @@ from .party import Party
 from .parlament import Parlament
 from .commission import Commission
 from .fraction import Fraction
+from .executive import Executive
 from .affair import Affair
 from .topic import Topic
 from .session import Session
