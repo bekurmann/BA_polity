@@ -54,7 +54,9 @@ class Politican(models.Model):
     parties = models.ManyToManyField('core.Party', through='Membership',
                                                 through_fields=('politican',
                                                 'party'))
-    #executives = 
+    executives = models.ManyToManyField('core.Executive', through='Membership',
+                                                through_fields=('politican',
+                                                'executive'))
     
 
     # contact

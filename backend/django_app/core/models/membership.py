@@ -17,11 +17,13 @@ class Membership(models.Model):
     COMMISSION = 'COMMI'
     FRACTION = 'FRACT'
     PARTY = 'PARTY'
+    EXECUTIVE = 'EXECU'
     TYPE_CHOICES = [
         (PARLAMENT, 'Parlament'),
         (COMMISSION, 'Commission'),
         (FRACTION, 'Fraction'),
         (PARTY, 'Party'),
+        (EXECUTIVE, 'Executive')
     ]
     membership_type = models.CharField(max_length=5, choices=TYPE_CHOICES)
 
@@ -46,6 +48,7 @@ class Membership(models.Model):
     commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, blank=True, null=True)
     fraction = models.ForeignKey('core.Fraction', on_delete=models.CASCADE, blank=True, null=True)
     party = models.ForeignKey('core.Party', on_delete=models.CASCADE, blank=True, null=True)
+    executive = models.ForeignKey('core.Executive', on_delete=models.CASCADE, blank=True, null=True)
 
     # start & end date
     start_date = models.DateField()
