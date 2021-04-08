@@ -32,7 +32,7 @@ class AffairAdmin(ImportExportModelAdmin):
 
     fieldsets = (
         ('General Information', { 'fields': ('id', 'title', 'affair_type', 'status', 'urgent', 'identifier', 'date_received',) }),
-        ('Belonging Parlament', {'fields': ('parlament', 'date_received',)}),
+        ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Authorship', {'fields': ('signatory', 'joint_signatories_count', 'joint_signatories', 'commission',)}),
         ('Topics', {'fields': ('topics',)}),
         ('Content', {'fields': ('content_motivation', 'content_inquiries', 'content_all',)}),

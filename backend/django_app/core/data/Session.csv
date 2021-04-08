@@ -1,79 +1,79 @@
 id,date,session_protocol,start_date,end_date,title,opening_session,additional_information,parlament
-100,28.01.2010,import/protocols/ow/Protokoll_der_Sitzung_vom_28._Januar_2010.pdf,2010-01-28,2010-01-28,Kantonsratssitzung,,,100
-101,22.04.2010,import/protocols/ow/Protokoll_der_Sitzung_vom_22._April_2010.pdf,2010-04-22,2010-04-22,Kantonsratssitzung,,,100
-102,09.09.2010,import/protocols/ow/Protokoll_10_09_09.pdf,2010-09-09,2010-09-09,Kantonsratssitzung,,,100
-103,28.10.2010,import/protocols/ow/Kantonsratsprotokoll_28.29._Oktober_2010.pdf,2010-10-28,2010-10-29,Kantonsratssitzung,,,100
-104,02.12.2010,import/protocols/ow/10_12_02.pdf,2010-12-02,2010-12-03,Kantonsratssitzung,,,100
-105,27.01.2011,import/protocols/ow/2011_01_27.pdf,2011-01-27,2011-01-27,Kantonsratssitzung,,,100
-106,17.03.2011,import/protocols/ow/2011_03_17.pdf,2011-03-17,2011-03-17,Kantonsratssitzung,,,100
-107,14.04.2011,import/protocols/ow/2011_04_14.pdf,2011-04-14,2011-04-14,Kantonsratssitzung,,,100
-108,26.05.2011,import/protocols/ow/2011_05_26.pdf,2011-05-26,2011-05-27,Kantonsratssitzung,,,100
-109,29.09.2011,import/protocols/ow/2011_09_29.pdf,2011-09-29,2011-09-29,Kantonsratssitzung,,,100
-110,01.07.2011,import/protocols/ow/2011_07_01.pdf,2011-07-01,2011-07-01,Kantonsratssitzung,,,100
-111,03.11.2011,import/protocols/ow/2011_11_03.pdf,2011-03-11,2011-03-11,Kantonsratssitzung,,,100
-112,02.12.2011,import/protocols/ow/Kantonsratsprotokoll_vom_1._2._Dezember_2011.pdf,2011-12-01,2011-12-02,Kantonsratssitzung,,,100
-113,26.01.2012,import/protocols/ow/2012_01_26.pdf,2012-01-26,2012-01-26,Kantonsratssitzung,,,100
-174,03.05.2012,import/protocols/ow/2012_05_03.pdf,2012-05-03,2012-05-03,Kantonsratssitzung,,,100
-114,31.05.2012,import/protocols/ow/2012_05_30_31.pdf,2012-05-30,2012-05-31,Kantonsratssitzung,,,100
-115,15.03.2012,import/protocols/ow/2012_03_15.pdf,2012-03-15,2012-03-15,Kantonsratssitzung,,,100
-117,29.06.2012,import/protocols/ow/2012_06_29.pdf,2012-06-29,2012-06-29,Eröffnungssitzung des Kantonsrats,1,,100
-118,13.09.2012,import/protocols/ow/2012_09_13.pdf,2012-09-13,2012-09-13,Kantonsratssitzung,,,100
-119,24.10.2012,import/protocols/ow/2012_10_24.pdf,2012-10-24,2012-10-24,Kantonsratssitzung,,,100
-120,06.12.2012,import/protocols/ow/2012_12_06.pdf,2012-12-06,2012-12-06,Kantonsratssitzung,,,100
-121,31.01.2013,import/protocols/ow/2013_01_31.pdf,2013-01-31,2013-01-31,Kantonsratssitzung,,,100
-122,14.03.2013,import/protocols/ow/2013_03_14.pdf,2013-03-14,2013-03-14,Kantonsratssitzung,,,100
-123,25.04.2013,import/protocols/ow/2013_04_25.pdf,2013-04-25,2013-04-25,Kantonsratssitzung,,,100
-124,23.05.2013,import/protocols/ow/2013_05_23.pdf,2013-05-23,2013-05-23,Kantonsratssitzung,,,100
-125,28.06.2013,import/protocols/ow/2013_06_28.pdf,2013-06-28,2013-06-28,Kantonsratssitzung,,,100
-126,12.09.2013,import/protocols/ow/2013_09_12.pdf,2013-09-12,2013-09-12,Kantonsratssitzung,,,100
-127,05.12.2013,import/protocols/ow/2013_12_05.pdf,2013-12-05,2013-12-05,Kantonsratssitzung,,,100
-174,24.10.2013,import/protocols/ow/2013_10_24.pdf,2013-10-24,2013-10-24,Kantonsratssitzung,,,100
-128,20.03.2014,import/protocols/ow/2014_03_20.pdf,2014-03-20,2014-03-20,Kantonsratssitzung,,,100
-129,30.01.2014,import/protocols/ow/2014_01_30.pdf,2014-01-30,2014-01-30,Kantonsratssitzung,,,100
-130,21.05.2014,import/protocols/ow/Kantonsratsprotokoll_Wortprotokoll_2014_05_21.pdf,2014-05-21,2014-05-21,Kantonsratssitzung,,,100
-131,16.04.2014,import/protocols/ow/2014_04_16.pdf,2014-04-16,2014-04-16,Kantonsratssitzung,,,100
-132,27.06.2014,import/protocols/ow/Kantonsratsprotokoll_Wortprotokoll_2014_06_27.pdf,2014-06-27,2014-06-27,Eröffnungssitzung des Kantonsrats,1,,100
-133,11.09.2014,import/protocols/ow/2014_09_11_Wortprtokoll.pdf,2014-09-11,2014-09-11,Kantonsratssitzung,,,100
-134,23.10.2014,import/protocols/ow/Kantonsratsverhandlung_vom_23._Oktober_2014_Wortprotokoll.pdf,2014-10-23,2014-10-23,Kantonsratssitzung,,,100
-135,04.12.2014,import/protocols/ow/Kantonsratsverhandlung_vom_4.5._Dezember_2014_Wortprotokoll.pdf,2014-12-04,2014-12-05,Kantonsratssitzung,,,100
-136,12.03.2015,import/protocols/ow/Kantonsratsverhandlung_vom_12._Maerz_2015_Wortprotokoll.pdf,2015-03-12,2015-03-12,Kantonsratssitzung,,,100
-137,23.04.2015,import/protocols/ow/Kantonsratsverhandlung_vom_23._April_2015_Wortprotokoll.pdf,2015-04-23,2015-04-23,Kantonsratssitzung,,,100
-138,19.06.2015,import/protocols/ow/Kantonsratsverhandlung_vom_19._Juni_2015_Wortprotokoll.pdf,2015-06-19,2015-06-19,Eröffnungssitzung des Kantonsrats,1,,100
-139,03.09.2015,import/protocols/ow/Kantonsratsverhandlung_vom_3._September_2015_Wortprotokoll.pdf,2015-09-03,2015-09-03,Kantonsratssitzung,,,100
-140,02.12.2015,import/protocols/ow/Kantonsratssitzung_vom_2.3._Dezember_2015_Wortprotokoll.pdf,2015-12-02,2015-12-03,Kantonsratssitzung,,,100
-141,22.10.2015,import/protocols/ow/Kantonsratssitzung_vom_22._Oktober_2015_Wortprotokoll.pdf,2015-10-22,2015-10-22,Kantonsratssitzung in Engelberg,,in Engelberg!,100
-175,28.01.2016,import/protocols/ow/Kantonsratssitzung_vom_28._Januar_2016_Wortprotokoll.pdf,2016-01-28,2016-01-28,Kantonsratssitzung,,,100
-142,10.03.2016,import/protocols/ow/Kantonsratssitzung_vom_10._Maerz_2016_Wortprotokoll.pdf,2016-03-10,2016-03-10,Kantonsratssitzung,,,100
-143,14.04.2016,import/protocols/ow/Kantonsratsverhandlung_vom_14._April_2016_Wortprotokoll.pdf,2016-04-14,2016-04-14,Kantonsratssitzung,,,100
-145,01.07.2016,import/protocols/ow/Kantonsratsverhandlung_vom_1._Juli_2016_Wortprotokoll.pdf,2016-07-01,2016-07-01,Eröffnungssitzung des Kantonsrats,1,,100
-176,08.09.2016,import/protocols/ow/Kantonsratsverhandlung_vom_8._September_2016_Wortprotokoll.pdf,2016-09-08,2016-09-08,Kantonsratssitzung,,,100
-146,26.10.2016,import/protocols/ow/Kantonsratsverhandlung_vom_26._Oktober_2016_Wortprotokoll.pdf,2016-10-26,2016-10-26,Kantonsratssitzung,,,100
-147,01.12.2016,import/protocols/ow/Kantonsratsverhandlung_vom_1.2._Dezember_2016_Wortprotokoll.pdf,2016-12-01,2016-12-02,Kantonsratssitzung,,,100
-148,26.01.2017,import/protocols/ow/Kantonsratsverhandlung_vom_26._Januar_2017_Wortprotokoll.pdf,2017-01-26,2017-01-26,Kantonsratssitzung,,,100
-149,24.03.2017,import/protocols/ow/Kantonsratsverhandlung_vom_24._Maerz_2017_Wortprotokoll.pdf,2017-03-24,2017-03-24,Kantonsratssitzung,,,100
-150,31.05.2017,import/protocols/ow/Kantonsratsverhandlung_vom_31._Mai__1._Juni_2017_Wortprotokoll.pdf,2017-05-31,2017-06-01,Kantonsratssitzung,,,100
-151,30.06.2017,import/protocols/ow/Kantonsratsverhandlung_vom_30._Juni_2017_Wortprotokoll.pdf,2017-06-30,2017-06-30,Eröffnungssitzung des Kantonsrats,1,,100
-152,07.09.2017,import/protocols/ow/Kantonsratsverhandlungen_vom_7._September_2017__Wortprotokoll.pdf,2017-09-07,2017-09-07,Kantonsratssitzung,,,100
-153,06.12.2017,import/protocols/ow/Kantonsratsverhandlungen_vom_6.7._Dezember_2017_Wortprotokoll.pdf,2017-12-06,2017-12-07,Kantonsratssitzung,,,100
-154,27.10.2017,import/protocols/ow/Kantonsratsverhandlungen_vom_27._Oktober_2017_Wortprotokoll.pdf,2017-10-27,2017-10-27,Kantonsratssitzung,,,100
-155,25.01.2018,import/protocols/ow/Kantonsratsverhandlungen_vom_25._Januar_2018_Wortprotokoll.pdf,2018-01-25,2018-01-25,Kantonsratssitzung,,,100
-156,15.03.2018,import/protocols/ow/Kantonratsverhandlungen_vom_15._Maerz_2018_Wortprotokoll.pdf,2018-03-15,2018-03-15,Kantonsratssitzung,,,100
-157,26.04.2018,import/protocols/ow/Kantonsratsverhandlung_vom_26._April_2018_Wortprotokoll.pdf,2018-04-26,2018-04-26,Kantonsratssitzung,,,100
-158,24.05.2018,import/protocols/ow/Kantonsratsverhandlungen_vom_24.25._Mai_2018_Wortprotokoll.pdf,2018-05-24,2018-05-25,Kantonsratssitzung,,,100
-159,06.09.2018,import/protocols/ow/Kantonsratsverhandlung_vom_6._September_2018_Wortprotokoll.pdf,2018-09-06,2018-09-06,Kantonsratssitzung,,,100
-160,29.06.2018,import/protocols/ow/Kantonsratsverhandlung_vom_29._Juni_2018_Wortprotokoll.pdf,2018-06-29,2018-06-29,Eröffnungssitzung des Kantonsrats,1,,100
-161,05.12.2018,import/protocols/ow/Kantonsratsverhandlungen_vom_5._Dezember_2018_Wortprotokoll.pdf,2018-12-05,2018-12-05,Kantonsratssitzung,,,100
-162,20.03.2019,import/protocols/ow/20190320_Wortprotokoll_Kantonsrat.pdf,2019-03-20,2019-03-20,Kantonsratssitzung,,,100
-163,23.05.2019,import/protocols/ow/20190523_Wortprotokoll_Kantonsrat.pdf,2019-05-23,2019-05-24,Kantonsratssitzung,,,100
-164,28.06.2019,import/protocols/ow/20190628_Wortprotokoll_Kantonsrat.pdf,2019-06-28,2019-06-28,Eröffnungssitzung des Kantonsrats,1,,100
-165,12.09.2019,import/protocols/ow/20190912_Wortprotokoll_Kantonsrat.pdf,2019-09-12,2019-09-12,Kantonsratssitzung,,,100
-166,05.12.2019,import/protocols/ow/20191205_Wortprotokoll_Kantonsrat.pdf,2019-12-05,2019-12-05,Kantonsratssitzung,,,100
-167,24.10.2019,import/protocols/ow/20191024_Wortprotokoll_Kantonsrat.pdf,2019-10-24,2019-10-24,Kantonsratssitzung,,,100
-168,19.03.2020,import/protocols/ow/,2020-03-19,2020-03-19,Kantonsratssitzung,,Ausfall infolge Covid-Pandemie,100
-170,10.09.2020,import/protocols/ow/20200910_Wortprotokoll_Kantonsrat.pdf,2020-09-10,2020-09-10,Kantonsratssitzung,,,100
-171,28.01.2021,import/protocols/ow/,2021-01-28,2021-01-28,Kantonsratssitzung,,,100
-172,03.12.2020,import/protocols/ow/2020120304_Wortprotokoll_Kantonsrat.pdf,2020-12-03,2020-12-04,Kantonsratssitzung,,,100
-173,18.03.2021,import/protocols/ow/,2021-03-18,,,,,100
-177,24.01.2019,import/protocols/ow/20190124_Wortprotokoll_Kantonsrat.pdf,2019-01-24,2019-01-24,Kantonsratssitzung,,,100
-178,17.12.2018,import/protocols/ow/Kantonsratsverhandlungen_vom_17._Dezember_2018_Worprotokoll.pdf,2018-12-17,2018-12-17,Kantonsratssitzung,,,100
-179,28.05.2020,import/protocols/ow/20200528_29_Wortprotokoll_Kantonsrat.pdf,2020-05-28,2020-05-29,Kantonsratssitzung,,,100
+100,2010-01-28,import/protocols/ow/Protokoll_der_Sitzung_vom_28._Januar_2010.pdf,2010-01-28,2010-01-28,Kantonsratssitzung,,,100
+101,2010-04-22,import/protocols/ow/Protokoll_der_Sitzung_vom_22._April_2010.pdf,2010-04-22,2010-04-22,Kantonsratssitzung,,,100
+102,2010-09-09,import/protocols/ow/Protokoll_10_09_09.pdf,2010-09-09,2010-09-09,Kantonsratssitzung,,,100
+103,2010-10-28,import/protocols/ow/Kantonsratsprotokoll_28.29._Oktober_2010.pdf,2010-10-28,2010-10-29,Kantonsratssitzung,,,100
+104,2010-12-02,import/protocols/ow/10_12_02.pdf,2010-12-02,2010-12-03,Kantonsratssitzung,,,100
+105,2011-01-27,import/protocols/ow/2011_01_27.pdf,2011-01-27,2011-01-27,Kantonsratssitzung,,,100
+106,2011-03-17,import/protocols/ow/2011_03_17.pdf,2011-03-17,2011-03-17,Kantonsratssitzung,,,100
+107,2011-04-14,import/protocols/ow/2011_04_14.pdf,2011-04-14,2011-04-14,Kantonsratssitzung,,,100
+108,2011-05-26,import/protocols/ow/2011_05_26.pdf,2011-05-26,2011-05-27,Kantonsratssitzung,,,100
+109,2011-09-29,import/protocols/ow/2011_09_29.pdf,2011-09-29,2011-09-29,Kantonsratssitzung,,,100
+110,2011-07-01,import/protocols/ow/2011_07_01.pdf,2011-07-01,2011-07-01,Kantonsratssitzung,,,100
+111,2011-11-03,import/protocols/ow/2011_11_03.pdf,2011-03-11,2011-03-11,Kantonsratssitzung,,,100
+112,2011-12-02,import/protocols/ow/Kantonsratsprotokoll_vom_1._2._Dezember_2011.pdf,2011-12-01,2011-12-02,Kantonsratssitzung,,,100
+113,2012-01-26,import/protocols/ow/2012_01_26.pdf,2012-01-26,2012-01-26,Kantonsratssitzung,,,100
+174,2012-05-03,import/protocols/ow/2012_05_03.pdf,2012-05-03,2012-05-03,Kantonsratssitzung,,,100
+114,2012-05-31,import/protocols/ow/2012_05_30_31.pdf,2012-05-30,2012-05-31,Kantonsratssitzung,,,100
+115,2012-03-15,import/protocols/ow/2012_03_15.pdf,2012-03-15,2012-03-15,Kantonsratssitzung,,,100
+117,2012-06-29,import/protocols/ow/2012_06_29.pdf,2012-06-29,2012-06-29,Eröffnungssitzung des Kantonsrats,1,,100
+118,2012-09-13,import/protocols/ow/2012_09_13.pdf,2012-09-13,2012-09-13,Kantonsratssitzung,,,100
+119,2012-10-24,import/protocols/ow/2012_10_24.pdf,2012-10-24,2012-10-24,Kantonsratssitzung,,,100
+120,2012-12-06,import/protocols/ow/2012_12_06.pdf,2012-12-06,2012-12-06,Kantonsratssitzung,,,100
+121,2013-01-31,import/protocols/ow/2013_01_31.pdf,2013-01-31,2013-01-31,Kantonsratssitzung,,,100
+122,2013-03-14,import/protocols/ow/2013_03_14.pdf,2013-03-14,2013-03-14,Kantonsratssitzung,,,100
+123,2013-04-25,import/protocols/ow/2013_04_25.pdf,2013-04-25,2013-04-25,Kantonsratssitzung,,,100
+124,2013-05-23,import/protocols/ow/2013_05_23.pdf,2013-05-23,2013-05-23,Kantonsratssitzung,,,100
+125,2013-06-28,import/protocols/ow/2013_06_28.pdf,2013-06-28,2013-06-28,Kantonsratssitzung,,,100
+126,2013-09-12,import/protocols/ow/2013_09_12.pdf,2013-09-12,2013-09-12,Kantonsratssitzung,,,100
+127,2013-12-05,import/protocols/ow/2013_12_05.pdf,2013-12-05,2013-12-05,Kantonsratssitzung,,,100
+174,2013-10-24,import/protocols/ow/2013_10_24.pdf,2013-10-24,2013-10-24,Kantonsratssitzung,,,100
+128,2014-03-20,import/protocols/ow/2014_03_20.pdf,2014-03-20,2014-03-20,Kantonsratssitzung,,,100
+129,2014-01-30,import/protocols/ow/2014_01_30.pdf,2014-01-30,2014-01-30,Kantonsratssitzung,,,100
+130,2014-05-21,import/protocols/ow/Kantonsratsprotokoll_Wortprotokoll_2014_05_21.pdf,2014-05-21,2014-05-21,Kantonsratssitzung,,,100
+131,2014-04-16,import/protocols/ow/2014_04_16.pdf,2014-04-16,2014-04-16,Kantonsratssitzung,,,100
+132,2014-06-27,import/protocols/ow/Kantonsratsprotokoll_Wortprotokoll_2014_06_27.pdf,2014-06-27,2014-06-27,Eröffnungssitzung des Kantonsrats,1,,100
+133,2014-09-11,import/protocols/ow/2014_09_11_Wortprtokoll.pdf,2014-09-11,2014-09-11,Kantonsratssitzung,,,100
+134,2014-10-23,import/protocols/ow/Kantonsratsverhandlung_vom_23._Oktober_2014_Wortprotokoll.pdf,2014-10-23,2014-10-23,Kantonsratssitzung,,,100
+135,2014-12-04,import/protocols/ow/Kantonsratsverhandlung_vom_4.5._Dezember_2014_Wortprotokoll.pdf,2014-12-04,2014-12-05,Kantonsratssitzung,,,100
+136,2015-03-12,import/protocols/ow/Kantonsratsverhandlung_vom_12._Maerz_2015_Wortprotokoll.pdf,2015-03-12,2015-03-12,Kantonsratssitzung,,,100
+137,2015-04-23,import/protocols/ow/Kantonsratsverhandlung_vom_23._April_2015_Wortprotokoll.pdf,2015-04-23,2015-04-23,Kantonsratssitzung,,,100
+138,2015-06-19,import/protocols/ow/Kantonsratsverhandlung_vom_19._Juni_2015_Wortprotokoll.pdf,2015-06-19,2015-06-19,Eröffnungssitzung des Kantonsrats,1,,100
+139,2015-09-03,import/protocols/ow/Kantonsratsverhandlung_vom_3._September_2015_Wortprotokoll.pdf,2015-09-03,2015-09-03,Kantonsratssitzung,,,100
+140,2015-12-02,import/protocols/ow/Kantonsratssitzung_vom_2.3._Dezember_2015_Wortprotokoll.pdf,2015-12-02,2015-12-03,Kantonsratssitzung,,,100
+141,2015-10-22,import/protocols/ow/Kantonsratssitzung_vom_22._Oktober_2015_Wortprotokoll.pdf,2015-10-22,2015-10-22,Kantonsratssitzung in Engelberg,,in Engelberg!,100
+175,2016-01-28,import/protocols/ow/Kantonsratssitzung_vom_28._Januar_2016_Wortprotokoll.pdf,2016-01-28,2016-01-28,Kantonsratssitzung,,,100
+142,2016-03-10,import/protocols/ow/Kantonsratssitzung_vom_10._Maerz_2016_Wortprotokoll.pdf,2016-03-10,2016-03-10,Kantonsratssitzung,,,100
+143,2016-04-14,import/protocols/ow/Kantonsratsverhandlung_vom_14._April_2016_Wortprotokoll.pdf,2016-04-14,2016-04-14,Kantonsratssitzung,,,100
+145,2016-07-01,import/protocols/ow/Kantonsratsverhandlung_vom_1._Juli_2016_Wortprotokoll.pdf,2016-07-01,2016-07-01,Eröffnungssitzung des Kantonsrats,1,,100
+176,2016-09-08,import/protocols/ow/Kantonsratsverhandlung_vom_8._September_2016_Wortprotokoll.pdf,2016-09-08,2016-09-08,Kantonsratssitzung,,,100
+146,2016-10-26,import/protocols/ow/Kantonsratsverhandlung_vom_26._Oktober_2016_Wortprotokoll.pdf,2016-10-26,2016-10-26,Kantonsratssitzung,,,100
+147,2016-12-01,import/protocols/ow/Kantonsratsverhandlung_vom_1.2._Dezember_2016_Wortprotokoll.pdf,2016-12-01,2016-12-02,Kantonsratssitzung,,,100
+148,2017-01-26,import/protocols/ow/Kantonsratsverhandlung_vom_26._Januar_2017_Wortprotokoll.pdf,2017-01-26,2017-01-26,Kantonsratssitzung,,,100
+149,2017-03-24,import/protocols/ow/Kantonsratsverhandlung_vom_24._Maerz_2017_Wortprotokoll.pdf,2017-03-24,2017-03-24,Kantonsratssitzung,,,100
+150,2017-05-31,import/protocols/ow/Kantonsratsverhandlung_vom_31._Mai__1._Juni_2017_Wortprotokoll.pdf,2017-05-31,2017-06-01,Kantonsratssitzung,,,100
+151,2017-06-30,import/protocols/ow/Kantonsratsverhandlung_vom_30._Juni_2017_Wortprotokoll.pdf,2017-06-30,2017-06-30,Eröffnungssitzung des Kantonsrats,1,,100
+152,2017-09-07,import/protocols/ow/Kantonsratsverhandlungen_vom_7._September_2017__Wortprotokoll.pdf,2017-09-07,2017-09-07,Kantonsratssitzung,,,100
+153,2017-12-06,import/protocols/ow/Kantonsratsverhandlungen_vom_6.7._Dezember_2017_Wortprotokoll.pdf,2017-12-06,2017-12-07,Kantonsratssitzung,,,100
+154,2017-10-27,import/protocols/ow/Kantonsratsverhandlungen_vom_27._Oktober_2017_Wortprotokoll.pdf,2017-10-27,2017-10-27,Kantonsratssitzung,,,100
+155,2018-01-25,import/protocols/ow/Kantonsratsverhandlungen_vom_25._Januar_2018_Wortprotokoll.pdf,2018-01-25,2018-01-25,Kantonsratssitzung,,,100
+156,2018-03-15,import/protocols/ow/Kantonratsverhandlungen_vom_15._Maerz_2018_Wortprotokoll.pdf,2018-03-15,2018-03-15,Kantonsratssitzung,,,100
+157,2018-04-26,import/protocols/ow/Kantonsratsverhandlung_vom_26._April_2018_Wortprotokoll.pdf,2018-04-26,2018-04-26,Kantonsratssitzung,,,100
+158,2018-05-24,import/protocols/ow/Kantonsratsverhandlungen_vom_24.25._Mai_2018_Wortprotokoll.pdf,2018-05-24,2018-05-25,Kantonsratssitzung,,,100
+159,2018-09-06,import/protocols/ow/Kantonsratsverhandlung_vom_6._September_2018_Wortprotokoll.pdf,2018-09-06,2018-09-06,Kantonsratssitzung,,,100
+160,2018-06-29,import/protocols/ow/Kantonsratsverhandlung_vom_29._Juni_2018_Wortprotokoll.pdf,2018-06-29,2018-06-29,Eröffnungssitzung des Kantonsrats,1,,100
+161,2018-12-05,import/protocols/ow/Kantonsratsverhandlungen_vom_5._Dezember_2018_Wortprotokoll.pdf,2018-12-05,2018-12-05,Kantonsratssitzung,,,100
+162,2019-03-20,import/protocols/ow/20190320_Wortprotokoll_Kantonsrat.pdf,2019-03-20,2019-03-20,Kantonsratssitzung,,,100
+163,2019-05-23,import/protocols/ow/20190523_Wortprotokoll_Kantonsrat.pdf,2019-05-23,2019-05-24,Kantonsratssitzung,,,100
+164,2019-06-28,import/protocols/ow/20190628_Wortprotokoll_Kantonsrat.pdf,2019-06-28,2019-06-28,Eröffnungssitzung des Kantonsrats,1,,100
+165,2019-09-12,import/protocols/ow/20190912_Wortprotokoll_Kantonsrat.pdf,2019-09-12,2019-09-12,Kantonsratssitzung,,,100
+166,2019-12-05,import/protocols/ow/20191205_Wortprotokoll_Kantonsrat.pdf,2019-12-05,2019-12-05,Kantonsratssitzung,,,100
+167,2019-10-24,import/protocols/ow/20191024_Wortprotokoll_Kantonsrat.pdf,2019-10-24,2019-10-24,Kantonsratssitzung,,,100
+168,2020-03-19,import/protocols/ow/,2020-03-19,2020-03-19,Kantonsratssitzung,,Ausfall infolge Covid-Pandemie,100
+170,2020-09-10,import/protocols/ow/20200910_Wortprotokoll_Kantonsrat.pdf,2020-09-10,2020-09-10,Kantonsratssitzung,,,100
+171,2021-01-28,import/protocols/ow/,2021-01-28,2021-01-28,Kantonsratssitzung,,,100
+172,2020-12-03,import/protocols/ow/2020120304_Wortprotokoll_Kantonsrat.pdf,2020-12-03,2020-12-04,Kantonsratssitzung,,,100
+173,2021-03-18,import/protocols/ow/,2021-03-18,,,,,100
+177,2019-01-24,import/protocols/ow/20190124_Wortprotokoll_Kantonsrat.pdf,2019-01-24,2019-01-24,Kantonsratssitzung,,,100
+178,2018-12-17,import/protocols/ow/Kantonsratsverhandlungen_vom_17._Dezember_2018_Worprotokoll.pdf,2018-12-17,2018-12-17,Kantonsratssitzung,,,100
+179,2020-05-28,import/protocols/ow/20200528_29_Wortprotokoll_Kantonsrat.pdf,2020-05-28,2020-05-29,Kantonsratssitzung,,,100

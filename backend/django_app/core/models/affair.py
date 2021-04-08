@@ -113,19 +113,26 @@ class Affair(models.Model):
     def __str__(self):
         return f'{self.identifier} {self.title}'
 
-class AffairResponse(models.Model):
-    """
-    model for affair response
-    * the response from the executive regarding the affair
-    """
-    pass
-
 class AffairDebate(models.Model):
     """
     model for affair debate
     * statements made in parlamet regarding the affair, WORTMELDUNGEN
     """
-    pass
+    session = models.ForeignKey('core.Session', on_delete=models.CASCADE, related_name="affairdebates", blank=True, null=True)
+    affair = models.ForeignKey('core.Affair', on_delete=models.CASCADE, related_name="affairdebates", blank=True, null=True)
+    politican = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="affairdebates", blank=True, null=True)
+
+    order = models.IntegerField()
+
+    content = models.TextField(blank=True)
+
+    # admin
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.politican.first_name} {self.politican.last_name} {self.affair.title}'
+    
     
 class AffairFile(models.Model):
     """
