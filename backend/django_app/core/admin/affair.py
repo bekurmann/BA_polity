@@ -63,7 +63,7 @@ class AffairAdmin(ImportExportModelAdmin):
 
     resource_class = AffairRessource
 
-    list_display = ('title', 'date_received', 'affair_type', 'status', 'identifier', 'parlament')
+    list_display = ('title', 'date_received', 'affair_type', 'status', 'accepted', 'identifier', 'parlament')
     search_fields = ['title', 'date_received', 'affair_type',]
 
 # *************************************************************************************
