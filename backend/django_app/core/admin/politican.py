@@ -30,7 +30,7 @@ class PoliticanAdmin(ImportExportModelAdmin):
     readonly_fields = ['get_avatar_preview']
 
     fieldsets = (
-        ('Personal Information', { 'fields': ('first_name', 'last_name', 'title', 'profession', 'date_of_birth',) }),
+        ('Personal Information', { 'fields': ('first_name', 'last_name', 'title', 'profession', 'date_of_birth', 'gender',) }),
         ('Address', { 'fields': ('street1', 'street2', 'city',) }),
         ('Location', { 'fields': ('location_query', 'location',  ) }),
         ('Contact', { 'fields': ('email', 'website', 'phone' ) }),

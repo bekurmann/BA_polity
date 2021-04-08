@@ -10,10 +10,10 @@ from core.models import Affair, Topic, Politican, Session, Parlament
 
 class AffairRessource(resources.ModelResource):
     parlament = fields.Field(column_name='parlament', attribute='parlament', widget=ForeignKeyWidget(Parlament, 'pk'))
-    signatory = fields.Field(column_name='signatory', attribute='signatory', widget=ManyToManyWidget(Politican, separator=';'))
+    signatory = fields.Field(column_name='signatory', attribute='signatory', widget=ForeignKeyWidget(Politican, 'pk'))
+    session = fields.Field(column_name='session', attribute='session', widget=ForeignKeyWidget(Session, 'pk'))
     joint_signatories = fields.Field(column_name='joint_signatories', attribute='joint_signatories', widget=ManyToManyWidget(Politican, separator=';'))
     topics = fields.Field(column_name='topics', attribute='topics', widget=ManyToManyWidget(Topic, separator=';'))
-    sessions = fields.Field(column_name='sessions', attribute='sessions', widget=ManyToManyWidget(Session, separator=';'))
 
     class Meta:
         model = Affair
@@ -31,12 +31,17 @@ class AffairAdmin(ImportExportModelAdmin):
     raw_id_fields = ['signatory', 'joint_signatories',]
 
     fieldsets = (
-        ('General Information', { 'fields': ('id', 'title', 'affair_type', 'status', 'urgent', 'identifier', 'date_received',) }),
+        ('General Information', { 'fields': ('id', 'title', 'affair_type', 'status', 'urgent', 'identifier', 'date_received', 'additional_information',) }),
         ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Authorship', {'fields': ('signatory', 'joint_signatories_count', 'joint_signatories', 'commission',)}),
         ('Topics', {'fields': ('topics',)}),
-        ('Content', {'fields': ('content_motivation', 'content_inquiries', 'content_all',)}),
-        ('Sessions', {'fields': ('sessions',)}),   
+        ('Content', {'fields': ('content_motivation', 'content_inquiries', 'content_all', 'content_response',)}),
+        ('Session', {'fields': ('session',)}),
+        ('Executive', {'fields': ('recommendation', 'transformation_recommendation',)}),  
+        ('Anonymous Vote', {'fields': ('anon_yes', 'anon_no', 'anon_abstinence',)}),   
+        ('Personalised Vote', {'fields': ('personalised_yes', 'personalised_no', 'personalised_abstinence',)}),  
+        ('Result', {'fields': ('accepted',)}),  
+        ('Special Fields', {'fields': ('discussion_desired', 'transformation_postulat',)}),  
     )
 
     resource_class = AffairRessource

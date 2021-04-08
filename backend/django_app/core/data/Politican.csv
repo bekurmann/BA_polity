@@ -68,7 +68,7 @@ id,first_name,last_name,gender,date_of_birth,profession,email,jurisdiction,fract
 211,Ruth,Koch-Niederberger,F,1964-07-13,Primarlehrerin / PR-Fachfrau,ruth_koch@bluewin.ch,Kerns,SP,Siebeneichstrasse 21,,Siebeneichstrasse 21 Kerns,41416609560,import/politicans/ow/RuthKochNiederberger.jpeg
 212,Maya,Büchi-Kaiser,F,1963-02-13,Betriebswirtschafterin,,Sachseln,FDP,,,,,import/politicans/ow/MayaBuechiKaiser.jpeg
 213,Urs,Keiser,M,1968-09-21,dipl. Physiotherapeut,keiser.wirth@hispeed.ch,Sarnen,CVP,Kirchstrasse 5D,,Kirchstrasse 5D Sarnen,41416609227,import/politicans/ow/UrsKeiser.jpg
-214,Susanne,Burch-Windlin,F,,Bäuerin mit FA,,Stalden,SVP,,,,,
+214,Susanne,Burch-Windlin,F,,Bäuerin mit FA,,Sarnen,SVP,,,,,
 215,Lukas,Küng,M,,"Rechtsanwalt, Fachanwalt SAV Strafrecht",,Alpnach Dorf,FDP,,,,,
 216,Guido,Steudler,M,,Dr. med. Facharzt für allg. Medizin,,Sarnen,CSP,Allmendstrasse 26,,Allmendstrasse 26 Wilen Sarnen,41416606740,
 217,Nicole,Wildisen,F,,Gymnasiallehrerin,,Sarnen,SP,Brunnmattweg 12,,Brunnmattweg 12 Sarnen,41416600511,
@@ -130,5 +130,5 @@ id,first_name,last_name,gender,date_of_birth,profession,email,jurisdiction,fract
 1003,Esther,Gasser Pfulg,F,1968-11-02,Betriebsökonomin HWV,,Lungern,FDP,,,,,import/politicans/ow/esthergasspfulg.jpg
 1004,Franz,Enderli,M,1954-12-04,Theologe,,Kerns,CSP,,,,,import/politicans/ow/franzenderli.jpg
 1005,Josef,Hess,M,1961-01-06,Forstingenieur,,Engelberg,,,,,,import/politicans/ow/josefhess.jpg
-9999,Beat,Hug,M,1981-01-01,liz. Staatswissenschaften,,,,,,,,
-9998,Nicole,Frunz Wallimann,F,1968-07-05,lic. rer. publ. ,,,,,,,,
+9999,Beat,Hug,M,1981-01-01,liz. Staatswissenschaften,,Sarnen,,,,,,
+9998,Nicole,Frunz Wallimann,F,1968-07-05,lic. rer. publ. ,,Sarnen,,,,,,
