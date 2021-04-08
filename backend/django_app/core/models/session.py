@@ -11,8 +11,8 @@ class Session(models.Model):
     # general information
     start_date = models.DateField()
     end_date = models.DateField()
-    opening_session = models.BooleanField()
-    regular_session = models.BooleanField()
+    opening_session = models.BooleanField(blank=True, null=True)
+    regular_session = models.BooleanField(blank=True, null=True)
     additional_information = models.TextField(blank=True)
 
     # greeting / address of discharge
@@ -36,4 +36,4 @@ class Session(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.date} {self.parlament.title}'
+        return f'{self.start_date} {self.parlament.title}'
