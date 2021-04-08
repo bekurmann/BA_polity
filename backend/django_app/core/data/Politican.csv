@@ -92,30 +92,30 @@ id,first_name,last_name,gender,date_of_birth,profession,email,jurisdiction,fract
 235,Isabella,Kretz-Kiser,F,,Buchhalterin,,Kerns,SVP,,,,,import/politicans/ow/IsabellaKretzKiser.jpg
 236,Christian,Limacher,M,1984-05-07,Unternehmer,christian@holzlimacher.ch,Alpnach Dorf,FDP,Baumgartenstrasse 9,,Baumgartenstrasse 9 Alpnach,,import/politicans/ow/ChristianLimacher.jpg
 237,Seppi,Hainbuchner,M,1959-09-15,Sachbearbeiter Finanzwesen,j-u.hainbuchner@tep.ch,Engelberg,SP,Meilandweg 23,,Meilandweg 23 Engelberg,,import/politicans/ow/SeppiHainbuchner.jpg
-238,Paula,Halter-Furrer,F,1960-01-01,Bäuerin/Primarlehrerin,,Giswil,CVP,Unterlinden,,Unterlinden Giswil,,import/politicans/ow/
-239,Martin,Odermatt,M,1959-01-01,Maschinenmechaniker,,Engelberg,SVP,Rüteli,,Rüteli Engelberg,,import/politicans/ow/
-240,Werner,Matter,M,,Landwirt,,Engelberg,CVP,Dorfstrasse 52b,,Dorfstrasse 52b Engelberg,,import/politicans/ow/
-241,Ruth,Infanger,F,1951-01-01,kaufm. Angestellte,,Engelberg,FDP,Parkweg 5,,Parkweg 5 Engelberg,,import/politicans/ow/
-242,Annie,Infanger-Schleiss,F,,Geschäftsfrau,,Engelberg,CVP,Dorfstrasse 34,,Dorfstrasse 34 Engelberg,,import/politicans/ow/
-243,Tony,Gasser-Ming,M,1960-01-01,Landwirt,,Lungern,CVP,Bürglenstrasse 8,,Bürglenstrasse 8 Lungern,,import/politicans/ow/
-244,André,Strasser,M,1956-01-01,eidg. dipl. Marketingleiter,,Giswil,FDP,Grossteilerstrasse 55,,Grossteilerstrasse 55 Giswil,,import/politicans/ow/
-245,Heidi,Brücker-Steiner,F,1953-01-01,Psychologin,,Giswil,CSP,Rebstock 14,,Rebstock 14 Giswil,,import/politicans/ow/
-246,Peter,Renggli,M,1955-01-01,dip. Wirtschaftsfachmann,,Alpnach Dorf,SVP,Grunderbergstrasse 5,,Grunderbergstrasse 5 Alpnach Dorf,,import/politicans/ow/
-247,Walter,Hug,M,1953-01-01,Meisterlandwirt,,Alpnach Dorf,FDP,Neuhof 1,,Neuhof 1 Alpnach Dorf,,import/politicans/ow/
-248,Monika,Brunner,F,1959-01-01,"lic. iur., Rechtsanwältin und Notarin",,Alpnach Dorf,CVP,Bahnhofstrasse 6,,Bahnhofstrasse 6 Alpnach Dorf,,import/politicans/ow/
-249,Anna,Schälin Nussbaum,F,1963-01-01,Familienfrau / Bäuerin,,Sachseln,CVP,Seeloch,,Seeloch Sachseln,,import/politicans/ow/
-250,Peter,Spichtig,M,1966-01-01,Gewerkschaftssekretär,,Sachseln,SP,Pappelweg 5,,Pappelweg 5 Sachseln,,import/politicans/ow/
-251,Gerda,Durrer,F,1970-01-01,Bürofachfrau,,Kerns,SP,Feldlistrasse 17,,Feldlistrasse 17 Kerns,,import/politicans/ow/
-252,Hans,Unternährer,M,1956-01-01,Karrossier,,Kerns,SVP,,,,,import/politicans/ow/
-253,Hanny,Durrer-Herger,F,1955-01-01,Geschäftsfrau,,Kerns,FDP,Sagenmatt 1,,Sagenmatt 1 Kerns,,import/politicans/ow/
-254,Josef,Bucher,M,1959-01-01,Landwirt,,Kerns,CVP,,,,,import/politicans/ow/
-255,Martin,Ming,M,1952-01-01,dipl. Architekt,,Kerns,FDP,Hohfurlistrasse 5,,Hohfurlistrasse 5 Kerns,,import/politicans/ow/
-256,Patrick,Imfeld,M,1966-01-01,dip. Bankfachexperte,,Sarnen,CVP,Giglenstrasse 21,,Giglenstrasse 21 Sarnen,,import/politicans/ow/
-257,Adrian,Halter,M,1962-01-01,Unternehmer,,Sarnen,SVP,Aamattweg 9,,Aamattweg 9 Sarnen,,import/politicans/ow/
-258,Theres,Huser Zemp,F,1954-01-01,Sozialarbeiterin,,Sarnen,CVP,Freiteilmattlistrasse 50,,Freiteilmattlistrasse 50 Sarnen,,import/politicans/ow/
-259,Paul,Küchler,M,1968-01-01,Landwirt/Technischer Kaufmann,,Sarnen,CVP,Eschliweg 9,,Eschliweg 9 Sarnen,,import/politicans/ow/
-260,Béatrice,Sidler-Gisler,F,1972-01-01,Betriebsökonomin FH,,Sarnen,FDP,Sonnenbergstrasse 13,,Sonnenbergstrasse 13 Sarnen,,import/politicans/ow/
-261,Bernhard,Berchtold-Durrer,M,1956-01-01,Poststellenleiter,,Sarnen,CSP,Enetriederstrasse 30,,Enetriederstrasse 30 Sarnen,,import/politicans/ow/
+238,Paula,Halter-Furrer,F,1960-01-01,Bäuerin/Primarlehrerin,,Giswil,CVP,Unterlinden,,Unterlinden Giswil,,
+239,Martin,Odermatt,M,1959-01-01,Maschinenmechaniker,,Engelberg,SVP,Rüteli,,Rüteli Engelberg,,
+240,Werner,Matter,M,,Landwirt,,Engelberg,CVP,Dorfstrasse 52b,,Dorfstrasse 52b Engelberg,,
+241,Ruth,Infanger,F,1951-01-01,kaufm. Angestellte,,Engelberg,FDP,Parkweg 5,,Parkweg 5 Engelberg,,
+242,Annie,Infanger-Schleiss,F,,Geschäftsfrau,,Engelberg,CVP,Dorfstrasse 34,,Dorfstrasse 34 Engelberg,,
+243,Tony,Gasser-Ming,M,1960-01-01,Landwirt,,Lungern,CVP,Bürglenstrasse 8,,Bürglenstrasse 8 Lungern,,
+244,André,Strasser,M,1956-01-01,eidg. dipl. Marketingleiter,,Giswil,FDP,Grossteilerstrasse 55,,Grossteilerstrasse 55 Giswil,,
+245,Heidi,Brücker-Steiner,F,1953-01-01,Psychologin,,Giswil,CSP,Rebstock 14,,Rebstock 14 Giswil,,
+246,Peter,Renggli,M,1955-01-01,dip. Wirtschaftsfachmann,,Alpnach Dorf,SVP,Grunderbergstrasse 5,,Grunderbergstrasse 5 Alpnach Dorf,,
+247,Walter,Hug,M,1953-01-01,Meisterlandwirt,,Alpnach Dorf,FDP,Neuhof 1,,Neuhof 1 Alpnach Dorf,,
+248,Monika,Brunner,F,1959-01-01,"lic. iur., Rechtsanwältin und Notarin",,Alpnach Dorf,CVP,Bahnhofstrasse 6,,Bahnhofstrasse 6 Alpnach Dorf,,
+249,Anna,Schälin Nussbaum,F,1963-01-01,Familienfrau / Bäuerin,,Sachseln,CVP,Seeloch,,Seeloch Sachseln,,
+250,Peter,Spichtig,M,1966-01-01,Gewerkschaftssekretär,,Sachseln,SP,Pappelweg 5,,Pappelweg 5 Sachseln,,
+251,Gerda,Durrer,F,1970-01-01,Bürofachfrau,,Kerns,SP,Feldlistrasse 17,,Feldlistrasse 17 Kerns,,
+252,Hans,Unternährer,M,1956-01-01,Karrossier,,Kerns,SVP,,,,,
+253,Hanny,Durrer-Herger,F,1955-01-01,Geschäftsfrau,,Kerns,FDP,Sagenmatt 1,,Sagenmatt 1 Kerns,,
+254,Josef,Bucher,M,1959-01-01,Landwirt,,Kerns,CVP,,,,,
+255,Martin,Ming,M,1952-01-01,dipl. Architekt,,Kerns,FDP,Hohfurlistrasse 5,,Hohfurlistrasse 5 Kerns,,
+256,Patrick,Imfeld,M,1966-01-01,dip. Bankfachexperte,,Sarnen,CVP,Giglenstrasse 21,,Giglenstrasse 21 Sarnen,,
+257,Adrian,Halter,M,1962-01-01,Unternehmer,,Sarnen,SVP,Aamattweg 9,,Aamattweg 9 Sarnen,,
+258,Theres,Huser Zemp,F,1954-01-01,Sozialarbeiterin,,Sarnen,CVP,Freiteilmattlistrasse 50,,Freiteilmattlistrasse 50 Sarnen,,
+259,Paul,Küchler,M,1968-01-01,Landwirt/Technischer Kaufmann,,Sarnen,CVP,Eschliweg 9,,Eschliweg 9 Sarnen,,
+260,Béatrice,Sidler-Gisler,F,1972-01-01,Betriebsökonomin FH,,Sarnen,FDP,Sonnenbergstrasse 13,,Sonnenbergstrasse 13 Sarnen,,
+261,Bernhard,Berchtold-Durrer,M,1956-01-01,Poststellenleiter,,Sarnen,CSP,Enetriederstrasse 30,,Enetriederstrasse 30 Sarnen,,
 262,Maya,Kiser-Krummenacher,F,1971-01-01,Bäuerin / Pflegeassistentin,,Sarnen,SVP,im Stücki,,"im Stücki, Ramersberg",,
 263,Robert,Hurschler,M,1959-01-01,Betriebsleiter,,Engelberg,CVP,Hälmeweg 3,,Hälmeweg 3 Engelberg,,
 264,John,de Haan,M,1952-01-01,Makler,,Sarnen,FDP,St. Antonistrasse 9,,St. Antonistrasse 9 Sarnen,,
@@ -130,5 +130,5 @@ id,first_name,last_name,gender,date_of_birth,profession,email,jurisdiction,fract
 1003,Esther,Gasser Pfulg,F,1968-11-02,Betriebsökonomin HWV,,Lungern,FDP,,,,,import/politicans/ow/esthergasspfulg.jpg
 1004,Franz,Enderli,M,1954-12-04,Theologe,,Kerns,CSP,,,,,import/politicans/ow/franzenderli.jpg
 1005,Josef,Hess,M,1961-01-06,Forstingenieur,,Engelberg,,,,,,import/politicans/ow/josefhess.jpg
-9999,Beat,Hug,M,1981-01-01,liz. Staatswissenschaften,,,,,,,,import/politicans/ow/
-9998,Nicole,Frunz Wallimann,F,1968-07-05,lic. rer. publ. ,,,,,,,,import/politicans/ow/
+9999,Beat,Hug,M,1981-01-01,liz. Staatswissenschaften,,,,,,,,
+9998,Nicole,Frunz Wallimann,F,1968-07-05,lic. rer. publ. ,,,,,,,,
