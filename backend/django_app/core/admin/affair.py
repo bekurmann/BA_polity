@@ -19,8 +19,16 @@ class AffairRessource(resources.ModelResource):
         model = Affair
         import_id_fields = ['id']
 
-
-
+class AffairDebateResource(resources.ModelResource):
+    session = fields.Field(column_name='session', attribute='session',
+                            widget=ForeignKeyWidget(Session, 'pk'))
+    affair = fields.Field(column_name='affair', attribute='affair',
+                            widget=ForeignKeyWidget(Affair, 'pk'))
+    politican = fields.Field(column_name='politican', attribute='politican',
+                            widget=ForeignKeyWidget(Politican, 'pk'))
+    class Meta:
+        model = AffairDebate
+        import_id_fields = ['id']
 class AffairFileResource(resources.ModelResource):
     affair = fields.Field(column_name='affair', attribute='affair',
                             widget=ForeignKeyWidget(Affair, 'pk'))
@@ -63,7 +71,20 @@ class AffairAdmin(ImportExportModelAdmin):
 # *************************************************************************************
 
 class AffairDebateAdmin(ImportExportModelAdmin):
-    pass
+    """
+    Customizing Admininterface for AffairDebate
+    """
+    readonly_fields = ['id']
+
+    fieldsets = (
+        ('General Information', {'fields': ('affair', 'politican', 'session', 'order',)}),
+        ('Content', {'fields': ('content',)})
+    )
+
+    resource_class = AffairDebateResource
+
+    list_display = ('politican', 'affair')
+    search_fields = ['politican__first_name', 'politican__last_name', 'affair__title', 'content',]
 
 # *************************************************************************************
 # AffairFile Admin
@@ -76,13 +97,14 @@ class AffairFileAdmin(ImportExportModelAdmin):
     readonly_fields = ['id']
 
     fieldsets = (
-        ('General Information', {'fields': ('id', 'affair', 'affair_file',)})
+        ('General Information', {'fields': ('id', 'affair', 'affair_file',)}),
     )
 
     resource_class = AffairFileResource
 
-    list_display = ('affair.title', 'affair_file')
+    list_display = ('affair', 'affair_file')
 
 # register
 admin.site.register(Affair, AffairAdmin)
+admin.site.register(AffairDebate, AffairDebateAdmin)
 admin.site.register(AffairFile, AffairFileAdmin)

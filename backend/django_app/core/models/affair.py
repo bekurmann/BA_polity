@@ -144,7 +144,8 @@ class AffairFile(models.Model):
         # file will be uploaded to MEDIA_ROOT/affairs/<parlament.name>/<identifier>/<filename>
         return f'affairs/{instance.affair.parlament.name}/{instance.affair.identifier}/{filename}'
 
-    affair_file = models.FileField(upload_to=get_affair_file_upload_path)
+    # default file length is 100; not enough!
+    affair_file = models.FileField(upload_to=get_affair_file_upload_path, max_length=600)
     
     # admin
     created_at = models.DateTimeField(auto_now_add=True)
