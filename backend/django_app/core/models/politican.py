@@ -12,12 +12,22 @@ class Politican(models.Model):
     * model for politican
     * fk city refers to model PLZ (with bfs_nummer also municipality, etc)
     * still todo: 
-        - prepopulate location_query with city.name ?
+        - prepopulate location_query with city.name ? seems hard!
     """
+    # gender choices
+    MALE = 'M'
+    FEMALE = 'F'
+    DIVERS = 'D'
+    GENDER_CHOICES = [
+        (MALE, 'Male'),
+        (FEMALE, 'Female'),
+        (DIVERS, 'Divers')
+    ]
 
     # personal information
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     title = models.CharField(max_length=200, blank=True)
     profession = models.CharField(max_length=200, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
@@ -44,6 +54,8 @@ class Politican(models.Model):
     parties = models.ManyToManyField('core.Party', through='Membership',
                                                 through_fields=('politican',
                                                 'party'))
+    #executives = 
+    
 
     # contact
     email = models.EmailField(max_length=200, blank=True)
