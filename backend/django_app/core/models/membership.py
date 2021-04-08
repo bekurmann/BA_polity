@@ -62,7 +62,8 @@ class Membership(models.Model):
 
     class Meta:
         constraints = [
-            # membership type of one politican must be unique for one parlament
+            # membership type of one politican must be unique for one parlament 
+            # not sure if this works with more than one votecounter membership
             models.UniqueConstraint(fields=['membership_type', 'membership_function', 'politican'], name='unique_parlament_membership_types'),
         ]
 
