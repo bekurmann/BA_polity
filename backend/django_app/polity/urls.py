@@ -17,7 +17,8 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 PoliticanViewSet,
                                 ParlamentMembershipViewSet, CommissionViewSet,
                                 CommissionMembershipViewSet,
-                                FractionViewSet, AffairViewSet, AffairDebateViewSet, 
+                                FractionViewSet, AffairAllViewSet, 
+                                AffairViewSet, AffairDebateViewSet, 
                                 AffairFileViewSet)
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
@@ -70,6 +71,12 @@ affair_file_router.register(r'files', AffairFileViewSet, basename="affair-files"
 router.register(r'politicans', PoliticanViewSet, basename="politicans")
 # /politicans/ 
 # /politicans/<pk>/
+
+# Affair ROUTER *
+# **************************************************************************************
+router.register(r'affairs', AffairAllViewSet, basename="affairs")
+# /affairs/ 
+# /affairs/<pk>/
 
 # LOCATION ROUTER
 # **************************************************************************************

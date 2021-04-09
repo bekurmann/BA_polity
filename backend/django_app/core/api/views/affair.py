@@ -11,6 +11,23 @@ from core.api.serializers import ( AffairListSerializer, AffairDetailSerializer,
 # *****************************************************************************************
 # Affair
 # *****************************************************************************************
+class AffairAllViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for affairs
+    """
+    def get_queryset(self):
+        return Affair.objects.all()
+
+    serializer_class = AffairListSerializer
+    detail_serializer_class = AffairDetailSerializer
+
+    def get_serializer_class(self):
+        # return serializer class based on action (list/retrieve)
+        if self.action == 'retrieve':
+            if hasattr(self, 'detail_serializer_class'):
+                return self.detail_serializer_class
+        
+        return super(AffairAllViewSet, self).get_serializer_class()
 class AffairViewSet(viewsets.ReadOnlyModelViewSet):
     """
     read-only viewset for affairs
