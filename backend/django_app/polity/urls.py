@@ -50,7 +50,7 @@ fraction_router.register(r'fractions', FractionViewSet, basename='fractions')
 # /parlaments/<pk>/fractions/
 # /parlaments/<pk>/fractions/<pk>/
 
-affair_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlaments')
+affair_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
 affair_router.register(r'affairs', AffairViewSet, basename='affairs')
 # /parlaments/<pk>/affairs/
 # /parlaments/<pk>/affairs/<pk>
