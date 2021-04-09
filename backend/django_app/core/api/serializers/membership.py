@@ -3,7 +3,7 @@ from rest_framework import serializers
 # import models
 from core.models import Membership
 
-from core.api.serializers import PoliticanSerializer
+from core.api.serializers import PoliticanListSerializer
 
 # *****************************************************************************************
 # Membership
@@ -12,7 +12,7 @@ class MembershipSerializer(serializers.ModelSerializer):
     """
     model serializer for membership
     """
-    politican = PoliticanSerializer(read_only=True)
+    politican = PoliticanListSerializer(read_only=True)
     active = serializers.BooleanField()
     class Meta:
         model = Membership
