@@ -43,8 +43,8 @@ class Membership(models.Model):
     membership_function = models.CharField(max_length=5, choices=FUNCTION_CHOICES, default=MEMBER)
 
     #fk 
-    politican = models.ForeignKey('core.Politican', on_delete=models.CASCADE)
-    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, blank=True, null=True)
+    politican = models.ForeignKey('core.Politican', on_delete=models.CASCADE, related_name="politican_memberships")
+    parlament = models.ForeignKey('core.Parlament', on_delete=models.CASCADE, blank=True, null=True, related_name="parlament_memberships")
     commission = models.ForeignKey('core.Commission', on_delete=models.CASCADE, blank=True, null=True)
     fraction = models.ForeignKey('core.Fraction', on_delete=models.CASCADE, blank=True, null=True)
     party = models.ForeignKey('core.Party', on_delete=models.CASCADE, blank=True, null=True)
