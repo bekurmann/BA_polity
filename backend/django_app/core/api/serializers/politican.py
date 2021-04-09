@@ -22,7 +22,17 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
     commissions = CommissionSerializer(read_only=True, many=True)
     #parties = 
     #parlaments = ParlamentSerializer(read_only=True)
+
+    number_of_submitted_affairs = serializers.SerializerMethodField()
+    number_of_debate_statements = serializers.SerializerMethodField()
  
     class Meta:
         model = Politican
         exclude = ['location_query', ]
+
+    def get_number_of_submitted_affairs(self, affair):
+        # wrong related name, should be affairs
+        return affair.signatories.count()
+
+    def get_number_of_debate_statements(self, debate):
+        return debate.affairdebates.count()

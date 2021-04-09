@@ -9,7 +9,14 @@ from locations.api.serializers import CantonNestedSerializer, PLZSerializer
 # *****************************************************************************************
 # Parlament
 # *****************************************************************************************
-class ParlamentSerializer(serializers.ModelSerializer):
+class ParlamentListSerializer(serializers.ModelSerializer):
+    """
+    """
+    class Meta:
+        model = Parlament
+        exclude = ['location', 'location_query',]
+
+class ParlamentDetailSerializer(serializers.ModelSerializer):
     """ 
     model serializer for parlament
         * city is nested with PLZSerializer

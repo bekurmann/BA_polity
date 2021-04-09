@@ -1,5 +1,5 @@
 # from .party import 
-from .parlament import ParlamentSerializer
+from .parlament import ParlamentListSerializer, ParlamentDetailSerializer
 from .commission import CommissionSerializer
 from .fraction import FractionSerializer
 #from .affair import
