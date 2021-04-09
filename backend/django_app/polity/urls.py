@@ -17,7 +17,7 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 PoliticanViewSet,
                                 ParlamentMembershipViewSet, CommissionViewSet,
                                 CommissionMembershipViewSet,
-                                FractionViewSet )
+                                FractionViewSet, AffairViewSet)
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -50,8 +50,13 @@ fraction_router.register(r'fractions', FractionViewSet, basename='fractions')
 # /parlaments/<pk>/fractions/
 # /parlaments/<pk>/fractions/<pk>/
 
+affair_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlaments')
+affair_router.register(r'affairs', AffairViewSet, basename='affairs')
+# /parlaments/<pk>/affairs/
+# /parlaments/<pk>/affairs/<pk>
 
-# POLITICAN ROUTER
+
+# POLITICAN ROUTER *
 # **************************************************************************************
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
@@ -103,6 +108,8 @@ urlpatterns = [
     path('api/v1/', include(commission_membership_router.urls)),
     # nested fractions 
     path('api/v1/', include(fraction_router.urls)),
+    # nested affairs
+    path('api/v1/', include(affair_router.urls)),
 
     # nested municipalities / cantons
      path('api/v1/', include(canton_municipality_router.urls)),
