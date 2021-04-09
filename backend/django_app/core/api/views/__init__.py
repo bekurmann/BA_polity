@@ -3,6 +3,6 @@ from .politican import PoliticanViewSet
 from .parlament import ParlamentViewSet
 from .commission import CommissionViewSet
 from .fraction import FractionViewSet
-from .affair import ( AffairViewSet )
+from .affair import ( AffairViewSet, AffairDebateViewSet, AffairFileViewSet )
 from .session import SessionViewSet
 from .membership import ParlamentMembershipViewSet, CommissionMembershipViewSet

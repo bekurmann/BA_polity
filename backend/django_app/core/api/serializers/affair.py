@@ -14,7 +14,11 @@ class AffairListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Affair
-        exclude = ["created_at", "updated_at",]
+        exclude = ["created_at", "updated_at", "additional_information", "content_all", "content_motivation",
+                    "content_inquiries", "joint_signatories_count", "anon_yes", "anon_no", "anon_abstinence", 
+                    "recommendation", "transformation_recommendation", "content_response", "discussion_desired",
+                    "transformation_postulat", "commission", "joint_signatories", "personalised_yes", 
+                    "personalised_no", "personalised_abstinence",]
 
 class AffairDetailSerializer(serializers.ModelSerializer):
     """

@@ -28,3 +28,46 @@ class AffairViewSet(viewsets.ReadOnlyModelViewSet):
                 return self.detail_serializer_class
         
         return super(AffairViewSet, self).get_serializer_class()
+
+
+# *****************************************************************************************
+# AffairDebate
+# *****************************************************************************************
+class AffairDebateViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for affairs
+    """
+    def get_queryset(self):
+        return AffairDebate.objects.filter(affair=self.kwargs['affair_pk'])
+
+    serializer_class = AffairDebateListSerializer
+    detail_serializer_class = AffairDebateDetailSerializer
+
+    def get_serializer_class(self):
+        # return serializer class based on action (list/retrieve)
+        if self.action == 'retrieve':
+            if hasattr(self, 'detail_serializer_class'):
+                return self.detail_serializer_class
+        
+        return super(AffairDebateViewSet, self).get_serializer_class()
+
+# *****************************************************************************************
+# AffairFile
+# *****************************************************************************************
+class AffairFileViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read-only viewset for affairs
+    """
+    def get_queryset(self):
+        return AffairFile.objects.filter(affair=self.kwargs['affair_pk'])
+
+    serializer_class = AffairFileListSerializer
+    detail_serializer_class = AffairFileDetailSerializer
+
+    def get_serializer_class(self):
+        # return serializer class based on action (list/retrieve)
+        if self.action == 'retrieve':
+            if hasattr(self, 'detail_serializer_class'):
+                return self.detail_serializer_class
+        
+        return super(AffairFileViewSet, self).get_serializer_class()

@@ -17,7 +17,8 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 PoliticanViewSet,
                                 ParlamentMembershipViewSet, CommissionViewSet,
                                 CommissionMembershipViewSet,
-                                FractionViewSet, AffairViewSet)
+                                FractionViewSet, AffairViewSet, AffairDebateViewSet, 
+                                AffairFileViewSet)
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -54,11 +55,19 @@ affair_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlam
 affair_router.register(r'affairs', AffairViewSet, basename='affairs')
 # /parlaments/<pk>/affairs/
 # /parlaments/<pk>/affairs/<pk>
+affair_debate_router = routers.NestedSimpleRouter(affair_router, r'affairs', lookup='affair')
+affair_debate_router.register(r'debate', AffairDebateViewSet, basename="affair-debates")
+# /parlaments/<pk>/affairs/<pk>/debate/
+# /parlaments/<pk>/affairs/<pk>/debate/<pk>/
+affair_file_router = routers.NestedSimpleRouter(affair_router, r'affairs', lookup='affair')
+affair_file_router.register(r'files', AffairFileViewSet, basename="affair-files")
+# /parlaments/<pk>/affairs/<pk>/files/
+# /parlaments/<pk>/affairs/<pk>/files/<pk>/
 
 
 # POLITICAN ROUTER *
 # **************************************************************************************
-router.register(r'politicans', PoliticanViewSet)
+router.register(r'politicans', PoliticanViewSet, basename="politicans")
 # /politicans/ 
 # /politicans/<pk>/
 
@@ -110,6 +119,8 @@ urlpatterns = [
     path('api/v1/', include(fraction_router.urls)),
     # nested affairs
     path('api/v1/', include(affair_router.urls)),
+    path('api/v1/', include(affair_debate_router.urls)),
+    path('api/v1/', include(affair_file_router.urls)),
 
     # nested municipalities / cantons
      path('api/v1/', include(canton_municipality_router.urls)),
