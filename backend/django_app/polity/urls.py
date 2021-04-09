@@ -14,9 +14,10 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 # import router from 3rd party nested-routes
 from rest_framework_nested import routers
 from core.api.views import (    ParlamentViewSet, SessionViewSet,
-                                PoliticanViewSet, PoliticanParlamentViewSet,
+                                PoliticanViewSet,
                                 ParlamentMembershipViewSet, CommissionViewSet,
-                                CommissionMembershipViewSet )
+                                CommissionMembershipViewSet,
+                                FractionViewSet )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -44,16 +45,17 @@ commission_membership_router.register(r'memberships', CommissionMembershipViewSe
 # /parlaments/<pk>/commissions/<pk>/memberships/
 # /parlaments/<pk>/commissions/<pk>/memberships/<pk>/
 
+fraction_router = routers.NestedSimpleRouter(router, r'parlaments', lookup='parlament')
+fraction_router.register(r'fractions', FractionViewSet, basename='fractions')
+# /parlaments/<pk>/fractions/
+# /parlaments/<pk>/fractions/<pk>/
+
 
 # POLITICAN ROUTER
 # **************************************************************************************
 router.register(r'politicans', PoliticanViewSet)
 # /politicans/ 
 # /politicans/<pk>/
-politican_membership_router = routers.NestedSimpleRouter(router, r'politicans', lookup='politican')
-politican_membership_router.register(r'memberships', PoliticanParlamentViewSet, basename='politican-memberships')
-# /politicans/<pk>/memberships/
-# /politicans/<pk>/memberships/<pk>/
 
 # LOCATION ROUTER
 # **************************************************************************************
@@ -99,9 +101,8 @@ urlpatterns = [
     # nested commissions / ...
     path('api/v1/', include(commission_router.urls)),
     path('api/v1/', include(commission_membership_router.urls)),
-
-    # nested politicans/ memberships
-    path('api/v1/', include(politican_membership_router.urls)),
+    # nested fractions 
+    path('api/v1/', include(fraction_router.urls)),
 
     # nested municipalities / cantons
      path('api/v1/', include(canton_municipality_router.urls)),

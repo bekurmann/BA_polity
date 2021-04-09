@@ -8,12 +8,13 @@ from locations.api.serializers import PLZSerializer
 from core.api.serializers import FractionSerializer, CommissionSerializer
 
 class PoliticanListSerializer(serializers.ModelSerializer):
+    fractions = FractionSerializer(read_only=True, many=True)
 
     class Meta:
         model = Politican
-        exclude = ['profession', 'date_of_birth', 'parlaments', 'fractions', 
+        exclude = ['profession', 'date_of_birth', 'parlaments',
                     'email', 'website',
-                    'location_query', 'location', 
+                    'location_query', 
                     'parties', 'executives', 'commissions',]
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):

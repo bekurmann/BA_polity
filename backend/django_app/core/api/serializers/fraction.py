@@ -10,4 +10,4 @@ class FractionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Fraction
-        fields = '__all__'
+        exclude = ["created_at", "updated_at",]

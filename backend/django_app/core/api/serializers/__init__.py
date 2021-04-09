@@ -6,4 +6,4 @@ from .fraction import FractionSerializer
 from .session import SessionSerializer
 # need to be down here because of import order
 from .politican import PoliticanListSerializer, PoliticanDetailSerializer
-from .membership import MembershipSerializer 
+from .membership import MembershipListSerializer, MembershipDetailSerializer 

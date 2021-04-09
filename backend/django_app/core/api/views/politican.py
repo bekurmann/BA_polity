@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 
 # models
-from core.models import Politican, Membership
+from core.models import Politican
 
 # serializers
-from core.api.serializers import PoliticanListSerializer, PoliticanDetailSerializer, MembershipSerializer
+from core.api.serializers import PoliticanListSerializer, PoliticanDetailSerializer
 
 class PoliticanViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -22,12 +22,4 @@ class PoliticanViewSet(viewsets.ReadOnlyModelViewSet):
         
         return super(PoliticanViewSet, self).get_serializer_class()
 
-class PoliticanParlamentViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    read-only viewset for listing parlament membership for politican
-    """
-    def get_queryset(self):
-        return Membership.objects.filter(politican=self.kwargs['politican_pk'])
-
-    serializer_class = MembershipSerializer
     
