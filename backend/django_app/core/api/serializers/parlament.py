@@ -15,6 +15,8 @@ from django.db.models import Prefetch
 class ParlamentListSerializer(serializers.ModelSerializer):
     """
     """
+    jurisdiction_canton = CantonNestedSerializer(read_only=True)
+
     class Meta:
         model = Parlament
         exclude = ['location', 'location_query',]

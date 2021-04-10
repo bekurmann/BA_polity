@@ -1,82 +1,116 @@
 <template>
     <v-container fluid>
-        <v-row>
-            <v-col cols="12">
-                <v-card dark color="primary">
-                    <v-card-title primary-title>
-                        {{parlament.title}}
-                        <v-avatar
-                            size="50"
-                        >
-                        <v-img :src="parlament.jurisdiction_canton.emblem" max-height="30" contain alt="canton emblem"></v-img>
-                        </v-avatar>
-                    </v-card-title>
-                    <v-card-subtitle>{{parlament.number_of_seats}} Seats</v-card-subtitle>
-                </v-card>
-            </v-col>
-        </v-row>
-        <!-- start grid -->
-        <v-row>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
-                <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch"> 
-                <ParlamentDetailContact :parlament="parlament"></ParlamentDetailContact>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12" class="d-flex child-flex align-stretch">
+        <v-card dark color="primary">
+            <v-card-title primary-title>
+                {{parlament.title}}
+                <v-avatar
+                    size="50"
+                >
+                <v-img :src="parlament.jurisdiction_canton.emblem" max-height="30" contain alt="canton emblem"></v-img>
+                </v-avatar>
+            </v-card-title>
 
-                <v-card v-if="$fetchState.pending">
-                    <v-card-title primary-title>
-                        Map
-                    </v-card-title>
-                    <v-card-text>
-                        <v-skeleton-loader
-                        class="mx-auto"
-                        type="image@2"
-                        ></v-skeleton-loader>
-                    </v-card-text>
-                </v-card>
+            <v-card-text>
+                
+                <v-tabs
+                    v-model="tab"
+                    color="primary"
+                    light
+                    center-active
+                    icons-and-text
+                    slider-color="primary"
+                >
+                    <v-tabs-slider></v-tabs-slider>
 
-                <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
-                <ParlamentDetailMap :parlament="parlament" :memberships="memberships" v-else></ParlamentDetailMap>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                <v-card>
-                    <v-card-title primary-title>
-                        Affairs
-                    </v-card-title>
-                </v-card>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                <ParlamentDetailMembers :memberships="memberships"></ParlamentDetailMembers>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                <v-card>
-                    <v-card-title primary-title>
-                        Sessions
-                    </v-card-title>
-                    
-                </v-card>
-            </v-col>
-            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
-                <v-card>
-                    <v-card-title primary-title>
-                        Commissions
-                    </v-card-title>
-                </v-card>
-            </v-col>
-        </v-row>
-        <!-- end grid -->
-        
+                    <v-tab href="#tab-1">
+                            Overview
+                            <v-icon>mdi-view-comfy-outline</v-icon>
+                    </v-tab>  
+
+                    <v-tab href="#tab-2">
+                            Members
+                            <v-icon>mdi-account-multiple-outline</v-icon>
+                    </v-tab>  
+
+                    <v-tab href="#tab-3">
+                            Affairs
+                            <v-icon>mdi-file-document-outline</v-icon>
+                    </v-tab>  
+
+                    <v-tab href="#tab-4">
+                            Sessions
+                            <v-icon>mdi-seat-outline</v-icon>
+                    </v-tab>  
+
+                    <v-tab href="#tab-5">
+                            Commissions
+                            <v-icon>mdi-domain</v-icon>
+                    </v-tab>  
+
+                    <v-tab href="#tab-6">
+                            Map
+                            <v-icon>mdi-map-marker-outline</v-icon>
+                    </v-tab> 
+
+                    <v-tab href="#tab-7">
+                            Analysis
+                            <v-icon>mdi-chart-line-variant</v-icon>
+                    </v-tab> 
+
+                    <v-tabs-items v-model="tab">
+                        
+                        <v-tab-item value="tab-1">
+                            <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-2">
+                            <ParlamentDetailMembers :memberships="memberships"></ParlamentDetailMembers>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-3">
+                            <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-4">
+                            <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-5">
+                            <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-6">
+                            <v-card v-if="$fetchState.pending">
+                                <v-card-title primary-title>
+                                    Map
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-skeleton-loader
+                                    class="mx-auto"
+                                    type="image@2"
+                                    ></v-skeleton-loader>
+                                </v-card-text>
+                            </v-card>
+
+                            <p v-else-if="$fetchState.error">{{ $fetchState.error.message }}</p>
+                            <ParlamentDetailMap :parlament="parlament" :memberships="memberships" v-else></ParlamentDetailMap>
+                        </v-tab-item>
+
+                        <v-tab-item value="tab-7">
+                            <ParlamentDetailGeneralInformation :parlament="parlament"></ParlamentDetailGeneralInformation>
+                        </v-tab-item>
+
+                    </v-tabs-items>
+
+                </v-tabs>
+
+            </v-card-text>
+
+        </v-card>        
     </v-container>
 </template>
 <script>
 import ParlamentDetailGeneralInformation from '~/components/parlaments/ParlamentDetailGeneralInformation.vue'
-import ParlamentDetailContact from '~/components/parlaments/ParlamentDetailContact.vue'
 import ParlamentDetailMap from '~/components/parlaments/ParlamentDetailMap.vue'
 import ParlamentDetailMembers from '~/components/parlaments/ParlamentDetailMembers.vue'
 
@@ -98,9 +132,13 @@ export default {
     },
     components: {
         ParlamentDetailGeneralInformation,
-        ParlamentDetailContact,
         ParlamentDetailMap,
         ParlamentDetailMembers,
+    },
+    data () {
+        return {
+            tab: null,
+        }
     },
     middleware: ['auth']
 }

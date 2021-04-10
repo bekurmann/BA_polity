@@ -4,49 +4,54 @@
             Members
         </v-card-title>
         <v-card-text>
-            
-            <v-list three-line>
 
-                <template v-for="(membership, index) in previewMemberships">
-                    <v-list-item :key="membership.politican.id">
-                        <v-list-item-avatar>
-                            <v-img :src="membership.politican.avatar"></v-img>
-                        </v-list-item-avatar>
+            <v-data-iterator
+                :items="memberships"
+                item-key="id"
+                :items-per-page.sync="itemsPerPage"
+            >
 
-                        <v-list-item-content>
-                            <v-list-item-title >
-                
-                                <NuxtLink :to="'/politicans/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink> 
-                                (<NuxtLink :to="'/fractions/' + fraction.id" 
-                                            v-for="fraction in membership.politican.fractions"
-                                            :key="fraction.id">{{fraction.name}}</NuxtLink>)
-                                
-                            </v-list-item-title>
-                            <v-list-item-subtitle>{{membership.politican.city.name}}</v-list-item-subtitle>
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-divider :key="index"></v-divider>
+                <template v-slot:default="memberships">
+                    <v-list three-line>
+
+                        <template v-for="(membership, index) in memberships">
+                            <v-list-item :key="membership.politican.id">
+                                <v-list-item-avatar>
+                                    <v-img :src="politican.avatar"></v-img>
+                                </v-list-item-avatar>
+
+                                <v-list-item-content>
+                                    <v-list-item-title >
+                        
+                                        <NuxtLink :to="'/politicans/' + membership.politican.id">{{politican.first_name}} {{politican.last_name}}</NuxtLink> 
+                                        (<NuxtLink :to="'/fractions/' + fraction.id" 
+                                                    v-for="fraction in membership.politican.fractions"
+                                                    :key="fraction.id">{{fraction.name}}</NuxtLink>)
+                                        
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle>{{membership.politican.city.name}}</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-divider :key="index"></v-divider>
+                        </template>
+
+                    </v-list>
                 </template>
+                
+            </v-data-iterator>
+            
 
-                <v-list-item>
-                    <v-list-item-avatar>
-                        <v-img src="/avatar.png"></v-img>
-                    </v-list-item-avatar>
-
-                    <v-list-item-content>
-                        <v-list-item-title >
-                            And + {{memberships.length -5}} more.
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
-            </v-list>
 
         </v-card-text>
     </v-card>
 </template>
 <script>
 export default {
+    data() {
+        return {
+            itemsPerPage: 5,
+        }
+    },
     props: {
         memberships: {
             type: Array
