@@ -8,6 +8,7 @@ from locations.api.serializers import PLZSerializer
 from core.api.serializers import FractionSerializer, CommissionSerializer
 
 class PoliticanListSerializer(serializers.ModelSerializer):
+    city = PLZSerializer(read_only=True)
     fractions = FractionSerializer(read_only=True, many=True)
 
     class Meta:
@@ -31,9 +32,9 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
         model = Politican
         exclude = ['location_query', ]
 
-    def get_number_of_submitted_affairs(self, affair):
+    def get_number_of_submitted_affairs(self, politican):
         # wrong related name, should be affairs
-        return affair.signatories.count()
+        return politican.signatories.count()
 
-    def get_number_of_debate_statements(self, debate):
-        return debate.affairdebates.count()
+    def get_number_of_debate_statements(self, politican):
+        return politican.affairdebates.count()
