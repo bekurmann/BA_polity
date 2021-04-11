@@ -22,12 +22,6 @@
 import ParlamentList from '~/components/parlaments/ParlamentList.vue'
 
 export default {
-    async asyncData({$axios}) {
-        const parlaments = await $axios.$get(`/parlaments/`)
-        return {
-            parlaments: parlaments
-        }
-    },
     components: {
         ParlamentList
     },
