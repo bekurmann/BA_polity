@@ -17,7 +17,7 @@ class PoliticanListSerializer(serializers.ModelSerializer):
                     'email', 'website',
                     'location_query', 
                     'parties', 'executives', 'commissions', 'title', 'street1', 
-                    'street2', 'location', 'phone',]
+                    'street2', 'phone',]
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
