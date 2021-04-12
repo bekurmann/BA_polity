@@ -116,42 +116,59 @@
         <!-- additional menu for parlaments -->
         <v-card dark color="primary">
 
-            <v-card-text align="center">
-                    
-              <v-btn :to="'/parlaments/' + $route.params.id " router exact text rounded>
-                  Overview
-                  <v-icon top>mdi-view-comfy-outline</v-icon>
-              </v-btn>
+          <v-card-text align="center">
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/members/'" router text rounded>
-                      Members
-                      <v-icon>mdi-account-multiple-outline</v-icon>
-              </v-btn>  
+              <v-row>
+                <v-col>
+                  <v-card-text align="center">
+                    <v-img :src="selectedParlament.jurisdiction_canton.emblem" max-height="100" contain></v-img>
+                    {{selectedParlament.title}}
+                  </v-card-text>
+                </v-col>
+              </v-row>
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/affairs/'" router text rounded>
-                      Affairs
-                      <v-icon>mdi-file-document-outline</v-icon>
-              </v-btn>  
+              <v-row>
+                <v-col>
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/sessions/'" router text rounded>
-                      Sessions
-                      <v-icon>mdi-seat-outline</v-icon>
-              </v-btn>  
+                  <v-btn :to="'/parlaments/' + $route.params.id " router exact text rounded>
+                      Overview
+                      <v-icon top>mdi-view-comfy-outline</v-icon>
+                  </v-btn>
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/commissions/'" router text rounded>
-                      Commissions
-                      <v-icon>mdi-domain</v-icon>
-              </v-btn>  
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/members/'" router text rounded>
+                          Members
+                          <v-icon>mdi-account-multiple-outline</v-icon>
+                  </v-btn>  
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/map/'" router text rounded>
-                      Map
-                      <v-icon>mdi-map-marker-outline</v-icon>
-              </v-btn> 
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/affairs/'" router text rounded>
+                          Affairs
+                          <v-icon>mdi-file-document-outline</v-icon>
+                  </v-btn>  
 
-              <v-btn :to="'/parlaments/' + $route.params.id + '/analysis/'" router text rounded>
-                      Analysis
-                      <v-icon>mdi-chart-line-variant</v-icon>
-              </v-btn> 
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/sessions/'" router text rounded>
+                          Sessions
+                          <v-icon>mdi-seat-outline</v-icon>
+                  </v-btn>  
+
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/commissions/'" router text rounded>
+                          Commissions
+                          <v-icon>mdi-domain</v-icon>
+                  </v-btn>  
+
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/map/'" router text rounded>
+                          Map
+                          <v-icon>mdi-map-marker-outline</v-icon>
+                  </v-btn> 
+
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/analysis/'" router text rounded>
+                          Analysis
+                          <v-icon>mdi-chart-line-variant</v-icon>
+                  </v-btn> 
+
+                  
+
+                </v-col>
+              </v-row>
 
             </v-card-text>
 
@@ -170,6 +187,7 @@
 
 <script>
 import Snackbar from '~/components/Snackbar.vue'
+import {mapState} from 'vuex'
 
 export default { 
   components: {
@@ -208,6 +226,11 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapState({
+      selectedParlament: state => state.parlaments.selectedParlament
+    })
   }
 }
 </script>
