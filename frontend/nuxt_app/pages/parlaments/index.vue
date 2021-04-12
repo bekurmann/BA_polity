@@ -9,7 +9,7 @@
                     <v-card-subtitle>Check out already registered parlaments. </v-card-subtitle>
                     <v-card-text>
                         <client-only>
-                        <ParlamentList></ParlamentList>
+                        <List></List>
                         </client-only>
                     </v-card-text>
                 </v-card>
@@ -19,11 +19,11 @@
     </v-container>
 </template>
 <script>
-import ParlamentList from '~/components/parlaments/ParlamentList.vue'
+import List from '~/components/parlaments/List.vue'
 
 export default {
     components: {
-        ParlamentList
+        List
     },
     middleware: ['auth'],
 }

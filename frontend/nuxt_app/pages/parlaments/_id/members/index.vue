@@ -1,11 +1,11 @@
 <template>
     <v-card class="mt-3">
-        <ParlamentDetailMembers :memberships="memberships"></ParlamentDetailMembers>
+        <Members :memberships="memberships"></Members>
     </v-card>
     
 </template>
 <script>
-import ParlamentDetailMembers from '~/components/parlaments/ParlamentDetailMembers.vue'
+import Members from '~/components/parlaments/Members.vue'
 
 export default {
     async asyncData({params, $axios}) {
@@ -15,7 +15,7 @@ export default {
         }
     },
     components: {
-        ParlamentDetailMembers
+        Members
     },
     middleware: ['auth'],
     layout: 'parlaments',

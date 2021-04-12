@@ -1,20 +1,15 @@
 <template>
 
         <v-card class="mt-3">
-            <v-card-title primary-title>
-                Just Testing {{selectedParlament.id}}
-                <!-- {{parlament.title}} -->
-                <v-avatar
-                    size="50"
-                >
-                <!-- <v-img :src="parlament.jurisdiction_canton.emblem" max-height="30" contain alt="canton emblem"></v-img> -->
-                </v-avatar>
-            </v-card-title>
+            <v-card-text primary-title>
+                <Overview :parlament="selectedParlament"></Overview>
+            </v-card-text>
         </v-card>
 
 </template>
 <script>
 import {mapState} from 'vuex'
+import Overview from '~/components/parlaments/Overview.vue'
 
 export default {
     async fetch() {
@@ -29,6 +24,9 @@ export default {
         ...mapState({
             selectedParlament: state => state.parlaments.selectedParlament
         })
+    },
+    components: {
+        Overview,
     },
     middleware: ['auth'],
     layout: 'parlaments',
