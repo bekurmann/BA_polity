@@ -16,13 +16,13 @@ class MembershipListSerializer(serializers.ModelSerializer):
     active = serializers.BooleanField()
 
 
-    # I needed to "flatten" json response because of v-data-iterator (only one level possible)    
+    # # I needed to "flatten" json response because of v-data-iterator (only one level possible)    
     first_name = serializers.SerializerMethodField()
     last_name = serializers.SerializerMethodField()
     city = serializers.SerializerMethodField()
     class Meta:
         model = Membership
-        exclude = [ 'created_at', 'updated_at',]
+        exclude = [ 'created_at', 'updated_at', ]
 
     def get_first_name(self, membership):
         return membership.politican.first_name
@@ -32,6 +32,7 @@ class MembershipListSerializer(serializers.ModelSerializer):
 
     def get_city(self, membership):
         return membership.politican.city.name
+
 
 class MembershipDetailSerializer(serializers.ModelSerializer):
     """

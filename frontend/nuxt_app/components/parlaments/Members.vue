@@ -8,7 +8,7 @@
             <v-data-iterator
                 :items="memberships"
                 item-key="id"
-                :items-per-page="5"
+                :items-per-page="15"
                 :search="search"
                 :sort-by="sortBy.toLowerCase()"
                 :sort-desc="sortDesc"
@@ -60,9 +60,37 @@
                     </v-toolbar>
                 </template>
 
+
                 <template v-slot:default="{ items }">
 
-                    <v-list three-line>
+                    <v-simple-table>
+                            <tbody>
+                                <tr v-for="(membership, index) in items" :key="membership.id">
+                                    <td>
+                                        <v-avatar size="40">
+                                        <v-img :src="membership.politican.avatar"></v-img>
+                                        </v-avatar>
+                                    </td>
+                                    
+                                    <td><NuxtLink :to="'/politicans/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink></td>
+
+                                    <td><NuxtLink :to="'/fractions/' + fraction.id" 
+                                                    v-for="fraction in membership.politican.fractions"
+                                                    :key="fraction.id">{{fraction.name}}</NuxtLink>
+                                    </td>
+                                    <td>
+                                        {{membership.politican.city.name}}
+                                    </td>
+                                    <td>
+                                        <v-chip v-if="membership.active" color="green" dark>active</v-chip>
+                                        <v-chip v-else color="red" dark>inactive</v-chip>
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </v-simple-table>
+
+
+                    <!-- <v-list three-line>
 
                         <template v-for="(membership, index) in items">
                             <v-list-item :key="membership.id">
@@ -79,13 +107,22 @@
                                                     :key="fraction.id">{{fraction.name}}</NuxtLink>)
                                         
                                     </v-list-item-title>
-                                    <v-list-item-subtitle>{{membership.politican.city.name}}</v-list-item-subtitle>
+                                    <v-list-item-subtitle>
+                                        <p>{{membership.politican.city.name}}</p>
+                                        <p v-if="membership.active">
+                                            <v-chip>active</v-chip>
+                                        </p>
+                                        <p v-else>
+                                            <v-chip>inactive</v-chip>
+                                        </p>
+                                    </v-list-item-subtitle>
                                 </v-list-item-content>
                             </v-list-item>
                             <v-divider :key="index"></v-divider>
                         </template>
 
-                    </v-list>
+                    </v-list> -->
+
 
                 </template>
                 
@@ -100,7 +137,7 @@
 export default {
     data() {
         return {
-            itemsPerPage: 5,
+            itemsPerPage: 15,
             search: '',
             sortBy: 'id',
             sortDesc: false,
@@ -109,6 +146,7 @@ export default {
                 'first_name',
                 'last_name',
                 'city',
+                'active',
             ],
         }
     },

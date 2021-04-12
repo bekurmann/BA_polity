@@ -16,7 +16,8 @@ class PoliticanListSerializer(serializers.ModelSerializer):
         exclude = ['profession', 'date_of_birth', 'parlaments',
                     'email', 'website',
                     'location_query', 
-                    'parties', 'executives', 'commissions',]
+                    'parties', 'executives', 'commissions', 'title', 'street1', 
+                    'street2', 'location', 'phone',]
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)

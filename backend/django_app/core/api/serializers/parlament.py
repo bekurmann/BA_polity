@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 # import models
-from core.models import Parlament, Affair, AffairDebate
+from core.models import Parlament, AffairFile, AffairDebate
 
 # import additional serializers 
 from locations.api.serializers import CantonNestedSerializer, PLZSerializer
@@ -35,6 +35,7 @@ class ParlamentDetailSerializer(serializers.ModelSerializer):
     number_of_affairs = serializers.SerializerMethodField()
     number_of_debate_statements = serializers.SerializerMethodField()
     number_of_sessions = serializers.SerializerMethodField()
+    number_of_files = serializers.SerializerMethodField()
 
     class Meta:
         model = Parlament
@@ -59,4 +60,7 @@ class ParlamentDetailSerializer(serializers.ModelSerializer):
     def get_number_of_sessions(self, parlament):
         return parlament.parlaments.count()
 
+    def get_number_of_files(self, parlament):
+        files = AffairFile.objects.filter(affair__parlament=parlament)
+        return files.count()
     
