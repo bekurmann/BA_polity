@@ -22,11 +22,26 @@
                             Mehr erfahren (Link)
                         </l-popup>
                     </l-marker>
+                    <!-- active politicans -->
                     <l-marker 
-                    v-for="membership in filteredMemberships" 
+                    v-for="membership in filteredMemberships_active" 
                     :lat-lng="[membership.politican.location.coordinates[1], membership.politican.location.coordinates[0]]" 
                     :key="membership.id"
-                    :icon="politicanIcon"
+                    :icon="politicanIcon_active"
+                    >
+                        <l-popup>
+                            <v-img :src="membership.politican.avatar" max-width="40"></v-img>
+                            <b>{{membership.politican.first_name}} {{membership.politican.last_name}}</b><br>
+                            Fraktion: <br>
+                            Mehr erfahren (Link)
+                        </l-popup>
+                    </l-marker>
+                    <!-- inactive politicans -->
+                    <l-marker 
+                    v-for="membership in filteredMemberships_inactive" 
+                    :lat-lng="[membership.politican.location.coordinates[1], membership.politican.location.coordinates[0]]" 
+                    :key="membership.id"
+                    :icon="politicanIcon_inactive"
                     >
                         <l-popup>
                             <v-img :src="membership.politican.avatar" max-width="40"></v-img>
@@ -45,9 +60,17 @@
 export default {
     data() {
         return {
-            politicanIcon: this.$L.icon({
+            politicanIcon_active: this.$L.icon({
                 // see: https://github.com/pointhi/leaflet-color-markers
                 iconUrl: '/leaflet/greenMarker.png',
+                shadowUrl: '/leaflet/markerShadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            }),
+            politicanIcon_inactive: this.$L.icon({
+                iconUrl: '/leaflet/redMarker.png',
                 shadowUrl: '/leaflet/markerShadow.png',
                 iconSize: [25, 41],
                 iconAnchor: [12, 41],
@@ -65,10 +88,17 @@ export default {
         },
     },
     computed: {
-        filteredMemberships: function() {
+        filteredMemberships_active: function() {
             let notNullMemberships = this.memberships.filter(el => el.politican.location !== null)
-            return notNullMemberships;    
+            let notNullMemberships_active = notNullMemberships.filter(el => el.active == true)
+            return notNullMemberships_active;    
+        },
+        filteredMemberships_inactive: function() {
+            let notNullMemberships = this.memberships.filter(el => el.politican.location !== null)
+            let notNullMemberships_inactive = notNullMemberships.filter(el => el.active == false)
+            return notNullMemberships_inactive;  
         }
+
     }
 }
 </script>
