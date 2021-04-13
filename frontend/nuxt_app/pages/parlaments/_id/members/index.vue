@@ -18,6 +18,6 @@ export default {
         Members
     },
     middleware: ['auth'],
-    layout: 'parlaments',
+    layout: 'ParlamentDetail',
 }
 </script>

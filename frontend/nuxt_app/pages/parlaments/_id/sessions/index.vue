@@ -14,6 +14,6 @@ export default {
         
     },
     middleware: ['auth'],
-    layout: 'parlaments',
+    layout: 'ParlamentDetail',
 }
 </script>

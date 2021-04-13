@@ -24,5 +24,5 @@ export const actions = {
             console.log(e)
         }
         
-    }
+    },
 }

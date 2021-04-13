@@ -111,13 +111,22 @@
 
     <!-- main ********************************** -->
     <v-main>
-      <v-container>
+      <v-container v-if="$fetchState.pending">
+        <v-card>
+            <v-skeleton-loader
+            class="mx-auto"
+            type="article@2"
+            light
+            ></v-skeleton-loader>
+        </v-card>
+      </v-container>
+
+      <v-container v-else>
 
         <!-- additional menu for parlaments -->
         <v-card dark color="primary">
 
           <v-card-text align="center">
-
               <v-row>
                 <v-col>
                   <v-card-text align="center">
@@ -125,7 +134,6 @@
                       :src="selectedParlament.jurisdiction_canton.emblem" 
                       max-height="100" 
                       contain
-                      v-if="selectedParlament.jurisdiction_canton"
                     ></v-img>
                     {{selectedParlament.title}}
                   </v-card-text>
@@ -197,10 +205,11 @@ import {mapState} from 'vuex'
 export default { 
   name: "parlaments",
   components: {
-    Snackbar
+    Snackbar,
   },
   data () {
     return {
+      //parlamentInformation: {},
       drawer: false,
       drawerItems: [
         {
@@ -232,6 +241,14 @@ export default {
         }
       ]
     }
+  },
+  async fetch() {
+      try {
+          const parlamentData = await this.$axios.$get(`/parlaments/${this.$route.params.id}`);
+          this.$store.dispatch("parlaments/setSelectedParlament", parlamentData);
+      } catch(error) {
+          throw new Error(`Failed to fetch parlamentData from /parlaments/${this.$route.params.id}`)
+      }
   },
   computed: {
     ...mapState({

@@ -20,6 +20,6 @@ export default {
         Map
     },
     middleware: ['auth'],
-    layout: 'parlaments',
+    layout: 'ParlamentDetail',
 }
 </script>
