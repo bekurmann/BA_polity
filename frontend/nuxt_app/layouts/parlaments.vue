@@ -121,7 +121,12 @@
               <v-row>
                 <v-col>
                   <v-card-text align="center">
-                    <v-img :src="selectedParlament.jurisdiction_canton.emblem" max-height="100" contain></v-img>
+                    <v-img 
+                      :src="selectedParlament.jurisdiction_canton.emblem" 
+                      max-height="100" 
+                      contain
+                      v-if="selectedParlament.jurisdiction_canton"
+                    ></v-img>
                     {{selectedParlament.title}}
                   </v-card-text>
                 </v-col>
@@ -190,6 +195,7 @@ import Snackbar from '~/components/Snackbar.vue'
 import {mapState} from 'vuex'
 
 export default { 
+  name: "parlaments",
   components: {
     Snackbar
   },

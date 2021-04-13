@@ -17,8 +17,12 @@ export const mutations = {
 
 export const actions = {
     // through actions we commit mutations
-    setSelectedParlament({commit}, parlament) {
-        commit('setSelectedParlament', parlament)
+    async setSelectedParlament({commit}, parlament) {
+        try {
+            commit('setSelectedParlament', parlament)
+        } catch (e) {
+            console.log(e)
+        }
+        
     }
-    
 }
