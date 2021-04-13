@@ -54,81 +54,81 @@ id,first_name,last_name,gender,date_of_birth,profession,email,jurisdiction,fract
 152,Ruth,Albert von Wyl,F,1971-05-25,Sozialpädagogin,ruthalbert.csp@gmail.com,Alpnach Dorf,CSP,Lindenmattli 6,SRID=4326;POINT (8.1822806 46.8333255),Alpnach Dorf Lindenmattli 6,41416605344,import/politicans/ow/RuthAlbert_imim_5f06b396a94d7.jpg
 153,Ambros,Albert,M,1953-07-08,Biobauer/Jugendbetreuer,ambrosalbert@bluewin.ch,Giswil,SP,Rebstock 19,SRID=4326;POINT (8.273682900000001 46.9411661),Giswil Rebstock 19,41416751075,import/politicans/ow/AmbrosAlbert_imim_5f06b393001f5.jpg
 154,Trudi,Abächerli-Halter,F,1964-07-31,"Supervisorin, Coach und Mediatorin SDM",trudi.abaecherli@bluewin.ch,Sarnen,FDP, ,SRID=4326;POINT (8.2461492 46.8956729),Sarnen  ,,import/politicans/ow/TrudiAbächerli-Halter_imim_5f06b39737e0b.jpg
-200,Walter,Wyrsch,M,1958-12-04,dipl. Erwachsenenbildner,,Alpnach Dorf,CSP,Sagengasse 2,,Alpnach Dorf  ,41416703209,import/politicans/ow/WalterWyrsch.jpg
+200,Walter,Wyrsch,M,1958-12-04,dipl. Erwachsenenbildner,,Alpnach Dorf,CSP,Sagengasse 2,SRID=4326;POINT (8.254821672197945 46.93432584999999),Alpnach Dorf  ,41416703209,import/politicans/ow/WalterWyrsch.jpg
 201,Willy,Fallegger,M,,,,Alpnach Dorf,SVP,,,,,import/politicans/ow/WillyFallegger.jpg
-202,Peter,Wechsler,M,,Heilpädagoge,,Kerns,CSP,Hoheneich 2,,Kerns  ,41416607528,import/politicans/ow/PeterWechsler.jpg
-203,Helen,Imfeld-Ettlin,F,,Hebamme,,Lungern,CSP,Studenstrasse 4,,Lungern Studenstrasse 4,41788209667,import/politicans/ow/HelenImfeld.jpeg
-204,Beat,von Wyl,M,,"Biologe, Gemeindepräsident Giswil",,Giswil,SP,Brünigstrasse 82,,Giswil Brünigstrasse 82,41416752482,import/politicans/ow/BeatvonWyl.jpeg
+202,Peter,Wechsler,M,,Heilpädagoge,,Kerns,CSP,Hoheneich 2,SRID=4326;POINT (8.282158849999998 46.89799695),Kerns  ,41416607528,import/politicans/ow/PeterWechsler.jpg
+203,Helen,Imfeld-Ettlin,F,,Hebamme,,Lungern,CSP,Studenstrasse 4,SRID=4326;POINT (8.1484405 46.7829735),Lungern Studenstrasse 4,41788209667,import/politicans/ow/HelenImfeld.jpeg
+204,Beat,von Wyl,M,,"Biologe, Gemeindepräsident Giswil",,Giswil,SP,Brünigstrasse 82,SRID=4326;POINT (8.186071399999999 46.836631),Giswil Brünigstrasse 82,41416752482,import/politicans/ow/BeatvonWyl.jpeg
 205,Heidi,Wernli Gasser ???? ****,F,,Heilpädagogin,,Sarnen,SP,Giglenstrasse 23,,Sarnen Giglenstrasse 23,41416601469,
-206,Lucia,Omlin,F,,"lic. iur., Rechtsanwältin und Notarin",,Sachseln,CVP,Bruder-Klausen-Weg 3,,Sachseln Bruder-Klausen-Weg 3,41416606262,import/politicans/ow/Lucia-Omlin.jpg
-207,Klaus,Wallimann-Bucher,M,1964-05-24,Treuhänder / Korporationsschreiber,,Alpnach Dorf,CVP,Dammstrasse 20,,Alpnach Dorf Dammstrasse 20,41416702668,import/politicans/ow/Klaus-Wallimann.jpg
+206,Lucia,Omlin,F,,"lic. iur., Rechtsanwältin und Notarin",,Sachseln,CVP,Bruder-Klausen-Weg 3,SRID=4326;POINT (8.239651 46.8669374),Sachseln Bruder-Klausen-Weg 3,41416606262,import/politicans/ow/Lucia-Omlin.jpg
+207,Klaus,Wallimann-Bucher,M,1964-05-24,Treuhänder / Korporationsschreiber,,Alpnach Dorf,CVP,Dammstrasse 20,SRID=4326;POINT (8.275243829028284 46.943017326059),Alpnach Dorf Dammstrasse 20,41416702668,import/politicans/ow/Klaus-Wallimann.jpg
 208,Paul,Vogler,M,1962-01-01,Meisterlandwirt,,Sachseln,CVP,,,,,
-209,Urs,Küchler,M,1966-02-20,dipl. Bauleiter,kuechlerundpartner@bluewin.ch,Kägiswil,CVP,Mittelgasse 9,,Mittelgasse 9 Kägiswil Obwalden,41416610153,import/politicans/ow/UrsKüchler.jpg
+209,Urs,Küchler,M,1966-02-20,dipl. Bauleiter,kuechlerundpartner@bluewin.ch,Kägiswil,CVP,Mittelgasse 9,SRID=4326;POINT (8.260457000000001 46.9211201),Mittelgasse 9 Kägiswil Obwalden,41416610153,import/politicans/ow/UrsKüchler.jpg
 210,Jürg,Berlinger,M,1969-04-29,Unternehmer,sarnen@juerg-berlinger.ch,Sarnen,CVP,,,,,import/politicans/ow/Juerg-Berlinger.jpg
-211,Ruth,Koch-Niederberger,F,1964-07-13,Primarlehrerin / PR-Fachfrau,ruth_koch@bluewin.ch,Kerns,SP,Siebeneichstrasse 21,,Siebeneichstrasse 21 Kerns,41416609560,import/politicans/ow/RuthKochNiederberger.jpeg
+211,Ruth,Koch-Niederberger,F,1964-07-13,Primarlehrerin / PR-Fachfrau,ruth_koch@bluewin.ch,Kerns,SP,Siebeneichstrasse 21,SRID=4326;POINT (8.278996212664577 46.91682655),Siebeneichstrasse 21 Kerns,41416609560,import/politicans/ow/RuthKochNiederberger.jpeg
 212,Maya,Büchi-Kaiser,F,1963-02-13,Betriebswirtschafterin,,Sachseln,FDP,,,,,import/politicans/ow/MayaBuechiKaiser.jpeg
-213,Urs,Keiser,M,1968-09-21,dipl. Physiotherapeut,keiser.wirth@hispeed.ch,Sarnen,CVP,Kirchstrasse 5D,,Kirchstrasse 5D Sarnen,41416609227,import/politicans/ow/UrsKeiser.jpg
+213,Urs,Keiser,M,1968-09-21,dipl. Physiotherapeut,keiser.wirth@hispeed.ch,Sarnen,CVP,Kirchstrasse 5D,SRID=4326;POINT (8.2411686 46.8952813),Kirchstrasse 5D Sarnen,41416609227,import/politicans/ow/UrsKeiser.jpg
 214,Susanne,Burch-Windlin,F,,Bäuerin mit FA,,Sarnen,SVP,,,,,
 215,Lukas,Küng,M,,"Rechtsanwalt, Fachanwalt SAV Strafrecht",,Alpnach Dorf,FDP,,,,,
-216,Guido,Steudler,M,,Dr. med. Facharzt für allg. Medizin,,Sarnen,CSP,Allmendstrasse 26,,Allmendstrasse 26 Wilen Sarnen,41416606740,
-217,Nicole,Wildisen,F,,Gymnasiallehrerin,,Sarnen,SP,Brunnmattweg 12,,Brunnmattweg 12 Sarnen,41416600511,
-218,Leo,Spichtig,M,,Dr. med. Facharzt für allg. Medizin,,Alpnach Dorf,CSP,Robert Barmettlerstrasse 5,,Robert Barmettlerstrasse 5 Alpnach Dorf,41416710101,import/politicans/ow/LeoSpichtig.jpg
-219,Boris,Camenzind,M,,dipl. Bauingenieur ETH,,Sarnen,FDP,Goldmattweg 34,,Goldmattweg 34 Sarnen,41416601065,import/politicans/ow/BorisCamenzind.jpg
+216,Guido,Steudler,M,,Dr. med. Facharzt für allg. Medizin,,Sarnen,CSP,Allmendstrasse 26,SRID=4326;POINT (8.2176861 46.8771962),Allmendstrasse 26 Wilen Sarnen,41416606740,
+217,Nicole,Wildisen,F,,Gymnasiallehrerin,,Sarnen,SP,Brunnmattweg 12,SRID=4326;POINT (8.2388838 46.8918222),Brunnmattweg 12 Sarnen,41416600511,
+218,Leo,Spichtig,M,,Dr. med. Facharzt für allg. Medizin,,Alpnach Dorf,CSP,Robert Barmettlerstrasse 5,SRID=4326;POINT (8.269688916368279 46.93999285),Robert Barmettlerstrasse 5 Alpnach Dorf,41416710101,import/politicans/ow/LeoSpichtig.jpg
+219,Boris,Camenzind,M,,dipl. Bauingenieur ETH,,Sarnen,FDP,Goldmattweg 34,SRID=4326;POINT (8.2389335 46.8905467),Goldmattweg 34 Sarnen,41416601065,import/politicans/ow/BorisCamenzind.jpg
 220,Walter,Küchler,M,,Gastronom,info@tschiferli.ch,Sachseln,SVP,,,,,import/politicans/ow/WalterKuechler.jpg
-221,Hampi,Lussi-Berwert,M,,eidg. dipl. Bautechn.,,Kägiswil,CVP,Dörflistrasse 30,,Dörflistrasse 30 Kägiswil,,import/politicans/ow/Lussi-Hampi-2018.jpg
-222,Pia,Berchtold-von Wyl,F,,Heilpädagogin,,Kägiswil,CVP,Hostettliweg 5,,Hostettliweg 5 Käsgiswil,,
+221,Hampi,Lussi-Berwert,M,,eidg. dipl. Bautechn.,,Kägiswil,CVP,Dörflistrasse 30,SRID=4326;POINT (8.2610329 46.9222249),Dörflistrasse 30 Kägiswil,,import/politicans/ow/Lussi-Hampi-2018.jpg
+222,Pia,Berchtold-von Wyl,F,,Heilpädagogin,,Kägiswil,CVP,Hostettliweg 5,SRID=4326;POINT (8.259205127178079 46.92194221723874),Hostettliweg 5 Käsgiswil,,
 223,Werni,Birrer,M,,,,Alpnach Dorf,SVP,,,,,
-224,Margrit,Freivogel-Kayser,F,,Redaktorin,,Sachseln,CVP,Wissibach 9,,Wissibach 9 Sachseln,,
-225,Christoph,Amstad-Bucher,M,1973-09-27,Dipl. Finanzplanungs-Experte,,Sarnen,CVP,Aamattweg 15,,Aamattweg 15 Sarnen,,import/politicans/ow/ChristophAmstad.jpg
-226,Daniel,Wyler,M,1959-10-23,Jurist,,Engelberg,SVP,Acherrainstrasse 4,,Acherrainstrasse 4 Engelberg,,import/politicans/ow/DanielWyler.jpg
-227,Lisbeth,Berchtold-Durrer,F,,"Bäuerin, Medizinische Praxisassistentin MPA",,Giswil,CVP,Ei 1,,Ei 1 Giswil,,import/politicans/ow/Lisbeth-Berchtold-Internet.jpg
-228,Sepp,Stalder,M,,Förster,,Lungern,CSP,Wichelmatte 7,,Wichelmatte 7 Lungern,,import/politicans/ow/
-229,Hans-Melk,Reinhard,M,1971-01-20,Schreinertechniker,,Sachseln,FDP,Bruechli 1,,Bruechli 1 Sachseln,,import/politicans/ow/HansMelkReinhard.jpg
-230,Bruno,Furrer,M,1962-01-01,Zimmermeister,,Lungern,CVP,Strüpfistrasse 1,,Strüpfistrasse 1 Lungern,,import/politicans/ow/BrunoFurrer.jpg
-231,Monika,Rüegger,F,1968-03-25,Hausfrau,moni.rueegger@bluewin.ch,Engelberg,SVP,Oberbergstrasse 110,,Oberbergstrasse 110 Engelberg,,import/politicans/ow/MonikaRueegger.jpg
+224,Margrit,Freivogel-Kayser,F,,Redaktorin,,Sachseln,CVP,Wissibach 9,SRID=4326;POINT (8.2406633 46.8701867),Wissibach 9 Sachseln,,
+225,Christoph,Amstad-Bucher,M,1973-09-27,Dipl. Finanzplanungs-Experte,,Sarnen,CVP,Aamattweg 15,SRID=4326;POINT (8.2401845 46.8914556),Aamattweg 15 Sarnen,,import/politicans/ow/ChristophAmstad.jpg
+226,Daniel,Wyler,M,1959-10-23,Jurist,,Engelberg,SVP,Acherrainstrasse 4,SRID=4326;POINT (8.394968199999999 46.8207323),Acherrainstrasse 4 Engelberg,,import/politicans/ow/DanielWyler.jpg
+227,Lisbeth,Berchtold-Durrer,F,,"Bäuerin, Medizinische Praxisassistentin MPA",,Giswil,CVP,Ei 1,SRID=4326;POINT (8.169892600000001 46.838734),Ei 1 Giswil,,import/politicans/ow/Lisbeth-Berchtold-Internet.jpg
+228,Sepp,Stalder,M,,Förster,,Lungern,CSP,Wichelmatte 7,SRID=4326;POINT (8.143944284846086 46.78438880982625),Wichelmatte 7 Lungern,,import/politicans/ow/
+229,Hans-Melk,Reinhard,M,1971-01-20,Schreinertechniker,,Sachseln,FDP,Bruechli 1,SRID=4326;POINT (8.243545098341336 46.87555123131531),Bruechli 1 Sachseln,,import/politicans/ow/HansMelkReinhard.jpg
+230,Bruno,Furrer,M,1962-01-01,Zimmermeister,,Lungern,CVP,Strüpfistrasse 1,SRID=4326;POINT (8.162155200000001 46.7867273),Strüpfistrasse 1 Lungern,,import/politicans/ow/BrunoFurrer.jpg
+231,Monika,Rüegger,F,1968-03-25,Hausfrau,moni.rueegger@bluewin.ch,Engelberg,SVP,Oberbergstrasse 110,SRID=4326;POINT (8.414233599999999 46.8178529),Oberbergstrasse 110 Engelberg,,import/politicans/ow/MonikaRueegger.jpg
 232,Markus,Ettlin,M,1962-10-29,Anlageberater,markus.ettlin@bluewin.ch,Kerns,CVP,,,,,import/politicans/ow/MarkusEttlin.jpg
-233,Christian,Schäli,M,1974-07-30,Rechtsanwalt,,Kerns,CSP,Hoheneich 6,,Hoheneich 6 Kerns,,import/politicans/ow/ChristianSchaeli.jpg
-234,Martin,Mahler,M,,Treuhänder,,Engelberg,FDP,Engelbergerstrasse 41,,Engelbergerstrasse 41 Engelberg,,import/politicans/ow/MartinMahler.jpg
+233,Christian,Schäli,M,1974-07-30,Rechtsanwalt,,Kerns,CSP,Hoheneich 6,SRID=4326;POINT (8.28197472273882 46.89768585),Hoheneich 6 Kerns,,import/politicans/ow/ChristianSchaeli.jpg
+234,Martin,Mahler,M,,Treuhänder,,Engelberg,FDP,Engelbergerstrasse 41,SRID=4326;POINT (8.397774816896966 46.817983),Engelbergerstrasse 41 Engelberg,,import/politicans/ow/MartinMahler.jpg
 235,Isabella,Kretz-Kiser,F,,Buchhalterin,,Kerns,SVP,,,,,import/politicans/ow/IsabellaKretzKiser.jpg
-236,Christian,Limacher,M,1984-05-07,Unternehmer,christian@holzlimacher.ch,Alpnach Dorf,FDP,Baumgartenstrasse 9,,Baumgartenstrasse 9 Alpnach,,import/politicans/ow/ChristianLimacher.jpg
-237,Seppi,Hainbuchner,M,1959-09-15,Sachbearbeiter Finanzwesen,j-u.hainbuchner@tep.ch,Engelberg,SP,Meilandweg 23,,Meilandweg 23 Engelberg,,import/politicans/ow/SeppiHainbuchner.jpg
-238,Paula,Halter-Furrer,F,1960-01-01,Bäuerin/Primarlehrerin,,Giswil,CVP,Unterlinden,,Unterlinden Giswil,,
-239,Martin,Odermatt,M,1959-01-01,Maschinenmechaniker,,Engelberg,SVP,Rüteli,,Rüteli Engelberg,,
-240,Werner,Matter,M,,Landwirt,,Engelberg,CVP,Dorfstrasse 52b,,Dorfstrasse 52b Engelberg,,
-241,Ruth,Infanger,F,1951-01-01,kaufm. Angestellte,,Engelberg,FDP,Parkweg 5,,Parkweg 5 Engelberg,,
-242,Annie,Infanger-Schleiss,F,,Geschäftsfrau,,Engelberg,CVP,Dorfstrasse 34,,Dorfstrasse 34 Engelberg,,
-243,Tony,Gasser-Ming,M,1960-01-01,Landwirt,,Lungern,CVP,Bürglenstrasse 8,,Bürglenstrasse 8 Lungern,,
-244,André,Strasser,M,1956-01-01,eidg. dipl. Marketingleiter,,Giswil,FDP,Grossteilerstrasse 55,,Grossteilerstrasse 55 Giswil,,
-245,Heidi,Brücker-Steiner,F,1953-01-01,Psychologin,,Giswil,CSP,Rebstock 14,,Rebstock 14 Giswil,,
-246,Peter,Renggli,M,1955-01-01,dip. Wirtschaftsfachmann,,Alpnach Dorf,SVP,Grunderbergstrasse 5,,Grunderbergstrasse 5 Alpnach Dorf,,
-247,Walter,Hug,M,1953-01-01,Meisterlandwirt,,Alpnach Dorf,FDP,Neuhof 1,,Neuhof 1 Alpnach Dorf,,
-248,Monika,Brunner,F,1959-01-01,"lic. iur., Rechtsanwältin und Notarin",,Alpnach Dorf,CVP,Bahnhofstrasse 6,,Bahnhofstrasse 6 Alpnach Dorf,,
-249,Anna,Schälin Nussbaum,F,1963-01-01,Familienfrau / Bäuerin,,Sachseln,CVP,Seeloch,,Seeloch Sachseln,,
-250,Peter,Spichtig,M,1966-01-01,Gewerkschaftssekretär,,Sachseln,SP,Pappelweg 5,,Pappelweg 5 Sachseln,,
-251,Gerda,Durrer,F,1970-01-01,Bürofachfrau,,Kerns,SP,Feldlistrasse 17,,Feldlistrasse 17 Kerns,,
+236,Christian,Limacher,M,1984-05-07,Unternehmer,christian@holzlimacher.ch,Alpnach Dorf,FDP,Baumgartenstrasse 9,SRID=4326;POINT (8.269644100000001 46.9373017),Baumgartenstrasse 9 Alpnach,,import/politicans/ow/ChristianLimacher.jpg
+237,Seppi,Hainbuchner,M,1959-09-15,Sachbearbeiter Finanzwesen,j-u.hainbuchner@tep.ch,Engelberg,SP,Meilandweg 23,SRID=4326;POINT (8.420725600000001 46.8199896),Meilandweg 23 Engelberg,,import/politicans/ow/SeppiHainbuchner.jpg
+238,Paula,Halter-Furrer,F,1960-01-01,Bäuerin/Primarlehrerin,,Giswil,CVP,Unterlinden,SRID=4326;POINT (8.172508971354793 46.85436114476389),Unterlinden Giswil,,
+239,Martin,Odermatt,M,1959-01-01,Maschinenmechaniker,,Engelberg,SVP,Rüteli,SRID=4326;POINT (8.433001600000001 46.809942),Rüteli Engelberg,,
+240,Werner,Matter,M,,Landwirt,,Engelberg,CVP,Dorfstrasse 52b,SRID=4326;POINT (8.39935215 46.8203194),Dorfstrasse 52b Engelberg,,
+241,Ruth,Infanger,F,1951-01-01,kaufm. Angestellte,,Engelberg,FDP,Parkweg 5,SRID=4326;POINT (8.4056888 46.8200554),Parkweg 5 Engelberg,,
+242,Annie,Infanger-Schleiss,F,,Geschäftsfrau,,Engelberg,CVP,Dorfstrasse 34,SRID=4326;POINT (8.403793794246539 46.8210728),Dorfstrasse 34 Engelberg,,
+243,Tony,Gasser-Ming,M,1960-01-01,Landwirt,,Lungern,CVP,Bürglenstrasse 8,SRID=4326;POINT (8.1675533 46.8125547),Bürglenstrasse 8 Lungern,,
+244,André,Strasser,M,1956-01-01,eidg. dipl. Marketingleiter,,Giswil,FDP,Grossteilerstrasse 55,SRID=4326;POINT (8.170748 46.8523703),Grossteilerstrasse 55 Giswil,,
+245,Heidi,Brücker-Steiner,F,1953-01-01,Psychologin,,Giswil,CSP,Rebstock 14,SRID=4326;POINT (8.1822806 46.8333255),Rebstock 14 Giswil,,
+246,Peter,Renggli,M,1955-01-01,dip. Wirtschaftsfachmann,,Alpnach Dorf,SVP,Grunderbergstrasse 5,SRID=4326;POINT (8.267503654532376 46.9429735),Grunderbergstrasse 5 Alpnach Dorf,,
+247,Walter,Hug,M,1953-01-01,Meisterlandwirt,,Alpnach Dorf,FDP,Neuhof 1,SRID=4326;POINT (8.277221584850111 46.94846154081613),Neuhof 1 Alpnach Dorf,,
+248,Monika,Brunner,F,1959-01-01,"lic. iur., Rechtsanwältin und Notarin",,Alpnach Dorf,CVP,Bahnhofstrasse 6,SRID=4326;POINT (8.275379300000001 46.9406316),Bahnhofstrasse 6 Alpnach Dorf,,
+249,Anna,Schälin Nussbaum,F,1963-01-01,Familienfrau / Bäuerin,,Sachseln,CVP,Seeloch,SRID=4326;POINT (8.223586227176686 46.86163160686846),Seeloch Sachseln,,
+250,Peter,Spichtig,M,1966-01-01,Gewerkschaftssekretär,,Sachseln,SP,Pappelweg 5,SRID=4326;POINT (8.232581440669753 46.86653629145398),Pappelweg 5 Sachseln,,
+251,Gerda,Durrer,F,1970-01-01,Bürofachfrau,,Kerns,SP,Feldlistrasse 17,SRID=4326;POINT (8.2784982 46.9009908),Feldlistrasse 17 Kerns,,
 252,Hans,Unternährer,M,1956-01-01,Karrossier,,Kerns,SVP,,,,,
-253,Hanny,Durrer-Herger,F,1955-01-01,Geschäftsfrau,,Kerns,FDP,Sagenmatt 1,,Sagenmatt 1 Kerns,,
+253,Hanny,Durrer-Herger,F,1955-01-01,Geschäftsfrau,,Kerns,FDP,Sagenmatt 1,SRID=4326;POINT (8.2809227 46.8761311),Sagenmatt 1 Kerns,,
 254,Josef,Bucher,M,1959-01-01,Landwirt,,Kerns,CVP,,,,,
-255,Martin,Ming,M,1952-01-01,dipl. Architekt,,Kerns,FDP,Hohfurlistrasse 5,,Hohfurlistrasse 5 Kerns,,
-256,Patrick,Imfeld,M,1966-01-01,dip. Bankfachexperte,,Sarnen,CVP,Giglenstrasse 21,,Giglenstrasse 21 Sarnen,,
-257,Adrian,Halter,M,1962-01-01,Unternehmer,,Sarnen,SVP,Aamattweg 9,,Aamattweg 9 Sarnen,,
-258,Theres,Huser Zemp,F,1954-01-01,Sozialarbeiterin,,Sarnen,CVP,Freiteilmattlistrasse 50,,Freiteilmattlistrasse 50 Sarnen,,
-259,Paul,Küchler,M,1968-01-01,Landwirt/Technischer Kaufmann,,Sarnen,CVP,Eschliweg 9,,Eschliweg 9 Sarnen,,
-260,Béatrice,Sidler-Gisler,F,1972-01-01,Betriebsökonomin FH,,Sarnen,FDP,Sonnenbergstrasse 13,,Sonnenbergstrasse 13 Sarnen,,
-261,Bernhard,Berchtold-Durrer,M,1956-01-01,Poststellenleiter,,Sarnen,CSP,Enetriederstrasse 30,,Enetriederstrasse 30 Sarnen,,
-262,Maya,Kiser-Krummenacher,F,1971-01-01,Bäuerin / Pflegeassistentin,,Sarnen,SVP,im Stücki,,"im Stücki, Ramersberg",,
-263,Robert,Hurschler,M,1959-01-01,Betriebsleiter,,Engelberg,CVP,Hälmeweg 3,,Hälmeweg 3 Engelberg,,
-264,John,de Haan,M,1952-01-01,Makler,,Sarnen,FDP,St. Antonistrasse 9,,St. Antonistrasse 9 Sarnen,,
-265,Ruedi,Amstutz,M,1966-01-01,Verkäufer,,Sachseln,FDP,Dominiweg 2,,Dominiweg 2 Sachseln,,
-266,Roger,Spichtig,M,1974-01-01,Maurer / Unternehmer,,Giswil,FDP,Hirserenriedstrasse 14,,Hirserenriedstrasse 14 Giswil,,
-267,Thomas,Zumstein,M,1968-01-01,Bauingenieur HTL,,Sarnen,FDP,Büntenstrasse 8,,Büntenstrasse 8 Sarnen,,
-268,Walter,Abächerli-Amschwand,M,1963-01-01,Meisterlandwirt / Korporationsverwalter,,Kerns,CVP,Nelkenweg 1,,Nelkenweg 1 Kerns,,
-269,Barbara,Dahinden,F,1981-01-01,Dipl. Pflegefachfrau HF / Sozialarbeiterin HF ,,Giswil,CSP,Weidweg 4,,Weidweg 4 Giswil,,
+255,Martin,Ming,M,1952-01-01,dipl. Architekt,,Kerns,FDP,Hohfurlistrasse 5,SRID=4326;POINT (8.277173245188591 46.90053455),Hohfurlistrasse 5 Kerns,,
+256,Patrick,Imfeld,M,1966-01-01,dip. Bankfachexperte,,Sarnen,CVP,Giglenstrasse 21,SRID=4326;POINT (8.2217941 46.8829888),Giglenstrasse 21 Sarnen,,
+257,Adrian,Halter,M,1962-01-01,Unternehmer,,Sarnen,SVP,Aamattweg 9,SRID=4326;POINT (8.2401845 46.8914556),Aamattweg 9 Sarnen,,
+258,Theres,Huser Zemp,F,1954-01-01,Sozialarbeiterin,,Sarnen,CVP,Freiteilmattlistrasse 50,SRID=4326;POINT (8.250548598341735 46.89267194578209),Freiteilmattlistrasse 50 Sarnen,,
+259,Paul,Küchler,M,1968-01-01,Landwirt/Technischer Kaufmann,,Sarnen,CVP,Eschliweg 9,SRID=4326;POINT (8.2469742 46.9071249),Eschliweg 9 Sarnen,,
+260,Béatrice,Sidler-Gisler,F,1972-01-01,Betriebsökonomin FH,,Sarnen,FDP,Sonnenbergstrasse 13,SRID=4326;POINT (8.240463200000001 46.8967145),Sonnenbergstrasse 13 Sarnen,,
+261,Bernhard,Berchtold-Durrer,M,1956-01-01,Poststellenleiter,,Sarnen,CSP,Enetriederstrasse 30,SRID=4326;POINT (8.2535098 46.8934211),Enetriederstrasse 30 Sarnen,,
+262,Maya,Kiser-Krummenacher,F,1971-01-01,Bäuerin / Pflegeassistentin,,Sarnen,SVP,im Stücki,SRID=4326;POINT (8.236652157862807 46.89855211007715),"im Stücki, Ramersberg",,
+263,Robert,Hurschler,M,1959-01-01,Betriebsleiter,,Engelberg,CVP,Hälmeweg 3,SRID=4326;POINT (8.4212314 46.8194964),Hälmeweg 3 Engelberg,,
+264,John,de Haan,M,1952-01-01,Makler,,Sarnen,FDP,St. Antonistrasse 9,SRID=4326;POINT (8.2494234 46.8926418),St. Antonistrasse 9 Sarnen,,
+265,Ruedi,Amstutz,M,1966-01-01,Verkäufer,,Sachseln,FDP,Dominiweg 2,SRID=4326;POINT (8.2389571 46.8670573),Dominiweg 2 Sachseln,,
+266,Roger,Spichtig,M,1974-01-01,Maurer / Unternehmer,,Giswil,FDP,Hirserenriedstrasse 14,SRID=4326;POINT (8.1833127 46.8441215),Hirserenriedstrasse 14 Giswil,,
+267,Thomas,Zumstein,M,1968-01-01,Bauingenieur HTL,,Sarnen,FDP,Büntenstrasse 8,SRID=4326;POINT (8.252043 46.89882555),Büntenstrasse 8 Sarnen,,
+268,Walter,Abächerli-Amschwand,M,1963-01-01,Meisterlandwirt / Korporationsverwalter,,Kerns,CVP,Nelkenweg 1,SRID=4326;POINT (8.27953289139009 46.90088805),Nelkenweg 1 Kerns,,
+269,Barbara,Dahinden,F,1981-01-01,Dipl. Pflegefachfrau HF / Sozialarbeiterin HF ,,Giswil,CSP,Weidweg 4,SRID=4326;POINT (8.170339500000001 46.837332),Weidweg 4 Giswil,,
 1000,Paul,Federer,M,1950-07-14,dipl. Ingenieur FH/STV,,Sarnen,FDP,,,,,import/politicans/ow/paulfederer.jpg
 1001,Hans,Wallimann,M,1953-02-22,Agraringenieur HTL,,Giswil,CVP,,,,,import/politicans/ow/Hans_Wallimann.jpg
 1002,Niklaus,Bleiker,M,1953-12-10,Bankfachmann,,Alpnach Dorf,CVP,,,,,import/politicans/ow/niklausbleiker.jpeg
 1003,Esther,Gasser Pfulg,F,1968-11-02,Betriebsökonomin HWV,,Lungern,FDP,,,,,import/politicans/ow/esthergasspfulg.jpg
 1004,Franz,Enderli,M,1954-12-04,Theologe,,Kerns,CSP,,,,,import/politicans/ow/franzenderli.jpg
-1005,Josef,Hess,M,1961-01-06,Forstingenieur,,Engelberg,,,,,,import/politicans/ow/josefhess.jpg
+1005,Josef,Hess,M,1961-01-06,Forstingenieur,,Engelberg,,,SRID=4326;POINT (8.404666600000001 46.8212255),,,import/politicans/ow/josefhess.jpg
 9999,Beat,Hug,M,1981-01-01,liz. Staatswissenschaften,,Sarnen,,,,,,
 9998,Nicole,Frunz Wallimann,F,1968-07-05,lic. rer. publ. ,,Sarnen,,,,,,
