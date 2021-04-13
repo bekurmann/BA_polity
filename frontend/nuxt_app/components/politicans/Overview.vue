@@ -18,6 +18,8 @@
                     <span v-else-if="politicanDetails.gender=='F'"><v-icon>mdi-gender-female</v-icon></span>
                     <span v-else><v-icon>mdi-gender-non-binary</v-icon></span>
                     <br>
+                    <b>{{politicanDetails.fractions[0].name}}</b>
+                    <br>
                     {{politicanDetails.title}}<br>
                     {{politicanDetails.profession}}<br>
                     {{politicanDetails.date_of_birth}}
@@ -56,7 +58,7 @@
 export default {
     props: {
         politicanDetails: {
-            type: Array
+            type: Object
         }
     },
 }

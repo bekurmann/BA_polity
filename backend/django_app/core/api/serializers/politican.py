@@ -1,11 +1,12 @@
 from rest_framework import serializers
 
 # import models
-from core.models import Politican, Affair
+from core.models import Politican, Affair, AffairDebate
 
 # import additional serializers 
 from locations.api.serializers import PLZSerializer
-from core.api.serializers import FractionSerializer, CommissionSerializer
+from core.api.serializers import (FractionSerializer, CommissionSerializer, 
+                                    AffairDetailSerializer, AffairDebateListSerializer)
 
 class PoliticanListSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
@@ -26,6 +27,9 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
     #parties = 
     #parlaments = ParlamentSerializer(read_only=True)
 
+    affairs = serializers.SerializerMethodField()
+    debate_statements = serializers.SerializerMethodField()
+
     number_of_submitted_affairs = serializers.SerializerMethodField()
     number_of_successful_affairs = serializers.SerializerMethodField()
     number_of_debate_statements = serializers.SerializerMethodField()
@@ -43,5 +47,18 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
         success = Affair.objects.filter(signatory=politican, accepted=True).count()
         return success
 
+    def get_affairs(self, politican):
+        # returns all affairs (nested) where politican is signatory
+        affairs = Affair.objects.filter(signatory=politican)
+        affairs_serializer = AffairDetailSerializer(affairs, many=True)
+        return affairs_serializer.data
+    
     def get_number_of_debate_statements(self, politican):
         return politican.affairdebates.count()
+
+    def get_debate_statements(self, politican):
+        statements = AffairDebate.objects.filter(politican=politican)
+        statements_serializer = AffairDebateListSerializer(statements, many=True)
+        return statements_serializer.data
+
+    

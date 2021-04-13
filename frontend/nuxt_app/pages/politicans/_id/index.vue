@@ -19,11 +19,23 @@
                 <Map :politicanDetails="politicanDetails"></Map>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
+                <Affairs :politicanDetails="politicanDetails"></Affairs>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
+                <DebateStatements :politicanDetails="politicanDetails"></DebateStatements>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 <script>
 import Overview from '~/components/politicans/Overview.vue'
 import Map from '~/components/politicans/Map.vue'
+import Affairs from '~/components/politicans/Affairs.vue'
+import DebateStatements from '~/components/politicans/DebateStatements.vue'
 
 export default {
     data() {
@@ -42,6 +54,8 @@ export default {
     components: {
         Overview,
         Map,
+        Affairs,
+        DebateStatements,
     },
     middleware: ['auth'],
 }

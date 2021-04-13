@@ -36,6 +36,7 @@ class AffairDebateListSerializer(serializers.ModelSerializer):
     """
     model serializer for affair (list)
     """
+    affair = AffairListSerializer(read_only=True)
 
     class Meta:
         model = AffairDebate
