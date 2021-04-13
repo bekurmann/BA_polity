@@ -12,7 +12,8 @@
                         <v-card>
                             <v-card-text>
                                 <span><v-avatar size="15" color="blue"></v-avatar> Parlaments</span><br>
-                               <span><v-avatar size="15" color="green"></v-avatar> Politicans</span>
+                                <span><v-avatar size="15" color="green"></v-avatar> Politicans (active)</span><br>
+                                <span><v-avatar size="15" color="red"></v-avatar> Politicans (inactive)</span>
                             </v-card-text>
                         </v-card>
                     </l-control>
