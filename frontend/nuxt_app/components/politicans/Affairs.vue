@@ -15,9 +15,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(affair) in politicanDetails.affairs" :key="affair.id">
+                    <tr v-for="(affair) in politicanDetails.affairs" :key="affair.id" @click:row="routerNuxtLink">
                         <td>
-                            {{affair.title}}
+                            <NuxtLink :to="'/affairs/' + affair.id">{{affair.title}}</NuxtLink>
                         </td>
                         <td>{{affair.date_received}}</td>
                         <td>{{affair.affair_type}}</td>
@@ -37,6 +37,11 @@ export default {
     props: {
         politicanDetails: {
             type: Object
+        }
+    },
+    methods: {
+        routerNuxtLink() {
+            this.router.push('/affairs'+affair.id)
         }
     }
 }

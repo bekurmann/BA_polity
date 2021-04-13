@@ -2,7 +2,7 @@
     <v-card>
         <v-card-title>Map</v-card-title>
         <v-card-text>
-            <div id="map-wrap" style="height: 50vh">
+            <div id="map-wrap" style="height: 50vh" v-if="politicanDetails.location">
                 <client-only>
                 <l-map :zoom=10 :center="[politicanDetails.location.coordinates[1], politicanDetails.location.coordinates[0]]" class="lowerZ">
                     <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>

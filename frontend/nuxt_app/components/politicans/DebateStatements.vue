@@ -16,6 +16,14 @@
                     <v-expansion-panel-content>
                         {{statement.content}}
                     </v-expansion-panel-content>
+                    <v-expansion-panel-content>
+                        <v-btn 
+                        color="primary"
+                        :to="'/affairs/'+statement.affair.id"
+                        >
+                            See affair details
+                        </v-btn>
+                    </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
 
