@@ -39,7 +39,7 @@ class PoliticanAdmin(ImportExportModelAdmin):
 
     resource_class = PoliticanRessource
 
-    list_display = ('first_name', 'last_name', 'get_city_name',)
+    list_display = ('first_name', 'last_name', 'get_city_name', 'location',)
     search_fields = ['first_name', 'last_name',]
 
     # function for getting the city name (foreign key PLZ, field "name")
