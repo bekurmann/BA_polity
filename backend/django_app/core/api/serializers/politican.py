@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 # import models
-from core.models import Politican
+from core.models import Politican, Affair
 
 # import additional serializers 
 from locations.api.serializers import PLZSerializer
@@ -27,7 +27,9 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
     #parlaments = ParlamentSerializer(read_only=True)
 
     number_of_submitted_affairs = serializers.SerializerMethodField()
+    number_of_successful_affairs = serializers.SerializerMethodField()
     number_of_debate_statements = serializers.SerializerMethodField()
+    number_of_successful_affairs = serializers.SerializerMethodField()
  
     class Meta:
         model = Politican
@@ -36,6 +38,10 @@ class PoliticanDetailSerializer(serializers.ModelSerializer):
     def get_number_of_submitted_affairs(self, politican):
         # wrong related name, should be affairs
         return politican.signatories.count()
+
+    def get_number_of_successful_affairs(self, politican):
+        success = Affair.objects.filter(signatory=politican, accepted=True).count()
+        return success
 
     def get_number_of_debate_statements(self, politican):
         return politican.affairdebates.count()

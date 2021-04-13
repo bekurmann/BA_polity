@@ -89,41 +89,6 @@
                             </tbody>
                     </v-simple-table>
 
-
-                    <!-- <v-list three-line>
-
-                        <template v-for="(membership, index) in items">
-                            <v-list-item :key="membership.id">
-                                <v-list-item-avatar>
-                                    <v-img :src="membership.politican.avatar"></v-img>
-                                </v-list-item-avatar>
-
-                                <v-list-item-content>
-                                    <v-list-item-title >
-                        
-                                        <NuxtLink :to="'/politicans/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink> 
-                                        (<NuxtLink :to="'/fractions/' + fraction.id" 
-                                                    v-for="fraction in membership.politican.fractions"
-                                                    :key="fraction.id">{{fraction.name}}</NuxtLink>)
-                                        
-                                    </v-list-item-title>
-                                    <v-list-item-subtitle>
-                                        <p>{{membership.politican.city.name}}</p>
-                                        <p v-if="membership.active">
-                                            <v-chip>active</v-chip>
-                                        </p>
-                                        <p v-else>
-                                            <v-chip>inactive</v-chip>
-                                        </p>
-                                    </v-list-item-subtitle>
-                                </v-list-item-content>
-                            </v-list-item>
-                            <v-divider :key="index"></v-divider>
-                        </template>
-
-                    </v-list> -->
-
-
                 </template>
                 
             </v-data-iterator>

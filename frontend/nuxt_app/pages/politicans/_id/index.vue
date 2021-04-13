@@ -1,4 +1,5 @@
 <template>
+    <!-- header with avatar-->
     <v-container v-if="$fetchState.pending">
         <v-row>
             <v-col>
@@ -11,39 +12,36 @@
     </v-container>
     <v-container v-else>
         <v-row>
-            <v-col cols="12">
-                <v-card align="center" >
-                    <v-card-title primary-title class="justify-center">
-                        {{details.first_name}} {{details.last_name}}
-                    </v-card-title>
-                    <v-card-subtitle>{{details.city.name}}</v-card-subtitle>
-                    <v-card-text>
-                        <v-avatar
-                            size="150"
-                        >
-                        <v-img :src="details.avatar" max-height="150" contain alt="canton emblem"></v-img>
-                        </v-avatar>
-                    </v-card-text>
-                </v-card>
+            <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
+                <Overview :politicanDetails="politicanDetails"></Overview>
+            </v-col>
+            <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
+                <Map :politicanDetails="politicanDetails"></Map>
             </v-col>
         </v-row>
     </v-container>
 </template>
 <script>
+import Overview from '~/components/politicans/Overview.vue'
+import Map from '~/components/politicans/Map.vue'
 
 export default {
     data() {
         return {
-            details: {}
+            politicanDetails: {}
         }
     },
     async fetch() {
         try {
             const politicanDetails = await this.$axios.$get(`/politicans/${this.$route.params.id}`)
-            this.details = politicanDetails
+            this.politicanDetails = politicanDetails
         } catch(error) {
             throw new Error(`Failed to fetch politicanDetails from /politicans/${this.$route.params.id}`)
         }
+    },
+    components: {
+        Overview,
+        Map,
     },
     middleware: ['auth'],
 }
