@@ -52,6 +52,21 @@
 
         </v-card-text>
 
+        <v-card-actions class="ma-3">
+            <v-btn outlined large color="primary" to="/support/">
+                <v-icon>mdi-account-check-outline</v-icon>
+                Follow
+            </v-btn>
+            <!-- <v-btn outlined large color="primary" to="/support/">
+                <v-icon>mdi-star-plus-outline</v-icon>
+                Rate
+            </v-btn>
+            <v-btn outlined large color="primary" to="/support/">
+                <v-icon>mdi-comment-outline</v-icon>
+                Comment
+            </v-btn> -->
+        </v-card-actions>
+
     </v-card>
 </template>
 <script>
