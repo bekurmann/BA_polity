@@ -13,6 +13,7 @@ class MembershipListSerializer(serializers.ModelSerializer):
     model serializer for membership
     """
     politican = PoliticanListSerializer(read_only=True)
+    # politican should go away -> circular import -> fraction, avatar seperate
     active = serializers.BooleanField()
 
 
@@ -20,6 +21,8 @@ class MembershipListSerializer(serializers.ModelSerializer):
     first_name = serializers.SerializerMethodField()
     last_name = serializers.SerializerMethodField()
     city = serializers.SerializerMethodField()
+
+
     class Meta:
         model = Membership
         exclude = [ 'created_at', 'updated_at', ]
@@ -32,6 +35,7 @@ class MembershipListSerializer(serializers.ModelSerializer):
 
     def get_city(self, membership):
         return membership.politican.city.name
+
 
 
 class MembershipDetailSerializer(serializers.ModelSerializer):

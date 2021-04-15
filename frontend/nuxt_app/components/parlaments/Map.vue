@@ -33,8 +33,7 @@
                         <l-popup>
                             <v-img :src="membership.politican.avatar" max-width="40"></v-img>
                             <b>{{membership.politican.first_name}} {{membership.politican.last_name}}</b><br>
-                            Fraktion: <br>
-                            Mehr erfahren (Link)
+                            <NuxtLink :to="'/politicans/'+membership.politican.id">Mehr erfahren (Link)</NuxtLink>
                         </l-popup>
                     </l-marker>
                     <!-- inactive politicans -->
@@ -47,8 +46,7 @@
                         <l-popup>
                             <v-img :src="membership.politican.avatar" max-width="40"></v-img>
                             <b>{{membership.politican.first_name}} {{membership.politican.last_name}}</b><br>
-                            Fraktion: <br>
-                            Mehr erfahren (Link)
+                            <NuxtLink :to="'/politicans/'+membership.politican.id">Mehr erfahren (Link)</NuxtLink>
                         </l-popup>
                     </l-marker>
                 </l-map>

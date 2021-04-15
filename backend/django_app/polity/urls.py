@@ -15,7 +15,8 @@ from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 from rest_framework_nested import routers
 from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 PoliticanViewSet,
-                                ParlamentMembershipViewSet, CommissionViewSet,
+                                ParlamentMembershipViewSet, PoliticanMembershipViewSet, 
+                                CommissionViewSet,
                                 CommissionMembershipViewSet,
                                 FractionViewSet, AffairAllViewSet, 
                                 AffairViewSet, AffairDebateViewSet, 
@@ -71,6 +72,11 @@ affair_file_router.register(r'files', AffairFileViewSet, basename="affair-files"
 router.register(r'politicans', PoliticanViewSet, basename="politicans")
 # /politicans/ 
 # /politicans/<pk>/
+
+politican_membership_router = routers.NestedSimpleRouter(router, r'politicans', lookup='politican')
+politican_membership_router.register(r'memberships', PoliticanMembershipViewSet, basename='politican-memberships')
+# /politicans/<pk>/memberships/
+# /politicans/<pk>/memberships/<pk>/
 
 # Affair ROUTER *
 # **************************************************************************************
@@ -128,6 +134,9 @@ urlpatterns = [
     path('api/v1/', include(affair_router.urls)),
     path('api/v1/', include(affair_debate_router.urls)),
     path('api/v1/', include(affair_file_router.urls)),
+
+    # nested politicans
+    path('api/v1/', include(politican_membership_router.urls)),
 
     # nested municipalities / cantons
      path('api/v1/', include(canton_municipality_router.urls)),

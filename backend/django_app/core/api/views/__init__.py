@@ -5,4 +5,4 @@ from .commission import CommissionViewSet
 from .fraction import FractionViewSet
 from .affair import (AffairAllViewSet, AffairViewSet, AffairDebateViewSet, AffairFileViewSet )
 from .session import SessionViewSet
-from .membership import ParlamentMembershipViewSet, CommissionMembershipViewSet
+from .membership import ParlamentMembershipViewSet, PoliticanMembershipViewSet, CommissionMembershipViewSet

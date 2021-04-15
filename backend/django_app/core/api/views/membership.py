@@ -33,6 +33,16 @@ class ParlamentMembershipViewSet(viewsets.ReadOnlyModelViewSet):
         
         return super(ParlamentMembershipViewSet, self).get_serializer_class()
 
+class PoliticanMembershipViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    read only viewset for listing all memberships of certain politican
+    """
+    def get_queryset(self):
+        return Membership.objects.filter(politican=self.kwargs['politican_pk'])
+    
+    serializer_class = MembershipListSerializer
+
+
 class CommissionMembershipViewSet(viewsets.ReadOnlyModelViewSet):
     """
     read-only viewset for listing commission membership
