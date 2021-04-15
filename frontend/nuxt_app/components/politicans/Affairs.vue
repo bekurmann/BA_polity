@@ -22,8 +22,11 @@
                         <td>{{affair.date_received}}</td>
                         <td>{{affair.affair_type}}</td>
                         <td>
-                            <v-chip v-if="affair.accepted" color="green" dark>accepted</v-chip>
-                            <v-chip v-else color="red" dark>rejected</v-chip>
+                            <!-- <v-chip v-if="affair.accepted" color="green" dark>accepted</v-chip>
+                            <v-chip v-else color="red" dark>rejected</v-chip> -->
+                            <v-chip v-if="affairResult(affair) =='no_vote'" color="yellow">no vote</v-chip>
+                            <v-chip v-else-if="affairResult(affair) =='accepted'" color="green" dark>accepted</v-chip>
+                            <v-chip v-else-if="affairResult(affair)=='declined'" color="red" dark>declined</v-chip>
                         </td>
                     </tr>
                 </tbody>
@@ -42,6 +45,18 @@ export default {
     methods: {
         routerNuxtLink() {
             this.router.push('/affairs'+affair.id)
+        },
+        affairResult(affair) {
+            let total_votes = affair.anon_yes + affair.anon_no + affair.anon_abstinence;
+            let yes_share = (affair.anon_yes / total_votes)*100;
+            if(total_votes == 0) {
+                return 'no_vote'
+            }
+            else if(yes_share > 50) {
+                return 'accepted'
+            } else {
+                return 'declined'
+            }
         }
     }
 }
