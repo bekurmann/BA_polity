@@ -47,12 +47,13 @@ export default {
             this.router.push('/affairs'+affair.id)
         },
         affairResult(affair) {
-            let total_votes = affair.anon_yes + affair.anon_no + affair.anon_abstinence;
-            let yes_share = (affair.anon_yes / total_votes)*100;
+            let total_votes = affair.anon_no + affair.anon_yes + affair.anon_abstinence
+            let no_share = affair.anon_no
+            let yes_share = affair.anon_yes
             if(total_votes == 0) {
                 return 'no_vote'
             }
-            else if(yes_share > 50) {
+            else if(yes_share > no_share) {
                 return 'accepted'
             } else {
                 return 'declined'

@@ -13,7 +13,7 @@ from core.api.serializers import ( AffairListSerializer, AffairDetailSerializer,
 # *****************************************************************************************
 class AffairAllViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    read-only viewset for affairs
+    read-only viewset for all affairs (not nested)
     """
     def get_queryset(self):
         return Affair.objects.all()
@@ -30,7 +30,7 @@ class AffairAllViewSet(viewsets.ReadOnlyModelViewSet):
         return super(AffairAllViewSet, self).get_serializer_class()
 class AffairViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    read-only viewset for affairs
+    read-only viewset for affairs based on parlament (nested route)
     """
     def get_queryset(self):
         return Affair.objects.filter(parlament=self.kwargs['parlament_pk'])
