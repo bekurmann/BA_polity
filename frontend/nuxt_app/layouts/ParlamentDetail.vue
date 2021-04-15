@@ -153,6 +153,11 @@
                           <v-icon>mdi-account-multiple-outline</v-icon>
                   </v-btn>  
 
+                  <v-btn :to="'/parlaments/' + $route.params.id + '/fractions/'" router text rounded>
+                          Fractions
+                          <v-icon>mdi-chart-pie</v-icon>
+                  </v-btn> 
+
                   <v-btn :to="'/parlaments/' + $route.params.id + '/affairs/'" router text rounded>
                           Affairs
                           <v-icon>mdi-file-document-outline</v-icon>

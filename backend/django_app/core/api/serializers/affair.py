@@ -12,7 +12,7 @@ class AffairListSerializer(serializers.ModelSerializer):
     model serializer for affair (list)
     """
 
-    
+
     class Meta:
         model = Affair
         exclude = ["created_at", "updated_at", "additional_information", "content_all", "content_motivation",
@@ -25,6 +25,8 @@ class AffairDetailSerializer(serializers.ModelSerializer):
     """
     model serializer for affair (detail)
     """
+
+    affair_type = serializers.CharField(source='get_affair_type_display')
 
     class Meta:
         model = Affair
