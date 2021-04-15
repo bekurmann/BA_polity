@@ -21,6 +21,11 @@
         </v-row>
         <v-row>
             <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
+                <Memberships :politicanDetails="politicanDetails"></Memberships>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
                 <Affairs :politicanDetails="politicanDetails"></Affairs>
             </v-col>
         </v-row>
@@ -34,6 +39,7 @@
 <script>
 import Overview from '~/components/politicans/Overview.vue'
 import Map from '~/components/politicans/Map.vue'
+import Memberships from '~/components/politicans/Memberships.vue'
 import Affairs from '~/components/politicans/Affairs.vue'
 import DebateStatements from '~/components/politicans/DebateStatements.vue'
 
@@ -54,6 +60,7 @@ export default {
     components: {
         Overview,
         Map,
+        Memberships,
         Affairs,
         DebateStatements,
     },

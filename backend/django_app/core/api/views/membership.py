@@ -40,7 +40,7 @@ class PoliticanMembershipViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         return Membership.objects.filter(politican=self.kwargs['politican_pk'])
     
-    serializer_class = MembershipListSerializer
+    serializer_class = MembershipDetailSerializer
 
 
 class CommissionMembershipViewSet(viewsets.ReadOnlyModelViewSet):

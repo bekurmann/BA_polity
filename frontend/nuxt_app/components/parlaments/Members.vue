@@ -65,7 +65,7 @@
 
                     <v-simple-table>
                             <tbody>
-                                <tr v-for="(membership, index) in items" :key="membership.id">
+                                <tr v-for="(membership) in items" :key="membership.id">
                                     <td>
                                         <v-avatar size="40">
                                         <v-img :src="membership.politican.avatar"></v-img>
