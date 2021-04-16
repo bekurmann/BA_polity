@@ -31,7 +31,7 @@
                                     </v-avatar>
                                 </v-col>
                                 <v-col cols="12" xs="12" sm="8" md="8" lg="8" xl="8">
-                                    <NuxtLink :to="'/politicans/'+politican.id">
+                                    <NuxtLink :to="'/parlaments/'+politican.parlaments[0]+'/members/'+politican.id">
                                         <span class="text-h6">{{politican.first_name}} {{politican.last_name}}</span>
                                     </NuxtLink>
                                     <br>

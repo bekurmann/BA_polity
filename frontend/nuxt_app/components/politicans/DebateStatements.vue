@@ -19,7 +19,7 @@
                     <v-expansion-panel-content>
                         <v-btn 
                         color="primary"
-                        :to="'/affairs/'+statement.affair.id"
+                        :to="'/parlaments/'+politicanDetails.parlaments[0]+'/affairs/'+statement.affair.id"
                         >
                             See affair details
                         </v-btn>

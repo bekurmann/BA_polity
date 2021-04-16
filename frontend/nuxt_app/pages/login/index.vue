@@ -1,9 +1,7 @@
 <template>
 <v-container>
 
-    <v-card color="primary">
-
-    <v-row class="px-3" align="center">
+    <v-row class="px-3" justify="center">
 
         <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
             <v-card>
@@ -32,13 +30,7 @@
 
         </v-col>
 
-        <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6" align="center">
-                <v-img src="/login.svg" max-width="80%"></v-img>
-        </v-col>
-
     </v-row>  
-
-    </v-card>
     
 </v-container>
 </template>
