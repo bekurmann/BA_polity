@@ -214,7 +214,6 @@ export default {
   },
   data () {
     return {
-      //parlamentInformation: {},
       drawer: false,
       drawerItems: [
         {
@@ -249,7 +248,10 @@ export default {
   },
   async fetch() {
       try {
-          const parlamentData = await this.$axios.$get(`/parlaments/${this.$route.params.id}`);
+          let routeSliced = this.$route.path.split("/");
+          // slices path based on / -> 3rd position is parlament id ->
+          let parlamentData = await this.$axios.$get(`/parlaments/${routeSliced[2]}`);
+          // sets selectedParlament (page reload bug -> direct access /parlament/id/members/id)
           this.$store.dispatch("parlaments/setSelectedParlament", parlamentData);
       } catch(error) {
           throw new Error(`Failed to fetch parlamentData from /parlaments/${this.$route.params.id}`)

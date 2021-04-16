@@ -17,7 +17,7 @@
                 <tbody>
                     <tr v-for="(affair) in politicanDetails.affairs" :key="affair.id" @click:row="routerNuxtLink">
                         <td>
-                            <NuxtLink :to="'/affairs/' + affair.id">{{affair.title}}</NuxtLink>
+                            <NuxtLink :to="'/parlaments/' + selectedParlament.id + '/affairs/' + affair.id">{{affair.title}}</NuxtLink>
                         </td>
                         <td>{{affair.date_received}}</td>
                         <td>{{affair.affair_type}}</td>
@@ -36,6 +36,8 @@
     </v-card>  
 </template>
 <script>
+import {mapState} from 'vuex'
+
 export default {
     props: {
         politicanDetails: {
@@ -59,6 +61,11 @@ export default {
                 return 'declined'
             }
         }
+    },
+    computed: {
+        ...mapState({
+            selectedParlament: state => state.parlaments.selectedParlament
+        })
     }
 }
 </script>
