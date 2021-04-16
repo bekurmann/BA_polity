@@ -3,22 +3,6 @@
         <v-card-title>Debate</v-card-title>
         <v-card-text>
 
-
-            <!-- <v-card 
-                class="ma-3" 
-                :dark="getCardStyle(debate.order)" 
-                :color="getCardColor(debate.order)" 
-                v-for="debate in debates" 
-                :key="debate.id"
-            >
-                <v-card-title>
-                    {{debate.order}}
-                </v-card-title>
-                <v-card-text>
-                    {{debate.content}}
-                </v-card-text>
-            </v-card> -->
-
             <v-expansion-panels>
                 <v-expansion-panel
                 class="ma-3" 
@@ -28,12 +12,23 @@
                 :key="debate.id"
                 >
                     <v-expansion-panel-header>
-                        #{{debate.order}}
+                        #{{debate.order}} {{debate.politican_first_name}} {{debate.politican_last_name}}
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         {{debate.content}}
                     </v-expansion-panel-content>
+
+                    <v-expansion-panel-content>
+                        <v-btn 
+                        color="primary"
+                        :to="'/parlaments/'+affair.parlament+'/members/'+debate.politican"
+                        >
+                            Profile {{debate.politican_first_name}} {{debate.politican_last_name}}
+                        </v-btn>
+                    </v-expansion-panel-content>
+
                 </v-expansion-panel>
+
             </v-expansion-panels>
 
 

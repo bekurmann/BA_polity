@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-title>Content</v-card-title>
-        <v-card-text>
+        <v-card-text class="whitespace">
             {{affair.content_all}}
         </v-card-text>
 
@@ -16,3 +16,8 @@ export default {
     }
 }
 </script>
+<style>
+.whitespace {
+    white-space: pre-wrap;
+}   
+</style>

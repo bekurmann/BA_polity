@@ -7,6 +7,7 @@
                     <v-chip outlined>{{affair.affair_type}}</v-chip>
                     <v-chip outlined>{{affair.identifier}}</v-chip>
                     <v-chip outlined>{{affair.date_received}}</v-chip>
+                    <v-chip outlined>Session: {{affair.session}}</v-chip><!-- fetch session data! -->
                     <v-chip v-if="affair.recommendation" color="green">Recommendation Executive</v-chip>
                     <v-chip v-else color="red">Recommendation Executive</v-chip>
                     <v-chip v-if="affair.discussion_desired" color="yellow" light>discussion desired</v-chip>

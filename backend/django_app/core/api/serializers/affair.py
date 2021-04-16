@@ -3,6 +3,7 @@ from rest_framework import serializers
 # import models
 from core.models import Affair, AffairDebate, AffairFile
 
+
 # ************************************************************
 # Affair
 # ************************************************************
@@ -40,13 +41,24 @@ class AffairDebateListSerializer(serializers.ModelSerializer):
     """
     affair = AffairListSerializer(read_only=True)
 
+    politican_first_name = serializers.SerializerMethodField()
+    politican_last_name = serializers.SerializerMethodField()
+
+
     class Meta:
         model = AffairDebate
         exclude = ["created_at", "updated_at",]
 
+    def get_politican_first_name(self, debate):
+        return debate.politican.first_name
+
+    def get_politican_last_name(self, debate):
+        return debate.politican.last_name
+
+
 class AffairDebateDetailSerializer(serializers.ModelSerializer):
     """
-    model serializer for affair (detail)
+    model serializer for affair (detail) !!! PROBABLY UNNECESSARY -> NESTED
     """
 
     class Meta:
