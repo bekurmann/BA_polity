@@ -30,6 +30,7 @@ class FractionAdmin(ImportExportModelAdmin):
         ('Belonging Parlament', {'fields': ('parlament',)}),
         ('Belonging Party', {'fields': ('party',)}),
         ('Address & Contact', {'fields': ('street1', 'street2', 'city', 'email', 'website', 'phone',)}),
+        ('Avatar', {'fields': ('avatar',)}),
     )
 
     resource_class = FractionRessource

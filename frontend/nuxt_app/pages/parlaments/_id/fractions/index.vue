@@ -1,17 +1,33 @@
 <template>
 
-        <v-card class="mt-3">
-            <v-card-title primary-title>
-                Fractions - coming soon
-            </v-card-title>
-        </v-card>
+    <v-container ma-0 mt-3 pa-0>
+        <v-row>
+            <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
+                <Fractions :fractions="fractions"></Fractions>
+            </v-col>
+
+            <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
+                <FractionsChart></FractionsChart>
+            </v-col>
+        </v-row>
+    </v-container>
 
 </template>
 <script>
+import Fractions from '~/components/parlaments/Fractions.vue'
+import FractionsChart from '~/components/parlaments/FractionsChart.vue'
+
 
 export default {
+    async asyncData({params, $axios}) {
+        const fractions = await $axios.$get(`/parlaments/${params.id}/fractions/`)
+        return { 
+            fractions: fractions,
+        }
+    },
     components: {
-        
+        Fractions,
+        FractionsChart,
     },
     middleware: ['auth'],
     layout: 'ParlamentDetail',

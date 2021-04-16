@@ -1,12 +1,12 @@
 <template>
     <v-card>
         <v-card-title>
-            Affairs
+            Sessions
         </v-card-title>
         <v-card-text>
 
             <v-data-iterator
-                :items="affairs"
+                :items="sessions"
                 item-key="id"
                 :items-per-page="15"
                 :search="search"
@@ -65,24 +65,21 @@
 
                     <v-simple-table>
                             <tbody>
-                                <tr v-for="(affair) in items" :key="affair.id">
-                                    
+                                <tr v-for="(session) in items" :key="session.id">
                                     <td>
-                                        <NuxtLink :to="$route.path + affair.id">
-                                            {{affair.title}}
-                                        </NuxtLink>
-                                    </td>
-
-                                    <td>
-                                        {{affair.date_received}}
+                                        {{session.start_date}}
                                     </td>
                                     <td>
-                                        {{affair.identifier}}
+                                        {{session.end_date}}
                                     </td>
                                     <td>
-                                        <!-- this is definetly wrong! -> need votes -->
-                                        <v-chip v-if="affair.accepted" color="green" dark>accepted</v-chip>
-                                        <v-chip v-else color="red" dark>declined</v-chip>
+                                        <v-chip v-if="session.opening_session" color="green" dark>opening session</v-chip>
+                                        <v-chip v-else color="yellow">regular session</v-chip>
+                                    </td>
+                                    <td>
+                                        <a :href="session.word_protocol">
+                                            {{getFileName(session.word_protocol)}}
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -105,17 +102,23 @@ export default {
             sortDesc: false,
             keys: [
                 'id',
-                'title',
-                'date_received',
+                'start_date',
+                'end_date',
+                'opening_session',
             ],
         }
     },
     props: {
-        affairs: {
+        sessions: {
             type: Object
         },
     },
-    computed: {
+    methods: {
+        getFileName(filePath) {
+            let slicedFilePath = filePath.split("/");
+            let [fileName] = slicedFilePath.slice(-1);
+            return fileName
+        }
     }
 }
 </script>

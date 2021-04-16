@@ -46,7 +46,6 @@ export default {
             let [fileName] = slicedFilePath.slice(-1);
             return fileName
         }
-
     }
 
 }
