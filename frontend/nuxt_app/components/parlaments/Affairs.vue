@@ -1,12 +1,12 @@
 <template>
     <v-card>
-        <v-card-title primary-title>
-            Members
+        <v-card-title>
+            Affairs
         </v-card-title>
         <v-card-text>
 
             <v-data-iterator
-                :items="memberships"
+                :items="affairs"
                 item-key="id"
                 :items-per-page="15"
                 :search="search"
@@ -65,25 +65,23 @@
 
                     <v-simple-table>
                             <tbody>
-                                <tr v-for="(membership) in items" :key="membership.id">
-                                    <td>
-                                        <v-avatar size="40">
-                                        <v-img :src="membership.politican.avatar"></v-img>
-                                        </v-avatar>
-                                    </td>
+                                <tr v-for="(affair) in items" :key="affair.id">
                                     
-                                    <td><NuxtLink :to="$route.path + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink></td>
+                                    <td>
+                                        <NuxtLink :to="$route.path + affair.signatory">
+                                            {{affair.title}}
+                                        </NuxtLink>
+                                    </td>
 
-                                    <td><NuxtLink :to="'/fractions/' + fraction.id" 
-                                                    v-for="fraction in membership.politican.fractions"
-                                                    :key="fraction.id">{{fraction.name}}</NuxtLink>
+                                    <td>
+                                        {{affair.date_received}}
                                     </td>
                                     <td>
-                                        {{membership.politican.city.name}}
+                                        {{affair.identifier}}
                                     </td>
                                     <td>
-                                        <v-chip v-if="membership.active" color="green" dark>active</v-chip>
-                                        <v-chip v-else color="red" dark>inactive</v-chip>
+                                        <v-chip v-if="affair.accepted" color="green" dark>accepted</v-chip>
+                                        <v-chip v-else color="red" dark>declined</v-chip>
                                     </td>
                                 </tr>
                             </tbody>
@@ -106,15 +104,13 @@ export default {
             sortDesc: false,
             keys: [
                 'id',
-                'first_name',
-                'last_name',
-                'city',
-                'active',
+                'title',
+                'date_received',
             ],
         }
     },
     props: {
-        memberships: {
+        affairs: {
             type: Object
         },
     },
