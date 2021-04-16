@@ -1,6 +1,6 @@
 <template>
-    <v-card class="ma-1" light>
-        <v-card-title>General Information</v-card-title>
+    <v-card class="ma-0 pa-0" light>
+        <v-card-title>{{affair.title}}</v-card-title>
         <v-card-text>
             <v-row>
                 <v-col>

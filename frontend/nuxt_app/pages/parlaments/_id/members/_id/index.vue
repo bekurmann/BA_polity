@@ -1,6 +1,6 @@
 <template>
     <!-- header with avatar-->
-    <v-container v-if="$fetchState.pending">
+    <v-container ma-0 mt-3 pa-0 v-if="$fetchState.pending">
         <v-row>
             <v-col>
                 <v-skeleton-loader
@@ -10,7 +10,7 @@
             </v-col>
         </v-row>
     </v-container>
-    <v-container v-else>
+    <v-container ma-0 mt-3 pa-0 v-else>
         <v-row>
             <v-col cols="12" xs="12" sm="6" md="6" lg="6" xl="6" class="d-flex child-flex align-stretch">
                 <Overview :politicanDetails="politicanDetails"></Overview>

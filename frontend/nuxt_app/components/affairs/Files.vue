@@ -4,11 +4,16 @@
         <v-card-text>
 
             <v-list-item v-for="file in files" :key="file.id">
-                <v-list-item-icon v-if="determineFileType(file.affair_file) == 'pdf'">
+                <v-list-item-icon v-if="getFileType(file.affair_file) == 'pdf'">
                     <v-icon color="primary">mdi-file-pdf</v-icon>
                 </v-list-item-icon>
-                <v-list-item-content>
-                    <v-list-item-title>{{file.affair_file}}</v-list-item-title>
+                <v-list-item-icon v-else>
+                    <v-icon color="primary">mdi-file</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content :href="file.affair_file">
+                    <v-list-item-title :href="file.affair_file">
+                        {{getFileName(file.affair_file)}}
+                    </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
 
@@ -32,11 +37,17 @@ export default {
         }
     },
     methods: {
-        determineFileType(filePath) {
+        getFileType(filePath) {
             let slicedFilePath = filePath.split(".");
             let [fileType] = slicedFilePath.slice(-1);
             return fileType
+        },
+        getFileName(filePath) {
+            let slicedFilePath = filePath.split("/");
+            let [fileName] = slicedFilePath.slice(-1);
+            return fileName
         }
+
     }
 
 }
