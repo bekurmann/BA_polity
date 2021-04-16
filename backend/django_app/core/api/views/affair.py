@@ -55,7 +55,7 @@ class AffairDebateViewSet(viewsets.ReadOnlyModelViewSet):
     read-only viewset for affairs
     """
     def get_queryset(self):
-        return AffairDebate.objects.filter(affair=self.kwargs['affair_pk'])
+        return AffairDebate.objects.filter(affair=self.kwargs['affair_pk']).order_by('order')
 
     serializer_class = AffairDebateListSerializer
     detail_serializer_class = AffairDebateDetailSerializer

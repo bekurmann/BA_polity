@@ -10,11 +10,23 @@
                 <AffairFiles></AffairFiles>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col>
+                <AffairContent :affair="affair"></AffairContent>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+                <AffairDebate :affair="affair"></AffairDebate>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 <script>
 import AffairInfo from '~/components/affairs/Info.vue'
 import AffairFiles from '~/components/affairs/Files.vue'
+import AffairContent from '~/components/affairs/Content.vue'
+import AffairDebate from '~/components/affairs/Debate.vue'
 
 export default {
     data() {
@@ -31,6 +43,8 @@ export default {
     components: {
         AffairInfo,
         AffairFiles,
+        AffairContent,
+        AffairDebate,
     },
     middleware: ['auth'],
     layout: 'ParlamentDetail',
