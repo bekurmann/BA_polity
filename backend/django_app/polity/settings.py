@@ -243,10 +243,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ['DELETE','GET','OPTIONS','PATCH','POST','PUT']
 CORS_ALLOWED_ORIGINS = [
     "http://0.0.0.0:3000",
+    "https://dev.polity.ch",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     #'change.allowed.com',
     '0.0.0.0',
     '172.17.*.*',
+    'dev.polity.ch',
 ]
