@@ -4,7 +4,7 @@
             Map
         </v-card-title>
         <v-card-text>
-            <div id="map-wrap" style="height: 60vh">
+            <div id="map-wrap" style="height: 55vh">
                 <client-only>
                 <l-map :zoom=10 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]" class="lowerZ">
                     <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>

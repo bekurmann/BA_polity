@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-title>
-            Sessions
+            Sessions (incomplete)
         </v-card-title>
         <v-card-text>
 

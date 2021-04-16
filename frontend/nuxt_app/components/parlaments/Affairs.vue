@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-title>
-            Affairs
+            Affairs (incomplete)
         </v-card-title>
         <v-card-text>
 
