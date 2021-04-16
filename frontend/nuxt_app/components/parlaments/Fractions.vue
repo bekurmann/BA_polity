@@ -13,6 +13,7 @@
 
                         <v-card-title>{{fraction.name}} ({{fraction.abbreviation}})</v-card-title>
                         <v-card-subtitle>{{fraction.description}}</v-card-subtitle>
+                        <v-card-text>{{fraction.number_of_active_members}} Mitglieder</v-card-text>
 
                     </div>
                     <v-avatar size="50" class="ma-3">

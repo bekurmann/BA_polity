@@ -9,7 +9,7 @@
                 v-for="commission in commissions" :key="commission.id"
                 >
 
-                    <v-card-title>{{commission.name}} ({{commission.abbreviation}})</v-card-title>
+                    <v-card-title>{{commission.title}} ({{commission.abbreviation}})</v-card-title>
                     <v-card-subtitle>{{commission.description}}</v-card-subtitle>
 
                 </v-card>
