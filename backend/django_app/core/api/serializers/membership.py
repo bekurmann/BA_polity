@@ -15,8 +15,6 @@ class MembershipListSerializer(serializers.ModelSerializer):
     politican = PoliticanListSerializer(read_only=True)
     # politican should go away -> circular import -> fraction, avatar seperate -> maybe one day
 
-    # parlament = ParlamentDetailSerializer(read_only=True)
-
     active = serializers.BooleanField()
 
 
