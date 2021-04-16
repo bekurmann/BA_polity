@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-title>
-            Fractions
+            Fractions (incomplete)
         </v-card-title>
         <v-card-text>
             <v-card 
@@ -15,7 +15,7 @@
                         <v-card-subtitle>{{fraction.description}}</v-card-subtitle>
 
                     </div>
-                    <v-avatar size="50" color="primary" class="ma-3">
+                    <v-avatar size="50" class="ma-3">
                         <v-img :src="fraction.avatar"></v-img>
                     </v-avatar>
                 </div>
