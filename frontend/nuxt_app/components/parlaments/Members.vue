@@ -72,7 +72,7 @@
                                         </v-avatar>
                                     </td>
                                     
-                                    <td><NuxtLink :to="'/politicans/' + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink></td>
+                                    <td><NuxtLink :to="$route.path + membership.politican.id">{{membership.politican.first_name}} {{membership.politican.last_name}}</NuxtLink></td>
 
                                     <td><NuxtLink :to="'/fractions/' + fraction.id" 
                                                     v-for="fraction in membership.politican.fractions"

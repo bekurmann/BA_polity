@@ -33,7 +33,7 @@
                         <l-popup>
                             <v-img :src="membership.politican.avatar" max-width="40"></v-img>
                             <b>{{membership.politican.first_name}} {{membership.politican.last_name}}</b><br>
-                            <NuxtLink :to="'/politicans/'+membership.politican.id">Mehr erfahren (Link)</NuxtLink>
+                            <NuxtLink :to="'/parlaments/' + selectedParlament.id + '/members/' +membership.politican.id">Mehr erfahren (Link)</NuxtLink>
                         </l-popup>
                     </l-marker>
                     <!-- inactive politicans -->
@@ -46,7 +46,7 @@
                         <l-popup>
                             <v-img :src="membership.politican.avatar" max-width="40"></v-img>
                             <b>{{membership.politican.first_name}} {{membership.politican.last_name}}</b><br>
-                            <NuxtLink :to="'/politicans/'+membership.politican.id">Mehr erfahren (Link)</NuxtLink>
+                            <NuxtLink :to="'/parlaments/' + selectedParlament.id + '/members/' +membership.politican.id">Mehr erfahren (Link)</NuxtLink>
                         </l-popup>
                     </l-marker>
                 </l-map>
@@ -56,6 +56,8 @@
     </v-card>
 </template>
 <script>
+import {mapState} from 'vuex'
+
 export default {
     data() {
         return {
@@ -96,8 +98,10 @@ export default {
             let notNullMemberships = this.memberships.filter(el => el.politican.location !== null)
             let notNullMemberships_inactive = notNullMemberships.filter(el => el.active == false)
             return notNullMemberships_inactive;  
-        }
-
+        },
+        ...mapState({
+        selectedParlament: state => state.parlaments.selectedParlament
+        })
     }
 }
 </script>

@@ -15,6 +15,7 @@
                                     <v-chip outlined>{{affair.date_received}}</v-chip>
                                     <v-chip v-if="affair.recommendation" color="green">Recommendation Executive</v-chip>
                                     <v-chip v-else color="red">Recommendation Executive</v-chip>
+                                    <v-chip v-if="affair.discussion_desired" color="yellow" light>discussion desired</v-chip>
 
                                     <v-chip v-if="affair.urgent" color="red" light>urgent</v-chip>
                                     <v-chip v-else color="yellow" light>not urgent</v-chip>

@@ -143,42 +143,42 @@
               <v-row>
                 <v-col>
 
-                  <v-btn :to="'/parlaments/' + $route.params.id " router exact text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id" router exact text rounded>
                       Overview
                       <v-icon top>mdi-view-comfy-outline</v-icon>
                   </v-btn>
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/members/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/members/'" router text rounded>
                           Members
                           <v-icon>mdi-account-multiple-outline</v-icon>
                   </v-btn>  
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/fractions/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/fractions/'" router text rounded>
                           Fractions
                           <v-icon>mdi-chart-pie</v-icon>
                   </v-btn> 
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/affairs/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/affairs/'" router text rounded>
                           Affairs
                           <v-icon>mdi-file-document-outline</v-icon>
                   </v-btn>  
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/sessions/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/sessions/'" router text rounded>
                           Sessions
                           <v-icon>mdi-seat-outline</v-icon>
                   </v-btn>  
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/commissions/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/commissions/'" router text rounded>
                           Commissions
                           <v-icon>mdi-domain</v-icon>
                   </v-btn>  
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/map/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/map/'" router text rounded>
                           Map
                           <v-icon>mdi-map-marker-outline</v-icon>
                   </v-btn> 
 
-                  <v-btn :to="'/parlaments/' + $route.params.id + '/analysis/'" router text rounded>
+                  <v-btn :to="'/parlaments/' + selectedParlament.id + '/analysis/'" router text rounded>
                           Analysis
                           <v-icon>mdi-chart-line-variant</v-icon>
                   </v-btn> 
