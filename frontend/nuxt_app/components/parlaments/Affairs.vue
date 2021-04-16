@@ -68,7 +68,7 @@
                                 <tr v-for="(affair) in items" :key="affair.id">
                                     
                                     <td>
-                                        <NuxtLink :to="$route.path + affair.signatory">
+                                        <NuxtLink :to="$route.path + affair.id">
                                             {{affair.title}}
                                         </NuxtLink>
                                     </td>
