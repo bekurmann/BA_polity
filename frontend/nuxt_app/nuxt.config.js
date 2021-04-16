@@ -46,8 +46,9 @@ export default {
     'nuxt-leaflet',
   ],
   axios: {
-    //baseURL: 'http://0.0.0.0:8000/api/v1/', // dev
-    baseURL: 'http://0.0.0.0/api/v1/', // prod -> don't forget to change
+    baseURL: 'http://0.0.0.0:8000/api/v1/', // dev
+    //baseURL_ 'https://dev.polity.ch/api/v1/', !!
+    //baseURL: 'http://0.0.0.0/api/v1/', // prod -> don't forget to change
     credentials: false, // this says that in the request the httponly cookie should be sent
   },
   auth: {
