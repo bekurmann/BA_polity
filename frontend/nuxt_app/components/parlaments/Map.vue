@@ -7,7 +7,8 @@
             <div id="map-wrap" style="height: 55vh">
                 <client-only>
                 <l-map :zoom=10 :center="[parlament.location.coordinates[1], parlament.location.coordinates[0]]" class="lowerZ">
-                    <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+                    <!-- change to https! -->
+                    <l-tile-layer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
                     <l-control position="topright">
                         <v-card>
                             <v-card-text>
