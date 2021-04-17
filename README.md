@@ -32,7 +32,9 @@ load.municipality_import()
 exit shell ctrl + D
 
 afterwards import data dump:
+```python
 python manage.py loaddata import/dump2...json
+```
 
 good to go.
 
