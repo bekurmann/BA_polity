@@ -6,8 +6,11 @@ docker-compose -f docker-compose.dev.yml up -d
 ## for prod
 docker-compose -f docker-compose.prod.yml up -d
 
+## super user
 super user credentials: benjamin:whatever
 
+
+## import
 after running, django needs import:
 enter django container:
 docker exec -it polity_django_dev[or prod] /bin/bash
