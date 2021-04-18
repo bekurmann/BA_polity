@@ -74,7 +74,7 @@
 
             <v-avatar v-bind="attrs" v-on="on">
               <img :src="$auth.user.avatar" class="mx-2" max-height="40" max-width="40" contain v-if="$auth.user.avatar != null" />
-              <img src="/avatar.png" class="mx-2" max-height="40" max-width="40" contain v-else />
+              <img src="/avatar.svg" class="mx-2" max-height="40" max-width="40" contain v-else />
             </v-avatar>
           </template>
 
