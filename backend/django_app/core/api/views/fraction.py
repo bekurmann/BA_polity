@@ -14,6 +14,6 @@ class FractionViewSet(viewsets.ReadOnlyModelViewSet):
     read-only viewset for listing fractions
     """
     def get_queryset(self):
-        return Fraction.objects.filter(parlament=self.kwargs['parlament_pk'])
+        return Fraction.objects.filter(parlament=self.kwargs['parlament_pk']).order_by('id')
 
     serializer_class = FractionSerializer
