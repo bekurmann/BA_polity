@@ -15,8 +15,6 @@ const chartColors = {
   yellow: 'rgb(255, 205, 86)',
   green: 'rgb(0, 153, 76)',
   blue: 'rgb(54, 162, 235)',
-  purple: 'rgb(153, 102, 255)',
-  grey: 'rgb(201, 203, 207)'
 };
 
 export default {
@@ -28,11 +26,11 @@ export default {
                     {
                         label: 'Fractions',
                         backgroundColor: [
-                            chartColors.orange,
-                            chartColors.blue,
-                            chartColors.green,
+                            chartColors.red,
                             chartColors.yellow,
-                            chartColors.red
+                            chartColors.green,
+                            chartColors.blue,
+                            chartColors.orange
                         ],
                         data: this.fractions.map(fraction => fraction.number_of_active_members)                
                     }
