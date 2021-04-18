@@ -100,7 +100,7 @@
 
 
       <!-- mobile menu -->
-      <template v-if="$vuetify.breakpoint.smAndDown">
+      <template v-if="$vuetify.breakpoint.smAndDown && $auth.loggedIn">
         <v-divider vertical class="mx-2"></v-divider>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </template>
