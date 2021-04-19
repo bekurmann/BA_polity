@@ -2,3 +2,9 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+
+// fuck this wordbreak in card titles
+.v-card__text, .v-card__title {
+    word-break: normal; /* maybe !important  */
+  }
