@@ -14,6 +14,7 @@
 
                 <v-card
                 dark
+                style="background-image: radial-gradient(circle, rgba(0,91,173,1) 1%, rgba(68,142,208,1) 100%)"
                 color="primary"
                 :to="'/parlaments/' + parlament.id"
                 >  
