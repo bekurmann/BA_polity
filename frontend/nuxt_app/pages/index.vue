@@ -19,8 +19,8 @@
                 <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="8">
                   <v-card-title class="text-h3">Information</v-card-title>
                   <v-card-text>
+                    <p class="text-h6">Keep yourself informed.</p>
                     <p class="text-h5">
-                      inform yourself via polity.<br>
                       polity lets you find the information you need. Browse politicans, affairs and sessions all in one place.
                     </p>
                   </v-card-text>
@@ -42,9 +42,9 @@
                 <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="8">
                   <v-card-title class="text-h3">Subscribe</v-card-title>
                   <v-card-text>
+                    <p class="text-h6">Follow the people you're interested in.</p>
                     <p class="text-h5">
-                      follow the people you're interested in.<br>
-                      with polity, you're always up to date on the activities of the politicans you're most interested in. We notify you, whenever your favourite politicans did something.
+                      With polity, you're always up to date on the activities of the politicans you're most interested in. We notify you, whenever your favourite politicans did something relevant.
                     </p>                    
                   </v-card-text>
                 </v-col>
@@ -65,9 +65,9 @@
                 <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="8">
                   <v-card-title class="text-h3">Interaction</v-card-title>
                   <v-card-text>
+                    <p class="text-h6">Participate via polity.</p>
                     <p class="text-h5">
-                      inform yourself via polity.<br>
-                      polity lets you find the information you need. Browse politicans, affairs and sessions all in one place.
+                      Show your opinion with rating or commenting political affairs. Or just write a draft of a political input yourself and find other people, who support you. 
                     </p>
                   </v-card-text>
                 </v-col>
@@ -88,9 +88,10 @@
                 <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="8">
                   <v-card-title class="text-h3">Analysis and GeoData</v-card-title>
                   <v-card-text>
+                    <p class="text-h6">Check out analysis and GeoData.</p>
                     <p class="text-h5">
                       Find out more about your democracy and check out beautifully designed visualizations and analysis.<br>
-                      Furthermore, polity let's you find politicans near you - or just find them on a map.
+                      Furthermore, polity let's you find politicans and activities near you - with SwissTopo GeoData.
                     </p>                    
                   </v-card-text>
                 </v-col>

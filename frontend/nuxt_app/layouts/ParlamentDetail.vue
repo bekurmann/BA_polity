@@ -124,7 +124,7 @@
       <v-container v-else>
 
         <!-- additional menu for parlaments -->
-        <v-card dark color="primary">
+        <v-card style="background-image: radial-gradient(circle, rgba(0,91,173,1) 1%, rgba(68,142,208,1) 100%)" dark color="primary">
 
           <v-card-text align="center">
               <v-row>
