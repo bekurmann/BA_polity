@@ -43,7 +43,9 @@ export default {
                 },
                 title: {
                     display: true,
-                    text: 'Fractions OW'
+                    text: 'Fractions OW 2018-2022',
+                    position: 'top',
+                    fontSize: 18,
                 },
             }
         }

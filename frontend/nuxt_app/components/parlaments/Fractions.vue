@@ -16,8 +16,8 @@
                         <v-card-text>{{fraction.number_of_active_members}} Mitglieder</v-card-text>
 
                     </div>
-                    <v-avatar size="50" class="ma-3">
-                        <v-img :src="fraction.avatar"></v-img>
+                    <v-avatar size="60" class="ma-3" tile>
+                        <v-img :src="fraction.avatar" contain></v-img>
                     </v-avatar>
                 </div>
                 </v-card>
