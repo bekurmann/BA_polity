@@ -9,3 +9,4 @@ from .session import SessionSerializer
 # need to be down here because of import order
 from .politican import PoliticanListSerializer, PoliticanDetailSerializer
 from .membership import MembershipListSerializer, MembershipDetailSerializer 
+#from .analysis import 
