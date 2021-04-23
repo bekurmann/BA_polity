@@ -2,7 +2,7 @@
     <v-card>
         <v-card-title>Chart</v-card-title>
         <v-card-text>
-            <LineChart :data="lineChartData" :options="lineChartOptions" :height="150"></LineChart>
+            <LineChart :data="lineChartData" :options="lineChartOptions" :height="250"></LineChart>
         </v-card-text>
     </v-card>
 </template>
@@ -21,11 +21,12 @@ export default {
     data() {
         return {
             lineChartData: {
-                labels: this.affairs.map(affairs => affairs.date_received),
+                //labels: this.affairs.map(affairs => affairs.date_received),
+                // wohl besser im backend
                 datasets: [
                     {
-                        label: 'Affairs',
-                        data: Object.keys(this.affairs)                
+                        label: 'All Affairs',
+                        data: this.affairs.map(affairs => affairs.date_received)             
                     }
                 ]
             },
@@ -39,6 +40,14 @@ export default {
                     text: 'Affairs OW 2018-2022',
                     position: 'top',
                     fontSize: 18,
+                },
+                scales: {
+                    xAxes: [{
+                        type : 'time',
+                        time: {
+                            unit: 'year'
+                        }
+                    }]
                 },
             }
         }
