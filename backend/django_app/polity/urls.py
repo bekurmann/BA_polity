@@ -20,7 +20,8 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 CommissionMembershipViewSet,
                                 FractionViewSet, AffairAllViewSet, 
                                 AffairViewSet, AffairDebateViewSet, 
-                                AffairFileViewSet)
+                                AffairFileViewSet,
+                                AnalysisParlamentAffairsPerYearOW)
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -66,7 +67,6 @@ affair_file_router.register(r'files', AffairFileViewSet, basename="affair-files"
 # /parlaments/<pk>/affairs/<pk>/files/
 # /parlaments/<pk>/affairs/<pk>/files/<pk>/
 
-
 # POLITICAN ROUTER *
 # **************************************************************************************
 router.register(r'politicans', PoliticanViewSet, basename="politicans")
@@ -102,6 +102,8 @@ canton_municipality_router.register(r'municipalities', NestedMunicipalityViewSet
 router.register(r'locations/municipalities', MunicipalityViewSet, basename='municipalities')
 # /locations/municipalities/
 # /locations/municipalities/<pk>
+
+
 # **************************************************************************************
 # urls patterns
 # **************************************************************************************
@@ -139,7 +141,14 @@ urlpatterns = [
     path('api/v1/', include(politican_membership_router.urls)),
 
     # nested municipalities / cantons
-     path('api/v1/', include(canton_municipality_router.urls)),
+    path('api/v1/', include(canton_municipality_router.urls)),
+
+
+    # **************************************************************************************
+    # Analysis
+    # **************************************************************************************
+    path('api/v1/analysis/ow/data/', AnalysisParlamentAffairsPerYearOW.as_view()),  # new
+
 ]
 
 # **************************************************************************************
