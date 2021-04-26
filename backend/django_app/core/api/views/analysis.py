@@ -139,12 +139,21 @@ class AnalysisParlamentAffairsTypesOW(APIView):
     interpellations = Affair.objects.filter(parlament=100, affair_type="INTER").count()
     inquiries = Affair.objects.filter(parlament=100, affair_type="INQUI").count()
 
+    # type count successful
+    suc_motions = Affair.objects.filter(parlament=100, affair_type="MOTIO", accepted=True).count()
+    suc_people_motions = Affair.objects.filter(parlament=100, affair_type="PMOTI", accepted=True).count()
+    suc_postulates = Affair.objects.filter(parlament=100, affair_type="POSTU", accepted=True).count()
+    suc_interpellations = Affair.objects.filter(parlament=100, affair_type="INTER", accepted=True).count()
+    suc_inquiries = Affair.objects.filter(parlament=100, affair_type="INQUI", accepted=True).count()
 
     def get(self, request, format=None):
         data = {
             "labels": ["Motions", "People Motions", "Postulates", "Interpellations", "Inquiries"],
             "data_all": [
                 self.motions, self.people_motions, self.postulates, self.interpellations, self.inquiries,
+            ],
+            "data_success": [
+                self.suc_motions, self.suc_people_motions, self.suc_postulates, self.suc_interpellations, self.suc_inquiries,
             ],
         }
 

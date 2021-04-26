@@ -1,6 +1,6 @@
 <template>
     <v-card>
-        <v-card-title>Number of Affairs per year and fraction</v-card-title>
+        <v-card-title>Number of Affairs per Type</v-card-title>
         <v-card-text>
             <BarChart :data="barChartData" :options="barChartOptions" :height="250"></BarChart>
         </v-card-text>
@@ -24,7 +24,7 @@ export default {
                 labels: this.numberOfAffairsTypes.labels,
                 datasets: [
                     {
-                        label: 'OW: Number of Affairs per Type',
+                        label: 'all',
                         data: this.numberOfAffairsTypes.data_all,
                         backgroundColor: [
                             chartColors.red,
@@ -33,6 +33,10 @@ export default {
                             chartColors.blue,
                             chartColors.orange
                         ],
+                    },
+                    {
+                        label: 'successful',
+                        data: this.numberOfAffairsTypes.data_success,
                     },
                 ]
             },
@@ -43,7 +47,7 @@ export default {
                 },
                 title: {
                     display: true,
-                    text: 'OW: Number of Affairs per Type',
+                    text: 'OW: Number of Affairs per Type (2010 - 2020)',
                     position: 'top',
                     fontSize: 18,
                 },

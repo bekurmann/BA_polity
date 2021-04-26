@@ -1,16 +1,22 @@
 from rest_framework import serializers
 
 # import models
-from core.models import Politican, Affair, AffairDebate
+from core.models import Politican, Affair, AffairDebate, Membership
 
 # import additional serializers 
 from locations.api.serializers import PLZSerializer
 from core.api.serializers import (FractionSerializer, CommissionSerializer, 
                                     AffairDetailSerializer, AffairDebateListSerializer)
 
+# import date
+import datetime
+
 class PoliticanListSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
     fractions = FractionSerializer(read_only=True, many=True)
+
+    number_of_submitted_affairs = serializers.SerializerMethodField()
+    days_in_parlament = serializers.SerializerMethodField()
 
     class Meta:
         model = Politican
@@ -19,6 +25,36 @@ class PoliticanListSerializer(serializers.ModelSerializer):
                     'location_query', 
                     'parties', 'executives', 'commissions', 'title', 'street1', 
                     'street2', 'phone',]
+
+    def get_number_of_submitted_affairs(self, politican):
+        # wrong related name, should be affairs
+        return politican.signatories.count()
+
+    def get_days_in_parlament(self, politican):
+
+        days_in_parlament = ''
+
+        start_date = ''
+        end_date = ''
+
+        parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA")
+
+        for membership in parlament_memberships:
+            start_date = membership.start_date
+            end_date = membership.end_date
+
+        if(end_date):
+            delta = end_date - start_date
+            days_in_parlament = delta.days
+        else:
+            today = datetime.datetime.date(2020, 5, 1) 
+            start_date_x = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+            delta = today - start_date_x 
+            days_in_parlament = delta.days
+            
+        return days_in_parlament
+        
+        
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
