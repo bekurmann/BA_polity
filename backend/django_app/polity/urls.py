@@ -21,7 +21,8 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 FractionViewSet, AffairAllViewSet, 
                                 AffairViewSet, AffairDebateViewSet, 
                                 AffairFileViewSet,
-                                AnalysisParlamentAffairsPerYearOW)
+
+                                AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW, )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
                                     MunicipalityViewSet, NestedMunicipalityViewSet )
@@ -147,8 +148,9 @@ urlpatterns = [
     # **************************************************************************************
     # Analysis
     # **************************************************************************************
-    path('api/v1/analysis/ow/data/', AnalysisParlamentAffairsPerYearOW.as_view()),  # new
-
+    path('api/v1/analysis/ow/affairsperyear/', AnalysisParlamentAffairsPerYearOW.as_view()), 
+    path('api/v1/analysis/ow/affairstypes/', AnalysisParlamentAffairsTypesOW.as_view()), 
+    
 ]
 
 # **************************************************************************************

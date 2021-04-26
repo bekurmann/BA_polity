@@ -126,3 +126,26 @@ class AnalysisParlamentAffairsPerYearOW(APIView):
         }
 
         return Response(data)
+
+class AnalysisParlamentAffairsTypesOW(APIView):
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    # type count
+    motions = Affair.objects.filter(parlament=100, affair_type="MOTIO").count()
+    people_motions = Affair.objects.filter(parlament=100, affair_type="PMOTI").count()
+    postulates = Affair.objects.filter(parlament=100, affair_type="POSTU").count()
+    interpellations = Affair.objects.filter(parlament=100, affair_type="INTER").count()
+    inquiries = Affair.objects.filter(parlament=100, affair_type="INQUI").count()
+
+
+    def get(self, request, format=None):
+        data = {
+            "labels": ["Motions", "People Motions", "Postulates", "Interpellations", "Inquiries"],
+            "data_all": [
+                self.motions, self.people_motions, self.postulates, self.interpellations, self.inquiries,
+            ],
+        }
+
+        return Response(data)

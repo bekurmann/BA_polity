@@ -22,9 +22,6 @@ export default {
         return {
             lineChartData: {
                 labels: this.numberOfAffairsPerYear.labels,
-                segment: {
-                    borderDash: ctx => skipped(ctx, [6, 6]),
-                },
                 datasets: [
                     {
                         label: 'all',
