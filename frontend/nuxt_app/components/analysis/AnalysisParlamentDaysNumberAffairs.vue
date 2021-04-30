@@ -22,36 +22,36 @@ export default {
     data() {
         return {
             scatterChartData: {
-                labels: this.MembershipsOW.map(memberships => memberships.politican.first_name),
+                //labels: this.MembershipsOW.map(memberships => memberships.politican.first_name + ' ' + memberships.politican.last_name),
                 datasets: [
                     {
                         label: 'sp',
-                        //data: this.getScatterData,
+                        labels: this.getScatterLabels(1),
                         data: this.getScatterData(1),
                         pointBackgroundColor: 'red',
                     },
                     {
                         label: 'csp',
-                        //data: this.getScatterData,
                         data: this.getScatterData(2),
+                        labels: this.getScatterLabels(2),
                         pointBackgroundColor: 'yellow',
                     },
                     {
                         label: 'svp',
-                        //data: this.getScatterData,
                         data: this.getScatterData(3),
+                        labels: this.getScatterLabels(3),
                         pointBackgroundColor: 'green',
                     },
                     {
                         label: 'fdp',
-                        //data: this.getScatterData,
                         data: this.getScatterData(4),
+                        labels: this.getScatterLabels(4),
                         pointBackgroundColor: 'blue',
                     },
                     {
                         label: 'cvp',
-                        //data: this.getScatterData,
                         data: this.getScatterData(5),
+                        labels: this.getScatterLabels(5),
                         pointBackgroundColor: 'orange',
                     },
 
@@ -82,6 +82,15 @@ export default {
                         }
                     }],
                 },
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var index = tooltipItem.index;
+                        return dataset.labels[index] + ': (' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ')';
+                        }
+                    }
+                }
             }
         }
     },
@@ -101,16 +110,24 @@ export default {
 
             for (let i=0; i<membershipData.length; i++) {
 
-                if(membershipData[i].politican.fractions[0].id = fractionID) {
-                    let singleObj = {
-                        x: membershipData[i].politican.days_in_parlament, 
-                        y: membershipData[i].politican.number_of_submitted_affairs
-                    };
-                    scatterData.push(singleObj);
-                }
+                let singleObj = {
+                    x: membershipData[i].politican.days_in_parlament, 
+                    y: membershipData[i].politican.number_of_submitted_affairs
+                };
+                scatterData.push(singleObj);
             }
             return scatterData
         },
+        getScatterLabels(fractionID) {
+            let scatterLabels = [];
+            let membershipData = this.MembershipsOW.filter(el => el.politican.fractions[0].id == fractionID);
+            
+            for (let i=0; i<membershipData.length; i++) {
+                let label = membershipData[i].politican.first_name + ' ' + membershipData[i].politican.last_name;
+                scatterLabels.push(label);
+            }
+            return scatterLabels
+        }
     }
 }
 </script>
