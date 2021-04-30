@@ -29,30 +29,35 @@ export default {
                         labels: this.getScatterLabels(1),
                         data: this.getScatterData(1),
                         pointBackgroundColor: 'red',
+                        backgroundColor: 'red', 
                     },
                     {
                         label: 'csp',
                         data: this.getScatterData(2),
                         labels: this.getScatterLabels(2),
                         pointBackgroundColor: 'yellow',
+                        backgroundColor: 'yellow', 
                     },
                     {
                         label: 'svp',
                         data: this.getScatterData(3),
                         labels: this.getScatterLabels(3),
                         pointBackgroundColor: 'green',
+                        backgroundColor: 'green', 
                     },
                     {
                         label: 'fdp',
                         data: this.getScatterData(4),
                         labels: this.getScatterLabels(4),
                         pointBackgroundColor: 'blue',
+                        backgroundColor: 'blue', 
                     },
                     {
                         label: 'cvp',
                         data: this.getScatterData(5),
                         labels: this.getScatterLabels(5),
                         pointBackgroundColor: 'orange',
+                        backgroundColor: 'orange', 
                     },
 
                 ]

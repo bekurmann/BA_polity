@@ -128,6 +128,10 @@ class AnalysisParlamentAffairsPerYearOW(APIView):
         return Response(data)
 
 class AnalysisParlamentAffairsTypesOW(APIView):
+    """
+    * returns total count of different types of affairs
+    * returns total count of successful affairs per type
+    """
 
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
@@ -155,6 +159,42 @@ class AnalysisParlamentAffairsTypesOW(APIView):
             "data_success": [
                 self.suc_motions, self.suc_people_motions, self.suc_postulates, self.suc_interpellations, self.suc_inquiries,
             ],
+        }
+
+        return Response(data)
+
+class AnalysisParlamentAffairTypesPerYearOW(APIView):
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        data = {
+
+        }
+
+        return Response(data)
+
+class AnalysisParlamentInterpellationOW(APIView):
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        data = {
+
+        }
+
+        return Response(data)
+
+class AnalysisParlamentMotionPostulateOW(APIView):
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        data = {
+
         }
 
         return Response(data)
