@@ -25,10 +25,36 @@ export default {
                 labels: this.MembershipsOW.map(memberships => memberships.politican.first_name),
                 datasets: [
                     {
-                        label: 'all',
+                        label: 'sp',
                         //data: this.getScatterData,
-                        data: this.getScatterData(),
+                        data: this.getScatterData(1),
+                        pointBackgroundColor: 'red',
                     },
+                    {
+                        label: 'csp',
+                        //data: this.getScatterData,
+                        data: this.getScatterData(2),
+                        pointBackgroundColor: 'yellow',
+                    },
+                    {
+                        label: 'svp',
+                        //data: this.getScatterData,
+                        data: this.getScatterData(3),
+                        pointBackgroundColor: 'green',
+                    },
+                    {
+                        label: 'fdp',
+                        //data: this.getScatterData,
+                        data: this.getScatterData(4),
+                        pointBackgroundColor: 'blue',
+                    },
+                    {
+                        label: 'cvp',
+                        //data: this.getScatterData,
+                        data: this.getScatterData(5),
+                        pointBackgroundColor: 'orange',
+                    },
+
                 ]
             },
             scatterChartOptions: {
@@ -44,10 +70,10 @@ export default {
                 },
                 scales: {
                     yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                        // stacked: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'number of submitted affairs'
+                        }
                     }],
                     xAxes: [{
                         scaleLabel: {
@@ -68,18 +94,23 @@ export default {
         ScatterChart,
     },
     methods: {
-        getScatterData() {
+        getScatterData(fractionID) {
             let scatterData = [];
-            for (let i=0; i<this.MembershipsOW.length; i++) {
-                let singleObj = {
-                    x: this.MembershipsOW[i].politican.days_in_parlament, 
-                    y: this.MembershipsOW[i].politican.number_of_submitted_affairs
-                };
-                scatterData.push(singleObj);
+
+            let membershipData = this.MembershipsOW.filter(el => el.politican.fractions[0].id == fractionID);
+
+            for (let i=0; i<membershipData.length; i++) {
+
+                if(membershipData[i].politican.fractions[0].id = fractionID) {
+                    let singleObj = {
+                        x: membershipData[i].politican.days_in_parlament, 
+                        y: membershipData[i].politican.number_of_submitted_affairs
+                    };
+                    scatterData.push(singleObj);
+                }
             }
             return scatterData
         },
-
     }
 }
 </script>
