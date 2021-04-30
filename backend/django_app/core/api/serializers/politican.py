@@ -37,7 +37,7 @@ class PoliticanListSerializer(serializers.ModelSerializer):
         start_date = ''
         end_date = ''
 
-        parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA")
+        parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA", membership_function="MEMBE")
 
         for membership in parlament_memberships:
             start_date = membership.start_date
