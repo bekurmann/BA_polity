@@ -47,11 +47,10 @@ class PoliticanListSerializer(serializers.ModelSerializer):
             delta = end_date - start_date
             days_in_parlament = delta.days
         else:
-            today = datetime.datetime.date(2020, 5, 1) 
-            start_date_x = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-            delta = today - start_date_x 
+            end = datetime.date.today()
+            delta = end - start_date
             days_in_parlament = delta.days
-            
+
         return days_in_parlament
         
         
