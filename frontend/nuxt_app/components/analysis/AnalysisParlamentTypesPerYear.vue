@@ -68,7 +68,7 @@ export default {
                 },
                 title: {
                     display: true,
-                    text: 'title',
+                    text: 'Usage of Affair Types over Time',
                     position: 'top',
                     fontSize: 18,
                 },
