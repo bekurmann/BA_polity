@@ -168,9 +168,147 @@ class AnalysisParlamentAffairTypesPerYearOW(APIView):
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
 
+    # affairs types count 2010
+    affair_types_2010_inqui = Affair.objects.filter(parlament=100, date_received__year=2010, affair_type="INQUI").count()
+    affair_types_2010_inter = Affair.objects.filter(parlament=100, date_received__year=2010, affair_type="INTER").count()
+    affair_types_2010_postu = Affair.objects.filter(parlament=100, date_received__year=2010, affair_type="POSTU").count()
+    affair_types_2010_motio = Affair.objects.filter(parlament=100, date_received__year=2010, affair_type="MOTIO").count()
+    affair_types_2010_pmoti = Affair.objects.filter(parlament=100, date_received__year=2010, affair_type="PMOTI").count()
+
+    # affairs types count 2011
+    affair_types_2011_inqui = Affair.objects.filter(parlament=100, date_received__year=2011, affair_type="INQUI").count()
+    affair_types_2011_inter = Affair.objects.filter(parlament=100, date_received__year=2011, affair_type="INTER").count()
+    affair_types_2011_postu = Affair.objects.filter(parlament=100, date_received__year=2011, affair_type="POSTU").count()
+    affair_types_2011_motio = Affair.objects.filter(parlament=100, date_received__year=2011, affair_type="MOTIO").count()
+    affair_types_2011_pmoti = Affair.objects.filter(parlament=100, date_received__year=2011, affair_type="PMOTI").count()
+
+    # affairs types count 2012
+    affair_types_2012_inqui = Affair.objects.filter(parlament=100, date_received__year=2012, affair_type="INQUI").count()
+    affair_types_2012_inter = Affair.objects.filter(parlament=100, date_received__year=2012, affair_type="INTER").count()
+    affair_types_2012_postu = Affair.objects.filter(parlament=100, date_received__year=2012, affair_type="POSTU").count()
+    affair_types_2012_motio = Affair.objects.filter(parlament=100, date_received__year=2012, affair_type="MOTIO").count()
+    affair_types_2012_pmoti = Affair.objects.filter(parlament=100, date_received__year=2012, affair_type="PMOTI").count()
+
+    # affairs types count 2013
+    affair_types_2013_inqui = Affair.objects.filter(parlament=100, date_received__year=2013, affair_type="INQUI").count()
+    affair_types_2013_inter = Affair.objects.filter(parlament=100, date_received__year=2013, affair_type="INTER").count()
+    affair_types_2013_postu = Affair.objects.filter(parlament=100, date_received__year=2013, affair_type="POSTU").count()
+    affair_types_2013_motio = Affair.objects.filter(parlament=100, date_received__year=2013, affair_type="MOTIO").count()
+    affair_types_2013_pmoti = Affair.objects.filter(parlament=100, date_received__year=2013, affair_type="PMOTI").count()
+
+    # affairs types count 2014
+    affair_types_2014_inqui = Affair.objects.filter(parlament=100, date_received__year=2014, affair_type="INQUI").count()
+    affair_types_2014_inter = Affair.objects.filter(parlament=100, date_received__year=2014, affair_type="INTER").count()
+    affair_types_2014_postu = Affair.objects.filter(parlament=100, date_received__year=2014, affair_type="POSTU").count()
+    affair_types_2014_motio = Affair.objects.filter(parlament=100, date_received__year=2014, affair_type="MOTIO").count()
+    affair_types_2014_pmoti = Affair.objects.filter(parlament=100, date_received__year=2014, affair_type="PMOTI").count()
+
+    # affairs types count 2015
+    affair_types_2015_inqui = Affair.objects.filter(parlament=100, date_received__year=2015, affair_type="INQUI").count()
+    affair_types_2015_inter = Affair.objects.filter(parlament=100, date_received__year=2015, affair_type="INTER").count()
+    affair_types_2015_postu = Affair.objects.filter(parlament=100, date_received__year=2015, affair_type="POSTU").count()
+    affair_types_2015_motio = Affair.objects.filter(parlament=100, date_received__year=2015, affair_type="MOTIO").count()
+    affair_types_2015_pmoti = Affair.objects.filter(parlament=100, date_received__year=2015, affair_type="PMOTI").count()
+
+    # affairs types count 2016
+    affair_types_2016_inqui = Affair.objects.filter(parlament=100, date_received__year=2016, affair_type="INQUI").count()
+    affair_types_2016_inter = Affair.objects.filter(parlament=100, date_received__year=2016, affair_type="INTER").count()
+    affair_types_2016_postu = Affair.objects.filter(parlament=100, date_received__year=2016, affair_type="POSTU").count()
+    affair_types_2016_motio = Affair.objects.filter(parlament=100, date_received__year=2016, affair_type="MOTIO").count()
+    affair_types_2016_pmoti = Affair.objects.filter(parlament=100, date_received__year=2016, affair_type="PMOTI").count()
+
+    # affairs types count 2017
+    affair_types_2017_inqui = Affair.objects.filter(parlament=100, date_received__year=2017, affair_type="INQUI").count()
+    affair_types_2017_inter = Affair.objects.filter(parlament=100, date_received__year=2017, affair_type="INTER").count()
+    affair_types_2017_postu = Affair.objects.filter(parlament=100, date_received__year=2017, affair_type="POSTU").count()
+    affair_types_2017_motio = Affair.objects.filter(parlament=100, date_received__year=2017, affair_type="MOTIO").count()
+    affair_types_2017_pmoti = Affair.objects.filter(parlament=100, date_received__year=2017, affair_type="PMOTI").count()
+
+    # affairs types count 2018
+    affair_types_2018_inqui = Affair.objects.filter(parlament=100, date_received__year=2018, affair_type="INQUI").count()
+    affair_types_2018_inter = Affair.objects.filter(parlament=100, date_received__year=2018, affair_type="INTER").count()
+    affair_types_2018_postu = Affair.objects.filter(parlament=100, date_received__year=2018, affair_type="POSTU").count()
+    affair_types_2018_motio = Affair.objects.filter(parlament=100, date_received__year=2018, affair_type="MOTIO").count()
+    affair_types_2018_pmoti = Affair.objects.filter(parlament=100, date_received__year=2018, affair_type="PMOTI").count()
+
+    # affairs types count 2019
+    affair_types_2019_inqui = Affair.objects.filter(parlament=100, date_received__year=2019, affair_type="INQUI").count()
+    affair_types_2019_inter = Affair.objects.filter(parlament=100, date_received__year=2019, affair_type="INTER").count()
+    affair_types_2019_postu = Affair.objects.filter(parlament=100, date_received__year=2019, affair_type="POSTU").count()
+    affair_types_2019_motio = Affair.objects.filter(parlament=100, date_received__year=2019, affair_type="MOTIO").count()
+    affair_types_2019_pmoti = Affair.objects.filter(parlament=100, date_received__year=2019, affair_type="PMOTI").count()
+
+    # affairs types count 2020
+    affair_types_2020_inqui = Affair.objects.filter(parlament=100, date_received__year=2020, affair_type="INQUI").count()
+    affair_types_2020_inter = Affair.objects.filter(parlament=100, date_received__year=2020, affair_type="INTER").count()
+    affair_types_2020_postu = Affair.objects.filter(parlament=100, date_received__year=2020, affair_type="POSTU").count()
+    affair_types_2020_motio = Affair.objects.filter(parlament=100, date_received__year=2020, affair_type="MOTIO").count()
+    affair_types_2020_pmoti = Affair.objects.filter(parlament=100, date_received__year=2020, affair_type="PMOTI").count()
+
     def get(self, request, format=None):
         data = {
-
+            "labels_years": ["2010", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",],
+            "labels_types": ["Inquiry", "Interpellation", "Postulate", "Motion", "People's Motion",],
+            "data_inqui": [
+                #inquiries per year
+                self.affair_types_2010_inqui, self.affair_types_2011_inqui, self.affair_types_2012_inqui,
+                self.affair_types_2013_inqui, self.affair_types_2014_inqui, self.affair_types_2015_inqui,
+                self.affair_types_2016_inqui, self.affair_types_2017_inqui, self.affair_types_2018_inqui,
+                self.affair_types_2019_inqui, self.affair_types_2020_inqui,
+            ],
+            "data_inter": [
+                #interepellation per year
+                self.affair_types_2010_inter,
+                self.affair_types_2011_inter,
+                self.affair_types_2012_inter,
+                self.affair_types_2013_inter,
+                self.affair_types_2014_inter,
+                self.affair_types_2015_inter,
+                self.affair_types_2016_inter,
+                self.affair_types_2017_inter,
+                self.affair_types_2018_inter,
+                self.affair_types_2019_inter,
+                self.affair_types_2020_inter,
+            ],
+            "data_postu": [
+                self.affair_types_2010_postu,
+                self.affair_types_2011_postu,
+                self.affair_types_2012_postu,
+                self.affair_types_2013_postu,
+                self.affair_types_2014_postu,
+                self.affair_types_2015_postu,
+                self.affair_types_2016_postu,
+                self.affair_types_2017_postu,
+                self.affair_types_2018_postu,
+                self.affair_types_2019_postu,
+                self.affair_types_2020_postu,
+            ],
+            "data_motio": [
+                self.affair_types_2010_motio,
+                self.affair_types_2011_motio,
+                self.affair_types_2012_motio,
+                self.affair_types_2013_motio,
+                self.affair_types_2014_motio,
+                self.affair_types_2015_motio,
+                self.affair_types_2016_motio,
+                self.affair_types_2017_motio,
+                self.affair_types_2018_motio,
+                self.affair_types_2019_motio,
+                self.affair_types_2020_motio,
+            ],
+            "data_pmoti": [
+                self.affair_types_2010_pmoti,
+                self.affair_types_2011_pmoti,
+                self.affair_types_2012_pmoti,
+                self.affair_types_2013_pmoti,
+                self.affair_types_2014_pmoti,
+                self.affair_types_2015_pmoti,
+                self.affair_types_2016_pmoti,
+                self.affair_types_2017_pmoti,
+                self.affair_types_2018_pmoti,
+                self.affair_types_2019_pmoti,
+                self.affair_types_2020_pmoti,
+            ],
         }
 
         return Response(data)

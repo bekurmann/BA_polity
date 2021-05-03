@@ -6,4 +6,5 @@ from .fraction import FractionViewSet
 from .affair import (AffairAllViewSet, AffairViewSet, AffairDebateViewSet, AffairFileViewSet )
 from .session import SessionViewSet
 from .membership import ParlamentMembershipViewSet, PoliticanMembershipViewSet, CommissionMembershipViewSet
-from .analysis import ( AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW )
+from .analysis import ( AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW,
+                        AnalysisParlamentAffairTypesPerYearOW )
