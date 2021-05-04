@@ -248,7 +248,6 @@ class AnalysisParlamentAffairTypesPerYearOW(APIView):
     def get(self, request, format=None):
         data = {
             "labels_years": ["2010", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",],
-            "labels_types": ["Inquiry", "Interpellation", "Postulate", "Motion", "People's Motion",],
             "data_inqui": [
                 #inquiries per year
                 self.affair_types_2010_inqui, self.affair_types_2011_inqui, self.affair_types_2012_inqui,
@@ -320,12 +319,13 @@ class AnalysisParlamentInterpellationOW(APIView):
 
     def get(self, request, format=None):
         data = {
-
+            "labels": ["no discussion desired", "discussion desired; success", "discussion desired; declined",],
         }
 
         return Response(data)
 
 class AnalysisParlamentMotionPostulateOW(APIView):
+    # recommendation
 
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
