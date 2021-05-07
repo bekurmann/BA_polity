@@ -66,14 +66,24 @@ class PoliticanListSerializer(serializers.ModelSerializer):
     def get_distance_to_parlament(self, politican):
         parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA", membership_function="MEMBE")
         parlament = ''
+        politican = ''
+        distance = ''
 
         # fuck; still working on it.
         for membership in parlament_memberships:
             parlament = membership.parlament.location
+            politican = membership.politican.location
 
-        parlament_location = GEOSGeometry(parlament)
-        politican_location = GEOSGeometry(politican.location)
-        return parlament_location.distance(politican_location)        
+        if parlament is not None:
+            if politican is not None:
+                parlament = GEOSGeometry(parlament)
+                politican = GEOSGeometry(politican)
+           
+                # * 100 = km
+                # 1 km = 1000m -> * 1000
+                distance = parlament.distance(politican) * 100 * 1000
+
+        return distance
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
