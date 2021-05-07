@@ -317,15 +317,44 @@ class AnalysisParlamentInterpellationOW(APIView):
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
 
+    # data querys
+    notDesired = Affair.objects.filter(parlament=100, affair_type="INTER", discussion_desired=False).count()
+    desiredSuccess = Affair.objects.filter(parlament=100, affair_type="INTER", discussion_desired=True, accepted=True).count()
+    desiredDeclined = Affair.objects.filter(parlament=100, affair_type="INTER", discussion_desired=True, accepted=False).count()
+
     def get(self, request, format=None):
         data = {
             "labels": ["no discussion desired", "discussion desired; success", "discussion desired; declined",],
+            "data_notDesired": [
+                self.notDesired,
+            ],
+            "data_desiredSuccess": [
+                self.desiredSuccess,
+            ],
+            "data_desiredDeclined": [
+                self.desiredDeclined,
+            ]
         }
 
         return Response(data)
 
 class AnalysisParlamentMotionPostulateOW(APIView):
     # recommendation
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        data = {
+
+        }
+
+        return Response(data)
+
+class AnalysisParlamentPoliticansXXXOW(APIView):
+    # success rate
+    # mean of affairs
+    # number of debate statements
 
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]

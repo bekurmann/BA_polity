@@ -18,6 +18,14 @@
                 <AnalysisParlamentTypesPerYear :numberOfAffairsTypesPerYear="numberOfAffairsTypesPerYear"></AnalysisParlamentTypesPerYear>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                <AnalysisParlamentInterpellation :analysisInterpellation="analysisInterpellation"></AnalysisParlamentInterpellation>
+            </v-col>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+
+            </v-col>
+        </v-row>
     </v-container>
 
 </template>
@@ -26,6 +34,7 @@ import AnalysisParlamentAffairsPerYearOW from '~/components/analysis/AnalysisPar
 import AnalysisParlamentAffairsTypeOW from '~/components/analysis/AnalysisParlamentAffairsTypeOW.vue'
 import AnalysisParlamentDaysNumberAffairs from '~/components/analysis/AnalysisParlamentDaysNumberAffairs.vue'
 import AnalysisParlamentTypesPerYear from '~/components/analysis/AnalysisParlamentTypesPerYear.vue'
+import AnalysisParlamentInterpellation from '~/components/analysis/AnalysisParlamentInterpellation.vue'
 
 export default {
     async asyncData({params, $axios}) {
@@ -33,11 +42,14 @@ export default {
         const numberOfAffairsTypes = await $axios.$get(`/analysis/ow/affairstypes`);
         const MembershipsOW = await $axios.$get(`/parlaments/${params.id}/memberships/`);
         const numberOfAffairsTypesPerYear = await $axios.$get(`/analysis/ow/affairstypesperyear`);
+        const analysisInterpellation = await $axios.$get(`/analysis/ow/interpellation`);
+        
         return {
             numberOfAffairsPerYear: numberOfAffairsPerYear,
             numberOfAffairsTypes: numberOfAffairsTypes,
             MembershipsOW:  MembershipsOW,
             numberOfAffairsTypesPerYear: numberOfAffairsTypesPerYear,
+            analysisInterpellation: analysisInterpellation,
         }
     },
     components: {
@@ -45,6 +57,7 @@ export default {
         AnalysisParlamentAffairsTypeOW,
         AnalysisParlamentDaysNumberAffairs,
         AnalysisParlamentTypesPerYear,
+        AnalysisParlamentInterpellation,
     },
     middleware: ['auth'],
     layout: 'ParlamentDetail',

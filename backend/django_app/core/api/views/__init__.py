@@ -7,4 +7,4 @@ from .affair import (AffairAllViewSet, AffairViewSet, AffairDebateViewSet, Affai
 from .session import SessionViewSet
 from .membership import ParlamentMembershipViewSet, PoliticanMembershipViewSet, CommissionMembershipViewSet
 from .analysis import ( AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW,
-                        AnalysisParlamentAffairTypesPerYearOW )
+                        AnalysisParlamentAffairTypesPerYearOW, AnalysisParlamentInterpellationOW )
