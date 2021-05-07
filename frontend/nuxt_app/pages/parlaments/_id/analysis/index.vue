@@ -23,6 +23,14 @@
                 <AnalysisParlamentInterpellation :analysisInterpellation="analysisInterpellation"></AnalysisParlamentInterpellation>
             </v-col>
             <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                <AnalysisParlamentPostulate :analysisPostulate="analysisPostulate"></AnalysisParlamentPostulate>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                <AnalysisParlamentMotion :analysisMotion="analysisMotion"></AnalysisParlamentMotion>
+            </v-col>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
 
             </v-col>
         </v-row>
@@ -35,6 +43,8 @@ import AnalysisParlamentAffairsTypeOW from '~/components/analysis/AnalysisParlam
 import AnalysisParlamentDaysNumberAffairs from '~/components/analysis/AnalysisParlamentDaysNumberAffairs.vue'
 import AnalysisParlamentTypesPerYear from '~/components/analysis/AnalysisParlamentTypesPerYear.vue'
 import AnalysisParlamentInterpellation from '~/components/analysis/AnalysisParlamentInterpellation.vue'
+import AnalysisParlamentPostulate from '~/components/analysis/AnalysisParlamentPostulate.vue'
+import AnalysisParlamentMotion from '~/components/analysis/AnalysisParlamentMotion.vue'
 
 export default {
     async asyncData({params, $axios}) {
@@ -43,13 +53,17 @@ export default {
         const MembershipsOW = await $axios.$get(`/parlaments/${params.id}/memberships/`);
         const numberOfAffairsTypesPerYear = await $axios.$get(`/analysis/ow/affairstypesperyear`);
         const analysisInterpellation = await $axios.$get(`/analysis/ow/interpellation`);
-        
+        const analysisPostulate = await $axios.$get(`/analysis/ow/postulate`);
+        const analysisMotion = await $axios.$get(`/analysis/ow/motion`);
+
         return {
             numberOfAffairsPerYear: numberOfAffairsPerYear,
             numberOfAffairsTypes: numberOfAffairsTypes,
             MembershipsOW:  MembershipsOW,
             numberOfAffairsTypesPerYear: numberOfAffairsTypesPerYear,
             analysisInterpellation: analysisInterpellation,
+            analysisPostulate: analysisPostulate,
+            analysisMotion: analysisMotion,
         }
     },
     components: {
@@ -58,6 +72,8 @@ export default {
         AnalysisParlamentDaysNumberAffairs,
         AnalysisParlamentTypesPerYear,
         AnalysisParlamentInterpellation,
+        AnalysisParlamentPostulate,
+        AnalysisParlamentMotion,
     },
     middleware: ['auth'],
     layout: 'ParlamentDetail',

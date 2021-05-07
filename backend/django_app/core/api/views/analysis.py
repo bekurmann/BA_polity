@@ -338,15 +338,76 @@ class AnalysisParlamentInterpellationOW(APIView):
 
         return Response(data)
 
-class AnalysisParlamentMotionPostulateOW(APIView):
+class AnalysisParlamentPostulateOW(APIView):
     # recommendation
 
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
     permission_classes = [IsAuthenticated]
 
+    # data querys
+    notRecommendedSuccess =Affair.objects.filter(parlament=100, affair_type="POSTU", recommendation=False, accepted=True).count()
+    notRecommendedDeclined = Affair.objects.filter(parlament=100, affair_type="POSTU", recommendation=False, accepted=False).count()
+    recommendedSuccess = Affair.objects.filter(parlament=100, affair_type="POSTU", recommendation=True, accepted=True).count()
+    recommendedDeclined = Affair.objects.filter(parlament=100, affair_type="POSTU", recommendation=True, accepted=False).count()
+
+
     def get(self, request, format=None):
         data = {
+            "labels": [
+                "negative recommendation + accepted", 
+                "negative recommendation + declined", 
+                "positive recommendation + accepted", 
+                "positive recommendation + declined",
+            ],
+            "data_notRecommendedSuccess": [
+                self.notRecommendedSuccess,
+            ],
+            "data_notRecommendedDeclined": [
+                self.notRecommendedDeclined,
+            ],
+            "data_recommendedSuccess": [
+                self.recommendedSuccess,
+            ],
+            "data_recommendedDeclined": [
+                self.recommendedDeclined,
+            ],
+        }
 
+        return Response(data)
+
+class AnalysisParlamentMotionOW(APIView):
+    # recommendation
+
+    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    # data querys
+    notRecommendedSuccess =Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=False, accepted=True).count()
+    notRecommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=False, accepted=False).count()
+    recommendedSuccess = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=True, accepted=True).count()
+    recommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=True, accepted=False).count()
+
+
+    def get(self, request, format=None):
+        data = {
+            "labels": [
+                "negative recommendation + accepted", 
+                "negative recommendation + declined", 
+                "positive recommendation + accepted", 
+                "positive recommendation + declined",
+            ],
+            "data_notRecommendedSuccess": [
+                self.notRecommendedSuccess,
+            ],
+            "data_notRecommendedDeclined": [
+                self.notRecommendedDeclined,
+            ],
+            "data_recommendedSuccess": [
+                self.recommendedSuccess,
+            ],
+            "data_recommendedDeclined": [
+                self.recommendedDeclined,
+            ],
         }
 
         return Response(data)
