@@ -17,6 +17,8 @@ class PoliticanListSerializer(serializers.ModelSerializer):
 
     number_of_submitted_affairs = serializers.SerializerMethodField()
     days_in_parlament = serializers.SerializerMethodField()
+    
+    number_of_debate_statements = serializers.SerializerMethodField()
 
     class Meta:
         model = Politican
@@ -52,6 +54,9 @@ class PoliticanListSerializer(serializers.ModelSerializer):
             days_in_parlament = delta.days
 
         return days_in_parlament
+
+    def get_number_of_debate_statements(self, politican):
+        return politican.affairdebates.count()    
         
         
 

@@ -382,10 +382,14 @@ class AnalysisParlamentMotionOW(APIView):
     permission_classes = [IsAuthenticated]
 
     # data querys
-    notRecommendedSuccess =Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=False, accepted=True).count()
-    notRecommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=False, accepted=False).count()
-    recommendedSuccess = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=True, accepted=True).count()
-    recommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", recommendation=True, accepted=False).count()
+    notRecommendedSuccess =Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=False, recommendation=False, accepted=True).count()
+    notRecommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=False, recommendation=False, accepted=False).count()
+    
+    recommendedSuccess = Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=False, recommendation=True, accepted=True).count()
+    recommendedDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=False, recommendation=True, accepted=False).count()
+    
+    transformationSuccess = Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=True, accepted=True).count()
+    transformationDeclined = Affair.objects.filter(parlament=100, affair_type="MOTIO", transformation_recommendation=True, accepted=False).count()
 
 
     def get(self, request, format=None):
@@ -395,6 +399,8 @@ class AnalysisParlamentMotionOW(APIView):
                 "negative recommendation + declined", 
                 "positive recommendation + accepted", 
                 "positive recommendation + declined",
+                "transformation recommendation + accepted",
+                "transformation recommendation + declined"
             ],
             "data_notRecommendedSuccess": [
                 self.notRecommendedSuccess,
@@ -407,6 +413,12 @@ class AnalysisParlamentMotionOW(APIView):
             ],
             "data_recommendedDeclined": [
                 self.recommendedDeclined,
+            ],
+            "data_transformationSuccess": [
+                self.transformationSuccess,
+            ],
+            "data_transformationDeclined": [
+                self.transformationDeclined,
             ],
         }
 

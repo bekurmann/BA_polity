@@ -26,16 +26,21 @@ export default {
                 datasets: [
                     {
                         backgroundColor: [
-                            "pink",
-                            chartColors.orange,
-                            chartColors.yellow,
+                            "red",
+                            "#65ff00",
+                            chartColors.green,
                             chartColors.red,
+                            "green",
+                            "pink",
+
                         ],
                         data: [
                             this.analysisMotion.data_notRecommendedSuccess,
                             this.analysisMotion.data_notRecommendedDeclined,
                             this.analysisMotion.data_recommendedSuccess,
                             this.analysisMotion.data_recommendedDeclined,
+                            this.analysisMotion.data_transformationSuccess,
+                            this.analysisMotion.data_transformationDeclined,
                         ]
                     },
                 ]
