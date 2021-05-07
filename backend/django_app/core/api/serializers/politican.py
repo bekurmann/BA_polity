@@ -8,6 +8,9 @@ from locations.api.serializers import PLZSerializer
 from core.api.serializers import (FractionSerializer, CommissionSerializer, 
                                     AffairDetailSerializer, AffairDebateListSerializer)
 
+# for geo distance
+from django.contrib.gis.geos import GEOSGeometry
+
 # import date
 import datetime
 
@@ -17,6 +20,8 @@ class PoliticanListSerializer(serializers.ModelSerializer):
 
     number_of_submitted_affairs = serializers.SerializerMethodField()
     days_in_parlament = serializers.SerializerMethodField()
+
+    distance_to_parlament = serializers.SerializerMethodField()
     
     number_of_debate_statements = serializers.SerializerMethodField()
 
@@ -58,7 +63,17 @@ class PoliticanListSerializer(serializers.ModelSerializer):
     def get_number_of_debate_statements(self, politican):
         return politican.affairdebates.count()    
         
-        
+    def get_distance_to_parlament(self, politican):
+        parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA", membership_function="MEMBE")
+        parlament = ''
+
+        # fuck; still working on it.
+        for membership in parlament_memberships:
+            parlament = membership.parlament.location
+
+        parlament_location = GEOSGeometry(parlament)
+        politican_location = GEOSGeometry(politican.location)
+        return parlament_location.distance(politican_location)        
 
 class PoliticanDetailSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
