@@ -39,14 +39,14 @@ export default {
                         yAxisID: "y-axis-1",
                     },
                     {
-                        label: "interpellation",
+                        label: "postulate",
                         data: this.numberOfAffairsTypesPerYear.data_postu,
                         pointBackgroundColor: chartColors.green,
                         backgroundColor: chartColors.green, 
                         yAxisID: "y-axis-1",
                     },
                     {
-                        label: "interpellation",
+                        label: "motion",
                         data: this.numberOfAffairsTypesPerYear.data_motio,
                         pointBackgroundColor: chartColors.red,
                         backgroundColor: chartColors.red, 
