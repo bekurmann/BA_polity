@@ -34,6 +34,14 @@
                 <AnalysisParlamentDistanceNumberAffairs :MembershipsOW="MembershipsOW"></AnalysisParlamentDistanceNumberAffairs>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+                <AnalysisParlamentNumberAffairsPolitican :MembershipsOW="MembershipsOW"></AnalysisParlamentNumberAffairsPolitican>
+            </v-col>
+            <v-col cols="12" xs="12" sm="12" md="6" lg="6" xl="6">
+
+            </v-col>
+        </v-row>
     </v-container>
 
 </template>
@@ -46,6 +54,7 @@ import AnalysisParlamentInterpellation from '~/components/analysis/AnalysisParla
 import AnalysisParlamentPostulate from '~/components/analysis/AnalysisParlamentPostulate.vue'
 import AnalysisParlamentMotion from '~/components/analysis/AnalysisParlamentMotion.vue'
 import AnalysisParlamentDistanceNumberAffairs from '~/components/analysis/AnalysisParlamentDistanceNumberAffairs.vue'
+import AnalysisParlamentNumberAffairsPolitican from '~/components/analysis/AnalysisParlamentNumberAffairsPolitican.vue'
 
 export default {
     async asyncData({params, $axios}) {
@@ -76,6 +85,7 @@ export default {
         AnalysisParlamentPostulate,
         AnalysisParlamentMotion,
         AnalysisParlamentDistanceNumberAffairs,
+        AnalysisParlamentNumberAffairsPolitican,
     },
     middleware: ['auth'],
     layout: 'ParlamentDetail',
