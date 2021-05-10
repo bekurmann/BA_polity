@@ -66,7 +66,6 @@ export default {
                         label: 'regression',
                         data: this.getRegressionData(),
                         type: 'line',
-                        fill: false,
                     }
 
                 ]

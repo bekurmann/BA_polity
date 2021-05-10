@@ -50,8 +50,13 @@ class PoliticanListSerializer(serializers.ModelSerializer):
             start_date = membership.start_date
             end_date = membership.end_date
 
-        if(end_date):
+        if(end_date and start_date > datetime.date(2010, 1 ,1)):
+            # start date should be 1.1.2010 -> analysis time period 
             delta = end_date - start_date
+            days_in_parlament = delta.days
+        elif(end_date and start_date < datetime.date(2010, 1, 1)):
+            start_special = datetime.date(2010, 1, 1)
+            delta = end_date - start_special
             days_in_parlament = delta.days
         else:
             end = datetime.date.today()
