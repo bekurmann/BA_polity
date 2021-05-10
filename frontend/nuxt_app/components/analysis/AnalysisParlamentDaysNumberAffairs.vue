@@ -9,6 +9,8 @@
 <script>
 import ScatterChart from '~/components/ScatterChart.js'
 
+import regression from 'regression'
+
 const chartColors = {
   red: 'rgb(255, 99, 132)',
   orange: 'rgb(255, 159, 64)',
@@ -23,6 +25,7 @@ export default {
         return {
             scatterChartData: {
                 //labels: this.MembershipsOW.map(memberships => memberships.politican.first_name + ' ' + memberships.politican.last_name),
+                type: 'scatter',
                 datasets: [
                     {
                         label: 'sp',
@@ -59,6 +62,12 @@ export default {
                         pointBackgroundColor: chartColors.orange,
                         backgroundColor: chartColors.orange, 
                     },
+                    {
+                        label: 'regression',
+                        data: this.getRegressionData(),
+                        type: 'line',
+                        fill: false,
+                    }
 
                 ]
             },
@@ -132,6 +141,28 @@ export default {
                 scatterLabels.push(label);
             }
             return scatterLabels
+        },
+        getRegressionData() {
+            let regressionData = this.MembershipsOW.map(
+                membership => {
+                return [membership.politican.days_in_parlament, membership.politican.number_of_submitted_affairs];
+            });
+
+            console.log(regressionData);
+
+            const regressionResult = regression.linear(regressionData);
+
+
+
+            console.log(regressionResult);
+
+            const regressionPoints = regressionResult.points.map(([x, y]) => {
+                return {x,y}
+            });
+
+            console.log(regressionPoints);
+
+            return regressionPoints
         }
     }
 }
