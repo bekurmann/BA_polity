@@ -438,3 +438,6 @@ class AnalysisParlamentPoliticansXXXOW(APIView):
         }
 
         return Response(data)
+
+class AnalysisUsageRegression(APIView):
+    pass
