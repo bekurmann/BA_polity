@@ -65,6 +65,7 @@ export default {
                     {
                         label: 'regression',
                         data: this.getRegressionData(),
+                        labels: [],
                         type: 'line',
                     }
 
@@ -147,18 +148,12 @@ export default {
                 return [membership.politican.days_in_parlament, membership.politican.number_of_submitted_affairs];
             });
 
-            console.log(regressionData);
-
-            const regressionResult = regression.linear(regressionData);
-
-
-
+            const regressionResult = regression.linear(regressionData, {precision: 10});
             console.log(regressionResult);
 
             const regressionPoints = regressionResult.points.map(([x, y]) => {
                 return {x,y}
             });
-
             console.log(regressionPoints);
 
             return regressionPoints
