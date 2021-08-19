@@ -14,6 +14,25 @@ from django.contrib.gis.geos import GEOSGeometry
 # import date
 import datetime
 
+# ************************************************************
+# Jupyter Politican
+# ************************************************************
+class PoliticanJupyterSerializer(serializers.ModelSerializer):
+    """
+    
+    """
+    
+    class Meta:
+        model = Politican
+        exclude = ['profession', 'date_of_birth', 'parlaments',
+                    'email', 'website',
+                    'location_query', 
+                    'parties', 'executives', 'commissions', 'title', 'street1', 
+                    'street2', 'phone',]
+
+# ************************************************************
+# Politican 
+# ************************************************************
 class PoliticanListSerializer(serializers.ModelSerializer):
     city = PLZSerializer(read_only=True)
     fractions = FractionSerializer(read_only=True, many=True)
@@ -41,7 +60,7 @@ class PoliticanListSerializer(serializers.ModelSerializer):
 
         days_in_parlament = ''
 
-        start_date = ''
+        start_date = datetime.date(2010, 1, 1)
         end_date = ''
 
         parlament_memberships = Membership.objects.filter(politican=politican, membership_type="PARLA", membership_function="MEMBE")
@@ -79,7 +98,7 @@ class PoliticanListSerializer(serializers.ModelSerializer):
             parlament = membership.parlament.location
             politican = membership.politican.location
 
-        if parlament is not None:
+        if parlament is not None and politican is not '':
             if politican is not None:
                 parlament = GEOSGeometry(parlament)
                 politican = GEOSGeometry(politican)

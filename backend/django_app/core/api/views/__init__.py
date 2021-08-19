@@ -9,4 +9,5 @@ from .membership import ParlamentMembershipViewSet, PoliticanMembershipViewSet, 
 from .analysis import ( AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW,
                         AnalysisParlamentAffairTypesPerYearOW, AnalysisParlamentInterpellationOW,
                         AnalysisParlamentPostulateOW, AnalysisParlamentMotionOW,
+                        AnalysisJupyterPolitican, AnalysisJupyterAffair,
                          )

@@ -1,11 +1,15 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+# for jupyter views
+from rest_framework import viewsets
+from core.api.serializers import AffairJupyterSerializer, PoliticanJupyterSerializer
+
 from dj_rest_auth.jwt_auth import JWTCookieAuthentication
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from core.models import Affair, Membership
+from core.models import Affair, Membership, Politican
 
 
 class AnalysisParlamentAffairsPerYearOW(APIView):
@@ -424,20 +428,23 @@ class AnalysisParlamentMotionOW(APIView):
 
         return Response(data)
 
-class AnalysisParlamentPoliticansXXXOW(APIView):
-    # success rate
-    # mean of affairs
-    # number of debate statements
+class AnalysisJupyterPolitican(viewsets.ReadOnlyModelViewSet):
+    """
+    * usage will be analysed based on politican model
+    * read-only viewset for all politican + certain fields (not nested) from other models
+    * all in serializers!
+    """
+    queryset = Politican.objects.all()
+    serializer_class = PoliticanJupyterSerializer
 
-    authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
-    permission_classes = [IsAuthenticated]
+    
 
-    def get(self, request, format=None):
-        data = {
 
-        }
-
-        return Response(data)
-
-class AnalysisUsageRegression(APIView):
-    pass
+class AnalysisJupyterAffair(viewsets.ReadOnlyModelViewSet):
+    """
+    * usage will be analysed based on affair model
+    * read-only viewset for all affirs + certain fields (not nested) from other models
+    * all in serializers!
+    """
+    queryset = Affair.objects.all()
+    serializer_class = AffairJupyterSerializer

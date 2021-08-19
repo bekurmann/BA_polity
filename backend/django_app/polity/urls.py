@@ -25,6 +25,7 @@ from core.api.views import (    ParlamentViewSet, SessionViewSet,
                                 AnalysisParlamentAffairsPerYearOW, AnalysisParlamentAffairsTypesOW, 
                                 AnalysisParlamentAffairTypesPerYearOW, AnalysisParlamentInterpellationOW, 
                                 AnalysisParlamentPostulateOW, AnalysisParlamentMotionOW,
+                                AnalysisJupyterAffair, AnalysisJupyterPolitican,
                                 )
 
 from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet, 
@@ -33,6 +34,12 @@ from locations.api.views import ( CountryViewSet, RegionViewSet, CantonViewSet,
 # PARLAMENT ROUTER
 # **************************************************************************************
 router = routers.SimpleRouter()
+
+# registering urls for jupyter
+router.register(r'jupyteraffair', AnalysisJupyterAffair, basename='jupyteraffair')
+router.register(r'jupyterpolitican', AnalysisJupyterPolitican, basename='jupyterpolitican')
+
+
 router.register(r'parlaments', ParlamentViewSet, basename='parlaments')
 # /parlaments/
 # /parlaments/<pk>/
@@ -149,7 +156,7 @@ urlpatterns = [
 
 
     # **************************************************************************************
-    # Analysis
+    # Analysis (js)
     # **************************************************************************************
     path('api/v1/analysis/ow/affairsperyear/', AnalysisParlamentAffairsPerYearOW.as_view()), 
     path('api/v1/analysis/ow/affairstypes/', AnalysisParlamentAffairsTypesOW.as_view()), 
@@ -157,6 +164,7 @@ urlpatterns = [
     path('api/v1/analysis/ow/interpellation/', AnalysisParlamentInterpellationOW.as_view()), 
     path('api/v1/analysis/ow/postulate/', AnalysisParlamentPostulateOW.as_view()), 
     path('api/v1/analysis/ow/motion/', AnalysisParlamentMotionOW.as_view()), 
+   
 
     
 ]
