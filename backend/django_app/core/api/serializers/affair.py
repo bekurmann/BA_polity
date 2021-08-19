@@ -75,7 +75,7 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
         return days_in_parlament_at_submission.days
 
     def get_signatory_fraction_strength(self, affair):
-        # returns relative fraction strength
+        # returns relative fraction strength at time of submission
 
         # find out fraction id
         fraction_memberships = Membership.objects.filter(politican=affair.signatory, membership_type="FRACT")
@@ -89,7 +89,7 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
                                                             Q(fraction=fraction_id, 
                                                             membership_type="FRACT",
                                                             start_date__lt=affair.date_received,
-                                                            end_date=None,
+                                                            end_date__isnull=True,
                                                             ) | Q(
                                                             fraction=fraction_id, 
                                                             membership_type="FRACT",
@@ -134,7 +134,8 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
         return yes_share
 
     def get_number_of_debate_statements(self, affair):
-        pass
+        all_debate_statements = AffairDebate.objects.filter(affair=affair)
+        return all_debate_statements.count()
 
 
 
