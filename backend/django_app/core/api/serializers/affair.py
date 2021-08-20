@@ -26,6 +26,7 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
     signatory_last_name = serializers.CharField(source="signatory.last_name", allow_null=True)
     signatory_city = serializers.CharField(source="signatory.city.name", allow_null=True)
     signatory_fraction = serializers.SerializerMethodField()
+    signatory_fraction_id = serializers.SerializerMethodField()
     # strength fraction in percent at time of submission
     signatory_fraction_strength = serializers.SerializerMethodField()
     signatory_days_in_parlament_at_submission = serializers.SerializerMethodField()
@@ -55,6 +56,17 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
             fraction_name = fraction_membership.fraction.name
         
         return fraction_name
+
+    def get_signatory_fraction_id(self, affair):
+        # return id of fraction membership
+        fraction_memberships = Membership.objects.filter(politican=affair.signatory, membership_type="FRACT")
+        
+        fraction_id = 999
+
+        for fraction_membership in fraction_memberships:
+            fraction_id = fraction_membership.fraction.id
+
+        return fraction_id
 
     def get_signatory_days_in_parlament_at_submission(self, affair):
         # return number of days in parlament from start to affair submission
