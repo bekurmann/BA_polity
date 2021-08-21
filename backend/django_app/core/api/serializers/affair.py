@@ -24,6 +24,7 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
     # signatory information
     signatory_first_name = serializers.CharField(source="signatory.first_name", allow_null=True)
     signatory_last_name = serializers.CharField(source="signatory.last_name", allow_null=True)
+    signatory_gender = serializers.CharField(source="signatory.gender", allow_null=True)
     signatory_city = serializers.CharField(source="signatory.city.name", allow_null=True)
     signatory_fraction = serializers.SerializerMethodField()
     signatory_fraction_id = serializers.SerializerMethodField()
