@@ -11,6 +11,11 @@ from rest_framework.permissions import IsAuthenticated
 
 from core.models import Affair, Membership, Politican
 
+# import date
+import datetime
+
+# q for filtering
+from django.db.models import Q
 
 class AnalysisParlamentAffairsPerYearOW(APIView):
     authentication_classes = [JWTCookieAuthentication, SessionAuthentication]
@@ -434,7 +439,13 @@ class AnalysisJupyterPolitican(viewsets.ReadOnlyModelViewSet):
     * read-only viewset for all politican + certain fields (not nested) from other models
     * all in serializers!
     """
-    queryset = Politican.objects.all()
+
+    date_valid = datetime.date(2010, 12, 31)
+
+
+    queryset = Politican.objects.filter(Q(politican_memberships__end_date__gt=date_valid)
+                                        & Q(politican_memberships__membership_type="PARLA")
+                                        & Q(politican_memberships__membership_function="MEMBE"))
     serializer_class = PoliticanJupyterSerializer
 
     

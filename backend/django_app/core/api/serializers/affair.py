@@ -4,7 +4,7 @@ from rest_framework import serializers
 from django.db.models import Q
 
 # import models
-from core.models import Affair, AffairDebate, AffairFile, Membership
+from core.models import Affair, AffairDebate, AffairFile, Membership, Politican
 
 # for geo distance
 from django.contrib.gis.geos import GEOSGeometry
@@ -25,6 +25,7 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
     signatory_first_name = serializers.CharField(source="signatory.first_name", allow_null=True)
     signatory_last_name = serializers.CharField(source="signatory.last_name", allow_null=True)
     signatory_gender = serializers.CharField(source="signatory.gender", allow_null=True)
+    signatory_age_in_days = serializers.SerializerMethodField()
     signatory_city = serializers.CharField(source="signatory.city.name", allow_null=True)
     signatory_fraction = serializers.SerializerMethodField()
     signatory_fraction_id = serializers.SerializerMethodField()
@@ -32,6 +33,9 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
     signatory_fraction_strength = serializers.SerializerMethodField()
     signatory_days_in_parlament_at_submission = serializers.SerializerMethodField()
     signatory_distance_to_parlament = serializers.SerializerMethodField()
+
+    # election year boolean
+    election_year = serializers.SerializerMethodField()
 
     # vote information
     vote_result_yes_share = serializers.SerializerMethodField()
@@ -135,6 +139,32 @@ class AffairJupyterSerializer(serializers.ModelSerializer):
 
         return distance
 
+    def get_election_year(self, affair):
+        """
+        return true/false if date_received is 365 days before an election date
+        * election 2010: 07.03.2010
+        * election 2014: 09.03.2014
+        * election 2018: 04.03.2018
+        """
+        # election10 = datetime.date(2010, 3, 7)
+        # election14 = datetime.date(2014, 3, 9)
+        # election18 = datetime.date(2018, 3, 4)
+
+        pass
+
+    def get_signatory_age_in_days(self, affair):
+        end_of_analysis = datetime.date(2020, 12, 31)
+        # dummy
+        birthday_signatory = datetime.date(2020, 12, 31)
+
+        if affair.signatory is not None:
+            if affair.signatory.date_of_birth is not None:
+                birthday_signatory = affair.signatory.date_of_birth
+
+        delta = end_of_analysis - birthday_signatory
+
+        return delta.days
+    
     def get_vote_result_yes_share(self, affair):
         total_votes = affair.anon_yes + affair.anon_no + affair.anon_abstinence
 
