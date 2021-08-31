@@ -440,12 +440,13 @@ class AnalysisJupyterPolitican(viewsets.ReadOnlyModelViewSet):
     * all in serializers!
     """
 
-    date_valid = datetime.date(2010, 12, 31)
+    date_valid = datetime.date(2010, 8, 30)
 
+    crit = (Q(politican_memberships__end_date__gt=date_valid) | Q(politican_memberships__end_date=None)) \
+            & Q(politican_memberships__membership_type="PARLA") \
+            & Q(politican_memberships__membership_function="MEMBE")
 
-    queryset = Politican.objects.filter(Q(politican_memberships__end_date__gt=date_valid)
-                                        & Q(politican_memberships__membership_type="PARLA")
-                                        & Q(politican_memberships__membership_function="MEMBE"))
+    queryset = Politican.objects.filter(crit)
     serializer_class = PoliticanJupyterSerializer
 
     
