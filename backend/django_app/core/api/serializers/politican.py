@@ -87,7 +87,7 @@ class PoliticanJupyterSerializer(serializers.ModelSerializer):
         days_in_parlament = ''
 
         start_date = datetime.date(1970, 1, 1) # dummy value for recognizing untrue info
-        end_date = datetime.date(2020, 1, 31)
+        end_date = datetime.date(2020, 12, 31)
 
         parlament_memberships = Membership.objects.filter(politican=politican, 
                                                             membership_type="PARLA", 
